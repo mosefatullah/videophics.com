@@ -26,3 +26,18 @@
  border-bottom: 2px solid var(--bg-secondary-1);
  transition: border-bottom-color 0.5s ease-in-out;
 }
+
+._drawer-menu {
+ padding-top: 20px;
+}
+
+._drawer-menu li {
+ padding: 5px;
+ list-style: none;
+ font-weight: 500;
+}
+
+._drawer-menu li a:hover,
+._drawer-menu li a.active {
+ color: var(--bg-secondary-1);
+}

@@ -17,9 +17,10 @@ export default function Home() {
         <span className="text-violet-500">discovering</span> a better future
        </h1>
        <p className="text-[14px] md:text-[17px] my-4 mb-7 text-slate-500 leading-6 md:leading-7">
-        We are a team of professionals who are passionate about creating
-        engaging and visually stunning videos for our clients. We are here to
-        help you grow your business with our creative and innovative ideas.
+        Videophics is a graphic design agency dedicated to empowering brands,
+        businesses, and individuals through impactful visual storytelling. We
+        craft compelling designs for a wide range of clients, including
+        companies, organizations, publications, and personal promotions.
        </p>
        <button className="px-7 text-sm md:text-[16px] md:px-8 py-3 text-white rounded-md from-violet-400 to-violet-600 bg-gradient-to-l hover:from-violet-500 hover:to-violet-700 transition-all duration-500 active:scale-95">
         Get Started

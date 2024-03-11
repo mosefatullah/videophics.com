@@ -11,6 +11,11 @@
  --bg-secondary-3: #4266bd;
 }
 
+._navbar {
+ background-color: rgba(255, 255, 255, 0.8);
+ backdrop-filter: blur(10px);
+}
+
 ._navbar ._menu li a {
  font-weight: 500 !important;
  padding: 4px 0;

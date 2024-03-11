@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Navbar() {
  return (
-  <div className="_navbar text-black p-4 px-6 border-b-2">
-   <div className="container mx-auto grid grid-cols-3 gap-4">
+  <div className="_navbar sticky top-0 left-0 z-50 text-black p-4 px-6 border-b-2">
+   <div className="container mx-auto grid grid-cols-3 gap-4 max-w-[1300px]">
     <div className="_logo flex items-center">
      <h1 className="font-medium text-lg flex items-center">
       <img

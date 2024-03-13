@@ -25,7 +25,10 @@ export default function Navbar() {
 
  return (
   <>
-   <div className="_navbar sticky top-0 left-0 z-50 text-black p-4 px-6 border-b-2">
+   <nav
+    className="_navbar sticky top-0 left-0 z-50 text-black p-4 px-6 border-b-2"
+    role="navigation"
+   >
     <div className="container mx-auto flex justify-between md:grid grid-cols-3 gap-4 max-w-[1300px]">
      <div className="_logo flex items-center">
       <h1 className="font-medium text-lg flex items-center">
@@ -97,9 +100,10 @@ export default function Navbar() {
       </button>
      </div>
     </div>
-   </div>
+   </nav>
    <div
     className="_drawer-menu w-[300px] bg-white fixed top-0 left-0 h-full transform -translate-x-full transition-all duration-500 ease-in-out p-4 shadow"
+    role="menu"
     style={{ zIndex: "60" }}
    >
     <Menu />
@@ -113,6 +117,7 @@ export default function Navbar() {
    />
    <div
     className="_drawer-search fixed top-0 left-0 w-full h-[300px] bg-white transform -translate-y-full transition-all duration-500 ease-in-out p-4 shadow"
+    role="search"
     style={{ zIndex: "60" }}
    >
     <div className="container mx-auto max-w-[1300px]">
@@ -120,6 +125,7 @@ export default function Navbar() {
       <input
        type="search"
        placeholder="Search for something"
+       role="searchbox"
        className="w-full p-2 font-[500] md:text-[26px] border-b-2"
       />
      </div>

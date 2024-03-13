@@ -1,24 +1,23 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
  const Menu = () => (
   <>
    <li>
-    <a href="/" className="active">
-     Home
-    </a>
+    <NavLink to="/">Home</NavLink>
    </li>
    <li>
-    <a href="/contact">Services</a>
+    <NavLink to="/services">Services</NavLink>
    </li>
    <li>
-    <a href="/about">About</a>
+    <NavLink to="/about">About</NavLink>
    </li>
    <li>
-    <a href="/contact">Contact</a>
+    <NavLink to="/contact">Contact</NavLink>
    </li>
    <li>
-    <a href="/contact">Blog</a>
+    <NavLink to="/blog">Blog</NavLink>
    </li>
   </>
  );

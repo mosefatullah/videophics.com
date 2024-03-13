@@ -32,7 +32,7 @@ export default function Home() {
       <div className="flex justify-center items-center md:justify-end z-10">
        <img
         src="/log.jpg"
-        alt="A visual representation of the company"
+        alt="A visual representation of videophics"
         className="object-cover rounded-lg max-h-[500px] w-full md:max-w-[700px] bg-purple-100"
         style={{
          aspectRatio: "16/9",
@@ -61,13 +61,47 @@ export default function Home() {
      </div>
      <div className="_services-box h-96 mt-10 md:grid grid-cols-2 gap-12">
       <div>
-       <div
-        src="/logo.jpg"
-        className="bg-purple-100 w-full h-full min-h-[300px]"
-       />
+       <div className="bg-purple-100 w-full h-full min-h-[300px]" />
       </div>
       <div>
        <div className="bg-white w-full h-full min-h-[300px]" />
+      </div>
+     </div>
+    </section>
+    <section className="_booking-section my-10 min-h-[calc(100vh-80px)] bg-violet-200 flex flex-col justify-center items-center">
+     <div className="container mx-auto max-w-[1300px]">
+      <div className="text-center">
+       <h1 className="text-3xl md:text-4xl lg:text-5xl font-[600] mb-4 text-slate-700 leading-10">
+        Book an Appointment
+       </h1>
+       <p className="text-[14px] md:text-[17px] text-slate-500 leading-6 md:leading-7">
+        Schedule an appointment with us and let's get started on your project.
+       </p>
+       <a
+        href="/booking"
+        className="text-sm md:text-[16px] text-violet-500 hover:underline block mt-10"
+        title="Click here to book an appointment"
+       >
+        Book Now &rarr;
+       </a>
+      </div>
+     </div>
+    </section>
+    <section className="_clients-section my-12 min-h-[calc(100vh-80px)] flex flex-col justify-center items-center">
+     <div className="container mx-auto max-w-[1300px]">
+      <div className="text-center">
+       <h1 className="text-3xl md:text-4xl lg:text-5xl font-[600] mb-4 text-slate-700 leading-10">
+        Our Clients
+       </h1>
+       <p className="text-[14px] md:text-[17px] text-slate-500 leading-6 md:leading-7">
+        We have worked with a wide range of clients. Here are some of them.
+       </p>
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+       <div className="bg-purple-100 h-32 w-full rounded-md" />
+       <div className="bg-purple-100 h-32 w-full rounded-md" />
+       <div className="bg-purple-100 h-32 w-full rounded-md" />
+       <div className="bg-purple-100 h-32 w-full rounded-md" />
       </div>
      </div>
     </section>

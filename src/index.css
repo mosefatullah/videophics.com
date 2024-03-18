@@ -5,39 +5,46 @@
 /* Custom CSS */
 
 :root {
- --bg-primary: #f8f9fa;
- --bg-secondary-1: #5c42bd;
- --bg-secondary-2: #9942bd;
- --bg-secondary-3: #4266bd;
+  --bg-primary: #f8f9fa;
+  --bg-secondary-1: #5c42bd;
+  --bg-secondary-2: #9942bd;
+  --bg-secondary-3: #4266bd;
 }
 
 ._navbar {
- background-color: rgba(255, 255, 255, 0.8);
- backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
 }
 
 ._navbar ._menu li a {
- font-weight: 500 !important;
- padding: 4px 0;
+  font-weight: 500 !important;
+  display: block;
+  border: 2px solid transparent;
+  padding: 25px 15px;
 }
 
-._navbar ._menu li a:hover,
+._navbar ._menu li a:hover {
+  border-bottom: 2px solid var(--bg-secondary-1);
+  color: var(--bg-secondary-1);
+  transition: border-bottom-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
 ._navbar ._menu li a.active {
- border-bottom: 2px solid var(--bg-secondary-1);
- transition: border-bottom-color 0.5s ease-in-out;
+  color: var(--bg-secondary-1);
+  transition: border-bottom-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 ._drawer-menu {
- padding-top: 20px;
+  padding-top: 20px;
 }
 
 ._drawer-menu li {
- padding: 5px;
- list-style: none;
- font-weight: 500;
+  padding: 5px;
+  list-style: none;
+  font-weight: 500;
 }
 
 ._drawer-menu li a:hover,
 ._drawer-menu li a.active {
- color: var(--bg-secondary-1);
+  color: var(--bg-secondary-1);
 }

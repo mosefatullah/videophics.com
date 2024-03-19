@@ -179,53 +179,59 @@ export default function Home() {
                 Frequently Asked Questions
               </h3>
               <p className="text-[14px] mt-4 md:text-[17px] text-slate-500 leading-6 md:leading-7 mb-8">
-                Can't find what you're looking for? Reach out to our <a className="text-violet-700" href="/support">support team</a>.
+                Can't find what you're looking for? Reach out to our{" "}
+                <a className="text-violet-700" href="/support">
+                  support team
+                </a>
+                .
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-[3rem]">
-              <div>
-                <div className="flex flex-col gap-4">
-                  <h3 className="text-2xl font-[600] text-slate-700 leading-8">
-                    How do I get started?
-                  </h3>
-                  <p className="text-sm text-slate-500 leading-6">
-                    You can get started by booking an appointment with us. We
-                    will discuss your project and provide you with a quote.
-                  </p>
+            <div className="flex justify-center">
+              <div className="grid grid-cols-1 max-w-[700px] gap-12 pt-[3rem]">
+                <div>
+                  <div className="flex flex-col gap-4">
+                    <h3 className="text-2xl font-[600] text-slate-700 leading-8">
+                      How do I get started?
+                    </h3>
+                    <p className="text-sm text-slate-500 leading-6">
+                      You can get started by booking an appointment with us. We
+                      will discuss your project and provide you with a quote.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <div className="flex flex-col gap-4">
-                  <h3 className="text-2xl font-[600] text-slate-700 leading-8">
-                    What are your payment methods?
-                  </h3>
-                  <p className="text-sm text-slate-500 leading-6">
-                    We accept payments through PayPal, bank transfers, and
-                    credit/debit cards.
-                  </p>
+                <div>
+                  <div className="flex flex-col gap-4">
+                    <h3 className="text-2xl font-[600] text-slate-700 leading-8">
+                      What are your payment methods?
+                    </h3>
+                    <p className="text-sm text-slate-500 leading-6">
+                      We accept payments through PayPal, bank transfers, and
+                      credit/debit cards.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <div className="flex flex-col gap-4">
-                  <h3 className="text-2xl font-[600] text-slate-700 leading-8">
-                    How long does a project take?
-                  </h3>
-                  <p className="text-sm text-slate-500 leading-6">
-                    The duration of a project depends on the complexity of the
-                    project. We will provide you with an estimated time frame
-                    after discussing your project.
-                  </p>
+                <div>
+                  <div className="flex flex-col gap-4">
+                    <h3 className="text-2xl font-[600] text-slate-700 leading-8">
+                      How long does a project take?
+                    </h3>
+                    <p className="text-sm text-slate-500 leading-6">
+                      The duration of a project depends on the complexity of the
+                      project. We will provide you with an estimated time frame
+                      after discussing your project.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <div className="flex flex-col gap-4">
-                  <h3 className="text-2xl font-[600] text-slate-700 leading-8">
-                    Do you offer refunds?
-                  </h3>
-                  <p className="text-sm text-slate-500 leading-6">
-                    We offer refunds on a case-by-case basis. If you're not
-                    satisfied with our service, we will refund your payment.
-                  </p>
+                <div>
+                  <div className="flex flex-col gap-4">
+                    <h3 className="text-2xl font-[600] text-slate-700 leading-8">
+                      Do you offer refunds?
+                    </h3>
+                    <p className="text-sm text-slate-500 leading-6">
+                      We offer refunds on a case-by-case basis. If you're not
+                      satisfied with our service, we will refund your payment.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

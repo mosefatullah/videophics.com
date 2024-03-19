@@ -1,11 +1,15 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 /* Components */
-import Home from "./pages/Home";
-import AboutUs from "./pages/AboutUs";
 import Navbar from "./pages/components/Navbar";
 import Footer from "./pages/components/Footer";
+
+/* Pages */
+import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
+import Blog from "./pages/Blog";
+import ContactUs from "./pages/ContactUs";
 
 export default function App() {
   const [theme, setTheme] = React.useState(
@@ -58,6 +62,7 @@ export default function App() {
             </Layout>
           }
         />
+        <Route path="/services" element={<Navigate to="/" />} />
         <Route
           path="/about-us"
           element={
@@ -66,6 +71,24 @@ export default function App() {
             </Layout>
           }
         />
+        <Route path="/about" element={<Navigate to="/about-us" />} />
+        <Route
+          path="/blog"
+          element={
+            <Layout>
+              <Blog />
+            </Layout>
+          }
+        />
+        <Route
+          path="/contact-us"
+          element={
+            <Layout>
+              <ContactUs />
+            </Layout>
+          }
+        />
+        <Route path="/contact" element={<Navigate to="/contact-us" />} />
         <Route path="*" element={<></>} />
       </Routes>
     </BrowserRouter>

@@ -114,12 +114,12 @@ export default function Navbar({ theme, setTheme }) {
             <Menu />
           </ul>
           <div className="flex gap-5 md:gap-4 justify-end items-center">
-            <a
-              href="/#contact"
+            <NavLink
+              to="/contact-us"
               className="bg-purple-700 text-white text-sm px-6 py-3 rounded-full from-purple-500 to-purple-700 bg-gradient-to-l hover:from-purple-600 hover:to-purple-800 active:scale-95 hidden md:block"
             >
               Contact Us
-            </a>
+            </NavLink>
             <button
               className="text-black p-2 rounded-full active:scale-95 active:bg-gray-100 dark:text-white dark:active:bg-slate-800 dark:active:text-white"
               onClick={() => {

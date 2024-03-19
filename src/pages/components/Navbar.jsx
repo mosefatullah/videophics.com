@@ -40,7 +40,7 @@ export default function Navbar({ theme, setTheme }) {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/about">About Us</NavLink>
+        <NavLink to="/about-us">About Us</NavLink>
       </li>
       <li>
         <NavLink to="/blog">Blog</NavLink>

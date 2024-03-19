@@ -11,6 +11,19 @@
   --bg-secondary-3: #4266bd;
 }
 
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
 ._navbar {
   background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
@@ -21,6 +34,7 @@
   display: block;
   border: 2px solid transparent;
   padding: 25px 15px;
+  white-space: nowrap;
 }
 
 ._navbar ._menu li a:hover {

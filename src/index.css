@@ -67,3 +67,12 @@ html.lenis {
   overflow: hidden;
   transition: height 0.3s ease-out;
 }
+
+._team-section  ._persons > div {
+  cursor: pointer;
+}
+
+._team-section ._persons > div:hover h4 {
+  color: var(--bg-secondary-1);
+  text-decoration: underline;
+}

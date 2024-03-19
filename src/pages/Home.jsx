@@ -150,6 +150,65 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <section className="_team-section py-[8rem] md:min-h-[calc(100vh-80px)] bg-violet-100 flex flex-col justify-center items-center">
+          <div className="container mx-auto max-w-[1300px]">
+            <div className="text-center">
+              <h3 className="text-3xl lg:text-4xl font-[600] mb-4 text-slate-700 leading-10">
+                Meet Our Team
+              </h3>
+              <p className="text-[14px] md:text-[17px] text-slate-500 leading-6 md:leading-7 mb-8">
+                Our team is dedicated to delivering the best results for you.
+              </p>
+            </div>
+            <div className="_persons grid md:grid-cols-3 gap-9 pt-8">
+              <div className="flex flex-col items-center">
+                <img src="/logo.jpg" className="max-w-[300px] bg-violet-100" style={{aspectRatio:"3/3"}} />
+                <h4 className="text-xl font-[600] mt-4 text-slate-700 leading-8">
+                  John Doe
+                </h4>
+                <p className="text-sm text-slate-500 leading-6">
+                  CEO & Co-Founder
+                </p>
+              </div>
+              <div className="flex flex-col items-center">
+                <img src="/logo.jpg" className="max-w-[300px] bg-violet-100" style={{aspectRatio:"3/3"}} />
+                <h4 className="text-xl font-[600] mt-4 text-slate-700 leading-8">
+                  John Doe
+                </h4>
+                <p className="text-sm text-slate-500 leading-6">
+                  CEO & Co-Founder
+                </p>
+              </div>
+              <div className="flex flex-col items-center">
+                <img src="/logo.jpg" className="max-w-[300px] bg-violet-100" style={{aspectRatio:"3/3"}} />
+                <h4 className="text-xl font-[600] mt-4 text-slate-700 leading-8">
+                  John Doe
+                </h4>
+                <p className="text-sm text-slate-500 leading-6">
+                  CEO & Co-Founder
+                </p>
+              </div>
+              <div className="flex flex-col items-center">
+                <img src="/logo.jpg" className="max-w-[300px] bg-violet-100" style={{aspectRatio:"3/3"}} />
+                <h4 className="text-xl font-[600] mt-4 text-slate-700 leading-8">
+                  John Doe
+                </h4>
+                <p className="text-sm text-slate-500 leading-6">
+                  CEO & Co-Founder
+                </p>
+              </div>
+              <div className="flex flex-col items-center">
+                <img src="/logo.jpg" className="max-w-[300px] bg-violet-100" style={{aspectRatio:"3/3"}} />
+                <h4 className="text-xl font-[600] mt-4 text-slate-700 leading-8">
+                  John Doe
+                </h4>
+                <p className="text-sm text-slate-500 leading-6">
+                  CEO & Co-Founder
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
         <section className="_clients-section bg-white py-[7rem] md:min-h-[calc(100vh-80px)] flex flex-col justify-center items-center">
           <div className="container mx-auto max-w-[1300px]">
             <div className="text-center">
@@ -323,7 +382,7 @@ export default function Home() {
                       type="email"
                       id="email"
                       className="p-3 rounded-md border-2 border-slate-200 focus:outline-none focus:border-violet-500"
-                      placeholder="name@example.com"
+                      placeholder="contact@example.com"
                       required
                     />
                   </div>

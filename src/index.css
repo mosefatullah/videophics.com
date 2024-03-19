@@ -60,8 +60,8 @@ html.lenis {
   font-weight: 500;
 }
 
-._drawer-menu li a:hover,
-._drawer-menu li a.active {
+._drawer-menu li > :hover,
+._drawer-menu li > .active {
   color: var(--bg-secondary-1);
 }
 

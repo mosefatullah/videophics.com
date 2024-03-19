@@ -2,6 +2,65 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 export default function Navbar({ theme, setTheme }) {
+  const ServicesList = () => (
+    <>
+      <li
+        className="border-b-[3px] border-purple-700 dark:border-purple-500 hover:border-purple-700 dark:hover:border-purple-500"
+        index="1"
+      >
+        <NavLink to="/services/branding">Branding</NavLink>
+        <NavLink to="/services/branding" className="_hover">
+          Branding
+        </NavLink>
+      </li>
+      <li
+        className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500"
+        index="2"
+      >
+        <NavLink to="/services/design">Design</NavLink>
+        <NavLink to="/services/design" className="_hover">
+          Design
+        </NavLink>
+      </li>
+      <li
+        className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500"
+        index="3"
+      >
+        <NavLink to="/services/development">Development</NavLink>
+        <NavLink to="/services/development" className="_hover">
+          Development
+        </NavLink>
+      </li>
+      <li
+        className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500"
+        index="4"
+      >
+        <NavLink to="/services/marketing">Marketing</NavLink>
+        <NavLink to="/services/marketing" className="_hover">
+          Marketing
+        </NavLink>
+      </li>
+      <li
+        className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500"
+        index="5"
+      >
+        <NavLink to="/services/content-writing">Content Writing</NavLink>
+        <NavLink to="/services/content-writing" className="_hover">
+          Content Writing
+        </NavLink>
+      </li>
+      <li
+        className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500"
+        index="6"
+      >
+        <NavLink to="/services/bug-fixing">Bug Fixing</NavLink>
+        <NavLink to="/services/bug-fixing" className="_hover">
+          Bug Fixing
+        </NavLink>
+      </li>
+    </>
+  );
+
   const Menu = () => (
     <>
       <li>
@@ -10,6 +69,7 @@ export default function Navbar({ theme, setTheme }) {
       <li>
         <NavLink
           to="/services"
+          className="hidden md:block"
           onMouseEnter={() => {
             document
               .querySelector("._services-menu")
@@ -38,6 +98,35 @@ export default function Navbar({ theme, setTheme }) {
             />
           </svg>
         </NavLink>
+        <div
+          className="w-fit cursor-pointer select-none md:hidden"
+          onClick={() => {
+            document
+              .querySelector("._mobile-service-lists")
+              .classList.toggle("height-0");
+          }}
+        >
+          Services{" "}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-4 h-4 inline-block"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </div>
+        <div className="_mobile-service-lists height-0 md:hidden">
+          <ul>
+            <ServicesList />
+          </ul>
+        </div>
       </li>
       <li>
         <NavLink to="/about-us">About Us</NavLink>
@@ -169,7 +258,10 @@ export default function Navbar({ theme, setTheme }) {
                   .classList.toggle("transform");
                 document
                   .querySelector("._drawer-menu")
-                  .classList.toggle("translate-x-0");
+                  .classList.toggle("translate-x-full");
+                document
+                  .querySelector("._drawer-menu")
+                  .classList.toggle("-translate-y-full");
               }}
             >
               <svg
@@ -191,10 +283,20 @@ export default function Navbar({ theme, setTheme }) {
         </div>
       </nav>
       <div
-        className="_drawer-menu w-[300px] bg-white fixed top-0 left-0 h-full transform -translate-x-full transition-all duration-500 ease-in-out p-4 shadow"
+        className="_drawer-menu min-w-[300px] w-[70%] bg-white fixed top-0 right-0 h-full transform translate-x-full -translate-y-full transition-all duration-500 ease-in-out p-6 shadow text-2xl rounded-lg"
         role="menu"
         style={{ zIndex: "60" }}
       >
+        <div className="brand mb-10">
+          <h1 className="font-medium text-lg flex items-center">
+            <img
+              src="/logo.jpg"
+              alt="Videophics"
+              className="h-8 w-8 object-cover rounded-md mr-2"
+            />
+            <span>Videophics</span>
+          </h1>
+        </div>
         <Menu />
       </div>
       <div
@@ -203,7 +305,10 @@ export default function Navbar({ theme, setTheme }) {
           document.querySelector("._drawer-menu-layer").classList.add("hidden");
           document
             .querySelector("._drawer-menu")
-            .classList.remove("translate-x-0");
+            .classList.add("translate-x-full");
+          document
+            .querySelector("._drawer-menu")
+            .classList.add("-translate-y-full");
         }}
       />
       <div
@@ -222,60 +327,7 @@ export default function Navbar({ theme, setTheme }) {
       >
         <div className="py-12 container mx-auto max-w-[1300px] flex justify-between items-center gap-6">
           <ul className="flex flex-col items-start gap-4 text-3xl font-[500] text-slate-700 dark:text-white text-right">
-            <li
-              className="border-b-[3px] border-purple-700 dark:border-purple-500 hover:border-purple-700 dark:hover:border-purple-500"
-              index="1"
-            >
-              <NavLink to="/services/branding">Branding</NavLink>
-              <NavLink to="/services/branding" className="_hover">
-                Branding
-              </NavLink>
-            </li>
-            <li
-              className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500"
-              index="2"
-            >
-              <NavLink to="/services/design">Design</NavLink>
-              <NavLink to="/services/design" className="_hover">
-                Design
-              </NavLink>
-            </li>
-            <li
-              className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500"
-              index="3"
-            >
-              <NavLink to="/services/development">Development</NavLink>
-              <NavLink to="/services/development" className="_hover">
-                Development
-              </NavLink>
-            </li>
-            <li
-              className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500"
-              index="4"
-            >
-              <NavLink to="/services/marketing">Marketing</NavLink>
-              <NavLink to="/services/marketing" className="_hover">
-                Marketing
-              </NavLink>
-            </li>
-            <li
-              className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500"
-              index="5"
-            >
-              <NavLink to="/services/content-writing">Content Writing</NavLink>
-              <NavLink to="/services/content-writing" className="_hover">
-                Content Writing
-              </NavLink>
-            </li>
-            <li
-              className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500"
-              index="6"
-            >
-              <NavLink to="/services/bug-fixing">Bug Fixing</NavLink>
-              <NavLink to="/services/bug-fixing" className="_hover">
-                Bug Fixing
-              </NavLink>
-            </li>
+            <ServicesList />
           </ul>
           <div>
             <img

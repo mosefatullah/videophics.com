@@ -65,6 +65,26 @@ html.lenis {
   color: var(--bg-secondary-1);
 }
 
+._services-menu li {
+  position: relative;
+  overflow: hidden;
+}
+
+._services-menu li a._hover {
+  position: absolute;
+  top: -55px;
+  left: 0;
+}
+
+._services-menu li.active a._hover {
+  top: 0;
+  transition: top 0.4s ease-in-out;
+}
+._services-menu li.active a:not(._hover) {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
 ._card-collapse {
   overflow: hidden;
   transition: height 0.3s ease-out;

@@ -64,6 +64,33 @@ export default function Navbar({ theme, setTheme }) {
         }
       }
     };
+    const servicesMenuList = document.querySelectorAll("._services-menu ul li");
+    servicesMenuList.forEach((li, index) => {
+      li.addEventListener("mouseenter", (e) => {
+        servicesMenuList.forEach((list) => {
+          list.classList.remove(
+            "border-purple-700",
+            "dark:border-purple-500",
+            "dark:hover:border-purple-500",
+            "active"
+          );
+          list.classList.add("border-transparent");
+        });
+        li.classList.add("border-purple-700");
+        li.classList.add("dark:border-purple-500");
+        li.classList.add("dark:hover:border-purple-500");
+        li.classList.add("active");
+        li.classList.remove("border-transparent");
+        const img = document.querySelector(
+          `._services-menu #img${e.target.getAttribute("index")}`
+        );
+        const images = document.querySelectorAll("._services-menu img");
+        images.forEach((image) => {
+          image.classList.add("hidden");
+        });
+        img.classList.remove("hidden");
+      });
+    });
   }, []);
 
   return (
@@ -195,30 +222,97 @@ export default function Navbar({ theme, setTheme }) {
       >
         <div className="py-12 container mx-auto max-w-[1300px] flex justify-between items-center gap-6">
           <ul className="flex flex-col items-start gap-4 text-3xl font-[500] text-slate-700 dark:text-white text-right">
-            <li className="border-b-[3px] border-purple-700 dark:border-purple-500 hover:border-purple-700 dark:hover:border-purple-500">
+            <li
+              className="border-b-[3px] border-purple-700 dark:border-purple-500 hover:border-purple-700 dark:hover:border-purple-500"
+              index="1"
+            >
               <NavLink to="/services/branding">Branding</NavLink>
+              <NavLink to="/services/branding" className="_hover">
+                Branding
+              </NavLink>
             </li>
-            <li className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500">
+            <li
+              className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500"
+              index="2"
+            >
               <NavLink to="/services/design">Design</NavLink>
+              <NavLink to="/services/design" className="_hover">
+                Design
+              </NavLink>
             </li>
-            <li className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500">
+            <li
+              className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500"
+              index="3"
+            >
               <NavLink to="/services/development">Development</NavLink>
+              <NavLink to="/services/development" className="_hover">
+                Development
+              </NavLink>
             </li>
-            <li className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500">
+            <li
+              className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500"
+              index="4"
+            >
               <NavLink to="/services/marketing">Marketing</NavLink>
+              <NavLink to="/services/marketing" className="_hover">
+                Marketing
+              </NavLink>
             </li>
-            <li className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500">
+            <li
+              className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500"
+              index="5"
+            >
               <NavLink to="/services/content-writing">Content Writing</NavLink>
+              <NavLink to="/services/content-writing" className="_hover">
+                Content Writing
+              </NavLink>
             </li>
-            <li className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500">
+            <li
+              className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500"
+              index="6"
+            >
               <NavLink to="/services/bug-fixing">Bug Fixing</NavLink>
+              <NavLink to="/services/bug-fixing" className="_hover">
+                Bug Fixing
+              </NavLink>
             </li>
           </ul>
           <div>
             <img
               src="/logo.jpg"
-              alt="Service(s)"
+              alt="Branding"
+              id="img1"
               className="w-full max-h-[400px] object-cover rounded-md"
+            />
+            <img
+              src="/logo.jpg"
+              alt="Design"
+              id="img2"
+              className="w-full max-h-[400px] object-cover rounded-md hidden opacity-80"
+            />
+            <img
+              src="/logo.jpg"
+              alt="Development"
+              id="img3"
+              className="w-full max-h-[400px] object-cover rounded-md hidden opacity-50"
+            />
+            <img
+              src="/logo.jpg"
+              alt="Marketing"
+              id="img4"
+              className="w-full max-h-[400px] object-cover rounded-md hidden opacity-40"
+            />
+            <img
+              src="/logo.jpg"
+              alt="Content Writing"
+              id="img5"
+              className="w-full max-h-[400px] object-cover rounded-md hidden opacity-30"
+            />
+            <img
+              src="/logo.jpg"
+              alt="Bug Fixing"
+              id="img6"
+              className="w-full max-h-[400px] object-cover rounded-md hidden opacity-20"
             />
           </div>
         </div>

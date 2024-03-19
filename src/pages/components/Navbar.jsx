@@ -8,7 +8,20 @@ export default function Navbar({ theme, setTheme }) {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/services">
+        <NavLink
+          to="/services"
+          onMouseEnter={() => {
+            document
+              .querySelector("._services-menu")
+              .classList.remove("transform");
+            document
+              .querySelector("._services-menu")
+              .classList.remove("-translate-x-full");
+            document
+              .querySelector("._services-menu")
+              .classList.add("opacity-100");
+          }}
+        >
           Services{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -56,10 +69,10 @@ export default function Navbar({ theme, setTheme }) {
   return (
     <>
       <nav
-        className="_navbar sticky top-0 left-0 z-50 text-black border-b border-slate-200 py-3 md:p-0 dark:bg-gray-900 dark:border-slate-800 bg-white dark:text-white transition-all duration-500 ease-in-out"
+        className="_navbar sticky top-0 left-0 z-50 text-black border-b border-slate-200 py-4 lg:p-0 dark:bg-slate-800 dark:border-slate-700 bg-white dark:text-white"
         role="navigation"
       >
-        <div className="container mx-auto flex justify-between md:grid grid-cols-3 gap-4 max-w-[1300px]">
+        <div className="container mx-auto flex justify-between lg:grid grid-cols-3 gap-4 max-w-[1300px]">
           <div className="_logo flex items-center">
             <h1 className="font-medium text-lg flex items-center">
               <img
@@ -70,7 +83,7 @@ export default function Navbar({ theme, setTheme }) {
               <span>Videophics</span>
             </h1>
           </div>
-          <ul className="_menu text-sm items-center hidden md:flex">
+          <ul className="_menu text-sm items-center hidden lg:flex">
             <Menu />
           </ul>
           <div className="flex gap-5 md:gap-4 justify-end items-center">
@@ -119,7 +132,7 @@ export default function Navbar({ theme, setTheme }) {
               )}
             </button>
             <button
-              className="text-black p-2 rounded-full active:scale-95 active:bg-gray-100 block md:hidden dark:text-white dark:active:bg-slate-800 dark:active:text-white"
+              className="text-black p-2 rounded-full active:scale-95 active:bg-gray-100 block lg:hidden dark:text-white dark:active:bg-slate-800 dark:active:text-white"
               onClick={() => {
                 document
                   .querySelector("._drawer-menu-layer")
@@ -158,7 +171,7 @@ export default function Navbar({ theme, setTheme }) {
         <Menu />
       </div>
       <div
-        className="_drawer-menu-layer fixed top-0 left-0  h-screen w-full hidden z-50 bg-black bg-opacity-50 transition-all duration-500 ease-in-out"
+        className="_drawer-menu-layer fixed top-0 left-0 h-screen w-full hidden z-50 bg-black bg-opacity-50 transition-all duration-500 ease-in-out"
         onClick={() => {
           document.querySelector("._drawer-menu-layer").classList.add("hidden");
           document
@@ -166,6 +179,50 @@ export default function Navbar({ theme, setTheme }) {
             .classList.remove("translate-x-0");
         }}
       />
+      <div
+        className="_services-menu bg-white dark:bg-slate-800 fixed left-0 w-full transform -translate-x-full transition-all duration-500 ease-in-out px-6 shadow-md opacity-0 hidden md:block"
+        role="menu"
+        style={{ zIndex: "60" }}
+        onMouseLeave={() => {
+          document.querySelector("._services-menu").classList.add("transform");
+          document
+            .querySelector("._services-menu")
+            .classList.add("-translate-x-full");
+          document
+            .querySelector("._services-menu")
+            .classList.remove("opacity-100");
+        }}
+      >
+        <div className="py-12 container mx-auto max-w-[1300px] flex justify-between items-center gap-6">
+          <ul className="flex flex-col items-start gap-4 text-3xl font-[500] text-slate-700 dark:text-white text-right">
+            <li className="border-b-[3px] border-purple-700 dark:border-purple-500 hover:border-purple-700 dark:hover:border-purple-500">
+              <NavLink to="/services/branding">Branding</NavLink>
+            </li>
+            <li className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500">
+              <NavLink to="/services/design">Design</NavLink>
+            </li>
+            <li className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500">
+              <NavLink to="/services/development">Development</NavLink>
+            </li>
+            <li className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500">
+              <NavLink to="/services/marketing">Marketing</NavLink>
+            </li>
+            <li className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500">
+              <NavLink to="/services/content-writing">Content Writing</NavLink>
+            </li>
+            <li className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500">
+              <NavLink to="/services/bug-fixing">Bug Fixing</NavLink>
+            </li>
+          </ul>
+          <div>
+            <img
+              src="/logo.jpg"
+              alt="Service(s)"
+              className="w-full max-h-[400px] object-cover rounded-md"
+            />
+          </div>
+        </div>
+      </div>
       <div className="bottom-to-top fixed right-4 bottom-4 z-50 hidden">
         <button
           className="p-3 bg-white rounded-full active:scale-95 active:bg-gray-100 shadow-md"

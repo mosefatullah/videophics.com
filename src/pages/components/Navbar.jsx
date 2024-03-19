@@ -1,4 +1,3 @@
-import { Lenis } from "@studio-freight/react-lenis";
 import React from "react";
 import { NavLink } from "react-router-dom";
 
@@ -114,7 +113,7 @@ export default function Navbar() {
         <button
           className="p-3 bg-white rounded-full active:scale-95 active:bg-gray-100 shadow-md"
           onClick={() => {
-            Lenis.scrollTo(0, 0);
+            window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
           <svg

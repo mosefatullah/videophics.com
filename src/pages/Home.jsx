@@ -171,7 +171,7 @@ export default function Home() {
           </div>
         </section>
         <section
-          className="_faq-section py-[8rem] md:min-h-[calc(100vh-80px)] bg-violet-100 flex flex-col justify-center items-center"
+          className="_faq-section py-[8rem] md:min-h-[calc(100vh-80px)] bg-violet-50 flex flex-col justify-center items-center"
           id="faq"
         >
           <div className="container mx-auto max-w-[1300px]">
@@ -191,20 +191,42 @@ export default function Home() {
               <div className="max-w-[700px] pt-[3rem]">
                 <Collapsible title="What is your refund policy?">
                   <p>
-                    We offer a 30-day money-back guarantee if you are not
-                    satisfied with our service.
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Atque, veniam excepturi sequi eius libero dolorem impedit
+                    dolores natus cum, a nostrum illum minima! Doloremque
+                    architecto cum expedita dolorem porro culpa.
                   </p>
                 </Collapsible>
                 <Collapsible title="How do I cancel my subscription?">
                   <p>
-                    You can cancel your subscription by reaching out to our
-                    support team.
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Aut, neque tenetur repellat obcaecati illum autem officiis
+                    odit excepturi exercitationem repudiandae atque unde nemo,
+                    corporis ratione saepe vitae, eveniet nesciunt beatae.
+                  </p>
+                </Collapsible>
+                <Collapsible title="How do I cancel my subscription?">
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Eum vitae neque quidem, in architecto a nam, atque doloribus
+                    eos sequi molestias cumque quo dignissimos culpa, omnis
+                    maiores repudiandae amet dolorum?
                   </p>
                 </Collapsible>
                 <Collapsible title="Can I upgrade my plan?">
                   <p>
-                    Yes, you can upgrade your plan at any time by reaching out
-                    to our support team.
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et
+                    libero cupiditate suscipit nisi ipsum quae distinctio quos
+                    architecto cum placeat eum quia, reprehenderit alias officia
+                    accusamus dolores recusandae dolore. Delectus.
+                  </p>
+                </Collapsible>
+                <Collapsible title="Can I upgrade my plan?">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Voluptates qui fugit provident vitae unde obcaecati
+                    blanditiis error quo in consequatur aperiam, quis quibusdam
+                    ad quidem dolor explicabo dignissimos facilis odio!
                   </p>
                 </Collapsible>
               </div>
@@ -245,7 +267,7 @@ export default function Home() {
             </div>
             <div>
               <form
-                className="flex flex-col gap-4 bg-violet-50 rounded-md p-6"
+                className="flex flex-col gap-4 rounded-md py-8 lg:p-8 md:py-10"
                 onSubmit={(e) => {
                   e.preventDefault();
                   let msgbody = `Hello, I am ${

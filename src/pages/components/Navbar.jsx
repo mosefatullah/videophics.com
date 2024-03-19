@@ -8,13 +8,32 @@ export default function Navbar() {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/services">Services</NavLink>
+        <NavLink to="/services">
+          Services{" "}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-4 h-4 inline-block"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </NavLink>
       </li>
       <li>
         <NavLink to="/about">About Us</NavLink>
       </li>
       <li>
         <NavLink to="/blog">Blog</NavLink>
+      </li>
+      <li className="block md:hidden">
+        <a href="/#contact">Contact Us</a>
       </li>
     </>
   );
@@ -37,7 +56,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className="_navbar sticky top-0 left-0 z-50 text-black border-b-2 py-3 md:p-0"
+        className="_navbar sticky top-0 left-0 z-50 text-black border-b border-slate-200 py-3 md:p-0"
         role="navigation"
       >
         <div className="container mx-auto flex justify-between md:grid grid-cols-3 gap-4 max-w-[1300px]">
@@ -57,7 +76,7 @@ export default function Navbar() {
           <div className="flex gap-5 md:gap-4 justify-end items-center">
             <a
               href="/#contact"
-              className="bg-purple-700 text-white text-sm px-6 py-3 rounded-full from-purple-500 to-purple-700 bg-gradient-to-l hover:from-purple-600 hover:to-purple-800 active:scale-95"
+              className="bg-purple-700 text-white text-sm px-6 py-3 rounded-full from-purple-500 to-purple-700 bg-gradient-to-l hover:from-purple-600 hover:to-purple-800 active:scale-95 hidden md:block"
             >
               Contact Us
             </a>

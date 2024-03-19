@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="bg-violet-700 text-white py-8 px-4">
+    <footer className="bg-violet-700 dark:bg-gray-800 text-white py-8 px-4">
       <div className="container mx-auto mt-6 mb-10 max-w-[1300px] gap-4 flex flex-col items-center sm:flex-row sm:justify-between">
         <div className="flex flex-col items-center sm:flex-row sm:justify-between">
           <div className="flex flex-col items-center sm:flex-row sm:justify-between gap-4">
@@ -22,7 +22,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto max-w-[1300px] gap-4 flex flex-col items-center sm:flex-row sm:justify-between border-t border-gray-400 pt-4">
+      <div className="container mx-auto max-w-[1300px] gap-4 flex flex-col items-center sm:flex-row sm:justify-between border-t border-gray-400 dark:border-gray-700 pt-4">
         <p className="text-md">© 2024 Videophics, All Rights Reserved.</p>
         <div className="flex space-x-5">
           <a href="https://www.facebook.com/videophics/" className="text-gray-300 hover:text-gray-100">

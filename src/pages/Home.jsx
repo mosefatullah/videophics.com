@@ -5,23 +5,23 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Collapsible from "./components/Collapsible";
 
-export default function Home() {
+export default function Home({ theme, setTheme }) {
   return (
     <>
-      <Navbar />
-      <main className="bg-violet-50" role="main">
-        <section className="_hero-section relative py-10 min-h-[calc(100vh-80px)] flex justify-center">
-          <div className="_sketch h-[200px] w-[100px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 left-0" />
-          <div className="_sketch h-[200px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter right-0 md:left-[40%] bottom-0" />
-          <div className="_sketch h-[200px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 right-0 hidden md:block" />
+      <Navbar theme={theme} setTheme={setTheme} />
+      <main className="bg-violet-50 dark:bg-slate-900 min-h-screen" role="main">
+        <section className="_hero-section relative py-10 min-h-[calc(100vh-80px)] flex justify-center dark:bg-slate-900">
+          <div className="_sketch h-[200px] w-[100px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 left-0 dark:opacity-50" />
+          <div className="_sketch h-[200px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter right-0 md:left-[40%] bottom-0 dark:hidden" />
+          <div className="_sketch h-[200px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 right-0 hidden md:block dark:bottom-0 dark:top-auto dark:opacity-50" />
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 max-w-[1300px]">
             <div className="flex flex-col justify-center items-start z-10 md:order-2">
-              <h1 className="text-4xl md:text-4xl lg:text-5xl font-[600] mb-4 text-slate-700 leading-10">
+              <h1 className="text-4xl md:text-4xl lg:text-5xl font-[600] mb-4 text-slate-700 dark:text-white leading-10">
                 Innovative minds are{" "}
-                <span className="text-violet-500">discovering</span> a better
+                <span className="text-violet-500 dark:text-violet-400">discovering</span> a better
                 future
               </h1>
-              <p className="text-[14px] md:text-[17px] mt-4 mb-7 text-slate-500 leading-6 md:leading-7 _heroPara">
+              <p className="text-[14px] md:text-[17px] mt-4 mb-7 text-slate-500 dark:text-white leading-6 md:leading-7 _heroPara">
                 Videophics is a graphic design agency dedicated to empowering
                 brands, businesses, and individuals through impactful visual
                 storytelling. We craft compelling designs for a wide range of
@@ -50,7 +50,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="_booking-section my-10 py-[8rem] md:min-h-[calc(100vh-80px)] bg-violet-500 flex flex-col justify-center items-center">
+        <section
+          id="booking"
+          className="_booking-section py-[8rem] md:min-h-[calc(100vh-80px)] bg-violet-500 dark:bg-violet-700 flex flex-col justify-center items-center"
+        >
           <div className="container mx-auto max-w-[1300px]">
             <div className="text-center">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-[600] mb-4 text-white leading-10">
@@ -75,73 +78,73 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="_services-section py-[5rem] md:min-h-[calc(100vh-80px)]">
+        <section className="_services-section dark:bg-slate-700 py-[5rem] md:min-h-[calc(100vh-80px)]">
           <div className="container mx-auto max-w-[1300px]">
             <div className="flex flex-col justify-center items-center text-center">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-[600] mb-4 text-slate-700 leading-10">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-[600] mb-4 text-slate-700 dark:text-white leading-10">
                 Our Services
               </h1>
-              <p className="text-[14px] md:text-[17px] text-slate-500 leading-6 md:leading-7">
+              <p className="text-[14px] md:text-[17px] text-slate-500 dark:text-slate-400 leading-6 md:leading-7">
                 Look at our services and see what we can do for you.
               </p>
             </div>
             <div className="_services-box mt-10 grid md:grid-cols-2 gap-12">
               <div>
-                <div className="bg-violet-100 w-full h-full min-h-[300px] flex items-center">
+                <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center">
                   <div className="p-6">
-                    <h3 className="text-4xl font-[600] mb-2 text-slate-700 leading-10">
+                    <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                       <span className="text-violet-700">1.</span> Branding
                     </h3>
-                    <p className="text-sm text-slate-500 leading-6">
+                    <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
                       We create brand identities, brand guidelines, and more.
                     </p>
                   </div>
                 </div>
               </div>
               <div>
-                <div className="bg-white w-full h-full min-h-[300px] flex items-center">
+                <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center">
                   <div className="p-6">
-                    <h3 className="text-4xl font-[600] mb-2 text-slate-700 leading-10">
+                    <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                       <span className="text-violet-700">2.</span> UI/UX
                     </h3>
-                    <p className="text-sm text-slate-500 leading-6">
+                    <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
                       We design user interfaces, user experiences, and more.
                     </p>
                   </div>
                 </div>
               </div>
               <div>
-                <div className="bg-white w-full h-full min-h-[300px] flex items-center">
+                <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center">
                   <div className="p-6">
-                    <h3 className="text-4xl font-[600] mb-2 text-slate-700 leading-10">
+                    <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                       <span className="text-violet-700">3.</span> Marketing
                     </h3>
-                    <p className="text-sm text-slate-500 leading-6">
+                    <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
                       We market your brand, products, and services.
                     </p>
                   </div>
                 </div>
               </div>
               <div>
-                <div className="bg-violet-100 w-full h-full min-h-[300px] flex items-center">
+                <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center">
                   <div className="p-6">
-                    <h3 className="text-4xl font-[600] mb-2 text-slate-700 leading-10">
+                    <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                       <span className="text-violet-700">4.</span> Content
                       Writing
                     </h3>
-                    <p className="text-sm text-slate-500 leading-6">
+                    <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
                       We write compelling content for your brand.
                     </p>
                   </div>
                 </div>
               </div>
               <div>
-                <div className="bg-violet-100 w-full h-full min-h-[300px] flex items-center">
+                <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center">
                   <div className="p-6">
-                    <h3 className="text-4xl font-[600] mb-2 text-slate-700 leading-10">
+                    <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                       <span className="text-violet-700">5.</span> Bug Fixes
                     </h3>
-                    <p className="text-sm text-slate-500 leading-6">
+                    <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
                       We fix technical bugs and issues in your projects.
                     </p>
                   </div>
@@ -150,95 +153,115 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="_team-section py-[8rem] md:min-h-[calc(100vh-80px)] bg-violet-100 flex flex-col justify-center items-center">
+        <section className="_team-section py-[8rem] md:min-h-[calc(100vh-80px)] bg-violet-100 dark:bg-slate-800 flex flex-col justify-center items-center">
           <div className="container mx-auto max-w-[1300px]">
             <div className="text-center">
-              <h3 className="text-3xl lg:text-4xl font-[600] mb-4 text-slate-700 leading-10">
+              <h3 className="text-3xl lg:text-4xl font-[600] mb-4 text-slate-700 dark:text-white leading-10">
                 Meet Our Team
               </h3>
-              <p className="text-[14px] md:text-[17px] text-slate-500 leading-6 md:leading-7 mb-8">
+              <p className="text-[14px] md:text-[17px] text-slate-500 dark:text-slate-400 leading-6 md:leading-7 mb-8">
                 Our team is dedicated to delivering the best results for you.
               </p>
             </div>
             <div className="_persons grid md:grid-cols-3 gap-9 pt-8">
               <div className="flex flex-col items-center">
-                <img src="/logo.jpg" className="max-w-[300px] bg-violet-100" style={{aspectRatio:"3/3"}} />
-                <h4 className="text-xl font-[600] mt-4 text-slate-700 leading-8">
-                  John Doe
+                <img
+                  src="/logo.jpg"
+                  className="max-w-[300px] bg-violet-100"
+                  style={{ aspectRatio: "3/3" }}
+                />
+                <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
+                  Saad Al Amin
                 </h4>
-                <p className="text-sm text-slate-500 leading-6">
+                <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
                   CEO & Co-Founder
                 </p>
               </div>
               <div className="flex flex-col items-center">
-                <img src="/logo.jpg" className="max-w-[300px] bg-violet-100" style={{aspectRatio:"3/3"}} />
-                <h4 className="text-xl font-[600] mt-4 text-slate-700 leading-8">
-                  John Doe
+                <img
+                  src="/logo.jpg"
+                  className="max-w-[300px] bg-violet-100"
+                  style={{ aspectRatio: "3/3" }}
+                />
+                <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
+                  Unknown
                 </h4>
-                <p className="text-sm text-slate-500 leading-6">
+                <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
                   CEO & Co-Founder
                 </p>
               </div>
               <div className="flex flex-col items-center">
-                <img src="/logo.jpg" className="max-w-[300px] bg-violet-100" style={{aspectRatio:"3/3"}} />
-                <h4 className="text-xl font-[600] mt-4 text-slate-700 leading-8">
-                  John Doe
+                <img
+                  src="/logo.jpg"
+                  className="max-w-[300px] bg-violet-100"
+                  style={{ aspectRatio: "3/3" }}
+                />
+                <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
+                  Al Lisan
                 </h4>
-                <p className="text-sm text-slate-500 leading-6">
+                <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
                   CEO & Co-Founder
                 </p>
               </div>
               <div className="flex flex-col items-center">
-                <img src="/logo.jpg" className="max-w-[300px] bg-violet-100" style={{aspectRatio:"3/3"}} />
-                <h4 className="text-xl font-[600] mt-4 text-slate-700 leading-8">
-                  John Doe
+                <img
+                  src="/logo.jpg"
+                  className="max-w-[300px] bg-violet-100"
+                  style={{ aspectRatio: "3/3" }}
+                />
+                <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
+                  Unknown
                 </h4>
-                <p className="text-sm text-slate-500 leading-6">
+                <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
                   CEO & Co-Founder
                 </p>
               </div>
               <div className="flex flex-col items-center">
-                <img src="/logo.jpg" className="max-w-[300px] bg-violet-100" style={{aspectRatio:"3/3"}} />
-                <h4 className="text-xl font-[600] mt-4 text-slate-700 leading-8">
-                  John Doe
+                <img
+                  src="/logo.jpg"
+                  className="max-w-[300px] bg-violet-100"
+                  style={{ aspectRatio: "3/3" }}
+                />
+                <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
+                  Mohammad Sefatullah
                 </h4>
-                <p className="text-sm text-slate-500 leading-6">
-                  CEO & Co-Founder
+                <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
+                  Web Developer
                 </p>
               </div>
             </div>
           </div>
         </section>
-        <section className="_clients-section bg-white py-[7rem] md:min-h-[calc(100vh-80px)] flex flex-col justify-center items-center">
+        <section className="_clients-section bg-white dark:bg-slate-700 py-[7rem] md:min-h-[calc(100vh-80px)] flex flex-col justify-center items-center">
           <div className="container mx-auto max-w-[1300px]">
             <div className="text-center">
-              <p className="text-sm text-slate-500 leading-6 md:leading-7 uppercase mb-2">
+              <p className="text-sm text-slate-500 dark:text-gray-300 leading-6 md:leading-7 uppercase mb-2">
                 Our Clients
               </p>
-              <h3 className="text-3xl lg:text-4xl font-[600] mb-2 text-slate-700 leading-10">
+              <h3 className="text-3xl lg:text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                 We're trusted by our clients.
               </h3>
             </div>
             <div className="flex justify-center items-center gap-4 mt-10 flex-wrap">
-              <div className="bg-violet-100 w-32 h-32 rounded-md" />
-              <div className="bg-violet-100 w-32 h-32 rounded-md" />
-              <div className="bg-violet-100 w-32 h-32 rounded-md" />
-              <div className="bg-violet-100 w-32 h-32 rounded-md" />
-              <div className="bg-violet-100 w-32 h-32 rounded-md" />
-              <div className="bg-violet-100 w-32 h-32 rounded-md" />
+              <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
+              <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
+              <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
+              <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
+              <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
+              <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
             </div>
           </div>
         </section>
         <section
-          className="_faq-section py-[8rem] md:min-h-[calc(100vh-80px)] bg-violet-50 flex flex-col justify-center items-center"
+          className="_faq-section py-[8rem] md:min-h-[calc(100vh-80px)] bg-violet-50 dark:bg-slate-800 flex flex-col justify-center items-center"
           id="faq"
         >
           <div className="container mx-auto max-w-[1300px]">
             <div className="text-center">
-              <h3 className="text-3xl lg:text-4xl font-[600] text-slate-700 leading-10">
+              <h3 className="text-3xl lg:text-4xl font-[600] text-slate-700 dark:text-white leading-10">
                 Frequently Asked Questions
               </h3>
-              <p className="text-[14px] mt-4 md:text-[17px] text-slate-500 leading-6 md:leading-7 mb-8">
+              <p className="text-[14px] mt-4 md:text-[17px] text-slate-500 dark:text-slate-400 leading-6 md:leading-7 mb-8">
                 Can't find what you're looking for? Reach out to our{" "}
                 <a className="text-violet-700" href="/support">
                   support team
@@ -293,25 +316,25 @@ export default function Home() {
           </div>
         </section>
         <section
-          className="_contact-section py-[8rem] md:min-h-[calc(100vh-80px)] bg-white flex flex-col justify-center items-center"
+          className="_contact-section py-[8rem] md:min-h-[calc(100vh-80px)] bg-white dark:bg-slate-700 flex flex-col justify-center items-center"
           id="contact"
         >
           <div className="container mx-auto max-w-[1300px] grid md:grid-cols-2 gap-10">
             <div>
-              <h3 className="text-3xl lg:text-4xl font-[600] mb-4 text-slate-500 leading-10">
+              <h3 className="text-3xl lg:text-4xl font-[600] mb-4 text-slate-500 dark:text-white leading-10">
                 Let's talk about your project.
               </h3>
-              <p className="text-md text-slate-500 pt-6">
+              <p className="text-md text-slate-500 dark:text-slate-300 pt-6">
                 <p className="leading-6">
-                  <span className="text-violet-700">Office Hours:</span> 9:00 AM
+                  <span className="text-violet-700 dark:text-violet-400">Office Hours:</span> 9:00 AM
                   - 5:00 PM (GMT+6)
                 </p>
                 <p className="leading-6">
-                  <span className="text-violet-700">Address:</span> Dhaka,
+                  <span className="text-violet-700 dark:text-violet-400">Address:</span> Dhaka,
                   Bangladesh
                 </p>
                 <p className="leading-6">
-                  <span className="text-violet-700">Email:</span>{" "}
+                  <span className="text-violet-700 dark:text-violet-400">Email:</span>{" "}
                   contact@videophics.com
                 </p>
               </p>
@@ -351,7 +374,7 @@ export default function Home() {
                 }}
               >
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="name" className="text-sm text-slate-500">
+                  <label htmlFor="name" className="text-sm text-slate-500 dark:text-white">
                     Full Name
                   </label>
                   <input
@@ -363,7 +386,7 @@ export default function Home() {
                 </div>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="company" className="text-sm text-slate-500">
+                    <label htmlFor="company" className="text-sm text-slate-500 dark:text-white">
                       Company Name *
                     </label>
                     <input
@@ -375,7 +398,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="email" className="text-sm text-slate-500">
+                    <label htmlFor="email" className="text-sm text-slate-500 dark:text-white">
                       Email Address *
                     </label>
                     <input
@@ -387,7 +410,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="service" className="text-sm text-slate-500">
+                    <label htmlFor="service" className="text-sm text-slate-500 dark:text-white">
                       Select Service *
                     </label>
                     <select
@@ -403,7 +426,7 @@ export default function Home() {
                     </select>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="range" className="text-sm text-slate-500">
+                    <label htmlFor="range" className="text-sm text-slate-500 dark:text-white">
                       Budget Range *
                     </label>
                     <select
@@ -419,7 +442,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="message" className="text-sm text-slate-500">
+                  <label htmlFor="message" className="text-sm text-slate-500 dark:text-white">
                     Details *
                   </label>
                   <textarea

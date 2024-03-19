@@ -3,6 +3,7 @@ import React from "react";
 /* Components */
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Collapsible from "./components/Collapsible";
 
 export default function Home() {
   return (
@@ -84,7 +85,7 @@ export default function Home() {
                 Look at our services and see what we can do for you.
               </p>
             </div>
-            <div className="_services-box mt-10 md:grid grid-cols-2 gap-12">
+            <div className="_services-box mt-10 grid md:grid-cols-2 gap-12">
               <div>
                 <div className="bg-violet-100 w-full h-full min-h-[300px] flex items-center">
                   <div className="p-6">
@@ -187,52 +188,25 @@ export default function Home() {
               </p>
             </div>
             <div className="flex justify-center">
-              <div className="grid grid-cols-1 max-w-[700px] gap-12 pt-[3rem]">
-                <div>
-                  <div className="flex flex-col gap-4">
-                    <h3 className="text-2xl font-[600] text-slate-700 leading-8">
-                      How do I get started?
-                    </h3>
-                    <p className="text-sm text-slate-500 leading-6">
-                      You can get started by booking an appointment with us. We
-                      will discuss your project and provide you with a quote.
-                    </p>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex flex-col gap-4">
-                    <h3 className="text-2xl font-[600] text-slate-700 leading-8">
-                      What are your payment methods?
-                    </h3>
-                    <p className="text-sm text-slate-500 leading-6">
-                      We accept payments through PayPal, bank transfers, and
-                      credit/debit cards.
-                    </p>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex flex-col gap-4">
-                    <h3 className="text-2xl font-[600] text-slate-700 leading-8">
-                      How long does a project take?
-                    </h3>
-                    <p className="text-sm text-slate-500 leading-6">
-                      The duration of a project depends on the complexity of the
-                      project. We will provide you with an estimated time frame
-                      after discussing your project.
-                    </p>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex flex-col gap-4">
-                    <h3 className="text-2xl font-[600] text-slate-700 leading-8">
-                      Do you offer refunds?
-                    </h3>
-                    <p className="text-sm text-slate-500 leading-6">
-                      We offer refunds on a case-by-case basis. If you're not
-                      satisfied with our service, we will refund your payment.
-                    </p>
-                  </div>
-                </div>
+              <div className="max-w-[700px] pt-[3rem]">
+                <Collapsible title="What is your refund policy?">
+                  <p>
+                    We offer a 30-day money-back guarantee if you are not
+                    satisfied with our service.
+                  </p>
+                </Collapsible>
+                <Collapsible title="How do I cancel my subscription?">
+                  <p>
+                    You can cancel your subscription by reaching out to our
+                    support team.
+                  </p>
+                </Collapsible>
+                <Collapsible title="Can I upgrade my plan?">
+                  <p>
+                    Yes, you can upgrade your plan at any time by reaching out
+                    to our support team.
+                  </p>
+                </Collapsible>
               </div>
             </div>
           </div>
@@ -241,23 +215,37 @@ export default function Home() {
           className="_contact-section py-[8rem] md:min-h-[calc(100vh-80px)] bg-white flex flex-col justify-center items-center"
           id="contact"
         >
-          <div className="container mx-auto max-w-[1300px] grid grid-cols-2 gap-12">
+          <div className="container mx-auto max-w-[1300px] grid md:grid-cols-2 gap-10">
             <div>
               <h3 className="text-3xl lg:text-4xl font-[600] mb-4 text-slate-500 leading-10">
                 Let's talk about your project.
               </h3>
-              <table className="text-md text-slate-500">
-                <tr>
-                  <td>9:00am - 5:00pm</td>
-                </tr>
-                <tr>
-                  <td>contact@videophics.com</td>
-                </tr>
-              </table>
+              <p className="text-md text-slate-500 pt-6">
+                <p className="leading-6">
+                  <span className="text-violet-700">Office Hours:</span> 9:00 AM
+                  - 5:00 PM (GMT+6)
+                </p>
+                <p className="leading-6">
+                  <span className="text-violet-700">Address:</span> Dhaka,
+                  Bangladesh
+                </p>
+                <p className="leading-6">
+                  <span className="text-violet-700">Email:</span>{" "}
+                  contact@videophics.com
+                </p>
+              </p>
+              <iframe
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Dhaka, Bangladesh"
+                width="600"
+                height="278"
+                frameborder="0"
+                style={{ width: "100%", marginTop: "2rem" }}
+                allowfullscreen=""
+              ></iframe>
             </div>
             <div>
               <form
-                className="flex flex-col gap-4"
+                className="flex flex-col gap-4 bg-violet-50 rounded-md p-6"
                 onSubmit={(e) => {
                   e.preventDefault();
                   let msgbody = `Hello, I am ${
@@ -289,10 +277,10 @@ export default function Home() {
                     type="text"
                     id="name"
                     className="p-3 rounded-md border-2 border-slate-200 focus:outline-none focus:border-violet-500"
-                    placeholder="Ex. Abdullah"
+                    placeholder="Abdullah"
                   />
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">
                     <label htmlFor="company" className="text-sm text-slate-500">
                       Company Name *
@@ -326,9 +314,11 @@ export default function Home() {
                       id="service"
                       required
                     >
-                      <option value="design">Design</option>
-                      <option value="development">Development</option>
-                      <option value="marketing">Marketing</option>
+                      <option value="Branding">Branding</option>
+                      <option value="UI/UX">UI/UX</option>
+                      <option value="Marketing">Marketing</option>
+                      <option value="Content Writing">Content Writing</option>
+                      <option value="Bug Fixes">Bug Fixes</option>
                     </select>
                   </div>
                   <div className="flex flex-col gap-2">

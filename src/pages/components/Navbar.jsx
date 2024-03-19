@@ -22,13 +22,15 @@ export default function Navbar() {
 
   React.useEffect(() => {
     window.onscroll = function () {
-      if (
-        document.body.scrollTop > 20 ||
-        document.documentElement.scrollTop > 20
-      ) {
-        document.querySelector(".bottom-to-top").style.display = "block";
-      } else {
-        document.querySelector(".bottom-to-top").style.display = "none";
+      if (document.querySelector(".bottom-to-top")) {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          document.querySelector(".bottom-to-top").style.display = "block";
+        } else {
+          document.querySelector(".bottom-to-top").style.display = "none";
+        }
       }
     };
   }, []);

@@ -62,3 +62,8 @@ html.lenis {
 ._drawer-menu li a.active {
   color: var(--bg-secondary-1);
 }
+
+._card-collapse {
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+}

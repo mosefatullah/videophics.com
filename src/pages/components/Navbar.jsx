@@ -177,6 +177,9 @@ export default function Navbar({ theme, setTheme }) {
         }
       }
     };
+  }, []);
+
+  React.useEffect(() => {
     const servicesMenuList = document.querySelectorAll("._services-menu ol li");
     servicesMenuList.forEach((li, index) => {
       li.addEventListener("mouseenter", (e) => {
@@ -204,7 +207,7 @@ export default function Navbar({ theme, setTheme }) {
         img.classList.remove("hidden");
       });
     });
-  }, []);
+  }, [document.querySelector("._services-menu ol li")]);
 
   return (
     <>

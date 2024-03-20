@@ -39,10 +39,19 @@ export default function BlogView() {
     <>
       {blogData.title && (
         <div key={id}>
-          <div className="border-b-[rgba(255,255,255,0.2)] border-b-[1px] md:flex gap-4 items-center max-h-screen">
-            <h1 className="text-4xl font-bold text-violet-900 dark:text-slate-50 p-12">
-              {blogData.title}
-            </h1>
+          <div className="border-b-[rgba(255,255,255,0.2)] border-b-[1px] md:flex gap-4 items-center">
+            <div className="p-12 text-left">
+              <h1 className="text-4xl font-bold text-violet-900 dark:text-slate-50">
+                {blogData.title}
+              </h1>
+              <p className="text-gray-300 dark:text-gray-400 mt-4">
+                {blogData.author} |{" "}
+                {blogData.publishedAt.toDate().toDateString()}
+              </p>
+              <p className="w-fit bg-violet-900 text-white text-sm py-2 px-5 rounded-full mt-4">
+                {blogData.category}
+              </p>
+            </div>
             <div className="md:min-w-[50%]">
               <img
                 src={blogData.thumbnail}
@@ -52,20 +61,31 @@ export default function BlogView() {
             </div>
           </div>
 
-          <div className="container mx-auto dark:text-white py-20 pb-30">
-            <div className="flex gap-10 justify-around">
-              <div>
-                <p
-                  className="_blog-body"
-                  dangerouslySetInnerHTML={{
-                    __html: new edjsParser({
-                      youtube: `<iframe src="<%data.embed%>" width="<%data.width%>"><%data.caption%></iframe>`,
-                      list: `<ul><%data.items.map(item => { return '<li>' + item + '</li>' }).join('')}</ul>`,
-                    }).parse(JSON.parse(blogData.body)),
-                  }}
-                ></p>
+          <div className="container mx-auto dark:text-white py-20 pb-30 overflow-auto">
+            <div className="flex flex-col lg:flex-row gap-14">
+              <div className="text-gray-700 dark:text-gray-400 flex lg:flex-col gap-4 pt-4">
+                <a
+                  href="https://www.facebook.com/videophics/"
+                >
+                  <ion-icon
+                    name="logo-facebook"
+                    style={{ fontSize: "17px" }}
+                  ></ion-icon>
+                </a>
+                <a href="#">
+                  <ion-icon
+                    name="logo-twitter"
+                    style={{ fontSize: "17px" }}
+                  ></ion-icon>
+                </a>
+                <a href="#">
+                  <ion-icon
+                    name="logo-instagram"
+                    style={{ fontSize: "17px" }}
+                  ></ion-icon>
+                </a>
               </div>
-              <div className="min-w-[300px]">
+              <div className="min-w-[300px] sticky top-20 lg:order-2">
                 <h2
                   className="text-2xl font-bold text-violet-900 dark:text-slate-50"
                   id="table-of-contents"
@@ -76,6 +96,15 @@ export default function BlogView() {
                   <TableOfContents />
                 </div>
               </div>
+              <div
+                className="_blog-body text-lg text-slate-900 dark:text-white"
+                dangerouslySetInnerHTML={{
+                  __html: new edjsParser({
+                    youtube: `<iframe src="<%data.embed%>" width="<%data.width%>"><%data.caption%></iframe>`,
+                    list: `<ul><%data.items.map(item => { return '<li>' + item + '</li>' }).join('')}</ul>`,
+                  }).parse(JSON.parse(blogData.body)),
+                }}
+              ></div>
             </div>
           </div>
         </div>

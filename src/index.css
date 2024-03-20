@@ -222,8 +222,12 @@ html.dark ._navbar ._menu li a:hover {
 ._blog-body h4,
 ._blog-body h5,
 ._blog-body h6 {
-  margin-top: 20px;
+  margin-top: 50px;
   margin-bottom: 10px;
+}
+
+._blog-body > :first-child {
+  margin-top: 0px;
 }
 
 ._blog-body h1 {

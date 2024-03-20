@@ -136,9 +136,21 @@ html.lenis {
   font-weight: 500;
 }
 
-._drawer-menu li > :hover,
-._drawer-menu li > .active {
-  color: var(--bg-secondary-1);
+._drawer-menu ol > li > a:hover,
+._drawer-menu ol > li > button:hover,
+._drawer-menu ol > li > .active {
+  color: var(--bg-secondary-1) !important;
+}
+
+#service-lists-in-mob ol > li {
+  width: fit-content;
+  font-size: 1.2rem;
+  padding: 0;
+  margin-top: 5px;
+  margin-left: 25px;
+  line-height: 1.4;
+  border-bottom-width: 0;
+  font-weight: 400;
 }
 
 ._services-menu li {

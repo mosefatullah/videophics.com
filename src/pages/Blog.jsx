@@ -50,6 +50,7 @@ export default function Blog() {
               to={
                 "/blog/" + blog.id
               }
+              className="hover:underline hover:transform hover:scale-105 transition duration-300 ease-in-out active:scale-100"
             >
               <div key={blog.id}>
                 <img

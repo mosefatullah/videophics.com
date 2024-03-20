@@ -21,7 +21,7 @@ export default function Home() {
                 muted
                 controls={false}
                 alt="A visual representation of videophics"
-                className="object-cover rounded-lg max-h-[500px] w-full md:max-w-[700px] bg-violet-100"
+                className="object-cover rounded-lg max-h-[500px] w-full md:max-w-[700px] bg-violet-100 md:hidden lg:block"
                 style={{
                   aspectRatio: "16/9",
                 }}
@@ -197,7 +197,7 @@ export default function Home() {
             <div className="flex flex-col items-center">
               <img
                 src="/logo.jpg"
-                className="max-w-[300px] bg-violet-100"
+                className="w-full max-w-[300px] bg-violet-100"
                 style={{ aspectRatio: "3/3" }}
               />
               <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
@@ -210,7 +210,7 @@ export default function Home() {
             <div className="flex flex-col items-center">
               <img
                 src="/logo.jpg"
-                className="max-w-[300px] bg-violet-100"
+                className="w-full max-w-[300px] bg-violet-100"
                 style={{ aspectRatio: "3/3" }}
               />
               <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
@@ -223,7 +223,7 @@ export default function Home() {
             <div className="flex flex-col items-center">
               <img
                 src="/logo.jpg"
-                className="max-w-[300px] bg-violet-100"
+                className="w-full max-w-[300px] bg-violet-100"
                 style={{ aspectRatio: "3/3" }}
               />
               <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
@@ -236,7 +236,7 @@ export default function Home() {
             <div className="flex flex-col items-center">
               <img
                 src="/logo.jpg"
-                className="max-w-[300px] bg-violet-100"
+                className="w-full max-w-[300px] bg-violet-100"
                 style={{ aspectRatio: "3/3" }}
               />
               <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
@@ -249,7 +249,7 @@ export default function Home() {
             <div className="flex flex-col items-center">
               <img
                 src="/logo.jpg"
-                className="max-w-[300px] bg-violet-100"
+                className="w-full max-w-[300px] bg-violet-100"
                 style={{ aspectRatio: "3/3" }}
               />
               <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
@@ -303,7 +303,7 @@ export default function Home() {
             </p>
           </div>
           <div className="flex justify-center">
-            <div className="max-w-[700px] pt-[3rem]">
+            <div className="max-w-[500px] md:max-w-[700px] pt-[3rem]">
               <Collapsible title="What is your refund policy?">
                 <p>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.

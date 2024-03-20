@@ -57,7 +57,8 @@ export default function Animated({
     function motion(elem, t) {
       window.addEventListener("scroll", function () {
         if (elem == null) return;
-        if (window.innerWidth < 768) return;
+        if (window.innerWidth < 768)
+          return (elem.style.transform = `translateX(0px) translateY(0px)`);
         var distInView = elem.getBoundingClientRect().top - window.innerHeight;
         if (
           distInView &&

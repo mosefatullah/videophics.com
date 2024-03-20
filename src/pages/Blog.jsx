@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import fi from "../utils/firebase";
 import {
   collection,
@@ -40,6 +41,9 @@ export default function Blog() {
 
   return (
     <>
+      <Helmet>
+        <title>Videophics Blog | Branding Agency</title>
+      </Helmet>
       <div className="container mx-auto py-10 dark:text-white">
         <h1 className="text-4xl font-bold text-center text-violet-900 dark:text-slate-50">
           Blog
@@ -47,9 +51,7 @@ export default function Blog() {
         <div className="pt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {blogslist.map((blog) => (
             <Link
-              to={
-                "/blog/" + blog.id
-              }
+              to={"/blog/" + blog.id}
               className="hover:underline hover:transform hover:scale-105 transition duration-300 ease-in-out active:scale-100"
             >
               <div key={blog.id}>

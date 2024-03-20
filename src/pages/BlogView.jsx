@@ -1,8 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import fi from "../utils/firebase";
-import { getFirestore, doc, getDoc } from "@firebase/firestore";
 import edjsParser from "editorjs-parser";
+import { getFirestore, doc, getDoc } from "@firebase/firestore";
+import { Helmet } from "react-helmet";
+import fi from "../utils/firebase";
 
 /* Components */
 import TableOfContents from "./components/TableOfContents";
@@ -36,6 +37,14 @@ export default function BlogView() {
 
   return (
     <>
+      <Helmet>
+        <title>
+          {blogData && blogData.title
+            ? blogData.title + " - Videophics"
+            : "Blog - Videophics"}
+        </title>
+      </Helmet>
+
       {blogData == null ? (
         <div className="flex items-center justify-center h-[90vh]">
           <h1 className="text-2xl md:text-4xl font-bold text-violet-900 dark:text-slate-50">

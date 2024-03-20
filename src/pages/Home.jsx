@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 /* Components */
 import Collapsible from "./components/Collapsible";
@@ -8,6 +9,9 @@ import Animated from "./components/Animated";
 export default function Home() {
   return (
     <>
+      <Helmet>
+        <title>Videophics | Branding Agency</title>
+      </Helmet>
       <section className="_hero-section relative py-10 min-h-[calc(100vh-80px)] flex justify-center dark:bg-slate-900">
         <div className="_sketch h-[200px] w-[100px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 left-0 dark:opacity-50" />
         <div className="_sketch h-[200px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter right-0 md:left-[40%] bottom-10 dark:hidden" />

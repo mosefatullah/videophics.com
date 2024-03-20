@@ -24,6 +24,79 @@ html.lenis {
   overflow: hidden;
 }
 
+.__animation {
+  -webkit-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+}
+.__animation[data-speed="fast"] {
+  -webkit-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+}
+.__animation[data-speed="slow"] {
+  -webkit-transition-delay: 0.6s;
+  -o-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+  -webkit-transition: 0.7s;
+  -o-transition: 0.7s;
+}
+.__animation-fadeIn,
+.__animation-fadeUp,
+.__animation-reveal,
+.__animation-fadeInLeft,
+.__animation-fadeInRight,
+.__animation-fadeInUp,
+.__animation-motionLeft,
+.__animation-motionRight {
+  -webkit-transition: all 0.4s, opacity 1s;
+  transition: all 0.4s, opacity 1s;
+}
+.__animation-fadeIn {
+  -webkit-transform: translateY(100px) scale(0.9);
+  transform: translateY(100px) scale(0.9);
+  opacity: 0.3;
+}
+.__animation-fadeIn.active {
+  opacity: 1;
+  -webkit-transform: translateY(0px) scale(1);
+  transform: translateY(0px) scale(1);
+}
+.__animation-fadeUp {
+  -webkit-transform: translateY(100px);
+  transform: translateY(100px);
+  opacity: 0;
+}
+.__animation-fadeUp.active {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+}
+.__animation-fadeLeft {
+  -webkit-transform: translateX(-100px);
+  transform: translateX(-100px);
+  opacity: 0;
+}
+.__animation-fadeLeft.active {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+}
+.__animation-fadeRight {
+  -webkit-transform: translateX(100px);
+  transform: translateX(100px);
+  opacity: 0;
+}
+.__animation-fadeRight.active {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
 ._navbar {
   background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);

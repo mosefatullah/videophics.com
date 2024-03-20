@@ -59,7 +59,11 @@ export default function Animated({
         if (elem == null) return;
         if (window.innerWidth < 768) return;
         var distInView = elem.getBoundingClientRect().top - window.innerHeight;
-        if (distInView) {
+        if (
+          distInView &&
+          elem.getBoundingClientRect().top < window.innerHeight &&
+          elem.getBoundingClientRect().bottom > 0
+        ) {
           if (distInView < 0) {
             elem.style.transform = types[t][1](distInView);
           } else {
@@ -69,37 +73,18 @@ export default function Animated({
       });
     }
 
-    function applyThat(t) {
-      if (t.includes("motion")) {
-        motion(element.current, t);
-      } else {
-        animate(element.current);
-        window.addEventListener("scroll", function () {
-          animate(element.current);
-        });
-      }
-    }
-
-    if (varient.split(" ").length > 1) {
-      varient.split(" ").forEach((type) => {
-        applyThat(type);
-      });
+    if (varient.includes("motion")) {
+      motion(element.current, varient);
     } else {
-      applyThat(varient);
+      animate(element.current);
+      window.addEventListener("scroll", function () {
+        animate(element.current);
+      });
     }
   }, []);
   return (
     <div
-      className={
-        "__animation " + varient.split(" ").length > 1
-          ? varient
-              .split(" ")
-              .map((type) => types[type][0])
-              .join(" ")
-          : types[varient]
-          ? types[varient][0]
-          : types["fade-in"][0]
-      }
+      className={"__animation " + types[varient][0]}
       ref={element}
       data-speed={speed}
       data-animation={varient}

@@ -100,74 +100,84 @@ export default function Home() {
           </div>
           <div className="_services-box mt-12 grid md:grid-cols-2 gap-12">
             <div>
-              <Animated varient="motion-left fade-in" speed="fast">
-                <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center">
-                  <div className="p-6">
-                    <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
-                      <span className="text-violet-700">1.</span> Branding
-                    </h3>
-                    <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
-                      We create brand identities, brand guidelines, and more.
-                    </p>
+              <Animated varient="motion-left" speed="fast">
+                <Animated varient="fade-in" speed="fast">
+                  <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center">
+                    <div className="p-6">
+                      <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
+                        <span className="text-violet-700">1.</span> Branding
+                      </h3>
+                      <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
+                        We create brand identities, brand guidelines, and more.
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </Animated>
               </Animated>
             </div>
             <div>
-              <Animated varient="motion-left fade-in" speed="fast">
-                <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center">
-                  <div className="p-6">
-                    <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
-                      <span className="text-violet-700">2.</span> UI/UX
-                    </h3>
-                    <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
-                      We design user interfaces, user experiences, and more.
-                    </p>
+              <Animated varient="motion-left" speed="fast">
+                <Animated varient="fade-in" speed="fast">
+                  <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center">
+                    <div className="p-6">
+                      <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
+                        <span className="text-violet-700">2.</span> UI/UX
+                      </h3>
+                      <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
+                        We design user interfaces, user experiences, and more.
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </Animated>
               </Animated>
             </div>
             <div>
-              <Animated varient="motion-right fade-in" speed="fast">
-                <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center">
-                  <div className="p-6">
-                    <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
-                      <span className="text-violet-700">3.</span> Marketing
-                    </h3>
-                    <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
-                      We market your brand, products, and services.
-                    </p>
+              <Animated varient="motion-right" speed="fast">
+                <Animated varient="fade-in" speed="fast">
+                  <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center">
+                    <div className="p-6">
+                      <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
+                        <span className="text-violet-700">3.</span> Marketing
+                      </h3>
+                      <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
+                        We market your brand, products, and services.
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </Animated>
               </Animated>
             </div>
             <div>
-              <Animated varient="motion-right fade-in" speed="fast">
-                <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center">
-                  <div className="p-6">
-                    <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
-                      <span className="text-violet-700">4.</span> Content
-                      Writing
-                    </h3>
-                    <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
-                      We write compelling content for your brand.
-                    </p>
+              <Animated varient="motion-right" speed="fast">
+                <Animated varient="fade-in" speed="fast">
+                  <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center">
+                    <div className="p-6">
+                      <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
+                        <span className="text-violet-700">4.</span> Content
+                        Writing
+                      </h3>
+                      <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
+                        We write compelling content for your brand.
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </Animated>
               </Animated>
             </div>
             <div>
-              <Animated varient="motion-left fade-in" speed="fast">
-                <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center">
-                  <div className="p-6">
-                    <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
-                      <span className="text-violet-700">5.</span> Bug Fixes
-                    </h3>
-                    <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
-                      We fix technical bugs and issues in your projects.
-                    </p>
+              <Animated varient="motion-left" speed="fast">
+                <Animated varient="fade-in" speed="fast">
+                  <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center">
+                    <div className="p-6">
+                      <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
+                        <span className="text-violet-700">5.</span> Bug Fixes
+                      </h3>
+                      <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
+                        We fix technical bugs and issues in your projects.
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </Animated>
               </Animated>
             </div>
           </div>

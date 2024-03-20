@@ -15,6 +15,7 @@ export default function Animated({
   varient = "fade-in",
   speed = "",
   amount = 35,
+  className = "",
 }) {
   const element = React.useRef(null);
   const types = {
@@ -83,7 +84,7 @@ export default function Animated({
   }, []);
   return (
     <div
-      className={"__animation " + types[varient][0]}
+      className={"__animation " + types[varient][0] + " " + className}
       ref={element}
       data-speed={speed}
       data-animation={varient}

@@ -13,25 +13,12 @@ export default function Home() {
         <div className="_sketch h-[200px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter right-0 md:left-[40%] bottom-10 dark:hidden" />
         <div className="_sketch h-[100px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 right-0 hidden md:block dark:bottom-20 dark:top-auto dark:opacity-50" />
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-14 max-w-[1300px]">
-          <div className="flex justify-center items-center md:justify-end z-10 md:order-2">
-            <Animated varient="fade-in" speed="fast">
-              <video
-                src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                autoPlay
-                muted
-                controls={false}
-                alt="A visual representation of videophics"
-                className="object-cover rounded-lg max-h-[500px] w-full md:max-w-[700px] bg-violet-100 md:hidden lg:block"
-                style={{
-                  aspectRatio: "16/9",
-                }}
-              />
-            </Animated>
-          </div>
           <div className="flex flex-col justify-center items-start z-10">
             <h1 className="text-4xl md:text-4xl lg:text-5xl font-[600] mb-4 text-slate-700 dark:text-white leading-10">
-              <Animated varient="fade-left">Innovative minds are </Animated>
-              <Animated varient="fade-right">
+              <Animated varient="fade-left" className="inline">
+                Innovative minds are
+              </Animated>{" "}
+              <Animated varient="fade-right" className="inline">
                 <span className="text-violet-500 dark:text-violet-400">
                   discovering
                 </span>{" "}
@@ -51,6 +38,21 @@ export default function Home() {
             >
               Learn More &rarr;
             </button>
+          </div>
+          <div className="flex justify-center items-center md:justify-end z-10 md:order-1">
+            <Animated varient="fade-in" speed="fast">
+              <video
+                src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                autoPlay
+                muted
+                controls={false}
+                alt="A visual representation of videophics"
+                className="object-cover rounded-lg max-h-[500px] w-full md:max-w-[700px] bg-violet-100 md:hidden lg:block"
+                style={{
+                  aspectRatio: "16/9",
+                }}
+              />
+            </Animated>
           </div>
         </div>
       </section>

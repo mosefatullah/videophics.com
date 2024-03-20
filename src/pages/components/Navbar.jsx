@@ -150,7 +150,7 @@ export default function Navbar({ theme, setTheme }) {
       <li>
         <NavLink to="/blog">Blog</NavLink>
       </li>
-      <li className="block md:hidden">
+      <li className="block lg:hidden">
         <a href="/#contact">Contact Us</a>
       </li>
     </>

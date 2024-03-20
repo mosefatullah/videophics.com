@@ -39,12 +39,12 @@ export default function BlogView() {
     <>
       {blogData.title && (
         <div key={id}>
-          <div className="container mx-auto border-b-[rgba(255,255,255,0.2)] border-b-[1px] md:flex gap-4 py-10 items-center">
+          <div className="container mx-auto border-b-[rgba(0,0,0,0.1)] dark:border-b-[rgba(255,255,255,0.2)] border-b-[1px] md:flex gap-4 py-10 items-center">
             <div className="py-12 text-left">
               <h1 className="text-4xl font-bold text-violet-900 dark:text-slate-50">
                 {blogData.title}
               </h1>
-              <p className="text-gray-300 dark:text-gray-400 mt-4">
+              <p className="text-gray-500 dark:text-gray-400 mt-4">
                 {blogData.author} |{" "}
                 {blogData.publishedAt.toDate().toDateString()}
               </p>
@@ -63,7 +63,7 @@ export default function BlogView() {
 
           <div className="container mx-auto dark:text-white py-20 pb-30">
             <div className="flex flex-col lg:flex-row gap-14">
-              <div className="text-gray-700 h-full sticky top-[7rem] dark:text-gray-400 flex lg:flex-col gap-4 pt-1">
+              <div className="text-gray-700 lg:h-full lg:sticky top-[7rem] dark:text-gray-400 flex lg:flex-col gap-4 pt-1">
                 <a
                   href="https://www.facebook.com/videophics/"
                 >
@@ -85,7 +85,7 @@ export default function BlogView() {
                   ></ion-icon>
                 </a>
               </div>
-              <div className="min-w-[300px] h-full sticky top-[7rem] lg:order-2">
+              <div className="min-w-[300px] lg:h-full lg:sticky top-[7rem] lg:order-2">
                 <h2
                   className="text-2xl font-bold text-violet-900 dark:text-slate-50"
                   id="table-of-contents"

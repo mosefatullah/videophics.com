@@ -16,7 +16,7 @@ export default function Home() {
           <div className="flex justify-center items-center md:justify-end z-10 md:order-2">
             <Animated varient="fade-in" speed="fast">
               <video
-                src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
                 autoPlay
                 muted
                 controls={false}
@@ -67,7 +67,7 @@ export default function Home() {
                 </h1>
               </Animated>
               <Animated varient="fade-right" speed="slow">
-                <p className="text-[14px] md:text-[17px] text-white leading-6 md:leading-7 mb-8">
+                <p className="text-[14px] md:text-[17px] text-white dark:text-slate-500 leading-6 md:leading-7 mb-8">
                   Schedule an appointment with us and let's get started on your
                   project.
                 </p>

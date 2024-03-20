@@ -177,7 +177,7 @@ export default function Navbar({ theme, setTheme }) {
         }
       }
     };
-    const servicesMenuList = document.querySelectorAll("._services-menu ul li");
+    const servicesMenuList = document.querySelectorAll("._services-menu ol li");
     servicesMenuList.forEach((li, index) => {
       li.addEventListener("mouseenter", (e) => {
         servicesMenuList.forEach((list) => {
@@ -346,7 +346,7 @@ export default function Navbar({ theme, setTheme }) {
         style={{ zIndex: "60" }}
         onMouseLeave={hideServiceMenu}
       >
-        <div className="py-12 container mx-auto max-w-[1300px] flex justify-between items-center gap-6">
+        <div className="py-12 container mx-auto max-w-[1300px] flex justify-around items-center gap-6">
           <ol className="flex flex-col items-start gap-4 text-3xl font-[500] text-slate-700 dark:text-white text-right">
             <ServicesList />
           </ol>
@@ -355,37 +355,37 @@ export default function Navbar({ theme, setTheme }) {
               src="/logo.jpg"
               alt="Branding"
               id="img1"
-              className="w-full max-h-[400px] object-cover rounded-md"
+              className="w-full max-h-[350px] object-cover rounded-md"
             />
             <img
               src="/logo.jpg"
               alt="Design"
               id="img2"
-              className="w-full max-h-[400px] object-cover rounded-md hidden opacity-80"
+              className="w-full max-h-[350px] object-cover rounded-md hidden opacity-80"
             />
             <img
               src="/logo.jpg"
               alt="Development"
               id="img3"
-              className="w-full max-h-[400px] object-cover rounded-md hidden opacity-50"
+              className="w-full max-h-[350px] object-cover rounded-md hidden opacity-50"
             />
             <img
               src="/logo.jpg"
               alt="Marketing"
               id="img4"
-              className="w-full max-h-[400px] object-cover rounded-md hidden opacity-40"
+              className="w-full max-h-[350px] object-cover rounded-md hidden opacity-40"
             />
             <img
               src="/logo.jpg"
               alt="Content Writing"
               id="img5"
-              className="w-full max-h-[400px] object-cover rounded-md hidden opacity-30"
+              className="w-full max-h-[350px] object-cover rounded-md hidden opacity-30"
             />
             <img
               src="/logo.jpg"
               alt="Bug Fixing"
               id="img6"
-              className="w-full max-h-[400px] object-cover rounded-md hidden opacity-20"
+              className="w-full max-h-[350px] object-cover rounded-md hidden opacity-20"
             />
           </div>
         </div>

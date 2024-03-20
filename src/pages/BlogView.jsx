@@ -39,8 +39,8 @@ export default function BlogView() {
     <>
       {blogData.title && (
         <div key={id}>
-          <div className="border-b-[rgba(255,255,255,0.2)] border-b-[1px] md:flex gap-4 items-center">
-            <div className="p-12 text-left">
+          <div className="container mx-auto border-b-[rgba(255,255,255,0.2)] border-b-[1px] md:flex gap-4 py-10 items-center">
+            <div className="py-12 text-left">
               <h1 className="text-4xl font-bold text-violet-900 dark:text-slate-50">
                 {blogData.title}
               </h1>

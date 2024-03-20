@@ -96,7 +96,9 @@ export default function Animated({
               .split(" ")
               .map((type) => types[type][0])
               .join(" ")
-          : types[varient][0]
+          : types[varient]
+          ? types[varient][0]
+          : types["fade-in"][0]
       }
       ref={element}
       data-speed={speed}

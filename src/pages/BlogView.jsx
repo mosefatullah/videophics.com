@@ -18,7 +18,7 @@ import TableOfContents from "./components/TableOfContents";
 */
 
 export default function BlogView() {
-  const [blogData, setBlogData] = React.useState({});
+  const [blogData, setBlogData] = React.useState(null);
   const id = useParams().id;
 
   React.useEffect(() => {
@@ -27,9 +27,8 @@ export default function BlogView() {
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
         setBlogData({ ...docSnap.data(), id: docSnap.id });
-        console.log(blogData);
       } else {
-        console.log("No such document!");
+        setBlogData({});
       }
     };
     getBlog();
@@ -37,7 +36,19 @@ export default function BlogView() {
 
   return (
     <>
-      {blogData.title && (
+      {blogData == null ? (
+        <div className="flex items-center justify-center h-[90vh]">
+          <h1 className="text-2xl md:text-4xl font-bold text-violet-900 dark:text-slate-50">
+            Loading...
+          </h1>
+        </div>
+      ) : !blogData.title ? (
+        <div className="flex items-center justify-center h-[90vh]">
+          <h1 className="text-2xl md:text-4xl font-bold text-violet-900 dark:text-slate-50">
+            404 Not Found
+          </h1>
+        </div>
+      ) : (
         <div key={id}>
           <div className="container mx-auto border-b-[rgba(0,0,0,0.1)] dark:border-b-[rgba(255,255,255,0.2)] border-b-[1px] md:flex gap-4 py-10 items-center">
             <div className="py-12 text-left">
@@ -64,9 +75,7 @@ export default function BlogView() {
           <div className="container mx-auto dark:text-white py-20 pb-30">
             <div className="flex flex-col lg:flex-row gap-14">
               <div className="text-gray-700 lg:h-full lg:sticky top-[7rem] dark:text-gray-400 flex lg:flex-col gap-4 pt-1">
-                <a
-                  href="https://www.facebook.com/videophics/"
-                >
+                <a href="https://www.facebook.com/videophics/">
                   <ion-icon
                     name="logo-facebook"
                     style={{ fontSize: "17px" }}

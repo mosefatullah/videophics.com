@@ -64,6 +64,7 @@ export default function App() {
           }
         />
         <Route path="/services" element={<Navigate to="/" />} />
+        <Route path="/services/:service" element={<Navigate to="/" />} />
         <Route
           path="/about-us"
           element={

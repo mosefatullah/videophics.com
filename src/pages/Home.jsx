@@ -102,7 +102,7 @@ export default function Home() {
             <div>
               <Animated varient="motion-left" speed="fast">
                 <Animated varient="fade-in" speed="fast">
-                  <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center">
+                  <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
                     <div className="p-6">
                       <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                         <span className="text-violet-700">1.</span> Branding
@@ -118,7 +118,7 @@ export default function Home() {
             <div>
               <Animated varient="motion-left" speed="fast">
                 <Animated varient="fade-in" speed="fast">
-                  <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center">
+                  <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
                     <div className="p-6">
                       <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                         <span className="text-violet-700">2.</span> UI/UX
@@ -134,7 +134,7 @@ export default function Home() {
             <div>
               <Animated varient="motion-right" speed="fast">
                 <Animated varient="fade-in" speed="fast">
-                  <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center">
+                  <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
                     <div className="p-6">
                       <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                         <span className="text-violet-700">3.</span> Marketing
@@ -150,7 +150,7 @@ export default function Home() {
             <div>
               <Animated varient="motion-right" speed="fast">
                 <Animated varient="fade-in" speed="fast">
-                  <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center">
+                  <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
                     <div className="p-6">
                       <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                         <span className="text-violet-700">4.</span> Content
@@ -167,7 +167,7 @@ export default function Home() {
             <div>
               <Animated varient="motion-left" speed="fast">
                 <Animated varient="fade-in" speed="fast">
-                  <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center">
+                  <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
                     <div className="p-6">
                       <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                         <span className="text-violet-700">5.</span> Bug Fixes
@@ -194,71 +194,81 @@ export default function Home() {
             </p>
           </div>
           <div className="_persons grid md:grid-cols-3 gap-9 pt-8">
-            <div className="flex flex-col items-center">
-              <img
-                src="/logo.jpg"
-                className="w-full max-w-[300px] bg-violet-100"
-                style={{ aspectRatio: "3/3" }}
-              />
-              <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
-                Saad Al Amin
-              </h4>
-              <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
-                CEO & Co-Founder
-              </p>
-            </div>
-            <div className="flex flex-col items-center">
-              <img
-                src="/logo.jpg"
-                className="w-full max-w-[300px] bg-violet-100"
-                style={{ aspectRatio: "3/3" }}
-              />
-              <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
-                Unknown
-              </h4>
-              <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
-                CEO & Co-Founder
-              </p>
-            </div>
-            <div className="flex flex-col items-center">
-              <img
-                src="/logo.jpg"
-                className="w-full max-w-[300px] bg-violet-100"
-                style={{ aspectRatio: "3/3" }}
-              />
-              <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
-                Al Lisan
-              </h4>
-              <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
-                CEO & Co-Founder
-              </p>
-            </div>
-            <div className="flex flex-col items-center">
-              <img
-                src="/logo.jpg"
-                className="w-full max-w-[300px] bg-violet-100"
-                style={{ aspectRatio: "3/3" }}
-              />
-              <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
-                Unknown
-              </h4>
-              <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
-                CEO & Co-Founder
-              </p>
-            </div>
-            <div className="flex flex-col items-center">
-              <img
-                src="/logo.jpg"
-                className="w-full max-w-[300px] bg-violet-100"
-                style={{ aspectRatio: "3/3" }}
-              />
-              <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
-                Mohammad Sefatullah
-              </h4>
-              <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
-                Web Developer
-              </p>
-            </div>
+            <Animated varient="fade-in">
+              <div className="flex flex-col items-center">
+                <img
+                  src="/logo.jpg"
+                  className="w-full max-w-[300px] bg-violet-100"
+                  style={{ aspectRatio: "3/3" }}
+                />
+                <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
+                  Saad Al Amin
+                </h4>
+                <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
+                  CEO & Co-Founder
+                </p>
+              </div>
+            </Animated>
+            <Animated varient="fade-in">
+              <div className="flex flex-col items-center">
+                <img
+                  src="/logo.jpg"
+                  className="w-full max-w-[300px] bg-violet-100"
+                  style={{ aspectRatio: "3/3" }}
+                />
+                <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
+                  Unknown
+                </h4>
+                <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
+                  CEO & Co-Founder
+                </p>
+              </div>
+            </Animated>
+            <Animated varient="fade-in">
+              <div className="flex flex-col items-center">
+                <img
+                  src="/logo.jpg"
+                  className="w-full max-w-[300px] bg-violet-100"
+                  style={{ aspectRatio: "3/3" }}
+                />
+                <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
+                  Al Lisan
+                </h4>
+                <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
+                  CEO & Co-Founder
+                </p>
+              </div>
+            </Animated>
+            <Animated varient="fade-in">
+              <div className="flex flex-col items-center">
+                <img
+                  src="/logo.jpg"
+                  className="w-full max-w-[300px] bg-violet-100"
+                  style={{ aspectRatio: "3/3" }}
+                />
+                <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
+                  Unknown
+                </h4>
+                <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
+                  CEO & Co-Founder
+                </p>
+              </div>
+            </Animated>
+            <Animated varient="fade-in">
+              <div className="flex flex-col items-center">
+                <img
+                  src="/logo.jpg"
+                  className="w-full max-w-[300px] bg-violet-100"
+                  style={{ aspectRatio: "3/3" }}
+                />
+                <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
+                  Mohammad Sefatullah
+                </h4>
+                <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
+                  Web Developer
+                </p>
+              </div>
+            </Animated>
           </div>
         </div>
       </section>
@@ -272,16 +282,19 @@ export default function Home() {
               We're trusted by our clients.
             </h3>
           </div>
-          <div className="flex justify-center items-center gap-4 mt-10 flex-wrap">
-            <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
-            <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
-            <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
-            <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
-            <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
-            <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
-          </div>
+          <Animated varient="fade-up">
+            <div className="flex justify-center items-center gap-4 mt-10 flex-wrap">
+              <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
+              <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
+              <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
+              <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
+              <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
+              <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
+            </div>
+          </Animated>
         </div>
       </section>
+
       <section
         className="_faq-section py-[8rem] md:min-h-[calc(100vh-80px)] bg-violet-50 dark:bg-slate-800 flex flex-col justify-center items-center"
         id="faq"

@@ -7,8 +7,6 @@ import React from "react";
  * Prefixes :-
    1. fade- (For fade animations)
    2. motion- (For motion animations)
-   2. txt- (For text animations)
-   3. bg- (For background animations)
  *
  */
 

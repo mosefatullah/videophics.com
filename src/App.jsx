@@ -13,7 +13,7 @@ import ContactUs from "./pages/ContactUs";
 
 export default function App() {
   const [theme, setTheme] = React.useState(
-    localStorage.getItem("theme") || "light"
+    localStorage.getItem("theme") || "dark"
   );
 
   React.useEffect(() => {

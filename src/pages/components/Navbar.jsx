@@ -140,6 +140,14 @@ export default function Navbar({ theme, setTheme }) {
     </>
   );
 
+  const hideServiceMenu = () => {
+    document.querySelector("._services-menu").classList.add("transform");
+    document
+      .querySelector("._services-menu")
+      .classList.add("-translate-x-full");
+    document.querySelector("._services-menu").classList.remove("opacity-100");
+  };
+
   React.useEffect(() => {
     window.onscroll = function () {
       if (document.querySelector(".bottom-to-top")) {
@@ -199,7 +207,10 @@ export default function Navbar({ theme, setTheme }) {
               <span>Videophics</span>
             </h1>
           </div>
-          <ul className="_menu text-sm items-center hidden lg:flex">
+          <ul
+            className="_menu text-sm items-center hidden lg:flex"
+            onClick={hideServiceMenu}
+          >
             <Menu />
           </ul>
           <div className="flex gap-5 md:gap-4 justify-end items-center">
@@ -315,15 +326,7 @@ export default function Navbar({ theme, setTheme }) {
         className="_services-menu bg-white dark:bg-slate-800 fixed left-0 w-full transform -translate-x-full transition-all duration-500 ease-in-out px-6 shadow-md opacity-0 hidden md:block"
         role="menu"
         style={{ zIndex: "60" }}
-        onMouseLeave={() => {
-          document.querySelector("._services-menu").classList.add("transform");
-          document
-            .querySelector("._services-menu")
-            .classList.add("-translate-x-full");
-          document
-            .querySelector("._services-menu")
-            .classList.remove("opacity-100");
-        }}
+        onMouseLeave={hideServiceMenu}
       >
         <div className="py-12 container mx-auto max-w-[1300px] flex justify-between items-center gap-6">
           <ul className="flex flex-col items-start gap-4 text-3xl font-[500] text-slate-700 dark:text-white text-right">

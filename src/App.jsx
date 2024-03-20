@@ -9,6 +9,7 @@ import Footer from "./pages/components/Footer";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Blog from "./pages/Blog";
+import BlogView from "./pages/BlogView";
 import ContactUs from "./pages/ContactUs";
 
 export default function App() {
@@ -77,6 +78,14 @@ export default function App() {
           element={
             <Layout>
               <Blog />
+            </Layout>
+          }
+        />
+        <Route
+          path="/blog/:id"
+          element={
+            <Layout>
+              <BlogView />
             </Layout>
           }
         />

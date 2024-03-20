@@ -199,3 +199,97 @@ html.dark ._navbar ._menu li a:hover {
   transform: scale(1.05);
   text-decoration: underline;
 }
+
+._blog-body p {
+  line-height: 1.8;
+}
+
+._blog-body img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.3rem;
+  margin-bottom: 20px;
+}
+
+._blog-body img:hover {
+  transform: scale(1.05);
+  transition: all 0.5s ease-in-out;
+}
+
+._blog-body h1,
+._blog-body h2,
+._blog-body h3,
+._blog-body h4,
+._blog-body h5,
+._blog-body h6 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+._blog-body h1 {
+  font-size: 2.5rem;
+}
+
+._blog-body h2 {
+  font-size: 2rem;
+}
+
+._blog-body h3 {
+  font-size: 1.8rem;
+}
+
+._blog-body h4 {
+  font-size: 1.6rem;
+}
+
+._blog-body h5 {
+  font-size: 1.4rem;
+}
+
+._blog-body h6 {
+  font-size: 1.2rem;
+}
+
+._blog-body blockquote {
+  padding: 20px;
+  border-left: 5px solid var(--bg-secondary-1);
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 0.3rem;
+  margin: 20px 0;
+}
+
+._blog-body blockquote p {
+  margin: 0;
+}
+
+._blog-body blockquote footer {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+._blog-body blockquote footer cite {
+  font-style: normal;
+}
+
+._blog-body blockquote footer cite:before {
+  content: "— ";
+}
+
+._blog-body mark {
+  background-color: var(--bg-secondary-2);
+  color: white;
+  border-radius: 0.3rem;
+  padding: 1px 2PX;
+}
+
+._blog-body ul,
+._blog-body ol {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+._blog-body ul li,
+._blog-body ol li {
+  list-style: square;
+}

@@ -61,9 +61,9 @@ export default function BlogView() {
             </div>
           </div>
 
-          <div className="container mx-auto dark:text-white py-20 pb-30 overflow-auto">
+          <div className="container mx-auto dark:text-white py-20 pb-30">
             <div className="flex flex-col lg:flex-row gap-14">
-              <div className="text-gray-700 dark:text-gray-400 flex lg:flex-col gap-4 pt-4">
+              <div className="text-gray-700 h-full sticky top-[7rem] dark:text-gray-400 flex lg:flex-col gap-4 pt-1">
                 <a
                   href="https://www.facebook.com/videophics/"
                 >
@@ -85,7 +85,7 @@ export default function BlogView() {
                   ></ion-icon>
                 </a>
               </div>
-              <div className="min-w-[300px] sticky top-20 lg:order-2">
+              <div className="min-w-[300px] h-full sticky top-[7rem] lg:order-2">
                 <h2
                   className="text-2xl font-bold text-violet-900 dark:text-slate-50"
                   id="table-of-contents"

@@ -14,6 +14,8 @@ import BlogView from "./pages/BlogView";
 import ContactUs from "./pages/ContactUs";
 import NotFound from "./pages/NotFound";
 
+import Admin_Home from "./pages/admin/Home.jsx";
+
 export default function App() {
   const [theme, setTheme] = React.useState(
     localStorage.getItem("theme") || "dark"
@@ -55,61 +57,73 @@ export default function App() {
   };
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Layout>
-              <Home />
-            </Layout>
-          }
-        />
-        <Route path="/services" element={<Navigate to="/" />} />
-        <Route
-          path="/services/:service"
-          element={
-            <Layout>
-              <ServicesView />
-            </Layout>
-          }
-        />
-        <Route
-          path="/about-us"
-          element={
-            <Layout>
-              <AboutUs />
-            </Layout>
-          }
-        />
-        <Route path="/about" element={<Navigate to="/about-us" />} />
-        <Route
-          path="/blog"
-          element={
-            <Layout>
-              <Blog />
-            </Layout>
-          }
-        />
-        <Route
-          path="/blog/:id"
-          element={
-            <Layout>
-              <BlogView />
-            </Layout>
-          }
-        />
-        <Route
-          path="/contact-us"
-          element={
-            <Layout>
-              <ContactUs />
-            </Layout>
-          }
-        />
-        <Route path="/contact" element={<Navigate to="/contact-us" />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Layout>
+                <Home />
+              </Layout>
+            }
+          />
+          <Route path="/services" element={<Navigate to="/" />} />
+          <Route
+            path="/services/:service"
+            element={
+              <Layout>
+                <ServicesView />
+              </Layout>
+            }
+          />
+          <Route
+            path="/about-us"
+            element={
+              <Layout>
+                <AboutUs />
+              </Layout>
+            }
+          />
+          <Route path="/about" element={<Navigate to="/about-us" />} />
+          <Route
+            path="/blog"
+            element={
+              <Layout>
+                <Blog />
+              </Layout>
+            }
+          />
+          <Route
+            path="/blog/:id"
+            element={
+              <Layout>
+                <BlogView />
+              </Layout>
+            }
+          />
+          <Route
+            path="/contact-us"
+            element={
+              <Layout>
+                <ContactUs />
+              </Layout>
+            }
+          />
+          <Route path="/contact" element={<Navigate to="/contact-us" />} />
+          <Route path="*" element={<NotFound />} />
+          
+          {/* Admin */}
+          <Route
+            path="/admin"
+            element={
+              <Layout>
+                <Admin_Home />
+              </Layout>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }

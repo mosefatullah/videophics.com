@@ -200,6 +200,13 @@ html.dark ._navbar ._menu li a:hover {
   text-decoration: underline;
 }
 
+._clients-section ._clients > div:hover {
+  transform: scale(1.1);
+  filter: opacity(0.3);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
 ._blog-body p {
   line-height: 1.8;
 }
@@ -284,7 +291,7 @@ html.dark ._navbar ._menu li a:hover {
   background-color: var(--bg-secondary-2);
   color: white;
   border-radius: 0.3rem;
-  padding: 1px 2PX;
+  padding: 1px 2px;
 }
 
 ._blog-body ul,

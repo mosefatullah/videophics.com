@@ -110,6 +110,7 @@ export default function Home() {
                 <Animated varient="fade-in" speed="fast">
                   <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
                     <div className="p-6">
+                      <img src="/images/static/branding.png" alt="Branding" className="w-15 h-15 mb-5" />
                       <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                         <span className="text-violet-700">1.</span> Branding
                       </h3>
@@ -126,6 +127,7 @@ export default function Home() {
                 <Animated varient="fade-in" speed="fast">
                   <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
                     <div className="p-6">
+                      <img src="/images/static/design.png" alt="UI/UX" className="w-15 h-15 mb-5" />
                       <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                         <span className="text-violet-700">2.</span> UI/UX
                       </h3>
@@ -142,6 +144,7 @@ export default function Home() {
                 <Animated varient="fade-in" speed="fast">
                   <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
                     <div className="p-6">
+                      <img src="/images/static/marketing.png" alt="Marketing" className="w-15 h-15 mb-5" />
                       <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                         <span className="text-violet-700">3.</span> Marketing
                       </h3>
@@ -158,6 +161,7 @@ export default function Home() {
                 <Animated varient="fade-in" speed="fast">
                   <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
                     <div className="p-6">
+                      <img src="/images/static/content.png" alt="Content Writing" className="w-15 h-15 mb-5" />
                       <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                         <span className="text-violet-700">4.</span> Content
                         Writing
@@ -175,6 +179,7 @@ export default function Home() {
                 <Animated varient="fade-in" speed="fast">
                   <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
                     <div className="p-6">
+                      <img src="/images/static/patch.png" alt="Bug Fixes" className="w-15 h-15 mb-5" />
                       <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                         <span className="text-violet-700">5.</span> Bug Fixes
                       </h3>
@@ -211,7 +216,7 @@ export default function Home() {
                   Saad Al Amin
                 </h4>
                 <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
-                  CEO & Co-Founder
+                  CEO & Founder
                 </p>
               </div>
             </Animated>
@@ -226,37 +231,37 @@ export default function Home() {
                   Unknown
                 </h4>
                 <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
-                  CEO & Co-Founder
-                </p>
-              </div>
-            </Animated>
-            <Animated varient="fade-in">
-              <div className="flex flex-col items-center">
-                <img
-                  src="/logo.jpg"
-                  className="w-full max-w-[300px] bg-violet-100"
-                  style={{ aspectRatio: "3/3" }}
-                />
-                <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
-                  Al Lisan
-                </h4>
-                <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
-                  CEO & Co-Founder
-                </p>
-              </div>
-            </Animated>
-            <Animated varient="fade-in">
-              <div className="flex flex-col items-center">
-                <img
-                  src="/logo.jpg"
-                  className="w-full max-w-[300px] bg-violet-100"
-                  style={{ aspectRatio: "3/3" }}
-                />
-                <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
                   Unknown
+                </p>
+              </div>
+            </Animated>
+            <Animated varient="fade-in">
+              <div className="flex flex-col items-center">
+                <img
+                  src="/logo.jpg"
+                  className="w-full max-w-[300px] bg-violet-100"
+                  style={{ aspectRatio: "3/3" }}
+                />
+                <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
+                  Zadid Al Lisan
                 </h4>
                 <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
-                  CEO & Co-Founder
+                  Unknown
+                </p>
+              </div>
+            </Animated>
+            <Animated varient="fade-in">
+              <div className="flex flex-col items-center">
+                <img
+                  src="/logo.jpg"
+                  className="w-full max-w-[300px] bg-violet-100"
+                  style={{ aspectRatio: "3/3" }}
+                />
+                <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
+                  Tahmidur Rahman
+                </h4>
+                <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
+                  Unknown
                 </p>
               </div>
             </Animated>
@@ -289,13 +294,19 @@ export default function Home() {
             </h3>
           </div>
           <Animated varient="fade-up">
-            <div className="flex justify-center items-center gap-4 mt-10 flex-wrap">
-              <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
-              <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
-              <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
-              <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
-              <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
-              <div className="bg-violet-100 dark:bg-slate-600 w-32 h-32 rounded-md" />
+            <div className="_clients flex justify-center items-center gap-8 mt-10 flex-wrap">
+              <div className="w-16 h-16 rounded-md">
+                <img src="/images/static/google.png" alt="Client Logo" className="w-full h-full" />
+              </div>
+              <div className="w-16 h-16 rounded-md">
+                <img src="/images/static/microsoft.png" alt="Client Logo" className="w-full h-full" />
+              </div>
+              <div className="w-16 h-16 rounded-md">
+                <img src="/images/static/apple.png" alt="Client Logo" className="w-full h-full" />
+              </div>
+              <div className="w-16 h-16 rounded-md">
+                <img src="/images/static/dropbox.png" alt="Client Logo" className="w-full h-full" />
+              </div>
             </div>
           </Animated>
         </div>

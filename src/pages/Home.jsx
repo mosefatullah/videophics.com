@@ -68,6 +68,11 @@ export default function Home() {
           <div className="container mx-auto max-w-[1300px]">
             <div className="text-center">
               <Animated varient="fade-left" speed="slow">
+                <img
+                  src="/images/static/appointment.png"
+                  alt="Appointment"
+                  className="w-12 h-12 mx-auto mb-4"
+                />
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-[600] mb-4 text-white leading-10">
                   Book an Appointment
                 </h1>
@@ -78,8 +83,9 @@ export default function Home() {
                   project.
                 </p>
               </Animated>
+              <Animated varient="fade-up" speed="slow">
               <button
-                className="bg-white text-sm md:text-[16px] px-8 py-3 rounded-md from-white to-gray-100 bg-gradient-to-l hover:from-gray-100 hover:to-gray-200 active:scale-95 text-slate-700"
+                className="bg-white text-sm md:text-[16px] px-8 py-3 rounded-md to-white from-gray-200 bg-gradient-to-l hover:from-gray-100 hover:to-gray-200 active:scale-95 text-slate-900 dark:from-slate-800 dark:to-slate-700 dark:text-white"
                 title="Click here to book an appointment"
                 onClick={() => {
                   Calendly.initPopupWidget({
@@ -90,6 +96,7 @@ export default function Home() {
               >
                 Book Now &rarr;
               </button>
+              </Animated>
             </div>
           </div>
         </section>
@@ -110,7 +117,11 @@ export default function Home() {
                 <Animated varient="fade-in" speed="fast">
                   <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
                     <div className="p-6">
-                      <img src="/images/static/branding.png" alt="Branding" className="w-15 h-15 mb-5" />
+                      <img
+                        src="/images/static/branding.png"
+                        alt="Branding"
+                        className="w-15 h-15 mb-5"
+                      />
                       <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                         <span className="text-violet-700">1.</span> Branding
                       </h3>
@@ -127,7 +138,11 @@ export default function Home() {
                 <Animated varient="fade-in" speed="fast">
                   <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
                     <div className="p-6">
-                      <img src="/images/static/design.png" alt="UI/UX" className="w-15 h-15 mb-5" />
+                      <img
+                        src="/images/static/design.png"
+                        alt="UI/UX"
+                        className="w-15 h-15 mb-5"
+                      />
                       <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                         <span className="text-violet-700">2.</span> UI/UX
                       </h3>
@@ -144,7 +159,11 @@ export default function Home() {
                 <Animated varient="fade-in" speed="fast">
                   <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
                     <div className="p-6">
-                      <img src="/images/static/marketing.png" alt="Marketing" className="w-15 h-15 mb-5" />
+                      <img
+                        src="/images/static/marketing.png"
+                        alt="Marketing"
+                        className="w-15 h-15 mb-5"
+                      />
                       <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                         <span className="text-violet-700">3.</span> Marketing
                       </h3>
@@ -161,7 +180,11 @@ export default function Home() {
                 <Animated varient="fade-in" speed="fast">
                   <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
                     <div className="p-6">
-                      <img src="/images/static/content.png" alt="Content Writing" className="w-15 h-15 mb-5" />
+                      <img
+                        src="/images/static/content.png"
+                        alt="Content Writing"
+                        className="w-15 h-15 mb-5"
+                      />
                       <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                         <span className="text-violet-700">4.</span> Content
                         Writing
@@ -179,7 +202,11 @@ export default function Home() {
                 <Animated varient="fade-in" speed="fast">
                   <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
                     <div className="p-6">
-                      <img src="/images/static/patch.png" alt="Bug Fixes" className="w-15 h-15 mb-5" />
+                      <img
+                        src="/images/static/patch.png"
+                        alt="Bug Fixes"
+                        className="w-15 h-15 mb-5"
+                      />
                       <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                         <span className="text-violet-700">5.</span> Bug Fixes
                       </h3>
@@ -296,16 +323,32 @@ export default function Home() {
           <Animated varient="fade-up">
             <div className="_clients flex justify-center items-center gap-8 mt-10 flex-wrap">
               <div className="w-16 h-16 rounded-md">
-                <img src="/images/static/google.png" alt="Client Logo" className="w-full h-full" />
+                <img
+                  src="/images/static/google.png"
+                  alt="Client Logo"
+                  className="w-full h-full"
+                />
               </div>
               <div className="w-16 h-16 rounded-md">
-                <img src="/images/static/microsoft.png" alt="Client Logo" className="w-full h-full" />
+                <img
+                  src="/images/static/microsoft.png"
+                  alt="Client Logo"
+                  className="w-full h-full"
+                />
               </div>
               <div className="w-16 h-16 rounded-md">
-                <img src="/images/static/apple.png" alt="Client Logo" className="w-full h-full" />
+                <img
+                  src="/images/static/apple.png"
+                  alt="Client Logo"
+                  className="w-full h-full"
+                />
               </div>
               <div className="w-16 h-16 rounded-md">
-                <img src="/images/static/dropbox.png" alt="Client Logo" className="w-full h-full" />
+                <img
+                  src="/images/static/dropbox.png"
+                  alt="Client Logo"
+                  className="w-full h-full"
+                />
               </div>
             </div>
           </Animated>

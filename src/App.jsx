@@ -15,6 +15,8 @@ import ContactUs from "./pages/ContactUs";
 import NotFound from "./pages/NotFound";
 
 import Admin_Home from "./pages/admin/Home.jsx";
+import Admin_Blog from "./pages/admin/Blog.jsx";
+import Admin_BlogEdit from "./pages/admin/BlogEdit.jsx";
 
 export default function App() {
   const [theme, setTheme] = React.useState(
@@ -60,6 +62,7 @@ export default function App() {
     <>
       <BrowserRouter>
         <Routes>
+          {/* Website */}
           <Route
             path="/"
             element={
@@ -111,14 +114,39 @@ export default function App() {
             }
           />
           <Route path="/contact" element={<Navigate to="/contact-us" />} />
-          <Route path="*" element={<NotFound />} />
-          
+
           {/* Admin */}
           <Route
             path="/admin"
             element={
               <Layout>
                 <Admin_Home />
+              </Layout>
+            }
+          />
+          <Route
+            path="/admin/myblog"
+            element={
+              <Layout>
+                <Admin_Blog />
+              </Layout>
+            }
+          />
+          <Route
+            path="/admin/myblog/edit/:id"
+            element={
+              <Layout>
+                <Admin_BlogEdit />
+              </Layout>
+            }
+          />
+
+          {/* 404 */}
+          <Route
+            path="*"
+            element={
+              <Layout>
+                <NotFound />
               </Layout>
             }
           />

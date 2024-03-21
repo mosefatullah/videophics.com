@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import fi from "../utils/firebase";
 import {
   collection,
   limit,
@@ -10,9 +9,8 @@ import {
   getFirestore,
 } from "@firebase/firestore";
 
+import fi from "../utils/firebase";
 const Blogs = collection(getFirestore(fi), "Blogs");
-
-/* Components */
 
 /*
    /id

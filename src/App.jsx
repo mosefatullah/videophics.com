@@ -72,7 +72,10 @@ export default function App() {
               </Layout>
             }
           />
-          <Route path="/services" element={<Navigate to="/" />} />
+          <Route
+            path="/services"
+            element={<Navigate to="/services/branding" />}
+          />
           <Route
             path="/services/:service"
             element={

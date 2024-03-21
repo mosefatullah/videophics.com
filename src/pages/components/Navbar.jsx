@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 export default function Navbar({ theme, setTheme }) {
   const ServicesList = ({ mobile }) => (
@@ -7,72 +7,72 @@ export default function Navbar({ theme, setTheme }) {
       <li
         className={
           !mobile
-            ? "border-b-[3px] border-purple-700 dark:border-purple-500 hover:border-purple-700 dark:hover:border-purple-500"
-            : "border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500"
+            ? "border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
+            : "border-b-[3px] border-transparent dark:hover:border-violet-500"
         }
         index="1"
       >
-        <NavLink to="/services/branding" className={mobile && "hidden"}>
+        <Link to="/services/branding" className={mobile && "hidden"}>
           Branding
-        </NavLink>
-        <NavLink to="/services/branding" className="_hover">
+        </Link>
+        <Link to="/services/branding" className="_hover">
           Branding
-        </NavLink>
+        </Link>
       </li>
       <li
-        className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500"
+        className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
         index="2"
       >
-        <NavLink to="/services/design" className={mobile && "hidden"}>
+        <Link to="/services/design" className={mobile && "hidden"}>
           Design
-        </NavLink>
-        <NavLink to="/services/design" className="_hover">
+        </Link>
+        <Link to="/services/design" className="_hover">
           Design
-        </NavLink>
+        </Link>
       </li>
       <li
-        className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500"
+        className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
         index="3"
       >
-        <NavLink to="/services/development" className={mobile && "hidden"}>
+        <Link to="/services/development" className={mobile && "hidden"}>
           Development
-        </NavLink>
-        <NavLink to="/services/development" className="_hover">
+        </Link>
+        <Link to="/services/development" className="_hover">
           Development
-        </NavLink>
+        </Link>
       </li>
       <li
-        className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500"
+        className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
         index="4"
       >
-        <NavLink to="/services/marketing" className={mobile && "hidden"}>
+        <Link to="/services/marketing" className={mobile && "hidden"}>
           Marketing
-        </NavLink>
-        <NavLink to="/services/marketing" className="_hover">
+        </Link>
+        <Link to="/services/marketing" className="_hover">
           Marketing
-        </NavLink>
+        </Link>
       </li>
       <li
-        className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500"
+        className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
         index="5"
       >
-        <NavLink to="/services/content-writing" className={mobile && "hidden"}>
+        <Link to="/services/content-writing" className={mobile && "hidden"}>
           Content Writing
-        </NavLink>
-        <NavLink to="/services/content-writing" className="_hover">
+        </Link>
+        <Link to="/services/content-writing" className="_hover">
           Content Writing
-        </NavLink>
+        </Link>
       </li>
       <li
-        className="border-b-[3px] border-transparent hover:border-purple-700 dark:hover:border-purple-500"
+        className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
         index="6"
       >
-        <NavLink to="/services/bug-fixing" className={mobile && "hidden"}>
+        <Link to="/services/bug-fixing" className={mobile && "hidden"}>
           Bug Fixing
-        </NavLink>
-        <NavLink to="/services/bug-fixing" className="_hover">
+        </Link>
+        <Link to="/services/bug-fixing" className="_hover">
           Bug Fixing
-        </NavLink>
+        </Link>
       </li>
     </>
   );
@@ -164,6 +164,13 @@ export default function Navbar({ theme, setTheme }) {
     document.querySelector("._services-menu").classList.remove("opacity-100");
   };
 
+  const hideDrawerMenu = () => {
+    document.querySelector("._drawer-menu-layer").classList.add("hidden");
+    document.querySelector("._drawer-menu").classList.add("transform");
+    document.querySelector("._drawer-menu").classList.add("translate-x-full");
+    document.querySelector("._drawer-menu").classList.add("-translate-y-full");
+  };
+
   React.useEffect(() => {
     window.onscroll = function () {
       if (document.querySelector(".bottom-to-top")) {
@@ -184,19 +191,9 @@ export default function Navbar({ theme, setTheme }) {
     servicesMenuList.forEach((li, index) => {
       li.addEventListener("mouseenter", (e) => {
         servicesMenuList.forEach((list) => {
-          list.classList.remove(
-            "border-purple-700",
-            "dark:border-purple-500",
-            "dark:hover:border-purple-500",
-            "active"
-          );
-          list.classList.add("border-transparent");
+          list.classList.remove("active");
         });
-        li.classList.add("border-purple-700");
-        li.classList.add("dark:border-purple-500");
-        li.classList.add("dark:hover:border-purple-500");
         li.classList.add("active");
-        li.classList.remove("border-transparent");
         const img = document.querySelector(
           `._services-menu #img${e.target.getAttribute("index")}`
         );
@@ -205,6 +202,11 @@ export default function Navbar({ theme, setTheme }) {
           image.classList.add("hidden");
         });
         img.classList.remove("hidden");
+      });
+      li.addEventListener("mouseleave", () => {
+        servicesMenuList.forEach((list) => {
+          list.classList.remove("active");
+        });
       });
     });
   }, [document.querySelector("._services-menu ol li")]);
@@ -327,21 +329,13 @@ export default function Navbar({ theme, setTheme }) {
             <span>Videophics</span>
           </h1>
         </div>
-        <ol>
+        <ol onClick={hideDrawerMenu}>
           <Menu />
         </ol>
       </div>
       <div
         className="_drawer-menu-layer fixed top-0 left-0 h-screen w-full hidden z-50 bg-black bg-opacity-50 transition-all duration-500 ease-in-out"
-        onClick={() => {
-          document.querySelector("._drawer-menu-layer").classList.add("hidden");
-          document
-            .querySelector("._drawer-menu")
-            .classList.add("translate-x-full");
-          document
-            .querySelector("._drawer-menu")
-            .classList.add("-translate-y-full");
-        }}
+        onClick={hideDrawerMenu}
       />
       <div
         className="_services-menu bg-white dark:bg-slate-800 fixed left-0 w-full transform -translate-x-full transition-all duration-500 ease-in-out px-6 shadow-md opacity-0 hidden md:block"
@@ -350,7 +344,10 @@ export default function Navbar({ theme, setTheme }) {
         onMouseLeave={hideServiceMenu}
       >
         <div className="py-12 container mx-auto max-w-[1300px] flex justify-around items-center gap-6">
-          <ol className="flex flex-col items-start gap-2 text-2xl font-[500] text-slate-700 dark:text-white text-right" onClick={hideServiceMenu}>
+          <ol
+            className="flex flex-col items-start gap-2 text-2xl font-[500] text-slate-700 dark:text-white text-right"
+            onClick={hideServiceMenu}
+          >
             <ServicesList />
           </ol>
           <div>

@@ -9,7 +9,7 @@ const Branding = () => {
   return (
     <>
       <div className="container mx-auto text-slate-800 dark:text-white">
-        <section className="_hero-section min-h-[90vh] grid grid-cols-2 gap-9 items-center">
+        <section className="_hero-section min-h-[90vh] grid lg:grid-cols-2 gap-9 items-center py-12">
           <div>
             <h1 className="text-5xl font-bold">Branding</h1>
             <p className="text-xl text-slate-700 dark:text-slate-300 mt-8 leading-8">
@@ -32,7 +32,7 @@ const Branding = () => {
             style={{ aspectRatio: "16/9" }}
           />
         </section>
-        <section className="_list-section min-h-screen py-8 px-4" id="list">
+        <section className="_list-section min-h-screen py-12 pb-20" id="list">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-12">
               Our Branding Services
@@ -45,7 +45,7 @@ const Branding = () => {
                   className="w-full object-cover rounded-md mx-auto"
                   style={{ aspectRatio: "3/2" }}
                 />
-                <h3 className="text-2xl font-semibold mt-4">Logo Design</h3>
+                <h3 className="text-2xl font-semibold mt-6">Logo Design</h3>
                 <p className="mt-4 text-slate-500 dark:text-slate-400">
                   Create a memorable logo to represent your brand across all
                   platforms.
@@ -58,7 +58,7 @@ const Branding = () => {
                   className="w-full object-cover rounded-md mx-auto"
                   style={{ aspectRatio: "3/2" }}
                 />
-                <h3 className="text-2xl font-semibold mt-4">Brand Messaging</h3>
+                <h3 className="text-2xl font-semibold mt-6">Brand Messaging</h3>
                 <p className="mt-4 text-slate-500 dark:text-slate-400">
                   Develop a unique brand voice that resonates with your
                   audience.
@@ -71,7 +71,7 @@ const Branding = () => {
                   className="w-full object-cover rounded-md mx-auto"
                   style={{ aspectRatio: "3/2" }}
                 />
-                <h3 className="text-2xl font-semibold mt-4">
+                <h3 className="text-2xl font-semibold mt-6">
                   Social Media Branding
                 </h3>
                 <p className="mt-4 text-slate-500 dark:text-slate-400">
@@ -91,7 +91,7 @@ const Design = () => {
   return (
     <>
       <div className="container mx-auto text-slate-800 dark:text-white">
-        <section className="_hero-section min-h-[90vh] grid grid-cols-2 gap-9 items-center">
+        <section className="_hero-section min-h-[90vh] grid lg:grid-cols-2 gap-9 items-center py-12">
           <div>
             <h1 className="text-5xl font-bold">UI/UX & Web Design</h1>
             <p className="text-xl text-slate-700 dark:text-slate-300 mt-8 leading-8">
@@ -109,12 +109,12 @@ const Design = () => {
 
           <img
             src="/images/static/designOne.webp"
-            alt="Branding"
+            alt="Design"
             className="w-full object-cover rounded-lg"
             style={{ aspectRatio: "16/9" }}
           />
         </section>
-        <section className="_list-section min-h-screen py-8 px-4" id="list">
+        <section className="_list-section min-h-screen py-12 pb-20" id="list">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-12">
               Our Design Services
@@ -127,7 +127,7 @@ const Design = () => {
                   className="w-full object-cover rounded-md mx-auto"
                   style={{ aspectRatio: "3/2" }}
                 />
-                <h3 className="text-2xl font-semibold mt-4">UI/UX Design</h3>
+                <h3 className="text-2xl font-semibold mt-6">UI/UX Design</h3>
                 <p className="mt-4 text-slate-500 dark:text-slate-400">
                   Create a visually appealing and user-friendly interface for
                   your website or app.
@@ -140,7 +140,7 @@ const Design = () => {
                   className="w-full object-cover rounded-md mx-auto"
                   style={{ aspectRatio: "3/2" }}
                 />
-                <h3 className="text-2xl font-semibold mt-4">Web Design</h3>
+                <h3 className="text-2xl font-semibold mt-6">Web Design</h3>
                 <p className="mt-4 text-slate-500 dark:text-slate-400">
                   Build a stunning website that is easy to navigate and use.
                 </p>
@@ -152,10 +152,178 @@ const Design = () => {
                   className="w-full object-cover rounded-md mx-auto"
                   style={{ aspectRatio: "3/2" }}
                 />
-                <h3 className="text-2xl font-semibold mt-4">Graphic Design</h3>
+                <h3 className="text-2xl font-semibold mt-6">Graphic Design</h3>
                 <p className="mt-4 text-slate-500 dark:text-slate-400">
                   Create visually appealing graphics for your website and social
                   media.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
+  );
+};
+
+const Development = () => {
+  return (
+    <>
+      <div className="container mx-auto text-slate-800 dark:text-white">
+        <section className="_hero-section min-h-[90vh] grid lg:grid-cols-2 gap-9 items-center py-12">
+          <div>
+            <h1 className="text-5xl font-bold">Web Development</h1>
+            <p className="text-xl text-slate-700 dark:text-slate-300 mt-8 leading-8">
+              Build a stunning website or web application with our development
+              solutions. We help you create a functional and user-friendly web
+              app that meets your business needs.
+            </p>
+            <a
+              href="#list"
+              className="inline-block bg-orange-600 text-white px-6 py-3 mt-8 rounded-full"
+            >
+              Develop your website!
+            </a>
+          </div>
+
+          <img
+            src="/images/static/eYpcLDXHVb0-unsplash.jpg"
+            alt="Web Development"
+            className="w-full object-cover rounded-lg"
+            style={{ aspectRatio: "16/9" }}
+          />
+        </section>
+        <section className="_list-section min-h-screen py-12 pb-20" id="list">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl font-bold text-center mb-12">
+              Development Services
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="text-center">
+                <img
+                  src="/images/static/ayjnmG4oUX4-unsplash.jpg"
+                  alt="Frontend Development"
+                  className="w-full object-cover rounded-md mx-auto"
+                  style={{ aspectRatio: "3/2" }}
+                />
+                <h3 className="text-2xl font-semibold mt-6">
+                  Frontend Development
+                </h3>
+                <p className="mt-4 text-slate-500 dark:text-slate-400">
+                  Create frontend interfaces that are visually appealing and
+                  user-friendly.
+                </p>
+              </div>
+              <div className="text-center">
+                <img
+                  src="/images/static/M5tzZtFCOfs-unsplash.jpg"
+                  alt="Backend Development"
+                  className="w-full object-cover rounded-md mx-auto"
+                  style={{ aspectRatio: "3/2" }}
+                />
+                <h3 className="text-2xl font-semibold mt-6">
+                  Backend Development
+                </h3>
+                <p className="mt-4 text-slate-500 dark:text-slate-400">
+                  Develop backend systems that power your website or web
+                  application.
+                </p>
+              </div>
+              <div className="text-center">
+                <img
+                  src="/images/static/ehyV_XOZ4iA-unsplash.jpg"
+                  alt="API Development"
+                  className="w-full object-cover rounded-md mx-auto"
+                  style={{ aspectRatio: "3/2" }}
+                />
+                <h3 className="text-2xl font-semibold mt-6">API Development</h3>
+                <p className="mt-4 text-slate-500 dark:text-slate-400">
+                  Build custom APIs to connect your website or app to external
+                  services.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
+  );
+};
+
+const Marketing = () => {
+  return (
+    <>
+      <div className="container mx-auto text-slate-800 dark:text-white">
+        <section className="_hero-section min-h-[90vh] grid lg:grid-cols-2 gap-9 items-center py-12">
+          <div>
+            <h1 className="text-5xl font-bold">Digital Marketing</h1>
+            <p className="text-xl text-slate-700 dark:text-slate-300 mt-8 leading-8">
+              Grow your online presence with our digital marketing solutions. We
+              help you reach your target audience and drive traffic to your
+              website or app.
+            </p>
+            <a
+              href="#list"
+              className="inline-block bg-orange-600 text-white px-6 py-3 mt-8 rounded-full"
+            >
+              Boost your marketing!
+            </a>
+          </div>
+
+          <img
+            src="/images/static/tZc3vjPCk-Q-unsplash.jpg"
+            alt="Marketing"
+            className="w-full object-cover rounded-lg"
+            style={{ aspectRatio: "16/9" }}
+          />
+        </section>
+        <section className="_list-section min-h-screen py-12 pb-20" id="list">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl font-bold text-center mb-12">
+              Our Marketing Services
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <img
+                  src="/images/static/shrXn8S8QU-unsplash.jpg"
+                  alt="SEO"
+                  className="w-full object-cover rounded-md mx-auto"
+                  style={{ aspectRatio: "3/2" }}
+                />
+                <h3 className="text-2xl font-semibold mt-6">SEO</h3>
+                <p className="mt-4 text-slate-500 dark:text-slate-400">
+                  Improve your website's search engine rankings and visibility.
+                </p>
+              </div>
+              <div className="text-center">
+                <img
+                  src="/images/static/kLmt1mpGJVg-unsplash.jpg"
+                  alt="Social Media Marketing"
+                  className="w-full object-cover rounded-md mx-auto"
+                  style={{ aspectRatio: "3/2" }}
+                />
+
+                <h3 className="text-2xl font-semibold mt-6">
+                  Social Media Marketing
+                </h3>
+                <p className="mt-4 text-slate-500 dark:text-slate-400">
+                  Promote your brand and engage with your audience on social
+                  media platforms.
+                </p>
+              </div>
+              <div className="text-center">
+                <img
+                  src="/images/static/3GZNPBLImWc-unsplash.jpg"
+                  alt="Content Marketing"
+                  className="w-full object-cover rounded-md mx-auto"
+                  style={{ aspectRatio: "3/2" }}
+                />
+                <h3 className="text-2xl font-semibold mt-6">
+                  Content Marketing
+                </h3>
+                <p className="mt-4 text-slate-500 dark:text-slate-400">
+                  Create valuable content that attracts and engages your target
+                  audience.
                 </p>
               </div>
             </div>
@@ -183,6 +351,8 @@ export default function ServicesView() {
   const componentsList = {
     branding: <Branding />,
     design: <Design />,
+    development: <Development />,
+    marketing: <Marketing />,
   };
 
   if (allowedPaths.includes(useParams().service)) {

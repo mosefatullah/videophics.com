@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 
 /* Components */
 import NotFound from "./NotFound";
+import Animated from "./components/Animated";
 
 const Branding = () => {
   return (
@@ -38,47 +39,59 @@ const Branding = () => {
               Branding Services
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <img
-                  src="/images/static/mr4JG4SYOF8-unsplash.jpg"
-                  alt="Logo Design"
-                  className="w-full object-cover rounded-md mx-auto"
-                  style={{ aspectRatio: "3/2" }}
-                />
-                <h3 className="text-2xl font-semibold mt-6">Logo Design</h3>
-                <p className="mt-4 text-slate-500 dark:text-slate-400">
-                  Create a memorable logo to represent your brand across all
-                  platforms.
-                </p>
-              </div>
-              <div className="text-center">
-                <img
-                  src="/images/static/QL0FAxaq2z0-unsplash.jpg"
-                  alt="Brand Messaging"
-                  className="w-full object-cover rounded-md mx-auto"
-                  style={{ aspectRatio: "3/2" }}
-                />
-                <h3 className="text-2xl font-semibold mt-6">Brand Messaging</h3>
-                <p className="mt-4 text-slate-500 dark:text-slate-400">
-                  Develop a unique brand voice that resonates with your
-                  audience.
-                </p>
-              </div>
-              <div className="text-center">
-                <img
-                  src="/images/static/yeB9jDmHm6M-unsplash.jpg"
-                  alt="Social Media Branding"
-                  className="w-full object-cover rounded-md mx-auto"
-                  style={{ aspectRatio: "3/2" }}
-                />
-                <h3 className="text-2xl font-semibold mt-6">
-                  Social Media Branding
-                </h3>
-                <p className="mt-4 text-slate-500 dark:text-slate-400">
-                  Create a consistent brand image across all social media
-                  platforms.
-                </p>
-              </div>
+              <Animated varient="fade-in">
+                <div>
+                  <img
+                    src="/images/static/mr4JG4SYOF8-unsplash.jpg"
+                    alt="Logo Design"
+                    className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
+                    style={{ aspectRatio: "3/2" }}
+                  />
+                  <div className="bg-slate-300 dark:bg-slate-800 p-6 rounded-b-md">
+                    <h3 className="text-2xl font-semibold">Logo Design</h3>
+                    <p className="mt-3 text-slate-500 dark:text-slate-400">
+                      Create a memorable logo to represent your brand across all
+                      platforms.
+                    </p>
+                  </div>
+                </div>
+              </Animated>
+              <Animated varient="fade-in">
+                <div>
+                  <img
+                    src="/images/static/QL0FAxaq2z0-unsplash.jpg"
+                    alt="Brand Messaging"
+                    className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
+                    style={{ aspectRatio: "3/2" }}
+                  />
+                  <div className="bg-slate-300 dark:bg-slate-800 p-6 rounded-b-md">
+                    <h3 className="text-2xl font-semibold">Brand Messaging</h3>
+                    <p className="mt-3 text-slate-500 dark:text-slate-400">
+                      Develop a unique brand voice that resonates with your
+                      audience.
+                    </p>
+                  </div>
+                </div>
+              </Animated>
+              <Animated varient="fade-in">
+                <div>
+                  <img
+                    src="/images/static/yeB9jDmHm6M-unsplash.jpg"
+                    alt="Social Media Branding"
+                    className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
+                    style={{ aspectRatio: "3/2" }}
+                  />
+                  <div className="bg-slate-300 dark:bg-slate-800 p-6 rounded-b-md">
+                    <h3 className="text-2xl font-semibold">
+                      Social Media Branding
+                    </h3>
+                    <p className="mt-3 text-slate-500 dark:text-slate-400">
+                      Create a consistent brand image across all social media
+                      platforms.
+                    </p>
+                  </div>
+                </div>
+              </Animated>
             </div>
           </div>
         </section>
@@ -120,44 +133,56 @@ const Design = () => {
               Design Services
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <img
-                  src="/images/static/IyaNci0CyRk-unsplash.jpg"
-                  alt="UI/UX Design"
-                  className="w-full object-cover rounded-md mx-auto"
-                  style={{ aspectRatio: "3/2" }}
-                />
-                <h3 className="text-2xl font-semibold mt-6">UI/UX Design</h3>
-                <p className="mt-4 text-slate-500 dark:text-slate-400">
-                  Create a visually appealing and user-friendly interface for
-                  your website or app.
-                </p>
-              </div>
-              <div className="text-center">
-                <img
-                  src="/images/static/bs2Ba7t69mM-unsplash.jpg"
-                  alt="Web Design"
-                  className="w-full object-cover rounded-md mx-auto"
-                  style={{ aspectRatio: "3/2" }}
-                />
-                <h3 className="text-2xl font-semibold mt-6">Web Design</h3>
-                <p className="mt-4 text-slate-500 dark:text-slate-400">
-                  Build a stunning website that is easy to navigate and use.
-                </p>
-              </div>
-              <div className="text-center">
-                <img
-                  src="/images/static/v9vII5gV8Lw-unsplash.jpg"
-                  alt="Graphic Design"
-                  className="w-full object-cover rounded-md mx-auto"
-                  style={{ aspectRatio: "3/2" }}
-                />
-                <h3 className="text-2xl font-semibold mt-6">Graphic Design</h3>
-                <p className="mt-4 text-slate-500 dark:text-slate-400">
-                  Create visually appealing graphics for your website and social
-                  media.
-                </p>
-              </div>
+              <Animated varient="fade-in">
+                <div>
+                  <img
+                    src="/images/static/IyaNci0CyRk-unsplash.jpg"
+                    alt="UI/UX Design"
+                    className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
+                    style={{ aspectRatio: "3/2" }}
+                  />
+                  <div className="bg-slate-300 dark:bg-slate-800 p-6 rounded-b-md">
+                    <h3 className="text-2xl font-semibold">UI/UX Design</h3>
+                    <p className="mt-3 text-slate-500 dark:text-slate-400">
+                      Create a visually appealing and user-friendly interface
+                      for your website or app.
+                    </p>
+                  </div>
+                </div>
+              </Animated>
+              <Animated varient="fade-in">
+                <div>
+                  <img
+                    src="/images/static/bs2Ba7t69mM-unsplash.jpg"
+                    alt="Web Design"
+                    className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
+                    style={{ aspectRatio: "3/2" }}
+                  />
+                  <div className="bg-slate-300 dark:bg-slate-800 p-6 rounded-b-md">
+                    <h3 className="text-2xl font-semibold">Web Design</h3>
+                    <p className="mt-3 text-slate-500 dark:text-slate-400">
+                      Build a stunning website that is easy to navigate and use.
+                    </p>
+                  </div>
+                </div>
+              </Animated>
+              <Animated varient="fade-in">
+                <div>
+                  <img
+                    src="/images/static/v9vII5gV8Lw-unsplash.jpg"
+                    alt="Graphic Design"
+                    className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
+                    style={{ aspectRatio: "3/2" }}
+                  />
+                  <div className="bg-slate-300 dark:bg-slate-800 p-6 rounded-b-md">
+                    <h3 className="text-2xl font-semibold">Graphic Design</h3>
+                    <p className="mt-3 text-slate-500 dark:text-slate-400">
+                      Create visually appealing graphics for your website and
+                      social media.
+                    </p>
+                  </div>
+                </div>
+              </Animated>
             </div>
           </div>
         </section>
@@ -199,49 +224,61 @@ const Development = () => {
               Development Services
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="text-center">
-                <img
-                  src="/images/static/ayjnmG4oUX4-unsplash.jpg"
-                  alt="Frontend Development"
-                  className="w-full object-cover rounded-md mx-auto"
-                  style={{ aspectRatio: "3/2" }}
-                />
-                <h3 className="text-2xl font-semibold mt-6">
-                  Frontend Development
-                </h3>
-                <p className="mt-4 text-slate-500 dark:text-slate-400">
-                  Create frontend interfaces that are visually appealing and
-                  user-friendly.
-                </p>
-              </div>
-              <div className="text-center">
-                <img
-                  src="/images/static/M5tzZtFCOfs-unsplash.jpg"
-                  alt="Backend Development"
-                  className="w-full object-cover rounded-md mx-auto"
-                  style={{ aspectRatio: "3/2" }}
-                />
-                <h3 className="text-2xl font-semibold mt-6">
-                  Backend Development
-                </h3>
-                <p className="mt-4 text-slate-500 dark:text-slate-400">
-                  Develop backend systems that power your website or web
-                  application.
-                </p>
-              </div>
-              <div className="text-center">
-                <img
-                  src="/images/static/ehyV_XOZ4iA-unsplash.jpg"
-                  alt="API Development"
-                  className="w-full object-cover rounded-md mx-auto"
-                  style={{ aspectRatio: "3/2" }}
-                />
-                <h3 className="text-2xl font-semibold mt-6">API Development</h3>
-                <p className="mt-4 text-slate-500 dark:text-slate-400">
-                  Build custom APIs to connect your website or app to external
-                  services.
-                </p>
-              </div>
+              <Animated varient="fade-in">
+                <div>
+                  <img
+                    src="/images/static/ayjnmG4oUX4-unsplash.jpg"
+                    alt="Frontend Development"
+                    className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
+                    style={{ aspectRatio: "3/2" }}
+                  />
+                  <div className="bg-slate-300 dark:bg-slate-800 p-6 rounded-b-md">
+                    <h3 className="text-2xl font-semibold">
+                      Frontend Development
+                    </h3>
+                    <p className="mt-3 text-slate-500 dark:text-slate-400">
+                      Create frontend interfaces that are visually appealing and
+                      user-friendly.
+                    </p>
+                  </div>
+                </div>
+              </Animated>
+              <Animated varient="fade-in">
+                <div>
+                  <img
+                    src="/images/static/M5tzZtFCOfs-unsplash.jpg"
+                    alt="Backend Development"
+                    className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
+                    style={{ aspectRatio: "3/2" }}
+                  />
+                  <div className="bg-slate-300 dark:bg-slate-800 p-6 rounded-b-md">
+                    <h3 className="text-2xl font-semibold">
+                      Backend Development
+                    </h3>
+                    <p className="mt-3 text-slate-500 dark:text-slate-400">
+                      Develop backend systems that power your website or web
+                      application.
+                    </p>
+                  </div>
+                </div>
+              </Animated>
+              <Animated varient="fade-in">
+                <div>
+                  <img
+                    src="/images/static/ehyV_XOZ4iA-unsplash.jpg"
+                    alt="API Development"
+                    className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
+                    style={{ aspectRatio: "3/2" }}
+                  />
+                  <div className="bg-slate-300 dark:bg-slate-800 p-6 rounded-b-md">
+                    <h3 className="text-2xl font-semibold">API Development</h3>
+                    <p className="mt-3 text-slate-500 dark:text-slate-400">
+                      Build custom APIs to connect your website or app to
+                      external services.
+                    </p>
+                  </div>
+                </div>
+              </Animated>
             </div>
           </div>
         </section>
@@ -283,49 +320,61 @@ const Marketing = () => {
               Marketing Services
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <img
-                  src="/images/static/shrXn8S8QU-unsplash.jpg"
-                  alt="SEO"
-                  className="w-full object-cover rounded-md mx-auto"
-                  style={{ aspectRatio: "3/2" }}
-                />
-                <h3 className="text-2xl font-semibold mt-6">SEO</h3>
-                <p className="mt-4 text-slate-500 dark:text-slate-400">
-                  Improve your website's search engine rankings and visibility.
-                </p>
-              </div>
-              <div className="text-center">
-                <img
-                  src="/images/static/kLmt1mpGJVg-unsplash.jpg"
-                  alt="Social Media Marketing"
-                  className="w-full object-cover rounded-md mx-auto"
-                  style={{ aspectRatio: "3/2" }}
-                />
-
-                <h3 className="text-2xl font-semibold mt-6">
-                  Social Media Marketing
-                </h3>
-                <p className="mt-4 text-slate-500 dark:text-slate-400">
-                  Promote your brand and engage with your audience on social
-                  media platforms.
-                </p>
-              </div>
-              <div className="text-center">
-                <img
-                  src="/images/static/3GZNPBLImWc-unsplash.jpg"
-                  alt="Content Marketing"
-                  className="w-full object-cover rounded-md mx-auto"
-                  style={{ aspectRatio: "3/2" }}
-                />
-                <h3 className="text-2xl font-semibold mt-6">
-                  Content Marketing
-                </h3>
-                <p className="mt-4 text-slate-500 dark:text-slate-400">
-                  Create valuable content that attracts and engages your target
-                  audience.
-                </p>
-              </div>
+              <Animated varient="fade-in">
+                <div>
+                  <img
+                    src="/images/static/shrXn8S8QU-unsplash.jpg"
+                    alt="SEO"
+                    className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
+                    style={{ aspectRatio: "3/2" }}
+                  />
+                  <div className="bg-slate-300 dark:bg-slate-800 p-6 rounded-b-md">
+                    <h3 className="text-2xl font-semibold">SEO</h3>
+                    <p className="mt-3 text-slate-500 dark:text-slate-400">
+                      Improve your website's search engine rankings and
+                      visibility.
+                    </p>
+                  </div>
+                </div>
+              </Animated>
+              <Animated varient="fade-in">
+                <div>
+                  <img
+                    src="/images/static/kLmt1mpGJVg-unsplash.jpg"
+                    alt="Social Media Marketing"
+                    className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
+                    style={{ aspectRatio: "3/2" }}
+                  />
+                  <div className="bg-slate-300 dark:bg-slate-800 p-6 rounded-b-md">
+                    <h3 className="text-2xl font-semibold">
+                      Social Media Marketing
+                    </h3>
+                    <p className="mt-3 text-slate-500 dark:text-slate-400">
+                      Promote your brand and engage with your audience on social
+                      media platforms.
+                    </p>
+                  </div>
+                </div>
+              </Animated>
+              <Animated varient="fade-in">
+                <div>
+                  <img
+                    src="/images/static/3GZNPBLImWc-unsplash.jpg"
+                    alt="Content Marketing"
+                    className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
+                    style={{ aspectRatio: "3/2" }}
+                  />
+                  <div className="bg-slate-300 dark:bg-slate-800 p-6 rounded-b-md">
+                    <h3 className="text-2xl font-semibold">
+                      Content Marketing
+                    </h3>
+                    <p className="mt-3 text-slate-500 dark:text-slate-400">
+                      Create valuable content that attracts and engages your
+                      target audience.
+                    </p>
+                  </div>
+                </div>
+              </Animated>
             </div>
           </div>
         </section>
@@ -367,43 +416,56 @@ const ContentWriting = () => {
               Content Writing Services
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <img
-                  src="/images/static/FHnnjk1Yj7Y-unsplash.jpg"
-                  alt="Blog Writing"
-                  className="w-full object-cover rounded-md mx-auto"
-                  style={{ aspectRatio: "3/2" }}
-                />
-                <h3 className="text-2xl font-semibold mt-6">Blog Writing</h3>
-                <p className="mt-4 text-slate-500 dark:text-slate-400">
-                  Create engaging blog posts that attract and inform your
-                  audience.
-                </p>
-              </div>
-              <div className="text-center">
-                <img
-                  src="/images/static/EKy2OTRPXdw-unsplash.jpg"
-                  alt="Copywriting"
-                  className="w-full object-cover rounded-md mx-auto"
-                  style={{ aspectRatio: "3/2" }}
-                />
-                <h3 className="text-2xl font-semibold mt-6">Copywriting</h3>
-                <p className="mt-4 text-slate-500 dark:text-slate-400">
-                  Develop compelling copy that drives conversions and sales.
-                </p>
-              </div>
-              <div className="text-center">
-                <img
-                  src="/images/static/XJXWbfSo2f0-unsplash.jpg"
-                  alt="SEO Writing"
-                  className="w-full object-cover rounded-md mx-auto"
-                  style={{ aspectRatio: "3/2" }}
-                />
-                <h3 className="text-2xl font-semibold mt-6">SEO Writing</h3>
-                <p className="mt-4 text-slate-500 dark:text-slate-400">
-                  Write SEO-friendly content that ranks well in search engines.
-                </p>
-              </div>
+              <Animated varient="fade-in">
+                <div>
+                  <img
+                    src="/images/static/FHnnjk1Yj7Y-unsplash.jpg"
+                    alt="Blog Writing"
+                    className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
+                    style={{ aspectRatio: "3/2" }}
+                  />
+                  <div className="bg-slate-300 dark:bg-slate-800 p-6 rounded-b-md">
+                    <h3 className="text-2xl font-semibold">Blog Writing</h3>
+                    <p className="mt-3 text-slate-500 dark:text-slate-400">
+                      Create engaging blog posts that attract and inform your
+                      audience.
+                    </p>
+                  </div>
+                </div>
+              </Animated>
+              <Animated varient="fade-in">
+                <div>
+                  <img
+                    src="/images/static/EKy2OTRPXdw-unsplash.jpg"
+                    alt="Copywriting"
+                    className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
+                    style={{ aspectRatio: "3/2" }}
+                  />
+                  <div className="bg-slate-300 dark:bg-slate-800 p-6 rounded-b-md">
+                    <h3 className="text-2xl font-semibold">Copywriting</h3>
+                    <p className="mt-3 text-slate-500 dark:text-slate-400">
+                      Develop compelling copy that drives conversions and sales.
+                    </p>
+                  </div>
+                </div>
+              </Animated>
+              <Animated varient="fade-in">
+                <div>
+                  <img
+                    src="/images/static/XJXWbfSo2f0-unsplash.jpg"
+                    alt="SEO Writing"
+                    className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
+                    style={{ aspectRatio: "3/2" }}
+                  />
+                  <div className="bg-slate-300 dark:bg-slate-800 p-6 rounded-b-md">
+                    <h3 className="text-2xl font-semibold">SEO Writing</h3>
+                    <p className="mt-3 text-slate-500 dark:text-slate-400">
+                      Write SEO-friendly content that ranks well in search
+                      engines.
+                    </p>
+                  </div>
+                </div>
+              </Animated>
             </div>
           </div>
         </section>
@@ -445,51 +507,61 @@ const BugFixing = () => {
               Bug Fixing Services
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <img
-                  src="/images/static/5fNmWej4tAA-unsplash.jpg"
-                  alt="Website Debugging"
-                  className="w-full object-cover rounded-md mx-auto"
-                  style={{ aspectRatio: "3/2" }}
-                />
-                <h3 className="text-2xl font-semibold mt-6">
-                  Website Debugging
-                </h3>
-                <p className="mt-4 text-slate-500 dark:text-slate-400">
-                  Identify and fix technical issues in your website to ensure
-                  optimal performance.
-                </p>
-              </div>
-              <div className="text-center">
-                <img
-                  src="/images/static/XJXWbfSo2f0-unsplash.jpg"
-                  alt="Code Refactoring"
-                  className="w-full object-cover rounded-md mx-auto"
-                  style={{ aspectRatio: "3/2" }}
-                />
-                <h3 className="text-2xl font-semibold mt-6">
-                  Code Refactoring
-                </h3>
-                <p className="mt-4 text-slate-500 dark:text-slate-400">
-                  Improve the structure and readability of your code for better
-                  performance.
-                </p>
-              </div>
-              <div className="text-center">
-                <img
-                  src="/images/static/GNyjCePVRs8-unsplash.jpg"
-                  alt="Database Optimization"
-                  className="w-full object-cover rounded-md mx-auto"
-                  style={{ aspectRatio: "3/2" }}
-                />
-                <h3 className="text-2xl font-semibold mt-6">
-                  Database Optimization
-                </h3>
-                <p className="mt-4 text-slate-500 dark:text-slate-400">
-                  Optimize your database to improve data retrieval and storage
-                  efficiency.
-                </p>
-              </div>
+              <Animated varient="fade-in">
+                <div>
+                  <img
+                    src="/images/static/5fNmWej4tAA-unsplash.jpg"
+                    alt="Website Debugging"
+                    className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
+                    style={{ aspectRatio: "3/2" }}
+                  />
+                  <div className="bg-slate-300 dark:bg-slate-800 p-6 rounded-b-md">
+                    <h3 className="text-2xl font-semibold">
+                      Website Debugging
+                    </h3>
+                    <p className="mt-3 text-slate-500 dark:text-slate-400">
+                      Identify and fix technical issues in your website to
+                      ensure optimal performance.
+                    </p>
+                  </div>
+                </div>
+              </Animated>
+              <Animated varient="fade-in">
+                <div>
+                  <img
+                    src="/images/static/XJXWbfSo2f0-unsplash.jpg"
+                    alt="Code Refactoring"
+                    className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
+                    style={{ aspectRatio: "3/2" }}
+                  />
+                  <div className="bg-slate-300 dark:bg-slate-800 p-6 rounded-b-md">
+                    <h3 className="text-2xl font-semibold">Code Refactoring</h3>
+                    <p className="mt-3 text-slate-500 dark:text-slate-400">
+                      Improve the structure and readability of your code for
+                      better performance.
+                    </p>
+                  </div>
+                </div>
+              </Animated>
+              <Animated varient="fade-in">
+                <div>
+                  <img
+                    src="/images/static/GNyjCePVRs8-unsplash.jpg"
+                    alt="Database Optimization"
+                    className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
+                    style={{ aspectRatio: "3/2" }}
+                  />
+                  <div className="bg-slate-300 dark:bg-slate-800 p-6 rounded-b-md">
+                    <h3 className="text-2xl font-semibold">
+                      Database Optimization
+                    </h3>
+                    <p className="mt-3 text-slate-500 dark:text-slate-400">
+                      Optimize your database to improve data retrieval and
+                      storage efficiency.
+                    </p>
+                  </div>
+                </div>
+              </Animated>
             </div>
           </div>
         </section>

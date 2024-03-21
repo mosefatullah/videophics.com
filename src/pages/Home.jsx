@@ -299,7 +299,7 @@ export default function Home() {
                   Zadid Al Lisan
                 </h4>
                 <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
-                  Unknown
+                  CTO
                 </p>
               </div>
             </Animated>
@@ -348,25 +348,25 @@ export default function Home() {
           </div>
           <Animated varient="fade-up">
             <div className="_clients flex justify-center items-center gap-8 mt-10 flex-wrap">
-              <div className="w-16 h-16 rounded-md">
+              <div className="w-16 h-16">
                 <img
-                  src="/images/static/google.png"
+                  src="/images/static/qweekai.png"
                   alt="Client Logo"
-                  className="w-full h-full"
+                  className="w-full h-full rounded-md"
                 />
               </div>
-              <div className="w-16 h-16 rounded-md">
+              <div className="w-16 h-16">
                 <img
-                  src="/images/static/microsoft.png"
+                  src="/images/static/dhanshalik.jpg"
                   alt="Client Logo"
-                  className="w-full h-full"
+                  className="w-full h-full rounded-md"
                 />
               </div>
-              <div className="w-16 h-16 rounded-md">
+              <div className="w-16 h-16">
                 <img
-                  src="/images/static/apple.png"
+                  src="/images/static/specialstars.jpeg"
                   alt="Client Logo"
-                  className="w-full h-full"
+                  className="w-full h-full rounded-md"
                 />
               </div>
               <div className="w-16 h-16 rounded-md">

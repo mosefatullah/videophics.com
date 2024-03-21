@@ -35,11 +35,9 @@ export default function Home() {
               </Animated>
             </h1>
             <p className="text-[14px] md:text-[17px] mt-4 mb-7 text-slate-500 dark:text-white leading-6 md:leading-7 _heroPara">
-              Videophics is a graphic design agency dedicated to empowering
-              brands, businesses, and individuals through impactful visual
-              storytelling. We craft compelling designs for a wide range of
-              clients, including companies, organizations, publications, and
-              personal promotions.
+              At Videophics, we bring brands and people closer. With a focus on
+              emotion-driven connections, we craft experiences that resonate and
+              endure. Let's tell your story in a way that truly connects.
             </p>
             <button
               className="px-7 text-sm md:text-[16px] md:px-8 py-3 text-white rounded-md from-violet-400 to-violet-600 bg-gradient-to-l hover:from-violet-500 hover:to-violet-700 active:scale-95"
@@ -245,6 +243,66 @@ export default function Home() {
               </Animated>
             </div>
           </div>
+          <div className="_unique-features pt-[10rem] flex flex-col gap-12">
+            <div className="min-h-[40vh] flex flex-col justify-center">
+              <h3 className="text-3xl lg:text-4xl font-[600] text-slate-700 dark:text-white leading-10 text-center mb-2">
+                Why Choose Us?
+              </h3>
+              <p className="text-[14px] md:text-[17px] text-slate-500 dark:text-slate-400 leading-6 md:leading-7 text-center mb-[4rem]">
+                What makes us different from others in the industry.
+              </p>
+              <div className="grid md:grid-cols-3 gap-12">
+                <Animated varient="fade-up">
+                  <div className="flex flex-col bg-slate-300 dark:bg-slate-800 p-6 rounded-lg">
+                    <img
+                      src="/images/static/organic.png"
+                      alt="Quality"
+                      className="w-16 h-16 mb-4"
+                    />
+                    <h4 className="text-xl font-[600] mb-2 text-slate-700 dark:text-white leading-8">
+                      Organic Reach
+                    </h4>
+                    <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
+                      We help you reach your audience organically without any
+                      paid ads.
+                    </p>
+                  </div>
+                </Animated>
+                <Animated varient="fade-up">
+                  <div className="flex flex-col bg-slate-300 dark:bg-slate-800 p-6 rounded-lg">
+                    <img
+                      src="/images/static/emotion.png"
+                      alt="Emotion"
+                      className="w-16 h-16 mb-4"
+                    />
+                    <h4 className="text-xl font-[600] mb-2 text-slate-700 dark:text-white leading-8">
+                      Emotional Connection
+                    </h4>
+                    <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
+                      We help you building emotional connection between brand
+                      and customer.
+                    </p>
+                  </div>
+                </Animated>
+                <Animated varient="fade-up">
+                  <div className="flex flex-col bg-slate-300 dark:bg-slate-800 p-6 rounded-lg">
+                    <img
+                      src="/images/static/story.png"
+                      alt="Story"
+                      className="w-16 h-16 mb-4"
+                    />
+                    <h4 className="text-xl font-[600] mb-2 text-slate-700 dark:text-white leading-8">
+                      Story Telling
+                    </h4>
+                    <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
+                      We help you finding the real connecting story of your
+                      brand.
+                    </p>
+                  </div>
+                </Animated>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section className="_team-section py-[8rem] md:min-h-[calc(100vh-80px)] bg-violet-100 dark:bg-slate-800 flex flex-col justify-center items-center">
@@ -261,8 +319,8 @@ export default function Home() {
             <Animated varient="fade-in">
               <div className="flex flex-col items-center">
                 <img
-                  src="/logo.jpg"
-                  className="w-full max-w-[300px] bg-violet-100"
+                  src=""
+                  className="w-full max-w-[300px] bg-violet-300 rounded-md object-cover"
                   style={{ aspectRatio: "3/3" }}
                 />
                 <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
@@ -276,8 +334,8 @@ export default function Home() {
             <Animated varient="fade-in">
               <div className="flex flex-col items-center">
                 <img
-                  src="/logo.jpg"
-                  className="w-full max-w-[300px] bg-violet-100"
+                  src=""
+                  className="w-full max-w-[300px] bg-violet-300 rounded-md object-cover"
                   style={{ aspectRatio: "3/3" }}
                 />
                 <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
@@ -291,8 +349,8 @@ export default function Home() {
             <Animated varient="fade-in">
               <div className="flex flex-col items-center">
                 <img
-                  src="/logo.jpg"
-                  className="w-full max-w-[300px] bg-violet-100"
+                  src=""
+                  className="w-full max-w-[300px] bg-violet-300 rounded-md object-cover"
                   style={{ aspectRatio: "3/3" }}
                 />
                 <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
@@ -306,8 +364,8 @@ export default function Home() {
             <Animated varient="fade-in">
               <div className="flex flex-col items-center">
                 <img
-                  src="/logo.jpg"
-                  className="w-full max-w-[300px] bg-violet-100"
+                  src=""
+                  className="w-full max-w-[300px] bg-violet-300 rounded-md object-cover"
                   style={{ aspectRatio: "3/3" }}
                 />
                 <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
@@ -321,8 +379,8 @@ export default function Home() {
             <Animated varient="fade-in">
               <div className="flex flex-col items-center">
                 <img
-                  src="/logo.jpg"
-                  className="w-full max-w-[300px] bg-violet-100"
+                  src=""
+                  className="w-full max-w-[300px] bg-violet-300 rounded-md object-cover"
                   style={{ aspectRatio: "3/3" }}
                 />
                 <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">

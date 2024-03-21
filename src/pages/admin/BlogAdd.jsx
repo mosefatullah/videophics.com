@@ -16,7 +16,7 @@ import DragDrop from "editorjs-drag-drop";
 import IndentTune from "editorjs-indent-tune";
 import Undo from "editorjs-undo";
 import edjsParser from "editorjs-parser";
-import EditorJSStyle from "editorjs-style";
+import { StyleInlineTool } from "editorjs-style";
 
 import { createBlogPost } from "../../utils/admin";
 
@@ -140,7 +140,7 @@ function BlogAdd() {
           },
         },
         indentTune: IndentTune,
-        style: EditorJSStyle.StyleInlineTool,
+        style: StyleInlineTool,
       },
       tunes: ["indentTune"],
       onReady: () => {

@@ -498,6 +498,13 @@ const BugFixing = () => {
   );
 };
 
+const Layout = ({ children }) => {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [children]);
+  return children;
+};
+
 export default function ServicesView() {
   const service =
     useParams().service.charAt(0).toUpperCase() +
@@ -513,12 +520,36 @@ export default function ServicesView() {
   ];
 
   const componentsList = {
-    branding: <Branding />,
-    design: <Design />,
-    development: <Development />,
-    marketing: <Marketing />,
-    "content-writing": <ContentWriting />,
-    "bug-fixing": <BugFixing />,
+    branding: (
+      <Layout>
+        <Branding />
+      </Layout>
+    ),
+    design: (
+      <Layout>
+        <Design />
+      </Layout>
+    ),
+    development: (
+      <Layout>
+        <Development />
+      </Layout>
+    ),
+    marketing: (
+      <Layout>
+        <Marketing />
+      </Layout>
+    ),
+    "content-writing": (
+      <Layout>
+        <ContentWriting />
+      </Layout>
+    ),
+    "bug-fixing": (
+      <Layout>
+        <BugFixing />
+      </Layout>
+    ),
   };
 
   if (allowedPaths.includes(useParams().service)) {

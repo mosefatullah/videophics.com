@@ -350,45 +350,45 @@ export default function Navbar({ theme, setTheme }) {
         onMouseLeave={hideServiceMenu}
       >
         <div className="py-12 container mx-auto max-w-[1300px] flex justify-around items-center gap-6">
-          <ol className="flex flex-col items-start gap-4 text-3xl font-[500] text-slate-700 dark:text-white text-right">
+          <ol className="flex flex-col items-start gap-2 text-2xl font-[500] text-slate-700 dark:text-white text-right">
             <ServicesList />
           </ol>
           <div>
             <img
-              src="/logo.jpg"
+              src="/images/static/branding.png"
               alt="Branding"
               id="img1"
-              className="w-full max-h-[350px] object-cover rounded-md"
+              className="w-full max-h-[350px] object-cover rounded-md bg-slate-300 dark:bg-slate-500 p-10"
             />
             <img
-              src="/logo.jpg"
+              src="/images/static/design.png"
               alt="Design"
               id="img2"
-              className="w-full max-h-[350px] object-cover rounded-md hidden opacity-80"
+              className="w-full max-h-[350px] object-cover rounded-md hidden bg-slate-300 dark:bg-slate-500 p-10"
             />
             <img
-              src="/logo.jpg"
+              src="/images/static/development.png"
               alt="Development"
               id="img3"
-              className="w-full max-h-[350px] object-cover rounded-md hidden opacity-50"
+              className="w-full max-h-[350px] object-cover rounded-md hidden bg-slate-300 dark:bg-slate-500 p-10"
             />
             <img
-              src="/logo.jpg"
+              src="/images/static/marketing.png"
               alt="Marketing"
               id="img4"
-              className="w-full max-h-[350px] object-cover rounded-md hidden opacity-40"
+              className="w-full max-h-[350px] object-cover rounded-md hidden bg-slate-300 dark:bg-slate-500 p-10"
             />
             <img
-              src="/logo.jpg"
+              src="/images/static/content.png"
               alt="Content Writing"
               id="img5"
-              className="w-full max-h-[350px] object-cover rounded-md hidden opacity-30"
+              className="w-full max-h-[350px] object-cover rounded-md hidden bg-slate-300 dark:bg-slate-500 p-10"
             />
             <img
-              src="/logo.jpg"
+              src="/images/static/patch.png"
               alt="Bug Fixing"
               id="img6"
-              className="w-full max-h-[350px] object-cover rounded-md hidden opacity-20"
+              className="w-full max-h-[350px] object-cover rounded-md hidden bg-slate-300 dark:bg-slate-500 p-10"
             />
           </div>
         </div>

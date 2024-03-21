@@ -7,10 +7,12 @@ import Footer from "./pages/components/Footer";
 
 /* Pages */
 import Home from "./pages/Home";
+import ServicesView from "./pages/ServicesView";
 import AboutUs from "./pages/AboutUs";
 import Blog from "./pages/Blog";
 import BlogView from "./pages/BlogView";
 import ContactUs from "./pages/ContactUs";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   const [theme, setTheme] = React.useState(
@@ -64,7 +66,14 @@ export default function App() {
           }
         />
         <Route path="/services" element={<Navigate to="/" />} />
-        <Route path="/services/:service" element={<Navigate to="/" />} />
+        <Route
+          path="/services/:service"
+          element={
+            <Layout>
+              <ServicesView />
+            </Layout>
+          }
+        />
         <Route
           path="/about-us"
           element={
@@ -99,7 +108,7 @@ export default function App() {
           }
         />
         <Route path="/contact" element={<Navigate to="/contact-us" />} />
-        <Route path="*" element={<></>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

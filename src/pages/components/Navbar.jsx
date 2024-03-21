@@ -350,7 +350,7 @@ export default function Navbar({ theme, setTheme }) {
         onMouseLeave={hideServiceMenu}
       >
         <div className="py-12 container mx-auto max-w-[1300px] flex justify-around items-center gap-6">
-          <ol className="flex flex-col items-start gap-2 text-2xl font-[500] text-slate-700 dark:text-white text-right">
+          <ol className="flex flex-col items-start gap-2 text-2xl font-[500] text-slate-700 dark:text-white text-right" onClick={hideServiceMenu}>
             <ServicesList />
           </ol>
           <div>

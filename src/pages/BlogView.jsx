@@ -7,6 +7,7 @@ import fi from "../utils/firebase";
 
 /* Components */
 import TableOfContents from "./components/TableOfContents";
+import NotFound from "./NotFound";
 
 /*
    /id
@@ -52,11 +53,7 @@ export default function BlogView() {
           </h1>
         </div>
       ) : !blogData.title ? (
-        <div className="flex items-center justify-center h-[90vh]">
-          <h1 className="text-2xl md:text-4xl font-bold text-violet-900 dark:text-slate-50">
-            404 Not Found
-          </h1>
-        </div>
+        <NotFound />
       ) : (
         <div key={id}>
           <div className="container mx-auto border-b-[rgba(0,0,0,0.1)] dark:border-b-[rgba(255,255,255,0.2)] border-b-[1px] md:flex gap-4 py-10 items-center">

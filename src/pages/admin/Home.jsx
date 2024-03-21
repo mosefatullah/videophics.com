@@ -42,7 +42,7 @@ function Home() {
         <>
           <div className="container py-12 mx-auto">
             <h1 className="text-center text-slate-800 dark:text-white text-3xl font-[500] mt-10">
-              Welcome to Admin Panel
+              Welcome to Admin Panel <span className="text-slate-400 dark:text-slate-500">:-)</span>
             </h1>
             <div className="_admin-account w-full max-w-[450px] mx-auto mt-5 text-slate-800 dark:text-white text-center">
               <p className="text-slate-500 dark:text-slate-400">

@@ -53,7 +53,7 @@ function Blog() {
                 </NavLink>
               </div>
               {blogslist.map((blog) => (
-                <div key={blog.id}>
+                <div key={blog.id} className="flex flex-col justify-between">
                   <div className="flex gap-2">
                     <NavLink to={"/blog/" + blog.id}>
                       <div className="hover:opacity-50 transition duration-300">

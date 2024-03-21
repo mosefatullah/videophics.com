@@ -250,7 +250,7 @@ html.dark #_blog-body-editor .ce-inline-toolbar * {
   color: #333;
 }
 
-html.dark #_blog-body-editor [data-tool="style"]{
+html.dark #_blog-body-editor [data-tool="style"] {
   margin-left: 10px;
 }
 
@@ -260,6 +260,21 @@ html.dark #_blog-body-editor svg [d="M0 0h24v24H0z"] {
 
 html.dark #_blog-body-editor .ce-block.ce-block--selected .ce-block__content {
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+html.dark #_blog-body-editor .ce-toolbar__actions > *:hover * {
+  color: #333;
+}
+
+@media screen and (max-width: 650px) {
+  html.dark #_blog-body-editor .ce-toolbar__actions * {
+    color: #333;
+  }
+  html.dark #_blog-body-editor .ce-toolbar__actions > * {
+    width: 26px;
+    height: 26px;
+    padding: 2px;
+  }
 }
 
 html.dark #_blog-body-editor .ce-popover *,

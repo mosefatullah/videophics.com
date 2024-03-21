@@ -23,23 +23,28 @@ function BlogAdd() {
           level: 1,
         },
       },
+      {
+        type: "paragraph",
+        data: {
+          text: "This is a simple paragraph.",
+        },
+      },
     ],
   };
   const initEditor = () => {
     const editor = new EditorJS({
       holder: "_blog-body-editor",
       inlineToolbar: true,
-      onReady: () => {
-        ejInstance.current = editor;
-      },
-      autofocus: true,
       data: DEFAULT_INITIAL_DATA,
       tools: {
         header: {
-            class: Header,
-            inlineToolbar: true,
+          class: Header,
+          inlineToolbar: true,
         },
-        linkTool: LinkTool,
+        linkTool: {
+          class: LinkTool,
+          inlineToolbar: true,
+        },
         raw: RawTool,
         image: {
           class: ImageTool,
@@ -71,10 +76,22 @@ function BlogAdd() {
             },
           },
         },
-        checklist: Checklist,
-        list: List,
-        embed: Embed,
+        checklist: {
+          class: Checklist,
+          inlineToolbar: true,
+        },
+        list: {
+          class: List,
+          inlineToolbar: true,
+        },
+        embed: {
+          class: Embed,
+          inlineToolbar: true,
+        },
         style: EditorJSStyle.StyleInlineTool,
+      },
+      onReady: () => {
+        ejInstance.current = editor;
       },
     });
   };
@@ -90,9 +107,12 @@ function BlogAdd() {
   }, []);
   return (
     <>
-      <div className="container mx-auto py-20 text-slate-800 dark:text-white">
+      <div className="container mx-auto py-10 text-slate-800 dark:text-white">
+        <button className="mb-5" onClick={() => window.history.back()}>
+          &larr; Go back
+        </button>
         <h1 className="text-4xl font-bold text-center">Add Blog Post</h1>
-        <div className="mt-10 flex justify-center">
+        <div className="mt-12 flex justify-center">
           <form
             className="bg-white dark:bg-slate-800 shadow-md rounded-md p-8 w-full max-w-[700px]"
             onSubmit={(e) => {
@@ -100,17 +120,50 @@ function BlogAdd() {
               createBlogPost(e);
             }}
           >
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-8">
               <div className="flex flex-col gap-2">
-                <label htmlFor="title">Title</label>
                 <input
-                  type="text"
-                  name="title"
-                  id="title"
-                  placeholder="What is Branding? The Ultimate Guide"
-                  className="text-slate-800 p-2 border border-slate-200 dark:border-slate-700 rounded-md"
+                  type="file"
+                  name="thumbnail"
+                  id="thumbnail"
+                  className="hidden"
                   required
                 />
+                <div className="bg-slate-200 dark:bg-slate-700 p-4 rounded-md flex items-center justify-center gap-2">
+                  <label htmlFor="thumbnail" className="cursor-pointer">
+                    <span className="text-slate-800 dark:text-white font-[500] text-sm">
+                      Upload Thumbnail
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col gap-2 sm:w-[65%]">
+                  <label htmlFor="title">Title</label>
+                  <input
+                    type="text"
+                    name="title"
+                    id="title"
+                    placeholder="What is Branding? The Ultimate Guide"
+                    className="text-slate-800 p-2 border border-slate-200 dark:border-slate-700 rounded-md"
+                    required
+                  />
+                </div>
+                <div className="flex flex-col gap-2 sm:w-[35%]">
+                  <label htmlFor="category">Category</label>
+                  <select
+                    name="category"
+                    id="category"
+                    className="text-slate-800 p-3 py-[0.6rem] border border-slate-200 dark:border-slate-700 rounded-md"
+                  >
+                    <option value="Branding">Branding</option>
+                    <option value="Design">Design</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Social Media">Social Media</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Development">Development</option>
+                  </select>
+                </div>
               </div>
               <div className="flex flex-col gap-2">
                 <label htmlFor="content">Content</label>

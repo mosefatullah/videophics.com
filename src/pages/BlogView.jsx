@@ -23,6 +23,15 @@ export default function BlogView() {
   const [blogData, setBlogData] = React.useState(null);
   const id = useParams().id;
 
+  const isJson = (str) => {
+    try {
+      JSON.parse(str);
+    } catch (e) {
+      return false;
+    }
+    return true;
+  };
+
   React.useEffect(() => {
     const getBlog = async () => {
       const docRef = doc(getFirestore(fi), "Blogs", id);
@@ -69,7 +78,7 @@ export default function BlogView() {
                 {blogData.category}
               </p>
             </div>
-            <div className="md:min-w-[50%]">
+            <div className="md:min-w-[50%] ml-auto">
               <img
                 src={blogData.thumbnail}
                 alt={blogData.title}
@@ -79,7 +88,7 @@ export default function BlogView() {
           </div>
 
           <div className="container mx-auto dark:text-white py-20 pb-30">
-            <div className="flex flex-col lg:flex-row gap-14">
+            <div className="flex flex-grow flex-col lg:flex-row gap-14">
               <div className="text-gray-700 lg:h-full lg:sticky top-[7rem] dark:text-gray-400 flex lg:flex-col gap-4 pt-1">
                 <a href="https://www.facebook.com/videophics/">
                   <ion-icon
@@ -100,7 +109,7 @@ export default function BlogView() {
                   ></ion-icon>
                 </a>
               </div>
-              <div className="min-w-[300px] lg:h-full lg:sticky top-[7rem] lg:order-2">
+              <div className="min-w-[300px] lg:h-full lg:sticky top-[7rem] lg:order-2 lg:ml-auto">
                 <h2
                   className="text-2xl font-bold text-violet-900 dark:text-slate-50"
                   id="table-of-contents"
@@ -114,10 +123,12 @@ export default function BlogView() {
               <div
                 className="_blog-body text-lg text-slate-900 dark:text-white"
                 dangerouslySetInnerHTML={{
-                  __html: new edjsParser({
-                    youtube: `<iframe src="<%data.embed%>" width="<%data.width%>"><%data.caption%></iframe>`,
-                    list: `<ul><%data.items.map(item => { return '<li>' + item + '</li>' }).join('')}</ul>`,
-                  }).parse(JSON.parse(blogData.body)),
+                  __html:
+                    isJson(blogData.body) ?
+                    new edjsParser({
+                      youtube: `<iframe src="<%data.embed%>" width="<%data.width%>"><%data.caption%></iframe>`,
+                      list: `<ul><%data.items.map(item => { return '<li>' + item + '</li>' }).join('')}</ul>`,
+                    }).parse(JSON.parse(blogData.body)) : (""),
                 }}
               ></div>
             </div>

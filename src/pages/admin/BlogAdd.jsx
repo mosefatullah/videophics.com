@@ -1,14 +1,22 @@
 import React from "react";
 import EditorJS from "@editorjs/editorjs";
-import Header from "@editorjs/header";
 import LinkTool from "@editorjs/link";
 import RawTool from "@editorjs/raw";
 import ImageTool from "@editorjs/image";
 import Checklist from "@editorjs/checklist";
 import List from "@editorjs/list";
 import Embed from "@editorjs/embed";
+import Header from "editorjs-header-with-alignment";
+import Paragraph from "editorjs-paragraph-with-alignment";
+import Quote from "@editorjs/quote";
+import Table from "@editorjs/table";
+import editorjsCodeflask from "@calumk/editorjs-codeflask";
+import AnyButton from "editorjs-button";
+import Tooltip from "editorjs-tooltip";
+import DragDrop from "editorjs-drag-drop";
+import IndentTune from "editorjs-indent-tune";
+import Undo from "editorjs-undo";
 
-import { StyleInlineTool } from "editorjs-style";
 import { createBlogPost } from "../../utils/admin";
 
 function BlogAdd() {
@@ -37,6 +45,10 @@ function BlogAdd() {
       inlineToolbar: true,
       data: DEFAULT_INITIAL_DATA,
       tools: {
+        paragraph: {
+          class: Paragraph,
+          inlineToolbar: true,
+        },
         header: {
           class: Header,
           inlineToolbar: true,
@@ -46,6 +58,7 @@ function BlogAdd() {
           inlineToolbar: true,
         },
         raw: RawTool,
+        code: editorjsCodeflask,
         image: {
           class: ImageTool,
           inlineToolbar: true,
@@ -76,6 +89,15 @@ function BlogAdd() {
             },
           },
         },
+        quote: {
+          class: Quote,
+          inlineToolbar: true,
+          shortcut: "CMD+SHIFT+O",
+          config: {
+            quotePlaceholder: "Enter a quote",
+            captionPlaceholder: "Quote's author",
+          },
+        },
         checklist: {
           class: Checklist,
           inlineToolbar: true,
@@ -84,14 +106,47 @@ function BlogAdd() {
           class: List,
           inlineToolbar: true,
         },
+        table: {
+          class: Table,
+          inlineToolbar: true,
+          config: {
+            rows: 2,
+            cols: 3,
+          },
+        },
         embed: {
           class: Embed,
           inlineToolbar: true,
         },
+        AnyButton: {
+          class: AnyButton,
+          inlineToolbar: false,
+          config: {
+            css: {
+              btnColor: "btn--gray",
+            },
+          },
+        },
+        tooltip: {
+          class: Tooltip,
+          config: {
+            location: "left",
+            underline: true,
+            placeholder: "Enter a tooltip",
+            highlightColor: "#FFEFD5",
+            backgroundColor: "#154360",
+            textColor: "#FDFEFE",
+            holder: "editorId",
+          },
+        },
+        indentTune: IndentTune,
         style: EditorJSStyle.StyleInlineTool,
       },
+      tunes: ["indentTune"],
       onReady: () => {
         ejInstance.current = editor;
+        new Undo({ editor });
+        new DragDrop(editor);
       },
     });
   };

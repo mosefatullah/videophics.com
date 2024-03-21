@@ -17,6 +17,7 @@ import NotFound from "./pages/NotFound";
 import Admin_Home from "./pages/admin/Home.jsx";
 import Admin_Blog from "./pages/admin/Blog.jsx";
 import Admin_BlogEdit from "./pages/admin/BlogEdit.jsx";
+import Admin_BlogAdd from "./pages/admin/BlogAdd.jsx";
 
 export default function App() {
   const [theme, setTheme] = React.useState(
@@ -137,6 +138,14 @@ export default function App() {
             element={
               <Layout>
                 <Admin_BlogEdit />
+              </Layout>
+            }
+          />
+          <Route
+            path="/admin/myblog/add"
+            element={
+              <Layout>
+                <Admin_BlogAdd />
               </Layout>
             }
           />

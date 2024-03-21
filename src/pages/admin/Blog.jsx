@@ -29,19 +29,29 @@ function Blog() {
     <>
       <div className="container mx-auto py-10 dark:text-white">
         <button className="mb-5" onClick={() => window.history.back()}>
-            &larr; Go back
+          &larr; Go back
         </button>
         <h1 className="text-4xl font-[500] text-center text-slate-800 dark:text-white">
           <span className="text-slate-500 dark:text-gray-500">Admin /</span>{" "}
           Blog
         </h1>
         <div className="pt-8 mt-7">
-          <div className="bg-white dark:bg-slate-800 shadow-md rounded-md p-8">
+          <div className="mt-2 bg-white dark:bg-slate-800 shadow-md rounded-md p-8">
             <p className="text-slate-700 dark:text-white text-lg font-[600]">
               My Blog
             </p>
             <div className="border-t border-slate-200 dark:border-slate-700 mt-4"></div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-7 min-h-[300px]">
+              <div className="rounded-md p-4 border border-slate-200 dark:border-slate-700">
+                <p className="mb-3 text-slate-700 dark:text-gray-400 text-[13px] uppercase font-[500]">
+                  Actions
+                </p>
+                <NavLink to="/admin/myblog/add">
+                  <button className="bg-violet-600 hover:bg-violet-700 text-white font-[500] text-sm py-2 px-4 rounded">
+                    Add Post
+                  </button>
+                </NavLink>
+              </div>
               {blogslist.map((blog) => (
                 <div key={blog.id}>
                   <div className="flex gap-2">
@@ -86,7 +96,7 @@ function Blog() {
                     <img
                       src={blog.thumbnail}
                       alt={blog.title}
-                      className="w-full h-[200px] object-cover mt-5 rounded-md hover:opacity-50 transition duration-300"
+                      className="w-full h-[200px] object-cover mt-5 rounded-md hover:opacity-50 transition duration-300 border"
                     />
                   </a>
                 </div>

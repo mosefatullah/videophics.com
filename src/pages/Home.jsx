@@ -11,6 +11,11 @@ export default function Home() {
     <>
       <Helmet>
         <title>Videophics | Branding Agency</title>
+        <script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          type="text/javascript"
+          async
+        ></script>
       </Helmet>
       <section className="_hero-section relative py-10 min-h-[calc(100vh-80px)] flex justify-center dark:bg-slate-900">
         <div className="_sketch h-[200px] w-[100px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 left-0 dark:opacity-50" />
@@ -84,18 +89,18 @@ export default function Home() {
                 </p>
               </Animated>
               <Animated varient="fade-up" speed="slow">
-              <button
-                className="bg-white text-sm md:text-[16px] px-8 py-3 rounded-md to-white from-gray-200 bg-gradient-to-l hover:from-gray-100 hover:to-gray-200 active:scale-95 text-slate-900 dark:from-slate-800 dark:to-slate-700 dark:text-white"
-                title="Click here to book an appointment"
-                onClick={() => {
-                  Calendly.initPopupWidget({
-                    url: "https://calendly.com/videophics?hide_gdpr_banner=1",
-                  });
-                  return false;
-                }}
-              >
-                Book Now &rarr;
-              </button>
+                <button
+                  className="bg-white text-sm md:text-[16px] px-8 py-3 rounded-md to-white from-gray-200 bg-gradient-to-l hover:from-gray-100 hover:to-gray-200 active:scale-95 text-slate-900 dark:from-slate-800 dark:to-slate-700 dark:text-white"
+                  title="Click here to book an appointment"
+                  onClick={() => {
+                    Calendly.initPopupWidget({
+                      url: "https://calendly.com/videophics?hide_gdpr_banner=1",
+                    });
+                    return false;
+                  }}
+                >
+                  Book Now &rarr;
+                </button>
               </Animated>
             </div>
           </div>
@@ -140,14 +145,35 @@ export default function Home() {
                     <div className="p-6">
                       <img
                         src="/images/static/design.png"
-                        alt="UI/UX"
+                        alt="Design"
                         className="w-15 h-15 mb-5"
                       />
                       <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
-                        <span className="text-violet-700">2.</span> UI/UX
+                        <span className="text-violet-700">2.</span> Design
                       </h3>
                       <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
                         We design user interfaces, user experiences, and more.
+                      </p>
+                    </div>
+                  </div>
+                </Animated>
+              </Animated>
+            </div>
+            <div>
+              <Animated varient="motion-right" speed="fast">
+                <Animated varient="fade-in" speed="fast">
+                  <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
+                    <div className="p-6">
+                      <img
+                        src="/images/static/development.png"
+                        alt="Design"
+                        className="w-15 h-15 mb-5"
+                      />
+                      <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
+                        <span className="text-violet-700">3.</span> Development
+                      </h3>
+                      <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
+                        We develop websites, web applications, and more.
                       </p>
                     </div>
                   </div>
@@ -165,7 +191,7 @@ export default function Home() {
                         className="w-15 h-15 mb-5"
                       />
                       <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
-                        <span className="text-violet-700">3.</span> Marketing
+                        <span className="text-violet-700">4.</span> Marketing
                       </h3>
                       <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
                         We market your brand, products, and services.
@@ -176,7 +202,7 @@ export default function Home() {
               </Animated>
             </div>
             <div>
-              <Animated varient="motion-right" speed="fast">
+              <Animated varient="motion-left" speed="fast">
                 <Animated varient="fade-in" speed="fast">
                   <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
                     <div className="p-6">
@@ -186,7 +212,7 @@ export default function Home() {
                         className="w-15 h-15 mb-5"
                       />
                       <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
-                        <span className="text-violet-700">4.</span> Content
+                        <span className="text-violet-700">5.</span> Content
                         Writing
                       </h3>
                       <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
@@ -208,7 +234,7 @@ export default function Home() {
                         className="w-15 h-15 mb-5"
                       />
                       <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
-                        <span className="text-violet-700">5.</span> Bug Fixes
+                        <span className="text-violet-700">6.</span> Bug Fixes
                       </h3>
                       <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
                         We fix technical bugs and issues in your projects.

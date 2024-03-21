@@ -16,6 +16,7 @@ import DragDrop from "editorjs-drag-drop";
 import IndentTune from "editorjs-indent-tune";
 import Undo from "editorjs-undo";
 import edjsParser from "editorjs-parser";
+import EditorJSStyle from "editorjs-style";
 
 import { createBlogPost } from "../../utils/admin";
 

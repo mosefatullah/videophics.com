@@ -1,5 +1,5 @@
 {
-  "name": "project-videophics",
+  "name": "videophics",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -31,6 +31,7 @@
     "editorjs-indent-tune": "^1.2.0",
     "editorjs-paragraph-with-alignment": "^3.0.0",
     "editorjs-parser": "^1.5.3",
+    "editorjs-style": "^3.0.3",
     "editorjs-tooltip": "^1.2.0",
     "editorjs-undo": "^1.0.1",
     "react": "^18.2.0",

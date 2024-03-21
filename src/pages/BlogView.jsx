@@ -1,14 +1,3 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import edjsParser from "editorjs-parser";
-import { getFirestore, doc, getDoc } from "@firebase/firestore";
-import { Helmet } from "react-helmet";
-import fi from "../utils/firebase";
-
-/* Components */
-import TableOfContents from "./components/TableOfContents";
-import NotFound from "./NotFound";
-
 /*
    /id
        title
@@ -18,6 +7,19 @@ import NotFound from "./NotFound";
        category
        thumbnail
 */
+
+import React from "react";
+import { useParams } from "react-router-dom";
+import edjsParser from "editorjs-parser";
+import { getFirestore, doc, getDoc } from "@firebase/firestore";
+import { Helmet } from "react-helmet";
+
+/* Utils */
+import fi from "../utils/firebase";
+
+/* Components */
+import TableOfContents from "./components/TableOfContents";
+import NotFound from "./NotFound";
 
 export default function BlogView() {
   const [blogData, setBlogData] = React.useState(null);
@@ -53,6 +55,14 @@ export default function BlogView() {
             ? blogData.title + " - Videophics"
             : "Blog - Videophics"}
         </title>
+        <script
+          type="module"
+          src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+          nomodule
+          src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+        ></script>
       </Helmet>
 
       {blogData == null ? (
@@ -90,21 +100,30 @@ export default function BlogView() {
           <div className="container mx-auto dark:text-white py-20 pb-30">
             <div className="flex flex-grow flex-col lg:flex-row gap-14">
               <div className="text-gray-700 lg:h-full lg:sticky top-[7rem] dark:text-gray-400 flex lg:flex-col gap-4 pt-1">
-                <a href="https://www.facebook.com/videophics/">
+                <a
+                  target="_blank"
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}&title=${blogData.title}`}
+                >
                   <ion-icon
                     name="logo-facebook"
                     style={{ fontSize: "17px" }}
                   ></ion-icon>
                 </a>
-                <a href="#">
+                <a
+                  target="_blank"
+                  href={`https://twitter.com/share?url=${window.location.href}&title=${blogData.title}&summary=`}
+                >
                   <ion-icon
                     name="logo-twitter"
                     style={{ fontSize: "17px" }}
                   ></ion-icon>
                 </a>
-                <a href="#">
+                <a
+                  target="_blank"
+                  href={`https://www.linkedin.com/shareArticle?mini=true&url=${window.location.href}&title=${blogData.title}&summary=`}
+                >
                   <ion-icon
-                    name="logo-instagram"
+                    name="logo-linkedin"
                     style={{ fontSize: "17px" }}
                   ></ion-icon>
                 </a>
@@ -123,12 +142,12 @@ export default function BlogView() {
               <div
                 className="_blog-body text-lg text-slate-900 dark:text-white"
                 dangerouslySetInnerHTML={{
-                  __html:
-                    isJson(blogData.body) ?
-                    new edjsParser({
-                      youtube: `<iframe src="<%data.embed%>" width="<%data.width%>"><%data.caption%></iframe>`,
-                      list: `<ul><%data.items.map(item => { return '<li>' + item + '</li>' }).join('')}</ul>`,
-                    }).parse(JSON.parse(blogData.body)) : (""),
+                  __html: isJson(blogData.body)
+                    ? new edjsParser({
+                        youtube: `<iframe src="<%data.embed%>" width="<%data.width%>"><%data.caption%></iframe>`,
+                        list: `<ul><%data.items.map(item => { return '<li>' + item + '</li>' }).join('')}</ul>`,
+                      }).parse(JSON.parse(blogData.body))
+                    : "",
                 }}
               ></div>
             </div>

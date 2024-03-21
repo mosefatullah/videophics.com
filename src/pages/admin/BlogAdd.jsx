@@ -10,12 +10,12 @@ import Header from "editorjs-header-with-alignment";
 import Paragraph from "editorjs-paragraph-with-alignment";
 import Quote from "@editorjs/quote";
 import Table from "@editorjs/table";
-import editorjsCodeflask from "@calumk/editorjs-codeflask";
 import AnyButton from "editorjs-button";
 import Tooltip from "editorjs-tooltip";
 import DragDrop from "editorjs-drag-drop";
 import IndentTune from "editorjs-indent-tune";
 import Undo from "editorjs-undo";
+import edjsParser from "editorjs-parser";
 
 import { createBlogPost } from "../../utils/admin";
 
@@ -58,7 +58,6 @@ function BlogAdd() {
           inlineToolbar: true,
         },
         raw: RawTool,
-        code: editorjsCodeflask,
         image: {
           class: ImageTool,
           inlineToolbar: true,
@@ -149,6 +148,20 @@ function BlogAdd() {
         new DragDrop(editor);
       },
     });
+
+    document.getElementById("addPost").addEventListener("click", () => {
+      editor
+        .save()
+        .then((outputData) => {
+          document.getElementById("output").innerHTML = new edjsParser({
+            youtube: `<iframe src="<%data.embed%>" width="<%data.width%>"><%data.caption%></iframe>`,
+            list: `<ul><%data.items.map(item => { return '<li>' + item + '</li>' }).join('')}</ul>`,
+          }).parse(outputData);
+        })
+        .catch((error) => {
+          console.log("Saving failed: ", error);
+        });
+    });
   };
   React.useEffect(() => {
     if (ejInstance.current === null) {
@@ -182,7 +195,6 @@ function BlogAdd() {
                   name="thumbnail"
                   id="thumbnail"
                   className="hidden"
-                  required
                 />
                 <div className="bg-slate-200 dark:bg-slate-700 p-4 rounded-md flex items-center justify-center gap-2">
                   <label htmlFor="thumbnail" className="cursor-pointer">
@@ -201,7 +213,6 @@ function BlogAdd() {
                     id="title"
                     placeholder="What is Branding? The Ultimate Guide"
                     className="text-slate-800 p-2 border border-slate-200 dark:border-slate-700 rounded-md"
-                    required
                   />
                 </div>
                 <div className="flex flex-col gap-2 sm:w-[35%]">
@@ -231,11 +242,13 @@ function BlogAdd() {
             <button
               type="submit"
               className="bg-violet-600 hover:bg-violet-700 text-white font-[500] text-sm py-2 px-4 mt-4 rounded"
+              id="addPost"
             >
               Add Post
             </button>
           </form>
         </div>
+        <div id="output" className="w-full"></div>
       </div>
     </>
   );

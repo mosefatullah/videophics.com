@@ -163,17 +163,17 @@ html.dark ._navbar ._menu li a:hover {
   transition: border 0.4s ease-in-out;
 }
 
-._services-menu li a._hover {
+._services-menu li p._hover {
   position: absolute;
   top: -55px;
   left: 0;
 }
 
-._services-menu li.active a._hover {
+._services-menu li.active p._hover {
   top: 0;
   transition: top 0.4s ease-in-out;
 }
-._services-menu li.active a:not(._hover) {
+._services-menu li.active p:not(._hover) {
   opacity: 0;
   transition: opacity 0.4s ease-in-out;
 }

@@ -4,76 +4,64 @@ import { NavLink, Link } from "react-router-dom";
 export default function Navbar({ theme, setTheme }) {
   const ServicesList = ({ mobile }) => (
     <>
-      <li
-        className={
-          !mobile
-            ? "border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
-            : "border-b-[3px] border-transparent dark:hover:border-violet-500"
-        }
-        index="1"
-      >
-        <Link to="/services/branding" className={mobile && "hidden"}>
-          Branding
-        </Link>
-        <Link to="/services/branding" className="_hover">
-          Branding
-        </Link>
-      </li>
-      <li
-        className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
-        index="2"
-      >
-        <Link to="/services/design" className={mobile && "hidden"}>
-          Design
-        </Link>
-        <Link to="/services/design" className="_hover">
-          Design
-        </Link>
-      </li>
-      <li
-        className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
-        index="3"
-      >
-        <Link to="/services/development" className={mobile && "hidden"}>
-          Development
-        </Link>
-        <Link to="/services/development" className="_hover">
-          Development
-        </Link>
-      </li>
-      <li
-        className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
-        index="4"
-      >
-        <Link to="/services/marketing" className={mobile && "hidden"}>
-          Marketing
-        </Link>
-        <Link to="/services/marketing" className="_hover">
-          Marketing
-        </Link>
-      </li>
-      <li
-        className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
-        index="5"
-      >
-        <Link to="/services/content-writing" className={mobile && "hidden"}>
-          Content Writing
-        </Link>
-        <Link to="/services/content-writing" className="_hover">
-          Content Writing
-        </Link>
-      </li>
-      <li
-        className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
-        index="6"
-      >
-        <Link to="/services/bug-fixing" className={mobile && "hidden"}>
-          Bug Fixing
-        </Link>
-        <Link to="/services/bug-fixing" className="_hover">
-          Bug Fixing
-        </Link>
-      </li>
+      <Link to="/services/branding">
+        <li
+          className={
+            !mobile
+              ? "border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
+              : "border-b-[3px] border-transparent dark:hover:border-violet-500"
+          }
+          index="1"
+        >
+          <p className={mobile && "hidden"}>Branding</p>
+          <p className="_hover">Branding</p>
+        </li>
+      </Link>
+      <Link to="/services/design">
+        <li
+          className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
+          index="2"
+        >
+          <p className={mobile && "hidden"}>Design</p>
+          <p className="_hover">Design</p>
+        </li>
+      </Link>
+      <Link to="/services/development">
+        <li
+          className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
+          index="3"
+        >
+          <p className={mobile && "hidden"}>Development</p>
+          <p className="_hover">Development</p>
+        </li>
+      </Link>
+      <Link to="/services/marketing">
+        <li
+          className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
+          index="4"
+        >
+          <p className={mobile && "hidden"}>Marketing</p>
+          <p className="_hover">Marketing</p>
+        </li>
+      </Link>
+      <Link to="/services/content-writing">
+        <li
+          className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
+          index="5"
+        >
+          <p className={mobile && "hidden"}>Content Writing</p>
+          <p className="_hover">Content Writing</p>
+        </li>
+      </Link>
+      <Link to="/services/bug-fixing">
+        <li
+          className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
+          index="6"
+        >
+          <p className={mobile && "hidden"}>Bug Fixing</p>
+          <p className="_hover">Bug Fixing</p>
+        </li>
+      </Link>
     </>
   );
 

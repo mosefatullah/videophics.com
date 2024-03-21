@@ -35,7 +35,7 @@ const Branding = () => {
         <section className="_list-section min-h-screen py-12 pb-20" id="list">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-12">
-              Our Branding Services
+              Branding Services
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
@@ -117,7 +117,7 @@ const Design = () => {
         <section className="_list-section min-h-screen py-12 pb-20" id="list">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-12">
-              Our Design Services
+              Design Services
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
@@ -280,7 +280,7 @@ const Marketing = () => {
         <section className="_list-section min-h-screen py-12 pb-20" id="list">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-12">
-              Our Marketing Services
+              Marketing Services
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
@@ -334,6 +334,170 @@ const Marketing = () => {
   );
 };
 
+const ContentWriting = () => {
+  return (
+    <>
+      <div className="container mx-auto text-slate-800 dark:text-white">
+        <section className="_hero-section min-h-[90vh] grid lg:grid-cols-2 gap-9 items-center py-12">
+          <div>
+            <h1 className="text-5xl font-bold">Content Writing</h1>
+            <p className="text-xl text-slate-700 dark:text-slate-300 mt-8 leading-8">
+              Create engaging and informative content with our content writing
+              solutions. We help you develop high-quality content that drives
+              traffic and conversions.
+            </p>
+            <a
+              href="#list"
+              className="inline-block bg-orange-600 text-white px-6 py-3 mt-8 rounded-full"
+            >
+              Write your content!
+            </a>
+          </div>
+
+          <img
+            src="/images/static/zIwAchjDirM-unsplash.jpg"
+            alt="Content Writing"
+            className="w-full object-cover rounded-lg"
+            style={{ aspectRatio: "16/9" }}
+          />
+        </section>
+        <section className="_list-section min-h-screen py-12 pb-20" id="list">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl font-bold text-center mb-12">
+              Content Writing Services
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <img
+                  src="/images/static/FHnnjk1Yj7Y-unsplash.jpg"
+                  alt="Blog Writing"
+                  className="w-full object-cover rounded-md mx-auto"
+                  style={{ aspectRatio: "3/2" }}
+                />
+                <h3 className="text-2xl font-semibold mt-6">Blog Writing</h3>
+                <p className="mt-4 text-slate-500 dark:text-slate-400">
+                  Create engaging blog posts that attract and inform your
+                  audience.
+                </p>
+              </div>
+              <div className="text-center">
+                <img
+                  src="/images/static/EKy2OTRPXdw-unsplash.jpg"
+                  alt="Copywriting"
+                  className="w-full object-cover rounded-md mx-auto"
+                  style={{ aspectRatio: "3/2" }}
+                />
+                <h3 className="text-2xl font-semibold mt-6">Copywriting</h3>
+                <p className="mt-4 text-slate-500 dark:text-slate-400">
+                  Develop compelling copy that drives conversions and sales.
+                </p>
+              </div>
+              <div className="text-center">
+                <img
+                  src="/images/static/XJXWbfSo2f0-unsplash.jpg"
+                  alt="SEO Writing"
+                  className="w-full object-cover rounded-md mx-auto"
+                  style={{ aspectRatio: "3/2" }}
+                />
+                <h3 className="text-2xl font-semibold mt-6">SEO Writing</h3>
+                <p className="mt-4 text-slate-500 dark:text-slate-400">
+                  Write SEO-friendly content that ranks well in search engines.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
+  );
+};
+
+const BugFixing = () => {
+  return (
+    <>
+      <div className="container mx-auto text-slate-800 dark:text-white">
+        <section className="_hero-section min-h-[90vh] grid lg:grid-cols-2 gap-9 items-center py-12">
+          <div>
+            <h1 className="text-5xl font-bold">Bug Fixing</h1>
+            <p className="text-xl text-slate-700 dark:text-slate-300 mt-8 leading-8">
+              Fix bugs and issues in your website or web application with our
+              bug fixing solutions. We help you identify and resolve technical
+              problems to ensure a smooth user experience.
+            </p>
+            <a
+              href="#list"
+              className="inline-block bg-orange-600 text-white px-6 py-3 mt-8 rounded-full"
+            >
+              Fix your bugs!
+            </a>
+          </div>
+
+          <img
+            src="/images/static/wvJuYrM5iuw-unsplash.jpg"
+            alt="Bug Fixing"
+            className="w-full object-cover rounded-lg"
+            style={{ aspectRatio: "16/9" }}
+          />
+        </section>
+        <section className="_list-section min-h-screen py-12 pb-20" id="list">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl font-bold text-center mb-12">
+              Bug Fixing Services
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <img
+                  src="/images/static/5fNmWej4tAA-unsplash.jpg"
+                  alt="Website Debugging"
+                  className="w-full object-cover rounded-md mx-auto"
+                  style={{ aspectRatio: "3/2" }}
+                />
+                <h3 className="text-2xl font-semibold mt-6">
+                  Website Debugging
+                </h3>
+                <p className="mt-4 text-slate-500 dark:text-slate-400">
+                  Identify and fix technical issues in your website to ensure
+                  optimal performance.
+                </p>
+              </div>
+              <div className="text-center">
+                <img
+                  src="/images/static/XJXWbfSo2f0-unsplash.jpg"
+                  alt="Code Refactoring"
+                  className="w-full object-cover rounded-md mx-auto"
+                  style={{ aspectRatio: "3/2" }}
+                />
+                <h3 className="text-2xl font-semibold mt-6">
+                  Code Refactoring
+                </h3>
+                <p className="mt-4 text-slate-500 dark:text-slate-400">
+                  Improve the structure and readability of your code for better
+                  performance.
+                </p>
+              </div>
+              <div className="text-center">
+                <img
+                  src="/images/static/GNyjCePVRs8-unsplash.jpg"
+                  alt="Database Optimization"
+                  className="w-full object-cover rounded-md mx-auto"
+                  style={{ aspectRatio: "3/2" }}
+                />
+                <h3 className="text-2xl font-semibold mt-6">
+                  Database Optimization
+                </h3>
+                <p className="mt-4 text-slate-500 dark:text-slate-400">
+                  Optimize your database to improve data retrieval and storage
+                  efficiency.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
+  );
+};
+
 export default function ServicesView() {
   const service =
     useParams().service.charAt(0).toUpperCase() +
@@ -353,6 +517,8 @@ export default function ServicesView() {
     design: <Design />,
     development: <Development />,
     marketing: <Marketing />,
+    "content-writing": <ContentWriting />,
+    "bug-fixing": <BugFixing />,
   };
 
   if (allowedPaths.includes(useParams().service)) {

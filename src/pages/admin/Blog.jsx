@@ -20,7 +20,7 @@ function Blog() {
         ...doc.data(),
         id: doc.id,
       }));
-      setblogs([...data, ...data, ...data]);
+      setblogs(data);
     });
 
     return unsubscribe;
@@ -28,6 +28,9 @@ function Blog() {
   return (
     <>
       <div className="container mx-auto py-10 dark:text-white">
+        <button className="mb-5" onClick={() => window.history.back()}>
+            &larr; Go back
+        </button>
         <h1 className="text-4xl font-[500] text-center text-slate-800 dark:text-white">
           <span className="text-slate-500 dark:text-gray-500">Admin /</span>{" "}
           Blog

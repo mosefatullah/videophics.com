@@ -9,8 +9,8 @@ function Home() {
 
   const loginProcess = () => {
     login(
-      () => {
-        setUser(result.user);
+      (u) => {
+        setUser(u.user);
       },
       (e) => {
         alert("You are not authorized to access this page!");

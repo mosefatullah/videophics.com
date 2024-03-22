@@ -41,6 +41,20 @@ function BlogAdd() {
     ],
   };
   const initEditor = () => {
+    const printOutput = () => {
+      editor
+        .save()
+        .then((outputData) => {
+          document.getElementById("output").innerHTML = new edjsParser({
+            youtube: `<iframe src="<%data.embed%>" width="<%data.width%>"><%data.caption%></iframe>`,
+            list: `<ul><%data.items.map(item => { return '<li>' + item + '</li>' }).join('')}</ul>`,
+          }).parse(outputData);
+        })
+        .catch((error) => {
+          console.log("Saving failed: ", error);
+        });
+    };
+
     const editor = new EditorJS({
       holder: "_blog-body-editor",
       inlineToolbar: true,
@@ -147,22 +161,14 @@ function BlogAdd() {
         ejInstance.current = editor;
         new Undo({ editor });
         new DragDrop(editor);
+        printOutput();
       },
     });
-
-    document.getElementById("addPost").addEventListener("click", () => {
-      editor
-        .save()
-        .then((outputData) => {
-          document.getElementById("output").innerHTML = new edjsParser({
-            youtube: `<iframe src="<%data.embed%>" width="<%data.width%>"><%data.caption%></iframe>`,
-            list: `<ul><%data.items.map(item => { return '<li>' + item + '</li>' }).join('')}</ul>`,
-          }).parse(outputData);
-        })
-        .catch((error) => {
-          console.log("Saving failed: ", error);
-        });
-    });
+    document
+      .querySelector("#_blog-body-editor")
+      .addEventListener("keyup", () => {
+        printOutput();
+      });
   };
   React.useEffect(() => {
     if (ejInstance.current === null) {
@@ -181,12 +187,11 @@ function BlogAdd() {
           &larr; Go back
         </button>
         <h1 className="text-4xl font-bold text-center">Add Blog Post</h1>
-        <div className="mt-12 flex justify-center">
+        <div className="mt-12 lg:flex justify-center gap-9">
           <form
             className="bg-white dark:bg-slate-800 shadow-md rounded-md p-8 w-full max-w-[700px]"
             onSubmit={(e) => {
               e.preventDefault();
-              createBlogPost(e);
             }}
           >
             <div className="flex flex-col gap-8">
@@ -196,14 +201,30 @@ function BlogAdd() {
                   name="thumbnail"
                   id="thumbnail"
                   className="hidden"
+                  onChange={(e) => {
+                    const file = e.target.files[0];
+                    if (file.size > 32 * 1024 * 1024) {
+                      alert("File size is too big! Maximum file size is 32MB.");
+                      return false;
+                    }
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                      const img = document.createElement("img");
+                      img.src = e.target.result;
+                      img.className = "w-full object-cover rounded-md";
+                      img.style.aspectRatio = "16/9";
+                      document.getElementById("top").innerHTML = img.outerHTML;
+                    };
+                    reader.readAsDataURL(file);
+                  }}
                 />
-                <div className="bg-slate-200 dark:bg-slate-700 p-4 rounded-md flex items-center justify-center gap-2">
-                  <label htmlFor="thumbnail" className="cursor-pointer">
+                <label htmlFor="thumbnail" className="cursor-pointer">
+                  <div className="bg-slate-200 dark:bg-slate-700 p-4 rounded-md flex items-center justify-center gap-2">
                     <span className="text-slate-800 dark:text-white font-[500] text-sm">
                       Upload Thumbnail
                     </span>
-                  </label>
-                </div>
+                  </div>
+                </label>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <div className="flex flex-col gap-2 sm:w-[65%]">
@@ -213,7 +234,7 @@ function BlogAdd() {
                     name="title"
                     id="title"
                     placeholder="What is Branding? The Ultimate Guide"
-                    className="text-slate-800 p-2 border border-slate-200 dark:border-slate-700 rounded-md"
+                    className="text-slate-800 p-2 border border-slate-200 dark:border-slate-700 rounded-md dark:bg-slate-700 dark:text-white dark:border-violet-500 dark:border-2"
                   />
                 </div>
                 <div className="flex flex-col gap-2 sm:w-[35%]">
@@ -221,7 +242,7 @@ function BlogAdd() {
                   <select
                     name="category"
                     id="category"
-                    className="text-slate-800 p-3 py-[0.6rem] border border-slate-200 dark:border-slate-700 rounded-md"
+                    className="text-slate-800 p-3 py-[0.6rem] border border-slate-200 dark:border-slate-700 rounded-md dark:bg-slate-700 dark:text-white dark:border-violet-500 dark:border-2"
                   >
                     <option value="Branding">Branding</option>
                     <option value="Design">Design</option>
@@ -236,20 +257,26 @@ function BlogAdd() {
                 <label htmlFor="content">Content</label>
                 <div
                   id="_blog-body-editor"
-                  className="border border-slate-200 dark:border-slate-700 rounded-md p-4"
+                  className="border border-slate-200 dark:border-slate-700 rounded-md p-4 dark:border-violet-500 dark:border-2 min-h-[300px]"
                 ></div>
               </div>
             </div>
             <button
               type="submit"
-              className="bg-violet-600 hover:bg-violet-700 text-white font-[500] text-sm py-2 px-4 mt-4 rounded"
+              className="bg-violet-600 hover:bg-violet-700 text-white font-[500] text-sm py-3 px-6 mt-6 rounded"
               id="addPost"
             >
               Add Post
             </button>
           </form>
+          <div className="w-full">
+            <div id="top"></div>
+            <div
+              id="output"
+              className="_blog-body border border-slate-200 dark:border-slate-700 rounded-md p-4 dark:border-violet-500 dark:border-2 mt-5"
+            ></div>
+          </div>
         </div>
-        <div id="output" className="w-full"></div>
       </div>
     </>
   );

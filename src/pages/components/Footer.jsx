@@ -32,7 +32,7 @@ function Footer() {
             </svg>
           </button>
         </div>
-        <div className="grid grid-cols-3 gap-20 flex-row sm:justify-between">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-20 flex-row sm:justify-between">
           <div>
             <h3 className="text-md uppercase">Quick Links</h3>
             <div className="text-white dark:text-gray-300 flex flex-col gap-2 mt-5 text-[15px]">

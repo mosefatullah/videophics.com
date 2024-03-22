@@ -45,7 +45,7 @@ const login = (success, error) => {
         if (snapshot.exists()) {
           if (snapshot.val().includes(result.user.email)) {
             if (typeof success === "function") {
-              success();
+              success(result);
             }
           } else {
             if (typeof error === "function") {

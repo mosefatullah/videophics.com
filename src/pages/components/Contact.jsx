@@ -116,7 +116,8 @@ export default function Contact() {
                 required
               >
                 <option value="Branding">Branding</option>
-                <option value="UI/UX">UI/UX</option>
+                <option value="Development">Development</option>
+                <option value="Brand Advisory">Brand Advisory</option>
                 <option value="Marketing">Marketing</option>
                 <option value="Content Writing">Content Writing</option>
                 <option value="Bug Fixes">Bug Fixes</option>

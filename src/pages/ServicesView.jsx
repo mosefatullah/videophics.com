@@ -172,7 +172,7 @@ const BrandAdvisory = () => {
 
           <img
             src="/images/static/designOne.webp"
-            alt="Design"
+            alt="Brand Advisory"
             className="w-full object-cover rounded-lg"
             style={{ aspectRatio: "16/9" }}
           />

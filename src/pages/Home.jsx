@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import { NavLink } from "react-router-dom";
 
 /* Components */
 import Collapsible from "./components/Collapsible";
@@ -40,12 +41,14 @@ export default function Home() {
               emotion-driven connections, we craft experiences that resonate and
               endure. Let's tell your story in a way that truly connects.
             </p>
-            <button
-              className="px-7 text-sm md:text-[16px] md:px-8 py-3 text-white rounded-md from-violet-400 to-violet-600 bg-gradient-to-l hover:from-violet-500 hover:to-violet-700 active:scale-95"
-              title="Clixk here to learn more"
-            >
-              Learn More &rarr;
-            </button>
+            <NavLink to="/about-us">
+              <button
+                className="px-7 text-sm md:text-[16px] md:px-8 py-3 text-white rounded-md from-violet-400 to-violet-600 bg-gradient-to-l hover:from-violet-500 hover:to-violet-700 active:scale-95"
+                title="Clixk here to learn more"
+              >
+                Learn More &rarr;
+              </button>
+            </NavLink>
           </div>
           <div className="flex justify-center items-center md:justify-end z-10 md:order-1">
             <Animated varient="fade-in" speed="fast">
@@ -97,7 +100,7 @@ export default function Home() {
               </Animated>
             </div>
             <div>
-              <Animated varient="motion-right" speed="fast">
+              <Animated varient="motion-left" speed="fast">
                 <Animated varient="fade-in" speed="fast">
                   <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
                     <div className="p-6">
@@ -118,13 +121,13 @@ export default function Home() {
               </Animated>
             </div>
             <div>
-              <Animated varient="motion-left" speed="fast">
+              <Animated varient="motion-right" speed="fast">
                 <Animated varient="fade-in" speed="fast">
                   <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
                     <div className="p-6">
                       <img
-                        src="/images/static/design.png"
-                        alt="Design"
+                        src="/images/static/advisory.png"
+                        alt="BNrand Advisory"
                         className="w-15 h-15 mb-5"
                       />
                       <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">

@@ -71,7 +71,7 @@ export default function BlogView() {
 
       {blogData == null ? (
         <div className="flex items-center justify-center h-[90vh]">
-          <h1 className="text-2xl md:text-4xl font-bold text-violet-900 dark:text-slate-50">
+          <h1 className="text-2xl md:text-4xl font-bold text-slate-900 dark:text-slate-50">
             Loading...
           </h1>
         </div>
@@ -81,7 +81,7 @@ export default function BlogView() {
         <div key={id}>
           <div className="container mx-auto border-b-[rgba(0,0,0,0.1)] dark:border-b-[rgba(255,255,255,0.2)] border-b-[1px] md:flex gap-4 py-10 items-center">
             <div className="py-12 text-left">
-              <h1 className="text-4xl font-bold text-violet-900 dark:text-slate-50">
+              <h1 className="text-4xl font-bold text-slate-900 dark:text-slate-50">
                 {blogData.title}
               </h1>
               <p className="text-gray-500 dark:text-gray-400 mt-4">

@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="bg-violet-700 dark:bg-gray-800 text-white py-8">
+    <footer className="_footer bg-violet-700 dark:bg-gray-800 text-white py-8">
       <div className="container mx-auto mt-6 mb-10 max-w-[1300px] gap-12 flex flex-col md:flex-row md:justify-between">
         <div className="md:max-w-[350px] lg:max-w-[450px]">
           <div className="flex items-center gap-4">
@@ -32,7 +32,7 @@ function Footer() {
             </svg>
           </button>
         </div>
-        <div className="grid grid-cols-2 gap-20 flex-row sm:justify-between">
+        <div className="grid grid-cols-3 gap-20 flex-row sm:justify-between">
           <div>
             <h3 className="text-md uppercase">Quick Links</h3>
             <div className="text-white dark:text-gray-300 flex flex-col gap-2 mt-5 text-[15px]">
@@ -59,11 +59,11 @@ function Footer() {
               <a href="/services/branding" className="hover:underline">
                 Branding
               </a>
-              <a href="/services/design" className="hover:underline">
-                Design
-              </a>
               <a href="/services/development" className="hover:underline">
                 Development
+              </a>
+              <a href="/services/brand-advisory" className="hover:underline">
+                Brand Advisory
               </a>
               <a href="/services/marketing" className="hover:underline">
                 Marketing
@@ -73,6 +73,20 @@ function Footer() {
               </a>
               <a href="/services/bug-fixing" className="hover:underline">
                 Bug Fixing
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 className="text-md uppercase">Legal</h3>
+            <div className="text-white dark:text-gray-300 flex flex-col gap-2 mt-5 text-[15px]">
+              <a href="/legal/privacy-policy" className="hover:underline">
+                Privacy Policy
+              </a>
+              <a href="/legal/cookies-policy" className="hover:underline">
+                Cookies Policy
+              </a>
+              <a href="/legal/terms-and-conditions" className="hover:underline">
+                Terms & Conditions
               </a>
             </div>
           </div>

@@ -410,3 +410,7 @@ html.dark #_blog-body-editor ::selection {
 ._blog-body ol li {
   list-style: square;
 }
+
+._footer a {
+  width: fit-content;
+}

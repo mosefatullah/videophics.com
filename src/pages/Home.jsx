@@ -97,27 +97,6 @@ export default function Home() {
               </Animated>
             </div>
             <div>
-              <Animated varient="motion-left" speed="fast">
-                <Animated varient="fade-in" speed="fast">
-                  <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
-                    <div className="p-6">
-                      <img
-                        src="/images/static/design.png"
-                        alt="Design"
-                        className="w-15 h-15 mb-5"
-                      />
-                      <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
-                        <span className="text-violet-700">2.</span> Design
-                      </h3>
-                      <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
-                        We design user interfaces, user experiences, and more.
-                      </p>
-                    </div>
-                  </div>
-                </Animated>
-              </Animated>
-            </div>
-            <div>
               <Animated varient="motion-right" speed="fast">
                 <Animated varient="fade-in" speed="fast">
                   <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
@@ -128,10 +107,32 @@ export default function Home() {
                         className="w-15 h-15 mb-5"
                       />
                       <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
-                        <span className="text-violet-700">3.</span> Development
+                        <span className="text-violet-700">2.</span> Development
                       </h3>
                       <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
                         We develop websites, web applications, and more.
+                      </p>
+                    </div>
+                  </div>
+                </Animated>
+              </Animated>
+            </div>
+            <div>
+              <Animated varient="motion-left" speed="fast">
+                <Animated varient="fade-in" speed="fast">
+                  <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
+                    <div className="p-6">
+                      <img
+                        src="/images/static/design.png"
+                        alt="Design"
+                        className="w-15 h-15 mb-5"
+                      />
+                      <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
+                        <span className="text-violet-700">3.</span> Brand
+                        Advisory
+                      </h3>
+                      <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
+                        We provide brand advisory services to help you grow.
                       </p>
                     </div>
                   </div>
@@ -213,7 +214,7 @@ export default function Home() {
               </p>
               <div className="grid md:grid-cols-3 gap-12">
                 <Animated varient="fade-up">
-                  <div className="flex flex-col bg-slate-300 dark:bg-slate-800 p-6 rounded-lg">
+                  <div className="flex flex-col bg-slate-300 dark:bg-slate-800 p-6 rounded-lg h-full">
                     <img
                       src="/images/static/organic.png"
                       alt="Quality"
@@ -229,7 +230,7 @@ export default function Home() {
                   </div>
                 </Animated>
                 <Animated varient="fade-up">
-                  <div className="flex flex-col bg-slate-300 dark:bg-slate-800 p-6 rounded-lg">
+                  <div className="flex flex-col bg-slate-300 dark:bg-slate-800 p-6 rounded-lg h-full">
                     <img
                       src="/images/static/emotion.png"
                       alt="Emotion"
@@ -245,7 +246,7 @@ export default function Home() {
                   </div>
                 </Animated>
                 <Animated varient="fade-up">
-                  <div className="flex flex-col bg-slate-300 dark:bg-slate-800 p-6 rounded-lg">
+                  <div className="flex flex-col bg-slate-300 dark:bg-slate-800 p-6 rounded-lg h-full">
                     <img
                       src="/images/static/story.png"
                       alt="Story"
@@ -429,50 +430,53 @@ export default function Home() {
                 .
               </p>
             </div>
-            <div className="flex justify-center">
-              <div className="max-w-[500px] md:max-w-[700px] pt-[3rem]">
-                <Collapsible title="What is your refund policy?">
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Atque, veniam excepturi sequi eius libero dolorem impedit
-                    dolores natus cum, a nostrum illum minima! Doloremque
-                    architecto cum expedita dolorem porro culpa.
-                  </p>
-                </Collapsible>
-                <Collapsible title="How do I cancel my subscription?">
-                  <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Aut, neque tenetur repellat obcaecati illum autem officiis
-                    odit excepturi exercitationem repudiandae atque unde nemo,
-                    corporis ratione saepe vitae, eveniet nesciunt beatae.
-                  </p>
-                </Collapsible>
-                <Collapsible title="How do I cancel my subscription?">
-                  <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Eum vitae neque quidem, in architecto a nam, atque doloribus
-                    eos sequi molestias cumque quo dignissimos culpa, omnis
-                    maiores repudiandae amet dolorum?
-                  </p>
-                </Collapsible>
-                <Collapsible title="Can I upgrade my plan?">
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et
-                    libero cupiditate suscipit nisi ipsum quae distinctio quos
-                    architecto cum placeat eum quia, reprehenderit alias officia
-                    accusamus dolores recusandae dolore. Delectus.
-                  </p>
-                </Collapsible>
-                <Collapsible title="Can I upgrade my plan?">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptates qui fugit provident vitae unde obcaecati
-                    blanditiis error quo in consequatur aperiam, quis quibusdam
-                    ad quidem dolor explicabo dignissimos facilis odio!
-                  </p>
-                </Collapsible>
+            <Animated varient="fade-up" speed="fast">
+              <div className="flex justify-center">
+                <div className="max-w-[500px] md:max-w-[700px] pt-[3rem]">
+                  <Collapsible title="What is your refund policy?">
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Atque, veniam excepturi sequi eius libero dolorem impedit
+                      dolores natus cum, a nostrum illum minima! Doloremque
+                      architecto cum expedita dolorem porro culpa.
+                    </p>
+                  </Collapsible>
+                  <Collapsible title="How do I cancel my subscription?">
+                    <p>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Aut, neque tenetur repellat obcaecati illum autem officiis
+                      odit excepturi exercitationem repudiandae atque unde nemo,
+                      corporis ratione saepe vitae, eveniet nesciunt beatae.
+                    </p>
+                  </Collapsible>
+                  <Collapsible title="How do I cancel my subscription?">
+                    <p>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Eum vitae neque quidem, in architecto a nam, atque
+                      doloribus eos sequi molestias cumque quo dignissimos
+                      culpa, omnis maiores repudiandae amet dolorum?
+                    </p>
+                  </Collapsible>
+                  <Collapsible title="Can I upgrade my plan?">
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Et libero cupiditate suscipit nisi ipsum quae distinctio
+                      quos architecto cum placeat eum quia, reprehenderit alias
+                      officia accusamus dolores recusandae dolore. Delectus.
+                    </p>
+                  </Collapsible>
+                  <Collapsible title="Can I upgrade my plan?">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Voluptates qui fugit provident vitae unde obcaecati
+                      blanditiis error quo in consequatur aperiam, quis
+                      quibusdam ad quidem dolor explicabo dignissimos facilis
+                      odio!
+                    </p>
+                  </Collapsible>
+                </div>
               </div>
-            </div>
+            </Animated>
           </div>
         </section>
       </div>

@@ -17,15 +17,6 @@ export default function Navbar({ theme, setTheme }) {
           <p className="_hover">Branding</p>
         </li>
       </Link>
-      <Link to="/services/design">
-        <li
-          className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
-          index="2"
-        >
-          <p className={mobile && "hidden"}>Design</p>
-          <p className="_hover">Design</p>
-        </li>
-      </Link>
       <Link to="/services/development">
         <li
           className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
@@ -33,6 +24,15 @@ export default function Navbar({ theme, setTheme }) {
         >
           <p className={mobile && "hidden"}>Development</p>
           <p className="_hover">Development</p>
+        </li>
+      </Link>
+      <Link to="/services/brand-advisory">
+        <li
+          className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
+          index="2"
+        >
+          <p className={mobile && "hidden"}>Brand Advisory</p>
+          <p className="_hover">Brand Advisory</p>
         </li>
       </Link>
       <Link to="/services/marketing">
@@ -346,8 +346,8 @@ export default function Navbar({ theme, setTheme }) {
               className="w-full max-h-[350px] object-cover rounded-md bg-slate-300 dark:bg-slate-500 p-10"
             />
             <img
-              src="/images/static/design.png"
-              alt="Design"
+              src="/images/static/advisory.png"
+              alt="Advisory"
               id="img2"
               className="w-full max-h-[350px] object-cover rounded-md hidden bg-slate-300 dark:bg-slate-500 p-10"
             />

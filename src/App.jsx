@@ -13,11 +13,14 @@ import Blog from "./pages/Blog";
 import BlogView from "./pages/BlogView";
 import ContactUs from "./pages/ContactUs";
 import NotFound from "./pages/NotFound";
+import Privacy from "./pages/legal/Privacy";
+import Cookie from "./pages/legal/Cookie";
+import Terms from "./pages/legal/Terms";
 
-import Admin_Home from "./pages/admin/Home.jsx";
-import Admin_Blog from "./pages/admin/Blog.jsx";
-import Admin_BlogEdit from "./pages/admin/BlogEdit.jsx";
-import Admin_BlogAdd from "./pages/admin/BlogAdd.jsx";
+import Admin_Home from "./pages/admin/Home";
+import Admin_Blog from "./pages/admin/Blog";
+import Admin_BlogEdit from "./pages/admin/BlogEdit";
+import Admin_BlogAdd from "./pages/admin/BlogAdd";
 
 export default function App() {
   const [theme, setTheme] = React.useState(
@@ -73,10 +76,6 @@ export default function App() {
             }
           />
           <Route
-            path="/services"
-            element={<Navigate to="/services/branding" />}
-          />
-          <Route
             path="/services/:service"
             element={
               <Layout>
@@ -92,7 +91,6 @@ export default function App() {
               </Layout>
             }
           />
-          <Route path="/about" element={<Navigate to="/about-us" />} />
           <Route
             path="/blog"
             element={
@@ -117,7 +115,6 @@ export default function App() {
               </Layout>
             }
           />
-          <Route path="/contact" element={<Navigate to="/contact-us" />} />
 
           {/* Admin */}
           <Route
@@ -152,6 +149,40 @@ export default function App() {
               </Layout>
             }
           />
+
+          {/* Legal */}
+          <Route
+            path="/legal/privacy-policy"
+            element={
+              <Layout>
+                <Privacy />
+              </Layout>
+            }
+          />
+          <Route
+            path="/legal/cookies-policy"
+            element={
+              <Layout>
+                <Cookie />
+              </Layout>
+            }
+          />
+          <Route
+            path="/legal/terms-and-conditions"
+            element={
+              <Layout>
+                <Terms />
+              </Layout>
+            }
+          />
+
+          {/* Redirects */}
+          <Route
+            path="/services"
+            element={<Navigate to="/services/branding" />}
+          />
+          <Route path="/about" element={<Navigate to="/about-us" />} />
+          <Route path="/contact" element={<Navigate to="/contact-us" />} />
 
           {/* 404 */}
           <Route

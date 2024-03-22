@@ -92,47 +92,6 @@ const Branding = () => {
                   </div>
                 </div>
               </Animated>
-            </div>
-          </div>
-        </section>
-      </div>
-    </>
-  );
-};
-
-const Design = () => {
-  return (
-    <>
-      <div className="container mx-auto text-slate-800 dark:text-white">
-        <section className="_hero-section min-h-[90vh] grid lg:grid-cols-2 gap-9 items-center py-12">
-          <div>
-            <h1 className="text-5xl font-bold">UI/UX & Web Design</h1>
-            <p className="text-xl text-slate-700 dark:text-slate-300 mt-8 leading-8">
-              Create a stunning user interface and user experience with our
-              design solutions. We help you build a visually appealing website
-              that is easy to navigate and use.
-            </p>
-            <a
-              href="#list"
-              className="inline-block bg-orange-600 text-white px-6 py-3 mt-8 rounded-full"
-            >
-              Fix your design!
-            </a>
-          </div>
-
-          <img
-            src="/images/static/designOne.webp"
-            alt="Design"
-            className="w-full object-cover rounded-lg"
-            style={{ aspectRatio: "16/9" }}
-          />
-        </section>
-        <section className="_list-section min-h-screen py-12 pb-20" id="list">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-12">
-              Design Services
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
               <Animated varient="fade-in">
                 <div>
                   <img
@@ -179,6 +138,98 @@ const Design = () => {
                     <p className="mt-3 text-slate-500 dark:text-slate-400">
                       Create visually appealing graphics for your website and
                       social media.
+                    </p>
+                  </div>
+                </div>
+              </Animated>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
+  );
+};
+
+const BrandAdvisory = () => {
+  return (
+    <>
+      <div className="container mx-auto text-slate-800 dark:text-white">
+        <section className="_hero-section min-h-[90vh] grid lg:grid-cols-2 gap-9 items-center py-12">
+          <div>
+            <h1 className="text-5xl font-bold">Brand Advisory</h1>
+            <p className="text-xl text-slate-700 dark:text-slate-300 mt-8 leading-8">
+              Get expert advice on building and growing your brand with our
+              brand advisory solutions. We help you develop a strategic brand
+              plan that aligns with your business goals.
+            </p>
+            <a
+              href="#list"
+              className="inline-block bg-orange-600 text-white px-6 py-3 mt-8 rounded-full"
+            >
+              Get advice for your brand!
+            </a>
+          </div>
+
+          <img
+            src="/images/static/designOne.webp"
+            alt="Design"
+            className="w-full object-cover rounded-lg"
+            style={{ aspectRatio: "16/9" }}
+          />
+        </section>
+        <section className="_list-section min-h-screen py-12 pb-20" id="list">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl font-bold text-center mb-12">
+              Brand Advisory Services
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <Animated varient="fade-in">
+                <div>
+                  <img
+                    src="/images/static/5fNmWej4tAA-unsplash.jpg"
+                    alt="Brand Consulting"
+                    className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
+                    style={{ aspectRatio: "3/2" }}
+                  />
+                  <div className="bg-slate-300 dark:bg-slate-800 p-6 rounded-b-md">
+                    <h3 className="text-2xl font-semibold">Brand Consulting</h3>
+                    <p className="mt-3 text-slate-500 dark:text-slate-400">
+                      Get expert advice on building and growing your brand with
+                      a strategic brand plan.
+                    </p>
+                  </div>
+                </div>
+              </Animated>
+              <Animated varient="fade-in">
+                <div>
+                  <img
+                    src="/images/static/QL0FAxaq2z0-unsplash.jpg"
+                    alt="Brand Strategy"
+                    className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
+                    style={{ aspectRatio: "3/2" }}
+                  />
+                  <div className="bg-slate-300 dark:bg-slate-800 p-6 rounded-b-md">
+                    <h3 className="text-2xl font-semibold">Brand Strategy</h3>
+                    <p className="mt-3 text-slate-500 dark:text-slate-400">
+                      Develop a comprehensive brand strategy that defines your
+                      brand's identity and positioning.
+                    </p>
+                  </div>
+                </div>
+              </Animated>
+              <Animated varient="fade-in">
+                <div>
+                  <img
+                    src="/images/static/PEJtZfT6C1Q-unsplash.jpg"
+                    alt="Brand Messaging"
+                    className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
+                    style={{ aspectRatio: "3/2" }}
+                  />
+                  <div className="bg-slate-300 dark:bg-slate-800 p-6 rounded-b-md">
+                    <h3 className="text-2xl font-semibold">Brand Messaging</h3>
+                    <p className="mt-3 text-slate-500 dark:text-slate-400">
+                      Develop a compelling brand story that resonates with your
+                      audience and communicates your brand values.
                     </p>
                   </div>
                 </div>
@@ -584,9 +635,9 @@ export default function ServicesView() {
 
   const allowedPaths = [
     "branding",
-    "marketing",
     "development",
-    "design",
+    "brand-advisory",
+    "marketing",
     "content-writing",
     "bug-fixing",
   ];
@@ -597,14 +648,14 @@ export default function ServicesView() {
         <Branding />
       </Layout>
     ),
-    design: (
-      <Layout>
-        <Design />
-      </Layout>
-    ),
     development: (
       <Layout>
         <Development />
+      </Layout>
+    ),
+    "brand-advisory": (
+      <Layout>
+        <BrandAdvisory />
       </Layout>
     ),
     marketing: (

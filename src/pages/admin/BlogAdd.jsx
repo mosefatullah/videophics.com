@@ -1,6 +1,5 @@
 import React from "react";
 import EditorJS from "@editorjs/editorjs";
-import LinkTool from "@editorjs/link";
 import RawTool from "@editorjs/raw";
 import ImageTool from "@editorjs/image";
 import Checklist from "@editorjs/checklist";
@@ -13,6 +12,7 @@ import Table from "@editorjs/table";
 import AnyButton from "editorjs-button";
 import Tooltip from "editorjs-tooltip";
 import DragDrop from "editorjs-drag-drop";
+import Hyperlink from "editorjs-hyperlink";
 import IndentTune from "editorjs-indent-tune";
 import Undo from "editorjs-undo";
 import edjsParser from "editorjs-parser";
@@ -22,6 +22,9 @@ import { createBlogPost } from "../../utils/admin";
 
 function BlogAdd() {
   const ejInstance = React.useRef();
+  const [blogBody, setBlogBody] = React.useState({});
+  const [thumbnail, setThumbnail] = React.useState(null);
+
   const DEFAULT_INITIAL_DATA = {
     time: new Date().getTime(),
     blocks: [
@@ -42,6 +45,7 @@ function BlogAdd() {
   };
   const initEditor = () => {
     const printOutput = () => {
+      if (ejInstance.current === null) return;
       editor
         .save()
         .then((outputData) => {
@@ -49,6 +53,7 @@ function BlogAdd() {
             youtube: `<iframe src="<%data.embed%>" width="<%data.width%>"><%data.caption%></iframe>`,
             list: `<ul><%data.items.map(item => { return '<li>' + item + '</li>' }).join('')}</ul>`,
           }).parse(outputData);
+          setBlogBody(outputData);
         })
         .catch((error) => {
           console.log("Saving failed: ", error);
@@ -68,11 +73,18 @@ function BlogAdd() {
           class: Header,
           inlineToolbar: true,
         },
-        linkTool: {
-          class: LinkTool,
-          inlineToolbar: true,
-        },
         raw: RawTool,
+        hyperlink: {
+          class: Hyperlink,
+          config: {
+            shortcut: "CMD+L",
+            target: "_blank",
+            rel: "nofollow",
+            availableTargets: ["_blank", "_self"],
+            availableRels: ["author", "noreferrer"],
+            validate: false,
+          },
+        },
         image: {
           class: ImageTool,
           inlineToolbar: true,
@@ -166,10 +178,12 @@ function BlogAdd() {
     });
     document
       .querySelector("#_blog-body-editor")
-      .addEventListener("keyup", () => {
-        printOutput();
-      });
+      .addEventListener("keyup", printOutput);
+    document
+      .querySelector("#_blog-body-editor")
+      .addEventListener("click", printOutput);
   };
+
   React.useEffect(() => {
     if (ejInstance.current === null) {
       initEditor();
@@ -187,7 +201,7 @@ function BlogAdd() {
           &larr; Go back
         </button>
         <h1 className="text-4xl font-bold text-center">Add Blog Post</h1>
-        <div className="mt-12 lg:flex justify-center gap-9">
+        <div className="mt-12 flex flex-col lg:flex-row justify-center gap-9">
           <form
             className="bg-white dark:bg-slate-800 shadow-md rounded-md p-8 w-full max-w-[700px]"
             onSubmit={(e) => {
@@ -201,6 +215,7 @@ function BlogAdd() {
                   name="thumbnail"
                   id="thumbnail"
                   className="hidden"
+                  accept="image/*"
                   onChange={(e) => {
                     const file = e.target.files[0];
                     if (file.size > 32 * 1024 * 1024) {
@@ -209,11 +224,10 @@ function BlogAdd() {
                     }
                     const reader = new FileReader();
                     reader.onload = function (e) {
-                      const img = document.createElement("img");
-                      img.src = e.target.result;
-                      img.className = "w-full object-cover rounded-md";
-                      img.style.aspectRatio = "16/9";
-                      document.getElementById("top").innerHTML = img.outerHTML;
+                      setThumbnail(e.target.result);
+                      document
+                        .getElementById("deleteThumbnail")
+                        .classList.remove("hidden");
                     };
                     reader.readAsDataURL(file);
                   }}
@@ -270,10 +284,53 @@ function BlogAdd() {
             </button>
           </form>
           <div className="w-full">
-            <div id="top"></div>
+            <div id="top" className="mb-5 min-h-[200px] relative">
+              {!thumbnail ? (
+                <div className="absolute bg-slate-200 w-full h-full dark:bg-slate-700 p-4 rounded-md flex items-center justify-center">
+                  <span className="text-slate-800 dark:text-white font-[500] text-sm">
+                    Thumbnail Preview
+                  </span>
+                </div>
+              ) : (
+                <img
+                  src={thumbnail}
+                  alt="Thumbnail"
+                  className="w-full object-cover rounded-md"
+                  style={{ aspectRatio: "16/9" }}
+                />
+              )}
+            </div>
+            <button
+              id="deleteThumbnail"
+              className="mb-5 bg-red-500 hover:bg-red-600 text-white font-[500] text-sm py-2 px-4 rounded flex items-center gap-2 hidden"
+              onClick={(e) => {
+                //ejInstance?.current?.destroy();
+                //ejInstance.current = null;
+                //initEditor();
+                e.target.classList.add("hidden");
+                document.getElementById("thumbnail").value = "";
+                setThumbnail(null);
+              }}
+            >
+              Delete{" "}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 25 21"
+                strokeWidth={3}
+                stroke="currentColor"
+                className="w-4 h-4"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
             <div
               id="output"
-              className="_blog-body border border-slate-200 dark:border-slate-700 rounded-md p-4 dark:border-violet-500 dark:border-2 mt-5"
+              className="_blog-body border border-slate-200 dark:border-slate-700 rounded-md p-4 dark:border-violet-500 dark:border-2"
             ></div>
           </div>
         </div>

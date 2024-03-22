@@ -249,13 +249,50 @@ html.dark #_blog-body-editor .ce-block {
 html.dark #_blog-body-editor .ce-inline-toolbar * {
   color: #333;
 }
-
-html.dark #_blog-body-editor [data-tool="style"] {
-  margin-left: 10px;
+#_blog-body-editor .ce-inline-toolbar button {
+  height: 38px;
+  width: 35px;
+}
+#_blog-body-editor .ce-inline-toolbar button:not([data-tool="style"]) svg {
+  width: 25px;
+  height: 25px;
+}
+#_blog-body-editor .ce-inline-toolbar__dropdown-content svg {
+  padding: 3px;
 }
 
-html.dark #_blog-body-editor svg [d="M0 0h24v24H0z"] {
+#_blog-body-editor .ce-inline-tool.ce-inline-tool--link[data-tool="hyperlink"] {
+  position: relative;
+}
+
+#_blog-body-editor .ce-inline-tool.ce-inline-tool--link[data-tool="hyperlink"]::after {
+  content: "A";
+  font-weight: 500;
+  display: block;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#_blog-body-editor [data-tool="style"] {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#_blog-body-editor svg [d="M0 0h24v24H0z"] {
   display: none;
+}
+
+#_blog-body-editor .ce-inline-tool-hyperlink--button {
+  padding: 6px 13px;
+  border-radius: 0.3rem;
+  background-color: #a332d3;
+  color: #fff !important;
+  font-weight: 500 !important;
+  width: fit-content !important;
+  height: auto !important;
+  margin-top: 8px;
+  font-size: 0.91rem;
 }
 
 html.dark #_blog-body-editor .ce-block.ce-block--selected .ce-block__content {
@@ -307,6 +344,14 @@ html.dark #_blog-body-editor .link-tool__progress.link-tool__progress--loading {
 html.dark #_blog-body-editor ::selection {
   background-color: var(--bg-secondary-1);
   color: white;
+}
+
+html.dark #_blog-body-editor .tc-popover * {
+  color: #333;
+}
+
+html.dark #_blog-body-editor .tc-cell--selected {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 #_blog-body-editor h1 {

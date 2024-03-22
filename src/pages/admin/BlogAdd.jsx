@@ -21,7 +21,7 @@ import { StyleInlineTool } from "editorjs-style";
 import { createBlogPost } from "../../utils/admin";
 
 function BlogAdd() {
-  const ejInstance = React.useRef();
+  const ejInstance = React.useRef(null);
   const [blogBody, setBlogBody] = React.useState({});
   const [thumbnail, setThumbnail] = React.useState(null);
 
@@ -43,16 +43,15 @@ function BlogAdd() {
       },
     ],
   };
+
   const initEditor = () => {
-    const printOutput = () => {
-      if (ejInstance.current === null) return;
-      editor
-        .save()
+    const printOutput = (e) => {
+      if (!e) return;
+      e.save()
         .then((outputData) => {
-          document.getElementById("output").innerHTML = new edjsParser({
-            youtube: `<iframe src="<%data.embed%>" width="<%data.width%>"><%data.caption%></iframe>`,
-            list: `<ul><%data.items.map(item => { return '<li>' + item + '</li>' }).join('')}</ul>`,
-          }).parse(outputData);
+          document.getElementById("output").innerHTML = new edjsParser().parse(
+            outputData
+          );
           setBlogBody(outputData);
         })
         .catch((error) => {
@@ -93,7 +92,7 @@ function BlogAdd() {
               async uploadByFile(file) {
                 const formData = new FormData();
                 formData.append("image", file);
-                if (file.size > 0.5 * 1024 * 1024) {
+                if (file.size > 32 * 1024 * 1024) {
                   alert("File size is too big! Maximum file size is 32MB.");
                   return false;
                 }
@@ -173,7 +172,7 @@ function BlogAdd() {
         ejInstance.current = editor;
         new Undo({ editor });
         new DragDrop(editor);
-        printOutput();
+        printOutput(editor);
       },
     });
     document
@@ -185,7 +184,10 @@ function BlogAdd() {
   };
 
   React.useEffect(() => {
-    if (ejInstance.current === null) {
+    if (
+      ejInstance.current === null &&
+      document.querySelectorAll(".codex-editor").length === 0
+    ) {
       initEditor();
     }
 
@@ -193,7 +195,7 @@ function BlogAdd() {
       ejInstance?.current?.destroy();
       ejInstance.current = null;
     };
-  }, []);
+  }, [document.querySelectorAll(".codex-editor").length]);
   return (
     <>
       <div className="container mx-auto py-10 text-slate-800 dark:text-white">

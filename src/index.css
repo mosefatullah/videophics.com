@@ -218,11 +218,6 @@ html.dark ._navbar ._menu li a:hover {
   margin-bottom: 20px;
 }
 
-._blog-body img:hover {
-  transform: scale(1.05);
-  transition: all 0.5s ease-in-out;
-}
-
 ._blog-body h1,
 ._blog-body h2,
 ._blog-body h3,
@@ -265,7 +260,8 @@ html.dark #_blog-body-editor .ce-inline-toolbar * {
   position: relative;
 }
 
-#_blog-body-editor .ce-inline-tool.ce-inline-tool--link[data-tool="hyperlink"]::after {
+#_blog-body-editor
+  .ce-inline-tool.ce-inline-tool--link[data-tool="hyperlink"]::after {
   content: "A";
   font-weight: 500;
   display: block;
@@ -293,6 +289,13 @@ html.dark #_blog-body-editor .ce-inline-toolbar * {
   height: auto !important;
   margin-top: 8px;
   font-size: 0.91rem;
+}
+
+#_blog-body-editor .ce-inline-toolbar__actions input {
+  padding: 5px 10px;
+  border-radius: 0.3rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 8px 0;
 }
 
 html.dark #_blog-body-editor .ce-block.ce-block--selected .ce-block__content {
@@ -451,9 +454,11 @@ html.dark #_blog-body-editor .tc-cell--selected {
   margin-bottom: 20px;
 }
 
-._blog-body ul li,
-._blog-body ol li {
+._blog-body ul li {
   list-style: square;
+}
+._blog-body ol li {
+  list-style-type: decimal;
 }
 
 ._footer a {

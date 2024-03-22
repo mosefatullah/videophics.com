@@ -51,9 +51,9 @@ export default function Blog() {
                   <img
                     src={blog.thumbnail}
                     alt={blog.title}
-                    className="w-full h-60 object-cover mt-5"
+                    className="w-full h-60 object-cover mt-5 bg-slate-300 dark:bg-slate-700 rounded-md"
                   />
-                  <h1 className="text-2xl font-bold text-violet-900 dark:text-slate-50 mt-5 mb-2">
+                  <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mt-5 mb-2">
                     {blog.title}
                   </h1>
                 </div>

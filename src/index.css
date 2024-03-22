@@ -233,6 +233,10 @@ html.dark ._navbar ._menu li a:hover {
   outline: none;
 }
 
+#_blog-body-editor .codex-editor__redactor {
+  padding-bottom: 1rem !important;
+}
+
 html.dark #_blog-body-editor * {
   color: #fff;
 }
@@ -393,26 +397,32 @@ html.dark #_blog-body-editor .tc-cell--selected {
 
 ._blog-body h1 {
   font-size: 2.5rem;
+  font-weight: 600;
 }
 
 ._blog-body h2 {
   font-size: 2rem;
+  font-weight: 600;
 }
 
 ._blog-body h3 {
   font-size: 1.8rem;
+  font-weight: 600;
 }
 
 ._blog-body h4 {
   font-size: 1.6rem;
+  font-weight: 600;
 }
 
 ._blog-body h5 {
   font-size: 1.4rem;
+  font-weight: 600;
 }
 
 ._blog-body h6 {
   font-size: 1.2rem;
+  font-weight: 600;
 }
 
 ._blog-body blockquote {

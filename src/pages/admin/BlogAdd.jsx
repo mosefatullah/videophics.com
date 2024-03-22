@@ -18,10 +18,13 @@ import Undo from "editorjs-undo";
 import edjsParser from "editorjs-parser";
 import { StyleInlineTool } from "editorjs-style";
 
-import { createBlogPost } from "../../utils/admin";
+import { createBlogPost, onAuth } from "../../utils/admin";
+import WithAuth from "./components/WithAuth";
+import { useLocation } from "react-router-dom";
 
 function BlogAdd() {
   const ejInstance = React.useRef(null);
+  const [user, setUser] = React.useState(null);
   const [blogBody, setBlogBody] = React.useState({});
   const [thumbnail, setThumbnail] = React.useState(null);
 
@@ -45,20 +48,6 @@ function BlogAdd() {
   };
 
   const initEditor = () => {
-    const printOutput = (e) => {
-      if (!e) return;
-      e.save()
-        .then((outputData) => {
-          document.getElementById("output").innerHTML = new edjsParser().parse(
-            outputData
-          );
-          setBlogBody(outputData);
-        })
-        .catch((error) => {
-          console.log("Saving failed: ", error);
-        });
-    };
-
     const editor = new EditorJS({
       holder: "_blog-body-editor",
       inlineToolbar: true,
@@ -168,176 +157,244 @@ function BlogAdd() {
         style: StyleInlineTool,
       },
       tunes: ["indentTune"],
-      onReady: () => {
+      onReady: async () => {
         ejInstance.current = editor;
         new Undo({ editor });
         new DragDrop(editor);
-        printOutput(editor);
+        let outputData = await editor.saver.save();
+        document.getElementById("output").innerHTML = new edjsParser().parse(
+          outputData
+        );
+        setBlogBody(outputData);
+      },
+      onChange: async () => {
+        let outputData = await editor.saver.save();
+        document.getElementById("output").innerHTML = new edjsParser().parse(
+          outputData
+        );
+        setBlogBody(outputData);
       },
     });
-    document
-      .querySelector("#_blog-body-editor")
-      .addEventListener("keyup", printOutput);
-    document
-      .querySelector("#_blog-body-editor")
-      .addEventListener("click", printOutput);
+  };
+
+  const addPost = () => {
+    const validate = () => {
+      const title = document.getElementById("title").value;
+      const category = document.getElementById("category").value;
+      if (!title || !category || !blogBody) {
+        alert("Please fill all the required fields!");
+        return false;
+      }
+      return true;
+    };
+
+    if (!validate()) return;
+
+    const post = {
+      id: document
+        .getElementById("title")
+        .value.toLowerCase()
+        .replace(/[^a-zA-Z0-9]/g, "-")
+        .replace(/--/g, "-")
+        .replace(/^-|-$/g, ""),
+
+      title: document.getElementById("title").value,
+      category: document.getElementById("category").value,
+      thumbnail: thumbnail || null,
+      body: blogBody,
+      publishedAt: new Date(),
+      author: document.getElementById("author").value || "Author",
+    };
+    createBlogPost(
+      post,
+      () => {
+        alert("Post added successfully!");
+        window.location.href = "/admin/myblog";
+      },
+      (e) => {
+        alert("Failed to add post! Please try again.");
+        console.error(e);
+      }
+    );
   };
 
   React.useEffect(() => {
-    if (
-      ejInstance.current === null &&
-      document.querySelectorAll(".codex-editor").length === 0
-    ) {
-      initEditor();
-    }
+    setTimeout(() => {
+      if (
+        ejInstance.current === null &&
+        document.querySelectorAll(".ce-block").length === 0
+      ) {
+        initEditor();
+      }
+      console.log(ejInstance.current);
+    }, 100);
 
     return () => {
       ejInstance?.current?.destroy();
       ejInstance.current = null;
     };
-  }, [document.querySelectorAll(".codex-editor").length]);
+  }, []);
+
   return (
-    <>
-      <div className="container mx-auto py-10 text-slate-800 dark:text-white">
-        <button className="mb-5" onClick={() => window.history.back()}>
-          &larr; Go back
-        </button>
-        <h1 className="text-4xl font-bold text-center">Add Blog Post</h1>
-        <div className="mt-12 flex flex-col lg:flex-row justify-center gap-9">
-          <form
-            className="bg-white dark:bg-slate-800 shadow-md rounded-md p-8 w-full max-w-[700px]"
-            onSubmit={(e) => {
-              e.preventDefault();
-            }}
-          >
-            <div className="flex flex-col gap-8">
-              <div className="flex flex-col gap-2">
-                <input
-                  type="file"
-                  name="thumbnail"
-                  id="thumbnail"
-                  className="hidden"
-                  accept="image/*"
-                  onChange={(e) => {
-                    const file = e.target.files[0];
-                    if (file.size > 32 * 1024 * 1024) {
-                      alert("File size is too big! Maximum file size is 32MB.");
-                      return false;
-                    }
-                    const reader = new FileReader();
-                    reader.onload = function (e) {
-                      setThumbnail(e.target.result);
-                      document
-                        .getElementById("deleteThumbnail")
-                        .classList.remove("hidden");
-                    };
-                    reader.readAsDataURL(file);
-                  }}
-                />
-                <label htmlFor="thumbnail" className="cursor-pointer">
-                  <div className="bg-slate-200 dark:bg-slate-700 p-4 rounded-md flex items-center justify-center gap-2">
-                    <span className="text-slate-800 dark:text-white font-[500] text-sm">
-                      Upload Thumbnail
-                    </span>
+    <WithAuth>
+      {() => (
+        <>
+          <div className="container mx-auto py-10 text-slate-800 dark:text-white">
+            <button className="mb-5" onClick={() => window.history.back()}>
+              &larr; Go back
+            </button>
+            <h1 className="text-4xl font-bold text-center">Add Blog Post</h1>
+            <div className="mt-12 flex flex-col lg:flex-row justify-center gap-9">
+              <form
+                className="bg-white dark:bg-slate-800 shadow-md rounded-md p-8 w-full max-w-[700px]"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                }}
+              >
+                <div className="flex flex-col gap-8">
+                  <div className="flex flex-col gap-2">
+                    <input
+                      type="file"
+                      name="thumbnail"
+                      id="thumbnail"
+                      className="hidden"
+                      accept="image/*"
+                      onChange={(e) => {
+                        const file = e.target.files[0];
+                        if (file.size > 32 * 1024 * 1024) {
+                          alert(
+                            "File size is too big! Maximum file size is 32MB."
+                          );
+                          return false;
+                        }
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                          setThumbnail(e.target.result);
+                          document
+                            .getElementById("deleteThumbnail")
+                            .classList.remove("hidden");
+                        };
+                        reader.readAsDataURL(file);
+                      }}
+                    />
+                    <label htmlFor="thumbnail" className="cursor-pointer">
+                      <div className="bg-slate-200 dark:bg-slate-700 p-4 rounded-md flex items-center justify-center gap-2">
+                        <span className="text-slate-800 dark:text-white font-[500] text-sm">
+                          Upload Thumbnail
+                        </span>
+                      </div>
+                    </label>
                   </div>
-                </label>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <div className="flex flex-col gap-2 sm:w-[65%]">
-                  <label htmlFor="title">Title</label>
-                  <input
-                    type="text"
-                    name="title"
-                    id="title"
-                    placeholder="What is Branding? The Ultimate Guide"
-                    className="text-slate-800 p-2 border border-slate-200 dark:border-slate-700 rounded-md dark:bg-slate-700 dark:text-white dark:border-violet-500 dark:border-2"
-                  />
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="title">Title *</label>
+                    <input
+                      type="text"
+                      name="title"
+                      id="title"
+                      placeholder="What is Branding? The Ultimate Guide"
+                      className="text-slate-800 p-2 border border-slate-200 dark:border-slate-700 rounded-md dark:bg-slate-700 dark:text-white dark:border-violet-500 dark:border-2"
+                    />
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <div className="flex flex-col gap-2 sm:w-[65%]">
+                      <label htmlFor="author">Author</label>
+                      <input
+                        type="text"
+                        name="author"
+                        id="author"
+                        placeholder="Abdullah"
+                        className="text-slate-800 p-2 border border-slate-200 dark:border-slate-700 rounded-md dark:bg-slate-700 dark:text-white dark:border-violet-500 dark:border-2"
+                      />
+                    </div>
+                    <div className="flex flex-col gap-2 sm:w-[35%]">
+                      <label htmlFor="category">Category *</label>
+                      <select
+                        name="category"
+                        id="category"
+                        className="text-slate-800 p-3 py-[0.6rem] border border-slate-200 dark:border-slate-700 rounded-md dark:bg-slate-700 dark:text-white dark:border-violet-500 dark:border-2"
+                      >
+                        <option value="Branding">Branding</option>
+                        <option value="Development">Development</option>
+                        <option value="Design">Brand Advisory</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Content Writing">Content Writing</option>
+                        <option value="Bug Fixing">Bug Fixing</option>
+                        <option value="Topic">Others</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="content">Content *</label>
+                    <div
+                      id="_blog-body-editor"
+                      className="border border-slate-200 dark:border-slate-700 rounded-md p-4 dark:border-violet-500 dark:border-2 min-h-[300px]"
+                    ></div>
+                  </div>
                 </div>
-                <div className="flex flex-col gap-2 sm:w-[35%]">
-                  <label htmlFor="category">Category</label>
-                  <select
-                    name="category"
-                    id="category"
-                    className="text-slate-800 p-3 py-[0.6rem] border border-slate-200 dark:border-slate-700 rounded-md dark:bg-slate-700 dark:text-white dark:border-violet-500 dark:border-2"
+                <button
+                  type="submit"
+                  className="bg-violet-600 hover:bg-violet-700 text-white font-[500] text-sm py-3 px-6 mt-6 rounded"
+                  id="addPost"
+                  onClick={addPost}
+                >
+                  Add Post
+                </button>
+              </form>
+              <div className="w-full">
+                <div id="top" className="mb-5 min-h-[200px] relative">
+                  {!thumbnail ? (
+                    <div className="absolute bg-slate-200 w-full h-full dark:bg-slate-700 p-4 rounded-md flex items-center justify-center">
+                      <span className="text-slate-800 dark:text-white font-[500] text-sm">
+                        Thumbnail Preview
+                      </span>
+                    </div>
+                  ) : (
+                    <img
+                      src={thumbnail}
+                      alt="Thumbnail"
+                      className="w-full object-cover rounded-md"
+                      style={{ aspectRatio: "16/9" }}
+                    />
+                  )}
+                </div>
+                <button
+                  id="deleteThumbnail"
+                  className="mb-5 bg-red-500 hover:bg-red-600 text-white font-[500] text-sm py-2 px-4 rounded flex items-center gap-2 hidden"
+                  onClick={(e) => {
+                    //ejInstance?.current?.destroy();
+                    //ejInstance.current = null;
+                    //initEditor();
+                    e.target.classList.add("hidden");
+                    document.getElementById("thumbnail").value = "";
+                    setThumbnail(null);
+                  }}
+                >
+                  Delete{" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 25 21"
+                    strokeWidth={3}
+                    stroke="currentColor"
+                    className="w-4 h-4"
                   >
-                    <option value="Branding">Branding</option>
-                    <option value="Design">Design</option>
-                    <option value="Marketing">Marketing</option>
-                    <option value="Social Media">Social Media</option>
-                    <option value="Technology">Technology</option>
-                    <option value="Development">Development</option>
-                  </select>
-                </div>
-              </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="content">Content</label>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
                 <div
-                  id="_blog-body-editor"
-                  className="border border-slate-200 dark:border-slate-700 rounded-md p-4 dark:border-violet-500 dark:border-2 min-h-[300px]"
+                  id="output"
+                  className="_blog-body border border-slate-200 dark:border-slate-700 rounded-md p-4 dark:border-violet-500 dark:border-2"
                 ></div>
               </div>
             </div>
-            <button
-              type="submit"
-              className="bg-violet-600 hover:bg-violet-700 text-white font-[500] text-sm py-3 px-6 mt-6 rounded"
-              id="addPost"
-            >
-              Add Post
-            </button>
-          </form>
-          <div className="w-full">
-            <div id="top" className="mb-5 min-h-[200px] relative">
-              {!thumbnail ? (
-                <div className="absolute bg-slate-200 w-full h-full dark:bg-slate-700 p-4 rounded-md flex items-center justify-center">
-                  <span className="text-slate-800 dark:text-white font-[500] text-sm">
-                    Thumbnail Preview
-                  </span>
-                </div>
-              ) : (
-                <img
-                  src={thumbnail}
-                  alt="Thumbnail"
-                  className="w-full object-cover rounded-md"
-                  style={{ aspectRatio: "16/9" }}
-                />
-              )}
-            </div>
-            <button
-              id="deleteThumbnail"
-              className="mb-5 bg-red-500 hover:bg-red-600 text-white font-[500] text-sm py-2 px-4 rounded flex items-center gap-2 hidden"
-              onClick={(e) => {
-                //ejInstance?.current?.destroy();
-                //ejInstance.current = null;
-                //initEditor();
-                e.target.classList.add("hidden");
-                document.getElementById("thumbnail").value = "";
-                setThumbnail(null);
-              }}
-            >
-              Delete{" "}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 25 21"
-                strokeWidth={3}
-                stroke="currentColor"
-                className="w-4 h-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-            <div
-              id="output"
-              className="_blog-body border border-slate-200 dark:border-slate-700 rounded-md p-4 dark:border-violet-500 dark:border-2"
-            ></div>
           </div>
-        </div>
-      </div>
-    </>
+        </>
+      )}
+    </WithAuth>
   );
 }
 

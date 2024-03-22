@@ -27,11 +27,15 @@ export default function BlogView() {
 
   const isJson = (str) => {
     try {
-      JSON.parse(str);
+      return JSON.parse(str);
     } catch (e) {
-      return false;
+      try {
+        return typeof str === "object" && str;
+      } catch (e) {
+        return false;
+      }
     }
-    return true;
+    return false;
   };
 
   React.useEffect(() => {
@@ -92,7 +96,7 @@ export default function BlogView() {
               <img
                 src={blogData.thumbnail}
                 alt={blogData.title}
-                className="w-full object-cover"
+                className="w-full object-cover rounded-md min-h-80 bg-slate-300 dark:bg-slate-700"
               />
             </div>
           </div>
@@ -146,7 +150,7 @@ export default function BlogView() {
                     ? new edjsParser({
                         youtube: `<iframe src="<%data.embed%>" width="<%data.width%>"><%data.caption%></iframe>`,
                         list: `<ul><%data.items.map(item => { return '<li>' + item + '</li>' }).join('')}</ul>`,
-                      }).parse(JSON.parse(blogData.body))
+                      }).parse(isJson(blogData.body))
                     : "",
                 }}
               ></div>

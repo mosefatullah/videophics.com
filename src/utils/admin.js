@@ -5,16 +5,7 @@ import {
   GoogleAuthProvider,
   signOut,
 } from "@firebase/auth";
-import {
-  getFirestore,
-  collection,
-  doc,
-  onSnapshot,
-  query,
-  limit,
-  addDoc,
-  setDoc,
-} from "@firebase/firestore";
+import { getFirestore, doc, setDoc } from "@firebase/firestore";
 import { getDatabase, ref, onValue } from "@firebase/database";
 
 import fi from "./firebase";
@@ -37,23 +28,27 @@ const logOut = (success, error) => {
     });
 };
 
+const checkAdmin = (email, success, error, result) => {
+  onValue(ref(db, "app/admins"), (snapshot) => {
+    if (snapshot.exists()) {
+      if (snapshot.val().includes(email)) {
+        if (typeof success === "function") {
+          success(result);
+        }
+      } else {
+        if (typeof error === "function") {
+          error();
+        }
+      }
+    }
+  });
+};
+
 const login = (success, error) => {
   const provider = new GoogleAuthProvider();
   signInWithPopup(auth, provider)
     .then((result) => {
-      onValue(ref(db, "app/admins"), (snapshot) => {
-        if (snapshot.exists()) {
-          if (snapshot.val().includes(result.user.email)) {
-            if (typeof success === "function") {
-              success(result);
-            }
-          } else {
-            if (typeof error === "function") {
-              error();
-            }
-          }
-        }
-      });
+      checkAdmin(result.user.email, success, error, result);
     })
     .catch((e) => {
       if (typeof error === "function") {
@@ -76,4 +71,11 @@ const createBlogPost = (data, success, error) => {
     });
 };
 
-export { login, logOut, auth, onAuthStateChanged as onAuth, createBlogPost };
+export {
+  login,
+  logOut,
+  checkAdmin,
+  auth,
+  onAuthStateChanged as onAuth,
+  createBlogPost,
+};

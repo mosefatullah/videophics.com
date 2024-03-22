@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import Collapsible from "./components/Collapsible";
 import Contact from "./components/Contact";
 import Animated from "./components/Animated";
+import Booking from "./components/Booking";
 
 export default function Home() {
   return (
@@ -63,58 +64,17 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Animated varient="fade-up" speed="fast">
-        <section
-          id="booking"
-          className="_booking-section py-[8rem] md:min-h-[calc(100vh-80px)] bg-violet-500 dark:bg-slate-950 flex flex-col justify-center items-center"
-        >
-          <div className="container mx-auto max-w-[1300px]">
-            <div className="text-center">
-              <Animated varient="fade-left" speed="slow">
-                <img
-                  src="/images/static/appointment.png"
-                  alt="Appointment"
-                  className="w-12 h-12 mx-auto mb-4"
-                />
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-[600] mb-4 text-white leading-10">
-                  Book an Appointment
-                </h1>
-              </Animated>
-              <Animated varient="fade-right" speed="slow">
-                <p className="text-[14px] md:text-[17px] text-white dark:text-slate-500 leading-6 md:leading-7 mb-8">
-                  Schedule an appointment with us and let's get started on your
-                  project.
-                </p>
-              </Animated>
-              <Animated varient="fade-up" speed="slow">
-                <button
-                  className="bg-white text-sm md:text-[16px] px-8 py-3 rounded-md to-white from-gray-200 bg-gradient-to-l hover:from-gray-100 hover:to-gray-200 active:scale-95 text-slate-900 dark:from-slate-800 dark:to-slate-700 dark:text-white"
-                  title="Click here to book an appointment"
-                  onClick={() => {
-                    Calendly.initPopupWidget({
-                      url: "https://calendly.com/videophics?hide_gdpr_banner=1",
-                    });
-                    return false;
-                  }}
-                >
-                  Book Now &rarr;
-                </button>
-              </Animated>
-            </div>
-          </div>
-        </section>
-      </Animated>
       <section className="_services-section dark:bg-slate-900 py-[7rem] md:min-h-[calc(100vh-80px)]">
         <div className="container mx-auto max-w-[1300px]">
           <div className="flex flex-col justify-center items-center text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-[600] mb-4 text-slate-700 dark:text-white leading-10">
+            <p className="text-sm text-slate-500 dark:text-slate-400 leading-6 md:leading-7 uppercase">
               Our Services
-            </h1>
-            <p className="text-[14px] md:text-[17px] text-slate-500 dark:text-slate-400 leading-6 md:leading-7">
-              Look at our services and see what we can do for you.
             </p>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-[600] mb-4 text-slate-700 dark:text-white leading-8 md:leading-10 mt-2">
+              Growing Brands. Touching Souls.
+            </h1>
           </div>
-          <div className="_services-box mt-12 grid md:grid-cols-2 gap-12">
+          <div className="_services-box mt-[4rem] grid md:grid-cols-2 gap-12">
             <div>
               <Animated varient="motion-left" speed="fast">
                 <Animated varient="fade-in" speed="fast">
@@ -305,17 +265,17 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="_team-section py-[8rem] md:min-h-[calc(100vh-80px)] bg-violet-100 dark:bg-slate-800 flex flex-col justify-center items-center">
+      <section className="_team-section py-[8rem] pt-[6rem] bg-white dark:bg-slate-900 flex flex-col justify-center items-center">
         <div className="container mx-auto max-w-[1300px]">
           <div className="text-center">
+            <p className="text-sm text-slate-500 dark:text-slate-400 leading-6 md:leading-7 mb-2 uppercase">
+              Our Team
+            </p>
             <h3 className="text-3xl lg:text-4xl font-[600] mb-4 text-slate-700 dark:text-white leading-10">
               Meet Our Team
             </h3>
-            <p className="text-[14px] md:text-[17px] text-slate-500 dark:text-slate-400 leading-6 md:leading-7 mb-8">
-              Our team is dedicated to delivering the best results for you.
-            </p>
           </div>
-          <div className="_persons grid md:grid-cols-3 gap-9 pt-8">
+          <div className="_persons grid md:grid-cols-3 gap-9 pt-[4rem]">
             <Animated varient="fade-in">
               <div className="flex flex-col items-center">
                 <img
@@ -394,119 +354,130 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="_clients-section bg-white dark:bg-slate-900 py-[7rem] md:min-h-[calc(100vh-80px)] flex flex-col justify-center items-center">
-        <div className="container mx-auto max-w-[1300px]">
-          <div className="text-center">
-            <p className="text-sm text-slate-500 dark:text-gray-300 leading-6 md:leading-7 uppercase mb-2">
-              Our Clients
-            </p>
-            <h3 className="text-3xl lg:text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
-              We're trusted by our clients.
-            </h3>
+      <div className="bg-slate-100 dark:bg-slate-800 py-[4rem]">
+        <section className="_clients-section py-[7rem] flex flex-col justify-center items-center pt-[3rem]">
+          <div className="container mx-auto max-w-[1300px]">
+            <div className="text-center mb-8">
+              <p className="text-sm text-slate-500 dark:text-gray-300 leading-6 md:leading-7 uppercase mb-2">
+                Our Clients
+              </p>
+              <h3 className="text-3xl lg:text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
+                We're trusted by our clients.
+              </h3>
+            </div>
+            <Animated varient="fade-up">
+              <div className="_clients flex justify-center items-center gap-8 mt-10 flex-wrap">
+                <div className="w-16 h-16">
+                  <img
+                    src="/images/static/qweekai.png"
+                    alt="Client Logo"
+                    className="w-full h-full rounded-md"
+                  />
+                </div>
+                <div className="w-16 h-16">
+                  <img
+                    src="/images/static/dhanshalik.jpg"
+                    alt="Client Logo"
+                    className="w-full h-full rounded-md"
+                  />
+                </div>
+                <div className="w-16 h-16">
+                  <img
+                    src="/images/static/specialstars.jpeg"
+                    alt="Client Logo"
+                    className="w-full h-full rounded-md"
+                  />
+                </div>
+                <div className="w-16 h-16 rounded-md">
+                  <img
+                    src="/images/static/dropbox.png"
+                    alt="Client Logo"
+                    className="w-full h-full"
+                  />
+                </div>
+              </div>
+            </Animated>
           </div>
-          <Animated varient="fade-up">
-            <div className="_clients flex justify-center items-center gap-8 mt-10 flex-wrap">
-              <div className="w-16 h-16">
-                <img
-                  src="/images/static/qweekai.png"
-                  alt="Client Logo"
-                  className="w-full h-full rounded-md"
-                />
-              </div>
-              <div className="w-16 h-16">
-                <img
-                  src="/images/static/dhanshalik.jpg"
-                  alt="Client Logo"
-                  className="w-full h-full rounded-md"
-                />
-              </div>
-              <div className="w-16 h-16">
-                <img
-                  src="/images/static/specialstars.jpeg"
-                  alt="Client Logo"
-                  className="w-full h-full rounded-md"
-                />
-              </div>
-              <div className="w-16 h-16 rounded-md">
-                <img
-                  src="/images/static/dropbox.png"
-                  alt="Client Logo"
-                  className="w-full h-full"
-                />
+        </section>
+        <Animated varient="fade-up" speed="fast">
+          <div className="container mx-auto">
+            <section
+              id="booking"
+              className="_booking-section py-[6.5rem] bg-violet-500 dark:bg-slate-950 flex flex-col justify-center items-center rounded-lg"
+            >
+              <Booking />
+            </section>
+          </div>
+        </Animated>
+        <section
+          className="_faq-section py-[8rem] pb-[3rem] md:min-h-[calc(100vh-80px)] flex flex-col justify-center items-center"
+          id="faq"
+        >
+          <div className="container mx-auto max-w-[1300px]">
+            <div className="text-center">
+              <h3 className="text-3xl lg:text-4xl font-[600] text-slate-700 dark:text-white leading-10">
+                Frequently Asked Questions
+              </h3>
+              <p className="text-[14px] mt-4 md:text-[17px] text-slate-500 dark:text-slate-400 leading-6 md:leading-7 mb-8">
+                Can't find what you're looking for? Reach out to our{" "}
+                <a
+                  className="text-violet-700 dark:text-violet-400"
+                  href="/support"
+                >
+                  support team
+                </a>
+                .
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <div className="max-w-[500px] md:max-w-[700px] pt-[3rem]">
+                <Collapsible title="What is your refund policy?">
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Atque, veniam excepturi sequi eius libero dolorem impedit
+                    dolores natus cum, a nostrum illum minima! Doloremque
+                    architecto cum expedita dolorem porro culpa.
+                  </p>
+                </Collapsible>
+                <Collapsible title="How do I cancel my subscription?">
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Aut, neque tenetur repellat obcaecati illum autem officiis
+                    odit excepturi exercitationem repudiandae atque unde nemo,
+                    corporis ratione saepe vitae, eveniet nesciunt beatae.
+                  </p>
+                </Collapsible>
+                <Collapsible title="How do I cancel my subscription?">
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Eum vitae neque quidem, in architecto a nam, atque doloribus
+                    eos sequi molestias cumque quo dignissimos culpa, omnis
+                    maiores repudiandae amet dolorum?
+                  </p>
+                </Collapsible>
+                <Collapsible title="Can I upgrade my plan?">
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et
+                    libero cupiditate suscipit nisi ipsum quae distinctio quos
+                    architecto cum placeat eum quia, reprehenderit alias officia
+                    accusamus dolores recusandae dolore. Delectus.
+                  </p>
+                </Collapsible>
+                <Collapsible title="Can I upgrade my plan?">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Voluptates qui fugit provident vitae unde obcaecati
+                    blanditiis error quo in consequatur aperiam, quis quibusdam
+                    ad quidem dolor explicabo dignissimos facilis odio!
+                  </p>
+                </Collapsible>
               </div>
             </div>
-          </Animated>
-        </div>
-      </section>
-
-      <section
-        className="_faq-section py-[8rem] md:min-h-[calc(100vh-80px)] bg-violet-50 dark:bg-slate-800 flex flex-col justify-center items-center"
-        id="faq"
-      >
-        <div className="container mx-auto max-w-[1300px]">
-          <div className="text-center">
-            <h3 className="text-3xl lg:text-4xl font-[600] text-slate-700 dark:text-white leading-10">
-              Frequently Asked Questions
-            </h3>
-            <p className="text-[14px] mt-4 md:text-[17px] text-slate-500 dark:text-slate-400 leading-6 md:leading-7 mb-8">
-              Can't find what you're looking for? Reach out to our{" "}
-              <a
-                className="text-violet-700 dark:text-violet-400"
-                href="/support"
-              >
-                support team
-              </a>
-              .
-            </p>
           </div>
-          <div className="flex justify-center">
-            <div className="max-w-[500px] md:max-w-[700px] pt-[3rem]">
-              <Collapsible title="What is your refund policy?">
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Atque, veniam excepturi sequi eius libero dolorem impedit
-                  dolores natus cum, a nostrum illum minima! Doloremque
-                  architecto cum expedita dolorem porro culpa.
-                </p>
-              </Collapsible>
-              <Collapsible title="How do I cancel my subscription?">
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut,
-                  neque tenetur repellat obcaecati illum autem officiis odit
-                  excepturi exercitationem repudiandae atque unde nemo, corporis
-                  ratione saepe vitae, eveniet nesciunt beatae.
-                </p>
-              </Collapsible>
-              <Collapsible title="How do I cancel my subscription?">
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum
-                  vitae neque quidem, in architecto a nam, atque doloribus eos
-                  sequi molestias cumque quo dignissimos culpa, omnis maiores
-                  repudiandae amet dolorum?
-                </p>
-              </Collapsible>
-              <Collapsible title="Can I upgrade my plan?">
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et
-                  libero cupiditate suscipit nisi ipsum quae distinctio quos
-                  architecto cum placeat eum quia, reprehenderit alias officia
-                  accusamus dolores recusandae dolore. Delectus.
-                </p>
-              </Collapsible>
-              <Collapsible title="Can I upgrade my plan?">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptates qui fugit provident vitae unde obcaecati blanditiis
-                  error quo in consequatur aperiam, quis quibusdam ad quidem
-                  dolor explicabo dignissimos facilis odio!
-                </p>
-              </Collapsible>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
       <section
-        className="_contact-section py-[8rem] md:min-h-[calc(100vh-80px)] bg-white dark:bg-slate-900 flex flex-col justify-center items-center"
+        className="_contact-section py-[8rem] bg-white dark:bg-slate-900 flex flex-col justify-center items-center"
         id="contact"
       >
         <div className="container mx-auto max-w-[1300px] grid md:grid-cols-2 gap-10">

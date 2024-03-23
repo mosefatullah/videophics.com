@@ -70,7 +70,7 @@ const postSitemap = async (data, result) => {
     await octokit.request(`PUT /repos/{owner}/{repo}/contents/{path}`, {
       owner: ownerName,
       repo: repoName,
-      path: fileName,
+      path: "public/" + fileName,
       message: "Update sitemap.xml",
       branch: codesBranchName,
       committer: {

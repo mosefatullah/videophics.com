@@ -681,7 +681,7 @@ export default function ServicesView() {
         <Helmet>
           <title>
             {service
-              ? "Videophics" + service + " | Agency Services"
+              ? service + " | Videophics Services"
               : "Services - Videophics"}
           </title>
         </Helmet>

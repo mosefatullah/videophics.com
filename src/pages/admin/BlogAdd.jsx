@@ -25,11 +25,10 @@ import { StyleInlineTool } from "editorjs-style";
 import WithAuth from "./components/WithAuth";
 
 /* Utils */
-import { createBlogPost, onAuth } from "../../utils/admin";
+import { createBlogPost } from "../../utils/admin";
 
 function BlogAdd() {
   const ejInstance = React.useRef(null);
-  const [user, setUser] = React.useState(null);
   const [blogBody, setBlogBody] = React.useState({});
   const [thumbnail, setThumbnail] = React.useState(null);
 
@@ -231,7 +230,6 @@ function BlogAdd() {
       ) {
         initEditor();
       }
-      console.log(ejInstance.current);
     }, 100);
 
     return () => {

@@ -135,7 +135,7 @@ export default function App() {
             }
           />
           <Route
-            path="/admin/myblog/edit/:id"
+            path="/admin/myblog/edit/:postId"
             element={
               <Layout>
                 <Admin_BlogEdit />

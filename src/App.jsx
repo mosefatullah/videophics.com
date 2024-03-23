@@ -21,6 +21,7 @@ import Admin_Home from "./pages/admin/Home";
 import Admin_Blog from "./pages/admin/Blog";
 import Admin_BlogEdit from "./pages/admin/BlogEdit";
 import Admin_BlogAdd from "./pages/admin/BlogAdd";
+import Admin_Sitemap from "./pages/admin/Sitemap";
 
 export default function App() {
   const [theme, setTheme] = React.useState(
@@ -146,6 +147,14 @@ export default function App() {
             element={
               <Layout>
                 <Admin_BlogAdd />
+              </Layout>
+            }
+          />
+          <Route
+            path="/admin/sitemap"
+            element={
+              <Layout>
+                <Admin_Sitemap />
               </Layout>
             }
           />

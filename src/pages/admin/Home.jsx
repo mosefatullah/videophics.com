@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 /* Utils */
 import { logOut } from "../../utils/admin";
@@ -16,6 +17,9 @@ function Home() {
     <WithAuth>
       {({ user }) => (
         <>
+          <Helmet>
+            <title>Admin - Videophics</title>
+          </Helmet>
           {user && (
             <>
               <div className="container py-12 mx-auto">
@@ -45,6 +49,16 @@ function Home() {
                       </h2>
                       <p className="text-slate-500 dark:text-slate-400 text-sm mt-2">
                         Manage blog posts at one place
+                      </p>
+                    </div>
+                  </NavLink>
+                  <NavLink to="/admin/sitemap">
+                    <div className="bg-white dark:bg-slate-800 shadow-md rounded-md p-6 hover:shadow-lg transition duration-300 hover:bg-slate-100 dark:hover:bg-slate-700 cursor-pointer select-none">
+                      <h2 className="text-slate-700 dark:text-white text-lg font-[500]">
+                        Sitemap
+                      </h2>
+                      <p className="text-slate-500 dark:text-slate-400 text-sm mt-2">
+                        Manage sitemap.xml file for SEO
                       </p>
                     </div>
                   </NavLink>

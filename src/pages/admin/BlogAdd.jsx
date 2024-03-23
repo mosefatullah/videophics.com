@@ -1,4 +1,7 @@
 import React from "react";
+import { Helmet } from "react-helmet";
+
+/* Plugins */
 import EditorJS from "@editorjs/editorjs";
 import RawTool from "@editorjs/raw";
 import ImageTool from "@editorjs/image";
@@ -18,9 +21,11 @@ import Undo from "editorjs-undo";
 import edjsParser from "editorjs-parser";
 import { StyleInlineTool } from "editorjs-style";
 
-import { createBlogPost, onAuth } from "../../utils/admin";
+/* Components */
 import WithAuth from "./components/WithAuth";
-import { useLocation } from "react-router-dom";
+
+/* Utils */
+import { createBlogPost, onAuth } from "../../utils/admin";
 
 function BlogAdd() {
   const ejInstance = React.useRef(null);
@@ -239,6 +244,9 @@ function BlogAdd() {
     <WithAuth>
       {() => (
         <>
+          <Helmet>
+            <title>Add Blog Post - Admin</title>
+          </Helmet>
           <div className="container mx-auto py-10 text-slate-800 dark:text-white">
             <button className="mb-5" onClick={() => window.history.back()}>
               &larr; Go back
@@ -286,7 +294,9 @@ function BlogAdd() {
                     </label>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="title">Title *</label>
+                    <label htmlFor="title">
+                      Title <span className="text-red-500">*</span>
+                    </label>
                     <input
                       type="text"
                       name="title"
@@ -307,7 +317,9 @@ function BlogAdd() {
                       />
                     </div>
                     <div className="flex flex-col gap-2 sm:w-[35%]">
-                      <label htmlFor="category">Category *</label>
+                      <label htmlFor="category">
+                        Category <span className="text-red-500">*</span>
+                      </label>
                       <select
                         name="category"
                         id="category"
@@ -324,7 +336,9 @@ function BlogAdd() {
                     </div>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="content">Content *</label>
+                    <label htmlFor="content">
+                      Content <span className="text-red-500">*</span>
+                    </label>
                     <div
                       id="_blog-body-editor"
                       className="border border-slate-200 dark:border-slate-700 rounded-md p-4 dark:border-violet-500 dark:border-2 min-h-[300px]"

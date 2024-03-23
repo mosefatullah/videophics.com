@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import {
   collection,
   limit,
@@ -33,6 +34,9 @@ function Blog() {
     <WithAuth>
       {({ user }) => (
         <>
+          <Helmet>
+            <title>My Blog - Admin</title>
+          </Helmet>
           <div className="container mx-auto py-10 dark:text-white">
             <button className="mb-5" onClick={() => window.history.back()}>
               &larr; Go back

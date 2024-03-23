@@ -479,3 +479,42 @@ html.dark #_blog-body-editor .tc-cell--selected {
 ._footer a {
   width: fit-content;
 }
+
+._sitemap-section {
+  padding: 20px;
+  width: 100%;
+}
+._sitemap-section h2 {
+  margin-bottom: 20px;
+}
+._sitemap-section code {
+  display: block;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.3rem;
+  max-height: 500px;
+  overflow: auto;
+}
+._sitemap-section button {
+  margin-top: 10px;
+  display: block;
+}
+._sitemap-section .addnewurl-form {
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.3rem;
+  margin-top: 30px;
+}
+._sitemap-section .addnewurl-form label {
+  font-weight: 600;
+}
+._sitemap-section .addnewurl-form input,
+._sitemap-section .addnewurl-form select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+._sitemap-section .addnewurl-form button {
+  margin-top: 20px;
+  display: block;
+}

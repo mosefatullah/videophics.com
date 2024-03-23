@@ -212,27 +212,6 @@ html.dark ._navbar ._menu li a:hover {
   cursor: pointer;
 }
 
-._blog-body p {
-  line-height: 1.8;
-}
-
-._blog-body img {
-  width: 100%;
-  height: auto;
-  border-radius: 0.3rem;
-  margin-bottom: 20px;
-}
-
-._blog-body h1,
-._blog-body h2,
-._blog-body h3,
-._blog-body h4,
-._blog-body h5,
-._blog-body h6 {
-  margin-top: 50px;
-  margin-bottom: 10px;
-}
-
 #_blog-body-editor * {
   color: #333;
   outline: none;
@@ -396,38 +375,67 @@ html.dark #_blog-body-editor .tc-cell--selected {
   font-weight: 600;
 }
 
+._blog-body p {
+  line-height: 1.8;
+}
+
+._blog-body img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.3rem;
+  margin-bottom: 20px;
+}
+
+._blog-body h1,
+._blog-body h2,
+._blog-body h3,
+._blog-body h4,
+._blog-body h5,
+._blog-body h6 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
 ._blog-body > :first-child {
   margin-top: 0px;
 }
 
 ._blog-body h1 {
   font-size: 2.5rem;
-  font-weight: 600;
+  line-height: 1.3;
 }
 
 ._blog-body h2 {
   font-size: 2rem;
-  font-weight: 600;
+  line-height: 1.5;
 }
 
 ._blog-body h3 {
   font-size: 1.8rem;
-  font-weight: 600;
+  line-height: 1.4;
 }
 
 ._blog-body h4 {
   font-size: 1.6rem;
-  font-weight: 600;
+  line-height: 1.3;
 }
 
 ._blog-body h5 {
   font-size: 1.4rem;
-  font-weight: 600;
+  line-height: 1.2;
 }
 
 ._blog-body h6 {
   font-size: 1.2rem;
-  font-weight: 600;
+  line-height: 1.1;
+}
+
+@media screen and (max-width: 768px) {
+  ._blog-body p {
+    line-height: 1.6;
+  }
+  
 }
 
 ._blog-body blockquote {
@@ -466,14 +474,16 @@ html.dark #_blog-body-editor .tc-cell--selected {
 ._blog-body ul,
 ._blog-body ol {
   padding-left: 20px;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 ._blog-body ul li {
   list-style: square;
+  margin: 10px 0;
 }
 ._blog-body ol li {
   list-style-type: decimal;
+  margin: 10px 0;
 }
 
 ._footer a {
@@ -481,7 +491,6 @@ html.dark #_blog-body-editor .tc-cell--selected {
 }
 
 ._sitemap-section {
-  padding: 20px;
   width: 100%;
 }
 ._sitemap-section h2 {
@@ -495,18 +504,13 @@ html.dark #_blog-body-editor .tc-cell--selected {
   max-height: 500px;
   overflow: auto;
 }
-._sitemap-section button {
-  margin-top: 10px;
-  display: block;
-}
 ._sitemap-section .addnewurl-form {
   padding: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0.3rem;
-  margin-top: 30px;
 }
 ._sitemap-section .addnewurl-form label {
-  font-weight: 600;
+  font-weight: 500;
 }
 ._sitemap-section .addnewurl-form input,
 ._sitemap-section .addnewurl-form select {

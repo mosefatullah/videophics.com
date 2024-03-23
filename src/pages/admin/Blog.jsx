@@ -41,7 +41,7 @@ function Blog() {
             <button className="mb-5" onClick={() => window.history.back()}>
               &larr; Go back
             </button>
-            <h1 className="text-4xl font-[500] text-center text-slate-800 dark:text-white">
+            <h1 className="text-3xl md:text-4xl font-[500] text-center text-slate-800 dark:text-white">
               <span className="text-slate-500 dark:text-gray-500">Admin /</span>{" "}
               Blog
             </h1>

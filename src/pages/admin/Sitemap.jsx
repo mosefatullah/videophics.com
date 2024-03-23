@@ -32,26 +32,16 @@ function Sitemap() {
             <button className="mb-5" onClick={() => window.history.back()}>
               &larr; Go back
             </button>
-            <h1 className="text-4xl font-bold text-center">Manage Sitemap</h1>
-            <div className="mt-12 flex flex-col lg:flex-row justify-center gap-9">
+            <h1 className="text-3xl md:text-4xl font-[500] text-center text-slate-800 dark:text-white">
+              <span className="text-slate-500 dark:text-gray-500">Admin /</span>{" "}
+              Sitemap
+            </h1>
+            <div className="mt-12 flex flex-col lg:flex-row justify-center gap-9 pt-2">
               <div className="_sitemap-section">
                 <div className="grid lg:grid-cols-2 gap-6">
-                  <div className="">
-                    <button
-                      className="bg-violet-500 text-white px-4 py-2 rounded-md"
-                      onClick={() => {
-                        setData("");
-                        setTimeout(() => {
-                          getSitemap((result) => {
-                            setData(result);
-                          });
-                        }, 500);
-                      }}
-                    >
-                      Refresh
-                    </button>
+                  <div>
                     <form className="addnewurl-form">
-                      <div className="form-group">
+                      <div className="form-group pb-3">
                         <label htmlFor="url">
                           URL <span className="text-red-500">*</span>
                         </label>
@@ -69,14 +59,13 @@ function Sitemap() {
                           className="text-slate-500 dark:text-slate-400"
                           style={{
                             fontSize: "0.8rem",
-                            marginBottom: "15px",
                           }}
                         >
                           You must use <span className="underline">?/</span> in
                           the URL after the domain name.
                         </p>
                       </div>
-                      <div className="form-group">
+                      <div className="form-group py-3">
                         <label htmlFor="lastmod">
                           Last Modified <span className="text-red-500">*</span>
                         </label>
@@ -93,14 +82,13 @@ function Sitemap() {
                           className="text-slate-500 dark:text-slate-400"
                           style={{
                             fontSize: "0.8rem",
-                            marginBottom: "15px",
                           }}
                         >
                           Last Modified tells search engines to re-crawl the
                           page.
                         </p>
                       </div>
-                      <div className="form-group">
+                      <div className="form-group pt-3">
                         <label htmlFor="changefreq">Change Frequency</label>
                         <select
                           id="changefreq"
@@ -167,11 +155,24 @@ function Sitemap() {
                           }, 500);
                         }}
                       >
-                        Add New URL
+                        Add to Sitemap
                       </button>
                     </form>
                   </div>
                   <div className="border border-slate-200 dark:border-slate-700 rounded-md p-4 dark:border-violet-500 dark:border-2">
+                    <button
+                      className="bg-violet-500 text-white px-4 py-2 mb-6 rounded-md"
+                      onClick={() => {
+                        setData("");
+                        setTimeout(() => {
+                          getSitemap((result) => {
+                            setData(result);
+                          });
+                        }, 500);
+                      }}
+                    >
+                      Refresh
+                    </button>
                     <code style={{ display: "block", whiteSpace: "pre-wrap" }}>
                       {data &&
                         JSON.parse(data)["urlset"]["url"].map((item, index) => {
@@ -180,16 +181,54 @@ function Sitemap() {
                               <div>
                                 <strong>URL:</strong> {item.loc._text}
                               </div>
-                              <div className="text-slate-500 dark:text-slate-400">
-                                <strong>Last Modified:</strong>{" "}
-                                {new Date(item.lastmod._text).toDateString()}
-                              </div>
-                              {item.changefreq && (
+                              <div className="text-slate-500 dark:text-slate-400 flex flex-col md:flex-row gap-2 md:items-center pb-1">
                                 <div>
-                                  <strong>Change Frequency:</strong>{" "}
-                                  {item.changefreq._text}
+                                  <div>
+                                    <strong>Last Modified:</strong>{" "}
+                                    {new Date(
+                                      item.lastmod._text
+                                    ).toDateString()}
+                                  </div>
+                                  {item.changefreq && (
+                                    <div>
+                                      <strong>Change Frequency:</strong>{" "}
+                                      {item.changefreq._text}
+                                    </div>
+                                  )}
                                 </div>
-                              )}
+                                <div className="ml-auto">
+                                  <button
+                                    className="text-red-500 hover:underline"
+                                    onClick={() => {
+                                      const dataParsed = JSON.parse(data);
+                                      dataParsed.urlset.url.splice(index, 1);
+                                      const newData = JSON.stringify(
+                                        dataParsed,
+                                        null,
+                                        4
+                                      );
+                                      setData("");
+                                      setTimeout(() => {
+                                        postSitemap(dataParsed, (result, e) => {
+                                          if (result) {
+                                            alert(
+                                              "Sitemap submitted! It may take a few minutes to update properly."
+                                            );
+                                            setData(newData);
+                                          } else {
+                                            alert(
+                                              "Sitemap not submitted! Please try again."
+                                            );
+                                            console.error(e);
+                                          }
+                                        });
+                                      }, 500);
+                                    }}
+                                  >
+                                    Remove
+                                  </button>
+                                </div>
+                              </div>
                               <hr />
                             </div>
                           );

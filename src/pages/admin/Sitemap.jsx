@@ -58,13 +58,23 @@ function Sitemap() {
                         <input
                           type="text"
                           id="url"
-                          placeholder="https://videophics.com/"
+                          placeholder="https://videophics.com/?/.../..."
                           className="text-slate-800 p-3 py-[0.6rem] border border-slate-200 dark:border-slate-700 rounded-md dark:bg-slate-700 dark:text-white dark:border-violet-500 dark:border-2"
                           value={addnewsitemapInput1}
                           onChange={(e) =>
                             setAddnewsitemapInput1(e.target.value)
                           }
                         />
+                        <p
+                          className="text-slate-500 dark:text-slate-400"
+                          style={{
+                            fontSize: "0.8rem",
+                            marginBottom: "15px",
+                          }}
+                        >
+                          You must use <span className="underline">?/</span> in
+                          the URL after the domain name.
+                        </p>
                       </div>
                       <div className="form-group">
                         <label htmlFor="lastmod">
@@ -79,6 +89,16 @@ function Sitemap() {
                             setAddnewsitemapInput2(e.target.value)
                           }
                         />
+                        <p
+                          className="text-slate-500 dark:text-slate-400"
+                          style={{
+                            fontSize: "0.8rem",
+                            marginBottom: "15px",
+                          }}
+                        >
+                          Last Modified tells search engines to re-crawl the
+                          page.
+                        </p>
                       </div>
                       <div className="form-group">
                         <label htmlFor="changefreq">Change Frequency</label>
@@ -99,18 +119,6 @@ function Sitemap() {
                           <option value="yearly">Yearly</option>
                           <option value="never">Never</option>
                         </select>
-                      </div>
-                      <div className="note">
-                        <p
-                          className="text-muted"
-                          style={{
-                            fontSize: "0.8rem",
-                            marginTop: "10px",
-                          }}
-                        >
-                          Note: Last Modified tells search engines to re-crawl
-                          the page.
-                        </p>
                       </div>
                       <button
                         type="submit"

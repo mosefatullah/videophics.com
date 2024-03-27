@@ -54,17 +54,18 @@ export default function Home() {
           </div>
           <div className="flex justify-center items-center md:justify-end z-10 md:order-1">
             <Animated varient="fade-in" speed="fast">
-              <video
-                src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                autoPlay
-                muted
-                controls={false}
-                alt="A visual representation of videophics"
-                className="object-cover rounded-lg max-h-[500px] w-full md:max-w-[700px] bg-violet-100 md:hidden lg:block"
-                style={{
-                  aspectRatio: "16/9",
-                }}
-              />
+              <div className="bg-violet-100 dark:bg-slate-700 rounded-lg">
+                <video
+                  src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                  autoPlay
+                  muted
+                  controls={false}
+                  alt="A visual representation of videophics"
+                  className="object-cover rounded-lg max-h-[500px] w-full md:max-w-[700px] md:hidden lg:block"
+                  style={{
+                    aspectRatio: "16/9",
+                  }}
+                /></div>
             </Animated>
           </div>
         </div>

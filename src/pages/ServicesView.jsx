@@ -28,7 +28,7 @@ const Branding = () => {
         <img
           src="/images/static/brandingView.webp"
           alt="Branding"
-          className="w-full object-cover rounded-lg"
+          className="w-full object-cover rounded-lg bg-slate-300 dark:bg-slate-700"
           style={{ aspectRatio: "16/9" }}
         />
       </section>
@@ -170,7 +170,7 @@ const BrandAdvisory = () => {
         <img
           src="/images/static/designOne.webp"
           alt="Brand Advisory"
-          className="w-full object-cover rounded-lg"
+          className="w-full object-cover rounded-lg bg-slate-300 dark:bg-slate-700"
           style={{ aspectRatio: "16/9" }}
         />
       </section>
@@ -260,7 +260,7 @@ const Development = () => {
         <img
           src="/images/static/eYpcLDXHVb0-unsplash.jpg"
           alt="Web Development"
-          className="w-full object-cover rounded-lg"
+          className="w-full object-cover rounded-lg bg-slate-300 dark:bg-slate-700"
           style={{ aspectRatio: "16/9" }}
         />
       </section>
@@ -354,7 +354,7 @@ const Marketing = () => {
         <img
           src="/images/static/tZc3vjPCk-Q-unsplash.jpg"
           alt="Marketing"
-          className="w-full object-cover rounded-lg"
+          className="w-full object-cover rounded-lg bg-slate-300 dark:bg-slate-700"
           style={{ aspectRatio: "16/9" }}
         />
       </section>
@@ -448,7 +448,7 @@ const ContentWriting = () => {
         <img
           src="/images/static/zIwAchjDirM-unsplash.jpg"
           alt="Content Writing"
-          className="w-full object-cover rounded-lg"
+          className="w-full object-cover rounded-lg bg-slate-300 dark:bg-slate-700"
           style={{ aspectRatio: "16/9" }}
         />
       </section>
@@ -538,7 +538,7 @@ const SoftwareTesting = () => {
           <img
             src="/images/static/wvJuYrM5iuw-unsplash.jpg"
             alt="Software Testing"
-            className="w-full object-cover rounded-lg"
+            className="w-full object-cover rounded-lg bg-slate-300 dark:bg-slate-700"
             style={{ aspectRatio: "16/9" }}
           />
         </section>

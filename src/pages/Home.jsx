@@ -199,19 +199,19 @@ export default function Home() {
             <div>
               <Animated varient="motion-left" speed="fast">
                 <Animated varient="fade-in" speed="fast">
-                  <Link to="/services/bug-fixing">
+                  <Link to="/services/software-testing">
                     <div className="main bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
                       <div className="p-6">
                         <img
                           src="/images/static/patch.png"
-                          alt="Bug Fixes"
+                          alt="Software Testing"
                           className="w-15 h-15 mb-5"
                         />
                         <h3 className="text-3xl md:text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
-                          <span className="text-violet-700">6.</span> Bug Fixes
+                          <span className="text-violet-700">6.</span> Software Testing
                         </h3>
                         <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
-                          We fix technical bugs and issues in your projects.
+                          We test your software to ensure quality and performance.
                         </p>
                       </div>
                     </div>
@@ -420,7 +420,7 @@ export default function Home() {
           <div className="container mx-auto max-w-[1300px]">
             <section
               id="booking"
-              className="_booking-section py-[6.5rem] bg-violet-500 dark:bg-slate-950 flex flex-col justify-center items-center rounded-lg"
+              className="_booking-section py-12 md:py-[6.5rem] bg-violet-500 dark:bg-slate-950 flex flex-col justify-center items-center rounded-lg"
             >
               <Booking />
             </section>

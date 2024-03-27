@@ -71,8 +71,8 @@ function Footer() {
               <a href="/services/content-writing" className="hover:underline">
                 Content Writing
               </a>
-              <a href="/services/bug-fixing" className="hover:underline">
-                Bug Fixing
+              <a href="/services/software-testing" className="hover:underline">
+                Software Testing
               </a>
             </div>
           </div>

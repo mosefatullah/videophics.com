@@ -19,9 +19,9 @@ const Collapsible = ({ title, children }) => {
   return (
     <div className={classes} onClick={handleToggle}>
       <div className="flex flex-col gap-2 mb-3 border-b border-slate-300 dark:border-slate-700">
-        <button className="text-xl font-[500] text-slate-700 dark:text-white text-left _collapsible">
+        <button className="text-xl font-[500] text-slate-700 dark:text-white text-left _collapsible flex">
           {title + " "}
-          <span className="float-right">&rarr;</span>
+          <span className="inline-block w-fit ml-auto">&rarr;</span>
         </button>
         <div
           className="text-sm text-slate-500 dark:text-slate-400 leading-6 _card-collapse mb-3"

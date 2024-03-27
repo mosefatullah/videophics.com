@@ -328,7 +328,7 @@ function BlogAdd() {
                         <option value="Design">Brand Advisory</option>
                         <option value="Marketing">Marketing</option>
                         <option value="Content Writing">Content Writing</option>
-                        <option value="Bug Fixing">Bug Fixing</option>
+                        <option value="Software Testing">Software Testing</option>
                         <option value="Topic">Others</option>
                       </select>
                     </div>

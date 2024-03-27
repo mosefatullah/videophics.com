@@ -53,13 +53,13 @@ export default function Navbar({ theme, setTheme }) {
           <p className="_hover">Content Writing</p>
         </li>
       </Link>
-      <Link to="/services/bug-fixing">
+      <Link to="/services/software-testing">
         <li
           className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
           index="6"
         >
-          <p className={mobile && "hidden"}>Bug Fixing</p>
-          <p className="_hover">Bug Fixing</p>
+          <p className={mobile && "hidden"}>Software Testing</p>
+          <p className="_hover">Software Testing</p>
         </li>
       </Link>
     </>
@@ -372,7 +372,7 @@ export default function Navbar({ theme, setTheme }) {
             />
             <img
               src="/images/static/patch.png"
-              alt="Bug Fixing"
+              alt="Software Testing"
               id="img6"
               className="w-full max-h-[350px] object-cover rounded-md hidden bg-slate-300 dark:bg-slate-500 p-10"
             />

@@ -515,16 +515,16 @@ const ContentWriting = () => {
   );
 };
 
-const BugFixing = () => {
+const SoftwareTesting = () => {
   return (
     <>
       <div className="container mx-auto text-slate-800 dark:text-white">
         <section className="_hero-section min-h-[90vh] grid lg:grid-cols-2 gap-9 items-center py-12">
           <div>
-            <h1 className="text-5xl font-bold">Bug Fixing</h1>
+            <h1 className="text-5xl font-bold">Software Testing</h1>
             <p className="text-xl text-slate-700 dark:text-slate-300 mt-8 leading-8">
               Fix bugs and issues in your website or web application with our
-              bug fixing solutions. We help you identify and resolve technical
+              software testing solutions. We help you identify and resolve technical
               problems to ensure a smooth user experience.
             </p>
             <a
@@ -537,7 +537,7 @@ const BugFixing = () => {
 
           <img
             src="/images/static/wvJuYrM5iuw-unsplash.jpg"
-            alt="Bug Fixing"
+            alt="Software Testing"
             className="w-full object-cover rounded-lg"
             style={{ aspectRatio: "16/9" }}
           />
@@ -545,14 +545,14 @@ const BugFixing = () => {
         <section className="_list-section min-h-screen py-12 pb-20" id="list">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-12">
-              Bug Fixing Services
+              Software Testing Services
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <Animated varient="fade-in">
                 <div>
                   <img
                     src="/images/static/5fNmWej4tAA-unsplash.jpg"
-                    alt="Website Debugging"
+                    alt="Software Testing"
                     className="w-full object-cover rounded-t-md mx-auto bg-slate-300 bg-slate-500"
                     style={{ aspectRatio: "3/2" }}
                   />
@@ -629,7 +629,7 @@ export default function ServicesView() {
     "brand-advisory",
     "marketing",
     "content-writing",
-    "bug-fixing",
+    "software-testing",
   ];
 
   const componentsList = {
@@ -658,9 +658,9 @@ export default function ServicesView() {
         <ContentWriting />
       </Layout>
     ),
-    "bug-fixing": (
+    "software-testing": (
       <Layout>
-        <BugFixing />
+        <SoftwareTesting />
       </Layout>
     ),
   };

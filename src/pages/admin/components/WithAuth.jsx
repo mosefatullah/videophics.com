@@ -8,24 +8,25 @@ function WithAuth({ children }) {
   const [user, setUser] = React.useState(null);
 
   const loginProcess = () => {
+    setUser(null);
     login(
       (u) => {
         setUser(u.user);
       },
-      (e) => {
+      () => {
         alert("You are not authorized to access this page!");
-        console.error(e);
         logOutProcess();
       }
     );
   };
 
   const logOutProcess = () => {
+    setUser(null);
     logOut(
       () => {
         setUser(false);
       },
-      (e) => {
+      () => {
         setUser(false);
       }
     );
@@ -34,7 +35,11 @@ function WithAuth({ children }) {
   React.useEffect(() => {
     onAuth(auth, (u) => {
       if (u) {
-        setUser(u);
+        checkAdmin(u.email, () => {
+          setUser(u);
+        }, () => {
+          logOutProcess();
+        });
       } else {
         setUser(false);
       }
@@ -54,7 +59,7 @@ function WithAuth({ children }) {
       ) : user !== false ? (
         children({ user })
       ) : (
-        <div className="container py-12 mx-auto">
+        <div className="container py-12 mx-auto max-w-[1300px]">
           <h1 className="text-center text-slate-800 dark:text-white text-3xl font-[500] mt-10">
             Welcome to Admin Panel
           </h1>

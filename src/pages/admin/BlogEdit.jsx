@@ -188,7 +188,6 @@ function BlogEdit() {
         setBlogBody(outputData);
       },
     });
-    console.log(blogBody);
   };
 
   const addPost = () => {
@@ -222,7 +221,7 @@ function BlogEdit() {
     createBlogPost(
       post,
       () => {
-        alert("Post added successfully!");
+        alert("Post updated successfully!");
         window.location.href = "/admin/myblog";
       },
       (e) => {
@@ -272,7 +271,7 @@ function BlogEdit() {
           <Helmet>
             <title>Edit Blog Post - Admin</title>
           </Helmet>
-          <div className="container mx-auto py-10 text-slate-800 dark:text-white">
+          <div className="container mx-auto max-w-[1300px] py-10 text-slate-800 dark:text-white">
             <button className="mb-5" onClick={() => window.history.back()}>
               &larr; Go back
             </button>

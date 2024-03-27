@@ -37,7 +37,7 @@ function Blog() {
           <Helmet>
             <title>My Blog - Admin</title>
           </Helmet>
-          <div className="container mx-auto py-10 dark:text-white">
+          <div className="container mx-auto max-w-[1300px] py-10 dark:text-white">
             <button className="mb-5" onClick={() => window.history.back()}>
               &larr; Go back
             </button>

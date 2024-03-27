@@ -231,7 +231,7 @@ export default function Navbar({ theme, setTheme }) {
               Contact Us
             </NavLink>
             <button
-              className="text-black p-2 rounded-full active:scale-95 active:bg-gray-100 dark:text-white dark:active:bg-slate-800 dark:active:text-white"
+              className="text-black p-2 rounded-full active:scale-95 active:bg-gray-100 dark:text-white dark:active:bg-slate-700 dark:active:text-white"
               onClick={() => {
                 setTheme(theme === "dark" ? "light" : "dark");
               }}

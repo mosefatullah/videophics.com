@@ -231,7 +231,7 @@ export default function Home() {
               </p>
               <div className="grid md:grid-cols-3 gap-12">
                 <Animated varient="fade-up">
-                  <div className="flex flex-col bg-slate-300 dark:bg-slate-800 p-6 rounded-lg h-full">
+                  <div className="flex flex-col bg-slate-200 dark:bg-slate-800 p-6 rounded-lg h-full">
                     <img
                       src="/images/static/organic.png"
                       alt="Quality"
@@ -247,7 +247,7 @@ export default function Home() {
                   </div>
                 </Animated>
                 <Animated varient="fade-up">
-                  <div className="flex flex-col bg-slate-300 dark:bg-slate-800 p-6 rounded-lg h-full">
+                  <div className="flex flex-col bg-slate-200 dark:bg-slate-800 p-6 rounded-lg h-full">
                     <img
                       src="/images/static/emotion.png"
                       alt="Emotion"
@@ -263,7 +263,7 @@ export default function Home() {
                   </div>
                 </Animated>
                 <Animated varient="fade-up">
-                  <div className="flex flex-col bg-slate-300 dark:bg-slate-800 p-6 rounded-lg h-full">
+                  <div className="flex flex-col bg-slate-200 dark:bg-slate-800 p-6 rounded-lg h-full">
                     <img
                       src="/images/static/story.png"
                       alt="Story"

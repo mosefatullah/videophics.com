@@ -10,7 +10,7 @@ export default function ContactUs() {
   return (
     <>
       <Helmet>
-        <title>Contact Us | Videophics</title>
+        <title>Contact Us - Videophics</title>
       </Helmet>
       <div className="container mx-auto max-w-[1300px] pb-12">
         <div className="grid md:grid-cols-2 gap-10 py-20">

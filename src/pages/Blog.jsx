@@ -34,7 +34,10 @@ export default function Blog() {
   return (
     <>
       <Helmet>
-        <title>Videophics Blog | Branding Agency</title>
+        <title>Blog - Videophics</title>
+        <meta
+          name="description"
+          content="Read our latest trending blogs on branding, marketing, and business growth." />
       </Helmet>
       <div className="container mx-auto py-10 dark:text-white">
         <h1 className="text-4xl font-bold text-center text-violet-900 dark:text-slate-50">
@@ -42,7 +45,7 @@ export default function Blog() {
         </h1>
         <div className="pt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {blogslist.map((blog) => (
-            <Animated varient="fade-in">
+            <Animated varient="fade-in" key={blog.id}>
               <Link
                 to={"/blog/" + blog.id}
                 className="hover:underline hover:transform hover:scale-105 transition duration-300 ease-in-out active:scale-100"

@@ -12,7 +12,9 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Videophics | Branding Agency</title>
+        <title>Videophics - Your Premier Branding Agency & Branding Experts</title>
+        <meta name="description" content="Videophics is a leading branding agency dedicated to empowering your brand's growth and success. Through our expertise in emotion-driven storytelling and strategic branding, we create enduring experiences that resonate with your audience." />
+
         <script
           src="https://assets.calendly.com/assets/external/widget.js"
           type="text/javascript"
@@ -25,21 +27,21 @@ export default function Home() {
         <div className="_sketch h-[100px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 right-0 hidden md:block dark:bottom-20 dark:top-auto dark:opacity-50" />
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-14 max-w-[1300px]">
           <div className="flex flex-col justify-center items-start z-10">
-            <h1 className="text-4xl md:text-4xl lg:text-5xl font-[600] mb-4 text-slate-700 dark:text-white leading-10">
+            <h1 className="text-4xl md:text-4xl lg:text-5xl  font-[600] mb-4 text-slate-700 dark:text-white leading-10 xl:leading-12">
               <Animated varient="fade-left" className="inline">
                 Innovative minds are
               </Animated>{" "}
               <Animated varient="fade-right" className="inline">
                 <span className="text-violet-500 dark:text-violet-400">
-                  discovering
+                  shaping
                 </span>{" "}
-                a better future
+                a brighter tomorrow
               </Animated>
             </h1>
             <p className="text-[14px] md:text-[17px] mt-4 mb-7 text-slate-500 dark:text-white leading-6 md:leading-7 _heroPara">
               At Videophics, we bring brands and people closer. With a focus on
               emotion-driven connections, we craft experiences that resonate and
-              endure. Let's tell your story in a way that truly connects.
+              endure. Let us help you tell your brand's story in a way that fosters genuine connections and drives meaningful engagement.
             </p>
             <NavLink to="/about-us">
               <button
@@ -404,7 +406,7 @@ export default function Home() {
           </div>
         </section>
         <Animated varient="fade-up" speed="fast">
-          <div className="container mx-auto">
+          <div className="container mx-auto max-w-[1300px]">
             <section
               id="booking"
               className="_booking-section py-[6.5rem] bg-violet-500 dark:bg-slate-950 flex flex-col justify-center items-center rounded-lg"

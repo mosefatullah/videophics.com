@@ -56,7 +56,7 @@ export default function BlogView() {
       <Helmet>
         <title>
           {blogData && blogData.title
-            ? blogData.title + " - Videophics"
+            ? blogData.title
             : "Blog - Videophics"}
         </title>
         <script
@@ -64,7 +64,7 @@ export default function BlogView() {
           src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
         ></script>
         <script
-          nomodule
+          noModule
           src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
         ></script>
       </Helmet>
@@ -148,9 +148,9 @@ export default function BlogView() {
                 dangerouslySetInnerHTML={{
                   __html: isJson(blogData.body)
                     ? new edjsParser({
-                        youtube: `<iframe src="<%data.embed%>" width="<%data.width%>"><%data.caption%></iframe>`,
-                        list: `<ul><%data.items.map(item => { return '<li>' + item + '</li>' }).join('')}</ul>`,
-                      }).parse(isJson(blogData.body))
+                      youtube: `<iframe src="<%data.embed%>" width="<%data.width%>"><%data.caption%></iframe>`,
+                      list: `<ul><%data.items.map(item => { return '<li>' + item + '</li>' }).join('')}</ul>`,
+                    }).parse(isJson(blogData.body))
                     : "",
                 }}
               ></div>

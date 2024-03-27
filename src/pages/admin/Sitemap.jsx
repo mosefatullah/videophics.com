@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 /* Components */
@@ -29,9 +30,11 @@ function Sitemap() {
             <title>Manage Sitemap - Admin</title>
           </Helmet>
           <div className="container mx-auto max-w-[1300px] py-10 text-slate-800 dark:text-white">
-            <button className="mb-5" onClick={() => window.history.back()}>
-              &larr; Go back
-            </button>
+            <Link to="/admin">
+              <button className="mb-5">
+                &larr; Go back
+              </button>
+            </Link>
             <h1 className="text-3xl md:text-4xl font-[500] text-center text-slate-800 dark:text-white">
               <span className="text-slate-500 dark:text-gray-500">Admin /</span>{" "}
               Sitemap

@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import {
   collection,
@@ -38,9 +38,11 @@ function Blog() {
             <title>My Blog - Admin</title>
           </Helmet>
           <div className="container mx-auto max-w-[1300px] py-10 dark:text-white">
-            <button className="mb-5" onClick={() => window.history.back()}>
-              &larr; Go back
-            </button>
+            <Link to="/admin">
+              <button className="mb-5">
+                &larr; Go back
+              </button>
+            </Link>
             <h1 className="text-3xl md:text-4xl font-[500] text-center text-slate-800 dark:text-white">
               <span className="text-slate-500 dark:text-gray-500">Admin /</span>{" "}
               Blog
@@ -56,11 +58,11 @@ function Blog() {
                     <p className="mb-3 text-slate-700 dark:text-gray-400 text-[13px] uppercase font-[500]">
                       Actions
                     </p>
-                    <NavLink to="/admin/myblog/add">
+                    <Link to="/admin/blog/add">
                       <button className="bg-violet-600 hover:bg-violet-700 text-white font-[500] text-sm py-2 px-4 rounded">
                         Add Post
                       </button>
-                    </NavLink>
+                    </Link>
                   </div>
                   {blogslist.map((blog) => (
                     <div
@@ -68,7 +70,7 @@ function Blog() {
                       className="flex flex-col justify-between"
                     >
                       <div className="flex gap-2">
-                        <NavLink to={"/blog/" + blog.id}>
+                        <Link to={"/blog/" + blog.id}>
                           <div className="hover:opacity-50 transition duration-300">
                             <h2 className="text-slate-800 dark:text-white text-lg font-[400] leading-6 line-clamp-2">
                               {blog.title}
@@ -78,9 +80,9 @@ function Blog() {
                               {blog.publishedAt.toDate().toDateString()}
                             </p>
                           </div>
-                        </NavLink>
+                        </Link>
                         <div className="ml-auto">
-                          <NavLink to={"/admin/myblog/edit/" + blog.id}>
+                          <Link to={"/admin/blog/edit/" + blog.id}>
                             <button className="bg-violet-600 hover:bg-violet-700 text-white font-[500] text-sm py-2 px-2 rounded">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +104,7 @@ function Blog() {
                                 />
                               </svg>
                             </button>
-                          </NavLink>
+                          </Link>
                         </div>
                       </div>
                       <a href={blog.thumbnail} target="_blank">

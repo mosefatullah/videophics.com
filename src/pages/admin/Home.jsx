@@ -40,7 +40,7 @@ function Home() {
               </p>
             </div>
             <div className="_admin-menu grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
-              <NavLink to="/admin/myblog">
+              <NavLink to="/admin/blog">
                 <div className="bg-white dark:bg-slate-800 shadow-md rounded-md p-6 hover:shadow-lg transition duration-300 hover:bg-slate-100 dark:hover:bg-slate-700 cursor-pointer select-none">
                   <h2 className="text-slate-700 dark:text-white text-lg font-[500]">
                     My Blog

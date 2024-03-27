@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { doc, getDoc, getFirestore } from "@firebase/firestore";
 
 /* Plugins */
@@ -191,11 +191,52 @@ function BlogEdit() {
   };
 
   const addPost = () => {
+    function areArraysEqual(arr1, arr2) {
+      if (arr1.length !== arr2.length) {
+        return false;
+      }
+      function areObjectsEqual(obj1, obj2) {
+        const keys1 = Object.keys(obj1);
+        const keys2 = Object.keys(obj2);
+        if (keys1.length !== keys2.length) {
+          return false;
+        }
+        for (const key of keys1) {
+          const val1 = obj1[key];
+          const val2 = obj2[key];
+          if (typeof val1 === 'object' && typeof val2 === 'object') {
+            if (!areObjectsEqual(val1, val2)) {
+              return false;
+            }
+          } else {
+            if (val1 !== val2) {
+              return false;
+            }
+          }
+        }
+        return true;
+      }
+      for (let i = 0; i < arr1.length; i++) {
+        const obj1 = arr1[i];
+        const obj2 = arr2[i];
+        if (typeof obj1 !== 'object' || typeof obj2 !== 'object') {
+          return false;
+        }
+        if (!areObjectsEqual(obj1, obj2)) {
+          return false;
+        }
+      }
+      return true;
+    }
     const validate = () => {
       const title = document.getElementById("title").value;
       const category = document.getElementById("category").value;
+      console.log(blogBody);
       if (!title || !category || !blogBody) {
         alert("Please fill all the required fields!");
+        return false;
+      } else if (title === thePost.title && category === thePost.category && author === thePost.author && thumbnail === thePost.thumbnail && areArraysEqual(blogBody.blocks, thePost.body.blocks)) {
+        alert("No changes detected!");
         return false;
       }
       return true;
@@ -222,7 +263,7 @@ function BlogEdit() {
       post,
       () => {
         alert("Post updated successfully!");
-        window.location.href = "/admin/myblog";
+        window.location.href = "/admin/blog";
       },
       (e) => {
         alert("Failed to add post! Please try again.");
@@ -272,9 +313,11 @@ function BlogEdit() {
             <title>Edit Blog Post - Admin</title>
           </Helmet>
           <div className="container mx-auto max-w-[1300px] py-10 text-slate-800 dark:text-white">
-            <button className="mb-5" onClick={() => window.history.back()}>
-              &larr; Go back
-            </button>
+            <Link to="/admin/blog">
+              <button className="mb-5">
+                &larr; Go back
+              </button>
+            </Link>
             <h1 className="text-4xl font-bold text-center">Edit Blog Post</h1>
             {thePost === null ? (
               <div className="text-center mt-10">
@@ -317,9 +360,9 @@ function BlogEdit() {
                 </p>
               </div>
             ) : (
-              <div className="mt-12 flex flex-col lg:flex-row justify-center gap-9">
+              <div className="mt-12 flex flex-col lg:flex-row justify-center items-center lg:items-start gap-12">
                 <form
-                  className="bg-white dark:bg-slate-800 shadow-md rounded-md p-8 w-full max-w-[700px] h-fit"
+                  className="bg-white dark:bg-slate-800 shadow-md rounded-md p-8 w-full h-fit max-w-[700px]"
                   onSubmit={(e) => {
                     e.preventDefault();
                   }}
@@ -427,7 +470,7 @@ function BlogEdit() {
                     Update the Post
                   </button>
                 </form>
-                <div className="w-full">
+                <div className="w-full max-w-[700px]">
                   <div id="top" className="mb-5 min-h-[200px] relative">
                     {!thumbnail ? (
                       <div className="absolute bg-slate-200 w-full h-full dark:bg-slate-700 p-4 rounded-md flex items-center justify-center">

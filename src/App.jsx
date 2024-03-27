@@ -41,7 +41,7 @@ export default function App() {
       localStorage.setItem("theme", "light");
       document.documentElement.style.setProperty("--bg-secondary-1", "#5c42bd");
     }
-    return () => {};
+    return () => { };
   }, [theme]);
 
   const Layout = ({ children }) => {
@@ -127,7 +127,7 @@ export default function App() {
             }
           />
           <Route
-            path="/admin/myblog"
+            path="/admin/blog"
             element={
               <Layout>
                 <Admin_Blog />
@@ -135,7 +135,7 @@ export default function App() {
             }
           />
           <Route
-            path="/admin/myblog/edit/:postId"
+            path="/admin/blog/edit/:postId"
             element={
               <Layout>
                 <Admin_BlogEdit />
@@ -143,7 +143,7 @@ export default function App() {
             }
           />
           <Route
-            path="/admin/myblog/add"
+            path="/admin/blog/add"
             element={
               <Layout>
                 <Admin_BlogAdd />

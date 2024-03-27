@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 /* Plugins */
@@ -213,7 +214,7 @@ function BlogAdd() {
       post,
       () => {
         alert("Post added successfully!");
-        window.location.href = "/admin/myblog";
+        window.location.href = "/admin/blog";
       },
       (e) => {
         alert("Failed to add post! Please try again.");
@@ -246,9 +247,11 @@ function BlogAdd() {
             <title>Add Blog Post - Admin</title>
           </Helmet>
           <div className="container mx-auto max-w-[1300px] py-10 text-slate-800 dark:text-white">
-            <button className="mb-5" onClick={() => window.history.back()}>
-              &larr; Go back
-            </button>
+            <Link to="/admin/blog">
+              <button className="mb-5">
+                &larr; Go back
+              </button>
+            </Link>
             <h1 className="text-4xl font-bold text-center">Add Blog Post</h1>
             <div className="mt-12 flex flex-col lg:flex-row justify-center gap-9">
               <form

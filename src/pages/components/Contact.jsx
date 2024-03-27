@@ -27,7 +27,7 @@ export default function Contact() {
           src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Dhaka, Bangladesh"
           width="600"
           height="278"
-          frameborder="0"
+          frameBorder="0"
           style={{ width: "100%", marginTop: "2rem" }}
           allowFullScreen=""
         ></iframe>

@@ -21,12 +21,12 @@ export default function Home() {
           async
         ></script>
       </Helmet>
-      <section className="_hero-section relative py-10 min-h-[calc(100vh-80px)] flex justify-center dark:bg-slate-900">
+      <section className="_hero-section relative py-10 lg:min-h-[calc(100vh-80px)] flex justify-center dark:bg-slate-900">
         <div className="_sketch h-[200px] w-[100px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 left-0 dark:opacity-50" />
         <div className="_sketch h-[200px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter right-0 md:left-[40%] bottom-10 dark:hidden" />
         <div className="_sketch h-[100px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 right-0 hidden md:block dark:bottom-20 dark:top-auto dark:opacity-50" />
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-14 max-w-[1300px]">
-          <div className="flex flex-col justify-center items-start z-10">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-7 md:gap-14 max-w-[1300px]">
+          <div className="flex flex-col justify-center md:pt-10 lg:pt-0 md:items-center lg:items-start z-10 max-w-[700px] lg:max-w-auto mx-auto lg:mx-0">
             <h1 className="text-4xl md:text-4xl lg:text-5xl  font-[600] mb-4 text-slate-700 dark:text-white leading-10 xl:leading-12">
               <Animated varient="fade-left" className="inline">
                 Innovative minds are

@@ -39,7 +39,7 @@ export default function Blog() {
           name="description"
           content="Read our latest trending blogs on branding, marketing, and business growth." />
       </Helmet>
-      <div className="container mx-auto py-10 dark:text-white">
+      <div className="container mx-auto py-10 dark:text-white max-w-[1300px]">
         <h1 className="text-4xl font-bold text-center text-violet-900 dark:text-slate-50">
           Blog
         </h1>
@@ -48,7 +48,7 @@ export default function Blog() {
             <Animated varient="fade-in" key={blog.id}>
               <Link
                 to={"/blog/" + blog.id}
-                className="hover:underline hover:transform hover:scale-105 transition duration-300 ease-in-out active:scale-100"
+                className="hover:opacity-70 transition duration-300 ease-in-out active:scale-100"
               >
                 <div key={blog.id}>
                   <img
@@ -56,9 +56,12 @@ export default function Blog() {
                     alt={blog.title}
                     className="w-full h-60 object-cover mt-5 bg-slate-300 dark:bg-slate-700 rounded-md"
                   />
-                  <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mt-5 mb-2">
+                  <h1 className="text-2xl font-[500] text-slate-900 dark:text-slate-50 mt-5 mb-2">
                     {blog.title}
                   </h1>
+                  <p className="text-gray-500 dark:text-gray-400">
+                    {blog.author} | {blog.publishedAt.toDate().toDateString()}
+                  </p>
                 </div>
               </Link>
             </Animated>

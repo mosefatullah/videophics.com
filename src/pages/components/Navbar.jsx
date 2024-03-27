@@ -176,7 +176,7 @@ export default function Navbar({ theme, setTheme }) {
 
   React.useEffect(() => {
     const servicesMenuList = document.querySelectorAll("._services-menu ol li");
-    servicesMenuList.forEach((li, index) => {
+    servicesMenuList.forEach((li) => {
       li.addEventListener("mouseenter", (e) => {
         servicesMenuList.forEach((list) => {
           list.classList.remove("active");
@@ -207,14 +207,15 @@ export default function Navbar({ theme, setTheme }) {
       >
         <div className="container mx-auto flex justify-between lg:grid grid-cols-3 gap-4 max-w-[1300px]">
           <div className="_logo flex items-center">
-            <h1 className="font-medium text-lg flex items-center">
-              <img
-                src="/logo.jpg"
-                alt="Videophics"
-                className="h-8 w-8 object-cover rounded-md mr-2"
-              />
-              <span>Videophics</span>
-            </h1>
+            <NavLink to="/">
+              <h1 className="font-medium text-lg flex items-center">
+                <img
+                  src="/logo.jpg"
+                  alt="Videophics"
+                  className="h-8 w-8 object-cover rounded-md mr-2"
+                />
+                <span>Videophics</span>
+              </h1></NavLink>
           </div>
           <ol
             className="_menu text-sm items-center hidden lg:flex"

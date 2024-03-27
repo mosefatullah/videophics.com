@@ -12,7 +12,7 @@ export default function AboutUs() {
           name="description"
           content="We are a branding agency that helps businesses grow organically. We provide best solutions for your business." />
       </Helmet>
-      <div className="container mx-auto py-20 text-slate-800 dark:text-white">
+      <div className="container mx-auto max-w-[1300px] py-20 text-slate-800 dark:text-white">
         <h1 className="text-4xl font-bold text-center">
           Branding Agency —{" "}
           <span className="text-violet-700 dark:text-violet-500">

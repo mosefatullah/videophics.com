@@ -23,7 +23,7 @@ function TableOfContents() {
     <div className="text-[17px] leading-7 font-[400] text-slate-900 dark:text-white">
       <ul id="table-of-contents" className="border-l border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.2)] pl-1">
         {toc.map(({ slug, text, level }) => (
-          <li key={slug} style={{ paddingLeft: `${(level - 1) * 20}px` }}>
+          <li key={slug} style={{ paddingLeft: `${(level - 1) * 10}px` }} className="hover:text-slate-500 dark:hover:text-slate-400">
             <a href={`#${slug}`}><span className="text-slate-400">#</span> {text}</a>
           </li>
         ))}

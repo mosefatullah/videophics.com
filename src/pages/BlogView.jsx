@@ -79,7 +79,7 @@ export default function BlogView() {
         <NotFound />
       ) : (
         <div key={id}>
-          <div className="container mx-auto border-b-[rgba(0,0,0,0.1)] dark:border-b-[rgba(255,255,255,0.2)] border-b-[1px] md:flex gap-4 py-10 items-center">
+          <div className="container mx-auto max-w-[1300px] border-b-[rgba(0,0,0,0.1)] dark:border-b-[rgba(255,255,255,0.2)] border-b-[1px] md:flex gap-4 py-10 lg:py-20 items-center">
             <div className="py-12 text-left">
               <h1 className="text-4xl font-bold text-slate-900 dark:text-slate-50">
                 {blogData.title}
@@ -101,7 +101,7 @@ export default function BlogView() {
             </div>
           </div>
 
-          <div className="container mx-auto dark:text-white py-20 pb-30">
+          <div className="container max-w-[1300px] mx-auto dark:text-white py-20 pb-30">
             <div className="flex flex-grow flex-col lg:flex-row gap-14">
               <div className="text-gray-700 lg:h-full lg:sticky top-[7rem] dark:text-gray-400 flex lg:flex-col gap-4 pt-1">
                 <a
@@ -134,7 +134,7 @@ export default function BlogView() {
               </div>
               <div className="min-w-[300px] lg:h-full lg:sticky top-[7rem] lg:order-2 lg:ml-auto">
                 <h2
-                  className="text-2xl font-bold text-violet-900 dark:text-slate-50"
+                  className="text-2xl font-bold text-slate-900 dark:text-slate-50"
                   id="table-of-contents"
                 >
                   Table of Contents

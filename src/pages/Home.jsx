@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 /* Components */
 import Collapsible from "./components/Collapsible";
@@ -38,7 +38,7 @@ export default function Home() {
                 a brighter tomorrow
               </Animated>
             </h1>
-            <p className="text-[14px] md:text-[17px] mt-4 mb-7 text-slate-500 dark:text-white leading-6 md:leading-7 _heroPara">
+            <p className="text-[14px] md:text-[17px] mt-4 mb-7 text-slate-500 dark:text-slate-400 leading-6 md:leading-7 _heroPara">
               At Videophics, we bring brands and people closer. With a focus on
               emotion-driven connections, we craft experiences that resonate and
               endure. Let us help you tell your brand's story in a way that fosters genuine connections and drives meaningful engagement.
@@ -83,128 +83,139 @@ export default function Home() {
             <div>
               <Animated varient="motion-left" speed="fast">
                 <Animated varient="fade-in" speed="fast">
-                  <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
-                    <div className="p-6">
-                      <img
-                        src="/images/static/branding.png"
-                        alt="Branding"
-                        className="w-15 h-15 mb-5"
-                      />
-                      <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
-                        <span className="text-violet-700">1.</span> Branding
-                      </h3>
-                      <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
-                        We create brand identities, brand guidelines, and more.
-                      </p>
-                    </div>
-                  </div>
+                  <Link to="/services/branding">
+                    <div className="main bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
+                      <div className="p-6">
+                        <img
+                          src="/images/static/branding.png"
+                          alt="Branding"
+                          className="w-15 h-15 mb-5"
+                        />
+                        <h3 className="text-3xl md:text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
+                          <span className="text-violet-700">1.</span> Branding
+                        </h3>
+                        <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
+                          We create brand identities, brand guidelines, and more.
+                        </p>
+                      </div>
+                    </div></Link>
                 </Animated>
               </Animated>
             </div>
             <div>
               <Animated varient="motion-left" speed="fast">
                 <Animated varient="fade-in" speed="fast">
-                  <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
-                    <div className="p-6">
-                      <img
-                        src="/images/static/development.png"
-                        alt="Design"
-                        className="w-15 h-15 mb-5"
-                      />
-                      <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
-                        <span className="text-violet-700">2.</span> Development
-                      </h3>
-                      <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
-                        We develop websites, web applications, and more.
-                      </p>
+                  <Link to="/services/development">
+                    <div className="main bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
+                      <div className="p-6">
+                        <img
+                          src="/images/static/development.png"
+                          alt="Design"
+                          className="w-15 h-15 mb-5"
+                        />
+                        <h3 className="text-3xl md:text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
+                          <span className="text-violet-700">2.</span> Development
+                        </h3>
+                        <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
+                          We develop websites, web applications, and more.
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </Animated>
               </Animated>
             </div>
             <div>
               <Animated varient="motion-right" speed="fast">
                 <Animated varient="fade-in" speed="fast">
-                  <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
-                    <div className="p-6">
-                      <img
-                        src="/images/static/advisory.png"
-                        alt="BNrand Advisory"
-                        className="w-15 h-15 mb-5"
-                      />
-                      <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
-                        <span className="text-violet-700">3.</span> Brand
-                        Advisory
-                      </h3>
-                      <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
-                        We provide brand advisory services to help you grow.
-                      </p>
+                  <Link to="/services/brand-advisory">
+                    <div className="main bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
+                      <div className="p-6">
+                        <img
+                          src="/images/static/advisory.png"
+                          alt="BNrand Advisory"
+                          className="w-15 h-15 mb-5"
+                        />
+                        <h3 className="text-3xl md:text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
+                          <span className="text-violet-700">3.</span> Brand
+                          Advisory
+                        </h3>
+                        <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
+                          We provide brand advisory services to help you grow.
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </Animated>
               </Animated>
             </div>
             <div>
               <Animated varient="motion-right" speed="fast">
                 <Animated varient="fade-in" speed="fast">
-                  <div className="bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
-                    <div className="p-6">
-                      <img
-                        src="/images/static/marketing.png"
-                        alt="Marketing"
-                        className="w-15 h-15 mb-5"
-                      />
-                      <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
-                        <span className="text-violet-700">4.</span> Marketing
-                      </h3>
-                      <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
-                        We market your brand, products, and services.
-                      </p>
+                  <Link to="/services/marketing">
+                    <div className="main bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
+                      <div className="p-6">
+                        <img
+                          src="/images/static/marketing.png"
+                          alt="Marketing"
+                          className="w-15 h-15 mb-5"
+                        />
+                        <h3 className="text-3xl md:text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
+                          <span className="text-violet-700">4.</span> Marketing
+                        </h3>
+                        <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
+                          We market your brand, products, and services.
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </Animated>
               </Animated>
             </div>
             <div>
               <Animated varient="motion-left" speed="fast">
                 <Animated varient="fade-in" speed="fast">
-                  <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
-                    <div className="p-6">
-                      <img
-                        src="/images/static/content.png"
-                        alt="Content Writing"
-                        className="w-15 h-15 mb-5"
-                      />
-                      <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
-                        <span className="text-violet-700">5.</span> Content
-                        Writing
-                      </h3>
-                      <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
-                        We write compelling content for your brand.
-                      </p>
+                  <Link to="/services/content-writing">
+                    <div className="main bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
+                      <div className="p-6">
+                        <img
+                          src="/images/static/content.png"
+                          alt="Content Writing"
+                          className="w-15 h-15 mb-5"
+                        />
+                        <h3 className="text-3xl md:text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
+                          <span className="text-violet-700">5.</span> Content
+                          Writing
+                        </h3>
+                        <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
+                          We write compelling content for your brand.
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </Animated>
               </Animated>
             </div>
             <div>
               <Animated varient="motion-left" speed="fast">
                 <Animated varient="fade-in" speed="fast">
-                  <div className="bg-violet-100 dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
-                    <div className="p-6">
-                      <img
-                        src="/images/static/patch.png"
-                        alt="Bug Fixes"
-                        className="w-15 h-15 mb-5"
-                      />
-                      <h3 className="text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
-                        <span className="text-violet-700">6.</span> Bug Fixes
-                      </h3>
-                      <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
-                        We fix technical bugs and issues in your projects.
-                      </p>
+                  <Link to="/services/bug-fixing">
+                    <div className="main bg-white dark:bg-slate-800 w-full h-full min-h-[300px] flex items-center rounded-lg">
+                      <div className="p-6">
+                        <img
+                          src="/images/static/patch.png"
+                          alt="Bug Fixes"
+                          className="w-15 h-15 mb-5"
+                        />
+                        <h3 className="text-3xl md:text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
+                          <span className="text-violet-700">6.</span> Bug Fixes
+                        </h3>
+                        <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
+                          We fix technical bugs and issues in your projects.
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </Animated>
               </Animated>
             </div>
@@ -367,7 +378,7 @@ export default function Home() {
               <p className="text-sm text-slate-500 dark:text-gray-300 leading-6 md:leading-7 uppercase mb-2">
                 Our Clients
               </p>
-              <h3 className="text-3xl lg:text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
+              <h3 className="text-3xl lg:text-3xl md:text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                 We're trusted by our clients.
               </h3>
             </div>

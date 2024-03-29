@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { useParams, Link } from "react-router-dom";
-import { doc, getDoc, getFirestore } from "@firebase/firestore";
+import { doc, getDoc, getFirestore, deleteDoc } from "@firebase/firestore";
 
 /* Plugins */
 import EditorJS from "@editorjs/editorjs";
@@ -27,7 +27,11 @@ import { StyleInlineTool } from "editorjs-style";
 import WithAuth from "./components/WithAuth";
 
 /* Utils */
-import { createBlogPost } from "../../utils/admin";
+import {
+  createBlogPost,
+  uploadBlogImage,
+  deleteBlogImage,
+} from "../../utils/admin";
 import fi from "../../utils/firebase";
 
 function BlogEdit() {
@@ -190,7 +194,7 @@ function BlogEdit() {
     });
   };
 
-  const addPost = () => {
+  const updatePost = () => {
     function areArraysEqual(arr1, arr2) {
       if (arr1.length !== arr2.length) {
         return false;
@@ -204,7 +208,7 @@ function BlogEdit() {
         for (const key of keys1) {
           const val1 = obj1[key];
           const val2 = obj2[key];
-          if (typeof val1 === 'object' && typeof val2 === 'object') {
+          if (typeof val1 === "object" && typeof val2 === "object") {
             if (!areObjectsEqual(val1, val2)) {
               return false;
             }
@@ -219,7 +223,7 @@ function BlogEdit() {
       for (let i = 0; i < arr1.length; i++) {
         const obj1 = arr1[i];
         const obj2 = arr2[i];
-        if (typeof obj1 !== 'object' || typeof obj2 !== 'object') {
+        if (typeof obj1 !== "object" || typeof obj2 !== "object") {
           return false;
         }
         if (!areObjectsEqual(obj1, obj2)) {
@@ -235,7 +239,13 @@ function BlogEdit() {
       if (!title || !category || !blogBody) {
         alert("Please fill all the required fields!");
         return false;
-      } else if (title === thePost.title && category === thePost.category && author === thePost.author && thumbnail === thePost.thumbnail && areArraysEqual(blogBody.blocks, thePost.body.blocks)) {
+      } else if (
+        title === thePost.title &&
+        category === thePost.category &&
+        author === thePost.author &&
+        thumbnail === thePost.thumbnail &&
+        areArraysEqual(blogBody.blocks, thePost.body.blocks)
+      ) {
         alert("No changes detected!");
         return false;
       }
@@ -252,12 +262,12 @@ function BlogEdit() {
         .replace(/--/g, "-")
         .replace(/^-|-$/g, ""),
 
-      title: document.getElementById("title").value,
-      category: document.getElementById("category").value,
+      title: title,
+      category: category,
       thumbnail: thumbnail || null,
       body: blogBody,
       publishedAt: new Date(),
-      author: document.getElementById("author").value || "Author",
+      author: author || "Author",
     };
     createBlogPost(
       post,
@@ -266,8 +276,82 @@ function BlogEdit() {
         window.location.href = "/admin/blog";
       },
       (e) => {
-        alert("Failed to add post! Please try again.");
+        alert("Failed to update post! Please try again.");
         console.error(e);
+      }
+    );
+  };
+
+  const deletePost = () => {
+    if (!window.confirm("Are you sure you want to delete this post?")) return;
+    const postRef = doc(getFirestore(fi), "Blogs", postId);
+    deleteDoc(postRef)
+      .then(() => {
+        alert("Post deleted successfully!");
+        window.location.href = "/admin/blog";
+      })
+      .catch((e) => {
+        alert("Failed to delete post! Please try again.");
+        console.error(e);
+      });
+  };
+
+  const uploadThumbnail = (file) => {
+    uploadBlogImage(
+      file,
+      (snapshot) => {
+        const urlofImage = `https://firebasestorage.googleapis.com/v0/b/${
+          snapshot.ref.bucket
+        }/o/${encodeURIComponent(snapshot.ref.fullPath)}?alt=media`;
+
+        createBlogPost(
+          { ...thePost, thumbnail: urlofImage },
+          () => {
+            setThumbnail(urlofImage);
+          },
+          (e) => {
+            alert("Failed to upload thumbnail! Please try again.");
+            console.error(e);
+          }
+        );
+      },
+      (e) => {
+        alert("Failed to upload thumbnail! Please try again.");
+        console.error(e);
+      }
+    );
+  };
+
+  const deleteThumbnail = () => {
+    const HGfgh = () => {
+      createBlogPost(
+        {
+          ...thePost,
+          thumbnail: null,
+        },
+        () => {
+          alert("Thumbnail deleted successfully!");
+          setThumbnail(null);
+          document.getElementById("thumbnail").value = "";
+        },
+        (e) => {
+          alert("Failed to delete thumbnail! Please try again.");
+          console.error(e);
+        }
+      );
+    };
+    deleteBlogImage(
+      thumbnail,
+      () => {
+        HGfgh();
+      },
+      (e) => {
+        if (e.code === "storage/object-not-found") {
+          HGfgh();
+        } else {
+          alert("Failed to delete thumbnail! Please try again.");
+          console.error(e);
+        }
       }
     );
   };
@@ -276,15 +360,18 @@ function BlogEdit() {
     getDoc(doc(getFirestore(fi), "Blogs", postId)).then((doc) => {
       if (doc.exists()) {
         setThePost(doc.data());
-        if (doc.data().thumbnail) setThumbnail(doc.data().thumbnail);
+        if (doc.data().thumbnail) {
+          setThumbnail(doc.data().thumbnail);
+        }
         if (doc.data().title) setTitle(doc.data().title);
         if (doc.data().author) setAuthor(doc.data().author);
         if (doc.data().category) setCategory(doc.data().category);
 
         if (doc.data().body) {
-          if (document.getElementById("output"))
+          if (document.getElementById("output")) {
             document.getElementById("output").innerHTML =
               new edjsParser().parse(doc.data().body);
+          }
           setBlogBody(doc.data().body);
           setTimeout(() => {
             if (
@@ -310,15 +397,13 @@ function BlogEdit() {
       {() => (
         <>
           <Helmet>
-            <title>Edit Blog Post - Admin</title>
+            <title>Manage Blog Post - Admin</title>
           </Helmet>
           <div className="container mx-auto max-w-[1300px] py-10 text-slate-800 dark:text-white">
             <Link to="/admin/blog">
-              <button className="mb-5">
-                &larr; Go back
-              </button>
+              <button className="mb-5">&larr; Go back</button>
             </Link>
-            <h1 className="text-4xl font-bold text-center">Edit Blog Post</h1>
+            <h1 className="text-4xl font-bold text-center">Manage Blog Post</h1>
             {thePost === null ? (
               <div className="text-center mt-10">
                 <svg
@@ -367,7 +452,25 @@ function BlogEdit() {
                     e.preventDefault();
                   }}
                 >
-                  <div className="flex flex-col gap-8">
+                  <div className="border-b border-slate-200 dark:border-slate-700 pb-4 flex gap-2 sm:gap-4 flex-col sm:flex-row">
+                    <button
+                      type="submit"
+                      className="bg-violet-600 hover:bg-violet-700 text-white font-[500] text-sm py-3 px-6 rounded"
+                      id="updatePost"
+                      onClick={updatePost}
+                    >
+                      Update the Post
+                    </button>
+                    <button
+                      type="submit"
+                      className="bg-red-600 hover:bg-red-700 text-white font-[500] text-sm py-3 px-6 rounded"
+                      id="updatePost"
+                      onClick={deletePost}
+                    >
+                      Delete the Post
+                    </button>
+                  </div>
+                  <div className="flex flex-col gap-8 mt-6">
                     <div className="flex flex-col gap-2">
                       <input
                         type="file"
@@ -383,20 +486,13 @@ function BlogEdit() {
                             );
                             return false;
                           }
-                          const reader = new FileReader();
-                          reader.onload = function (e) {
-                            setThumbnail(e.target.result);
-                            document
-                              .getElementById("deleteThumbnail")
-                              .classList.remove("hidden");
-                          };
-                          reader.readAsDataURL(file);
+                          uploadThumbnail(file);
                         }}
                       />
                       <label htmlFor="thumbnail" className="cursor-pointer">
                         <div className="bg-slate-200 dark:bg-slate-700 p-4 rounded-md flex items-center justify-center gap-2">
                           <span className="text-slate-800 dark:text-white font-[500] text-sm">
-                            Upload Thumbnail
+                            Change or Upload Thumbnail
                           </span>
                         </div>
                       </label>
@@ -446,7 +542,9 @@ function BlogEdit() {
                           <option value="Content Writing">
                             Content Writing
                           </option>
-                          <option value="Software Testing">Software Testing</option>
+                          <option value="Software Testing">
+                            Software Testing
+                          </option>
                           <option value="Topic">Others</option>
                         </select>
                       </div>
@@ -461,14 +559,6 @@ function BlogEdit() {
                       ></div>
                     </div>
                   </div>
-                  <button
-                    type="submit"
-                    className="bg-violet-600 hover:bg-violet-700 text-white font-[500] text-sm py-3 px-6 mt-6 rounded"
-                    id="addPost"
-                    onClick={addPost}
-                  >
-                    Update the Post
-                  </button>
                 </form>
                 <div className="w-full max-w-[700px]">
                   <div id="top" className="mb-5 min-h-[200px] relative">
@@ -487,31 +577,37 @@ function BlogEdit() {
                       />
                     )}
                   </div>
-                  <button
-                    id="deleteThumbnail"
-                    className="mb-5 bg-red-500 hover:bg-red-600 text-white font-[500] text-sm py-2 px-4 rounded flex items-center gap-2 hidden"
-                    onClick={(e) => {
-                      e.target.classList.add("hidden");
-                      document.getElementById("thumbnail").value = "";
-                      setThumbnail(null);
-                    }}
-                  >
-                    Delete{" "}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 25 21"
-                      strokeWidth={3}
-                      stroke="currentColor"
-                      className="w-4 h-4"
+                  {thumbnail && (
+                    <button
+                      className="mb-5 bg-red-500 dark:bg-red-600 dark:hover:bg-red-700 hover:bg-red-600 text-white font-[500] text-sm py-2 px-4 rounded flex items-center gap-1"
+                      onClick={(e) => {
+                        if (
+                          window.confirm(
+                            "Are you sure you want to delete the thumbnail?"
+                          )
+                        ) {
+                          deleteThumbnail();
+                        }
+                      }}
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M6 18L18 6M6 6l12 12"
-                      />
-                    </svg>
-                  </button>
+                      Remove{" "}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 25 24"
+                        strokeWidth={3}
+                        stroke="currentColor"
+                        className="w-4 h-4"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
+                    </button>
+                  )}
+
                   <div
                     id="output"
                     className="_blog-body border border-slate-200 dark:border-slate-700 rounded-md p-4 dark:border-violet-500 dark:border-2"

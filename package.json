@@ -24,6 +24,7 @@
     "@firebase/auth": "^1.6.2",
     "@firebase/database": "^1.0.3",
     "@firebase/firestore": "^4.5.0",
+    "@firebase/storage": "^0.12.3",
     "@studio-freight/react-lenis": "^0.0.46",
     "editorjs-button": "^1.0.4",
     "editorjs-drag-drop": "^1.1.13",

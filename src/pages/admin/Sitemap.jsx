@@ -31,9 +31,7 @@ function Sitemap() {
           </Helmet>
           <div className="container mx-auto max-w-[1300px] py-10 text-slate-800 dark:text-white">
             <Link to="/admin">
-              <button className="mb-5">
-                &larr; Go back
-              </button>
+              <button className="mb-5">&larr; Go back</button>
             </Link>
             <h1 className="text-3xl md:text-4xl font-[500] text-center text-slate-800 dark:text-white">
               <span className="text-slate-500 dark:text-gray-500">Admin /</span>{" "}
@@ -181,7 +179,7 @@ function Sitemap() {
                         JSON.parse(data)["urlset"]["url"].map((item, index) => {
                           return (
                             <div key={index} className="py-2">
-                              <div>
+                              <div style={{ whiteSpace: "wrap" }}>
                                 <strong>URL:</strong> {item.loc._text}
                               </div>
                               <div className="text-slate-500 dark:text-slate-400 flex flex-col md:flex-row gap-2 md:items-center pb-1">
@@ -203,6 +201,12 @@ function Sitemap() {
                                   <button
                                     className="text-red-500 hover:underline"
                                     onClick={() => {
+                                      if (
+                                        !window.confirm(
+                                          "Are you sure you want to remove this URL from the sitemap?"
+                                        )
+                                      )
+                                        return;
                                       const dataParsed = JSON.parse(data);
                                       dataParsed.urlset.url.splice(index, 1);
                                       const newData = JSON.stringify(
@@ -215,12 +219,12 @@ function Sitemap() {
                                         postSitemap(dataParsed, (result, e) => {
                                           if (result) {
                                             alert(
-                                              "Sitemap submitted! It may take a few minutes to update properly."
+                                              "The URL has been removed from the sitemap. It may take a few minutes to update properly."
                                             );
                                             setData(newData);
                                           } else {
                                             alert(
-                                              "Sitemap not submitted! Please try again."
+                                              "The URL has not been removed from the sitemap! Please try again."
                                             );
                                             console.error(e);
                                           }

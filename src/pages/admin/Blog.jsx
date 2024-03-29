@@ -39,9 +39,7 @@ function Blog() {
           </Helmet>
           <div className="container mx-auto max-w-[1300px] py-10 dark:text-white">
             <Link to="/admin">
-              <button className="mb-5">
-                &larr; Go back
-              </button>
+              <button className="mb-5">&larr; Go back</button>
             </Link>
             <h1 className="text-3xl md:text-4xl font-[500] text-center text-slate-800 dark:text-white">
               <span className="text-slate-500 dark:text-gray-500">Admin /</span>{" "}
@@ -70,7 +68,7 @@ function Blog() {
                       className="flex flex-col justify-between"
                     >
                       <div className="flex gap-2">
-                        <Link to={"/blog/" + blog.id}>
+                        <Link to={"/blog/" + blog.id} target="_blank">
                           <div className="hover:opacity-50 transition duration-300">
                             <h2 className="text-slate-800 dark:text-white text-lg font-[400] leading-6 line-clamp-2">
                               {blog.title}

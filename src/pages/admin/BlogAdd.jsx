@@ -26,7 +26,11 @@ import { StyleInlineTool } from "editorjs-style";
 import WithAuth from "./components/WithAuth";
 
 /* Utils */
-import { createBlogPost } from "../../utils/admin";
+import {
+  createBlogPost,
+  uploadBlogImage,
+  deleteBlogImage,
+} from "../../utils/admin";
 
 function BlogAdd() {
   const ejInstance = React.useRef(null);
@@ -223,6 +227,45 @@ function BlogAdd() {
     );
   };
 
+  const uploadThumbnail = (file) => {
+    uploadBlogImage(
+      file,
+      (snapshot) => {
+        const urlofImage = `https://firebasestorage.googleapis.com/v0/b/${
+          snapshot.ref.bucket
+        }/o/${encodeURIComponent(snapshot.ref.fullPath)}?alt=media`;
+
+        setThumbnail(urlofImage);
+      },
+      (e) => {
+        alert("Failed to upload thumbnail! Please try again.");
+        console.error(e);
+      }
+    );
+  };
+
+  const deleteThumbnail = () => {
+    const HGfgh = () => {
+      alert("Thumbnail deleted successfully!");
+      setThumbnail(null);
+      document.getElementById("thumbnail").value = "";
+    };
+    deleteBlogImage(
+      thumbnail,
+      () => {
+        HGfgh();
+      },
+      (e) => {
+        if (e.code === "storage/object-not-found") {
+          HGfgh();
+        } else {
+          alert("Failed to delete thumbnail! Please try again.");
+          console.error(e);
+        }
+      }
+    );
+  };
+
   React.useEffect(() => {
     setTimeout(() => {
       if (
@@ -248,9 +291,7 @@ function BlogAdd() {
           </Helmet>
           <div className="container mx-auto max-w-[1300px] py-10 text-slate-800 dark:text-white">
             <Link to="/admin/blog">
-              <button className="mb-5">
-                &larr; Go back
-              </button>
+              <button className="mb-5">&larr; Go back</button>
             </Link>
             <h1 className="text-4xl font-bold text-center">Add Blog Post</h1>
             <div className="mt-12 flex flex-col lg:flex-row justify-center gap-9">
@@ -276,14 +317,7 @@ function BlogAdd() {
                           );
                           return false;
                         }
-                        const reader = new FileReader();
-                        reader.onload = function (e) {
-                          setThumbnail(e.target.result);
-                          document
-                            .getElementById("deleteThumbnail")
-                            .classList.remove("hidden");
-                        };
-                        reader.readAsDataURL(file);
+                        uploadThumbnail(file);
                       }}
                     />
                     <label htmlFor="thumbnail" className="cursor-pointer">
@@ -331,7 +365,9 @@ function BlogAdd() {
                         <option value="Design">Brand Advisory</option>
                         <option value="Marketing">Marketing</option>
                         <option value="Content Writing">Content Writing</option>
-                        <option value="Software Testing">Software Testing</option>
+                        <option value="Software Testing">
+                          Software Testing
+                        </option>
                         <option value="Topic">Others</option>
                       </select>
                     </div>
@@ -372,34 +408,36 @@ function BlogAdd() {
                     />
                   )}
                 </div>
-                <button
-                  id="deleteThumbnail"
-                  className="mb-5 bg-red-500 hover:bg-red-600 text-white font-[500] text-sm py-2 px-4 rounded flex items-center gap-2 hidden"
-                  onClick={(e) => {
-                    //ejInstance?.current?.destroy();
-                    //ejInstance.current = null;
-                    //initEditor();
-                    e.target.classList.add("hidden");
-                    document.getElementById("thumbnail").value = "";
-                    setThumbnail(null);
-                  }}
-                >
-                  Delete{" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 25 21"
-                    strokeWidth={3}
-                    stroke="currentColor"
-                    className="w-4 h-4"
+                {thumbnail && (
+                  <button
+                    className="mb-5 bg-red-500 dark:bg-red-600 dark:hover:bg-red-700 hover:bg-red-600 text-white font-[500] text-sm py-2 px-4 rounded flex items-center gap-1"
+                    onClick={(e) => {
+                      if (
+                        window.confirm(
+                          "Are you sure you want to delete the thumbnail?"
+                        )
+                      ) {
+                        deleteThumbnail();
+                      }
+                    }}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </button>
+                    Remove{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 25 24"
+                      strokeWidth={3}
+                      stroke="currentColor"
+                      className="w-4 h-4"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                )}
                 <div
                   id="output"
                   className="_blog-body border border-slate-200 dark:border-slate-700 rounded-md p-4 dark:border-violet-500 dark:border-2"

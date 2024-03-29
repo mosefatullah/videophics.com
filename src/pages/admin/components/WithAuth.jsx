@@ -35,11 +35,15 @@ function WithAuth({ children }) {
   React.useEffect(() => {
     onAuth(auth, (u) => {
       if (u) {
-        checkAdmin(u.email, () => {
-          setUser(u);
-        }, () => {
-          logOutProcess();
-        });
+        checkAdmin(
+          u.email,
+          () => {
+            setUser(u);
+          },
+          () => {
+            logOutProcess();
+          }
+        );
       } else {
         setUser(false);
       }
@@ -54,6 +58,9 @@ function WithAuth({ children }) {
         <div className="container py-12 mx-auto">
           <div className="text-center text-slate-800 dark:text-white text-3xl font-[500] mt-10">
             Loading...
+            <p className="text-base text-slate-600 dark:text-slate-400 font-[400] mt-4">
+              Please clear the site data if it takes too long and try again.
+            </p>
           </div>
         </div>
       ) : user !== false ? (

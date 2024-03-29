@@ -282,46 +282,6 @@ function BlogEdit() {
     );
   };
 
-  const deletePost = () => {
-    if (!window.confirm("Are you sure you want to delete this post?")) return;
-    const postRef = doc(getFirestore(fi), "Blogs", postId);
-    deleteDoc(postRef)
-      .then(() => {
-        alert("Post deleted successfully!");
-        window.location.href = "/admin/blog";
-      })
-      .catch((e) => {
-        alert("Failed to delete post! Please try again.");
-        console.error(e);
-      });
-  };
-
-  const uploadThumbnail = (file) => {
-    uploadBlogImage(
-      file,
-      (snapshot) => {
-        const urlofImage = `https://firebasestorage.googleapis.com/v0/b/${
-          snapshot.ref.bucket
-        }/o/${encodeURIComponent(snapshot.ref.fullPath)}?alt=media`;
-
-        createBlogPost(
-          { ...thePost, thumbnail: urlofImage },
-          () => {
-            setThumbnail(urlofImage);
-          },
-          (e) => {
-            alert("Failed to upload thumbnail! Please try again.");
-            console.error(e);
-          }
-        );
-      },
-      (e) => {
-        alert("Failed to upload thumbnail! Please try again.");
-        console.error(e);
-      }
-    );
-  };
-
   const deleteThumbnail = () => {
     const HGfgh = () => {
       createBlogPost(
@@ -352,6 +312,66 @@ function BlogEdit() {
           alert("Failed to delete thumbnail! Please try again.");
           console.error(e);
         }
+      }
+    );
+  };
+
+  const deletePost = () => {
+    if (!window.confirm("Are you sure you want to delete this post?")) return;
+    const HGfgh = () => {
+      const postRef = doc(getFirestore(fi), "Blogs", postId);
+      deleteDoc(postRef)
+        .then(() => {
+          alert("Post deleted successfully!");
+          window.location.href = "/admin/blog";
+        })
+        .catch((e) => {
+          alert("Failed to delete post! Please try again.");
+          console.error(e);
+        });
+    };
+    if (thumbnail) {
+      deleteBlogImage(
+        thumbnail,
+        () => {
+          HGfgh();
+        },
+        (e) => {
+          if (e.code === "storage/object-not-found") {
+            HGfgh();
+          } else {
+            alert("Failed to delete thumbnail! Please try again.");
+            console.error(e);
+          }
+        }
+      );
+    } else {
+      HGfgh();
+    }
+  };
+
+  const uploadThumbnail = (file) => {
+    uploadBlogImage(
+      file,
+      (snapshot) => {
+        const urlofImage = `https://firebasestorage.googleapis.com/v0/b/${
+          snapshot.ref.bucket
+        }/o/${encodeURIComponent(snapshot.ref.fullPath)}?alt=media`;
+
+        createBlogPost(
+          { ...thePost, thumbnail: urlofImage },
+          () => {
+            setThumbnail(urlofImage);
+          },
+          (e) => {
+            alert("Failed to upload thumbnail! Please try again.");
+            console.error(e);
+          }
+        );
+      },
+      (e) => {
+        alert("Failed to upload thumbnail! Please try again.");
+        console.error(e);
       }
     );
   };

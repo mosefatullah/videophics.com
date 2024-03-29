@@ -525,7 +525,7 @@ function BlogEdit() {
                         type="text"
                         name="title"
                         id="title"
-                        value={thePost.title}
+                        value={title}
                         onChange={(e) => setTitle(e.target.value)}
                         placeholder="What is Branding? The Ultimate Guide"
                         className="text-slate-800 p-2 border border-slate-200 dark:border-slate-700 rounded-md dark:bg-slate-700 dark:text-white dark:border-violet-500 dark:border-2"
@@ -538,7 +538,7 @@ function BlogEdit() {
                           type="text"
                           name="author"
                           id="author"
-                          value={thePost.author}
+                          value={author}
                           onChange={(e) => setAuthor(e.target.value)}
                           placeholder="Abdullah"
                           className="text-slate-800 p-2 border border-slate-200 dark:border-slate-700 rounded-md dark:bg-slate-700 dark:text-white dark:border-violet-500 dark:border-2"
@@ -552,7 +552,7 @@ function BlogEdit() {
                           name="category"
                           id="category"
                           className="text-slate-800 p-3 py-[0.6rem] border border-slate-200 dark:border-slate-700 rounded-md dark:bg-slate-700 dark:text-white dark:border-violet-500 dark:border-2"
-                          value={thePost.category}
+                          value={category}
                           onChange={(e) => setCategory(e.target.value)}
                         >
                           <option value="Branding">Branding</option>

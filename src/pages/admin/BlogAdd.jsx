@@ -31,6 +31,7 @@ import {
   uploadBlogImage,
   deleteBlogImage,
 } from "../../utils/admin";
+import { getSitemap, postSitemap } from "../../utils/sitemap";
 
 function BlogAdd() {
   const ejInstance = React.useRef(null);
@@ -217,8 +218,29 @@ function BlogAdd() {
     createBlogPost(
       post,
       () => {
-        alert("Post added successfully!");
-        window.location.href = "/admin/blog";
+        getSitemap((data) => {
+          let dataParsed = JSON.parse(data);
+          dataParsed.urlset.url.push({
+            loc: `https://videophics.com/?/blog/${post.id}`,
+            lastmod: new Date().toISOString(),
+          });
+          setTimeout(() => {
+            postSitemap(dataParsed, (result, e) => {
+              if (result) {
+                alert(
+                  "Post added successfully and sitemap submitted successfully!"
+                );
+                window.location.href = "/admin/blog/";
+                window.open("/blog/" + post.id, "_blank");
+              } else {
+                alert("Post added successfully but sitemap submission failed!");
+                window.location.href = "/admin/blog/";
+                window.open("/blog/" + post.id, "_blank");
+                console.error(e);
+              }
+            });
+          }, 500);
+        });
       },
       (e) => {
         alert("Failed to add post! Please try again.");

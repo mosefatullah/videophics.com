@@ -10,7 +10,9 @@ import { getSitemap, postSitemap } from "../../utils/sitemap";
 
 function Sitemap() {
   const [data, setData] = React.useState(null);
-  const [addnewsitemapInput1, setAddnewsitemapInput1] = React.useState("");
+  const [addnewsitemapInput1, setAddnewsitemapInput1] = React.useState(
+    "https://videophics.com/?/"
+  );
   const [addnewsitemapInput2, setAddnewsitemapInput2] = React.useState(
     new Date().toISOString().split("T")[0]
   );
@@ -121,7 +123,11 @@ function Sitemap() {
                           const changefreq =
                             document.getElementById("changefreq").value;
                           const dataFinal = {};
-                          if (!url) {
+                          if (
+                            !url ||
+                            String(url).trim() === "" ||
+                            url === "https://videophics.com/?/"
+                          ) {
                             alert("URL is required!");
                             return;
                           } else {
@@ -174,7 +180,13 @@ function Sitemap() {
                     >
                       Refresh
                     </button>
-                    <code style={{ display: "block", whiteSpace: "pre-wrap" }}>
+                    <code
+                      style={{
+                        display: "block",
+                        whiteSpace: "pre-wrap",
+                        overflowX: "auto",
+                      }}
+                    >
                       {data &&
                         JSON.parse(data)["urlset"]["url"].map((item, index) => {
                           return (

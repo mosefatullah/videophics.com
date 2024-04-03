@@ -26,8 +26,8 @@ export default function Home() {
           async
         ></script>
       </Helmet>
-      <div className="hidden lg:block absolute right-0 top-0 h-[400px] w-[500px] bg-violet-100 dark:bg-slate-800 rounded-l-full" />
-      <div className="hidden lg:block absolute right-0 top-[300px] h-[200px] w-[200px] bg-violet-200 dark:bg-slate-700 rounded-full" />
+      <div className="hidden lg:block absolute right-0 top-0 h-[400px] w-[500px] bg-gradient-to-r from-violet-100 to-violet-50 dark:from-slate-800 dark:to-slate-900 rounded-l-full" />
+      <div className="hidden lg:block absolute right-0 top-[300px] h-[200px] w-[200px] bg-gradient-to-r from-violet-200 to-violet-50 dark:from-slate-800 dark:to-slate-900 rounded-full" />
       <section className="_hero-section relative py-10 lg:min-h-[calc(100vh-80px)] flex justify-center">
         <div className="_sketch h-[200px] w-[100px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 left-0 dark:opacity-50" />
         <div className="_sketch h-[200px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter right-0 md:left-[40%] bottom-10 dark:hidden" />
@@ -67,7 +67,7 @@ export default function Home() {
             </div>
           </Animated>
 
-          <div className="flex justify-center items-center md:justify-end z-10 md:order-1">
+          <div className="z-10">
             <div className="bg-violet-100 dark:bg-slate-700 rounded-lg">
               <video
                 src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"

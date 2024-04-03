@@ -392,40 +392,40 @@ export default function Home() {
         </div>
       </section>
       <div className="bg-slate-100 dark:bg-slate-800 py-[4rem]">
-        <section className="_clients-section py-[7rem] flex flex-col justify-center items-center pt-[3rem]">
+        <section className="_clients-section pb-[9rem] flex flex-col justify-center items-center pt-[4rem]">
           <div className="container mx-auto max-w-[1300px]">
             <div className="text-center mb-8">
               <p className="text-sm text-slate-500 dark:text-gray-300 leading-6 md:leading-7 uppercase mb-2">
                 Our Clients
               </p>
-              <h3 className="text-3xl lg:text-3xl md:text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
+              <h3 className="text-3xl md:text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
                 We're trusted by our clients.
               </h3>
             </div>
             <Animated varient="fade-up">
-              <div className="_clients flex justify-center items-center gap-8 mt-10 flex-wrap">
+              <div className="_clients flex justify-center items-center gap-4 mt-2 flex-wrap">
                 <div className="w-16 h-16">
                   <img
                     src="/images/static/qweekai.png"
                     alt="Client Logo"
-                    className="w-full h-full rounded-md"
+                    className="w-full h-full"
                   />
                 </div>
                 <div className="w-16 h-16">
                   <img
                     src="/images/static/dhanshalik.jpg"
                     alt="Client Logo"
-                    className="w-full h-full rounded-md"
+                    className="w-full h-full"
                   />
                 </div>
                 <div className="w-16 h-16">
                   <img
                     src="/images/static/specialstars.jpeg"
                     alt="Client Logo"
-                    className="w-full h-full rounded-md"
+                    className="w-full h-full"
                   />
                 </div>
-                <div className="w-16 h-16 rounded-md">
+                <div className="w-16 h-16">
                   <img
                     src="/images/static/dropbox.png"
                     alt="Client Logo"

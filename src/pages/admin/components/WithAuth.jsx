@@ -78,7 +78,7 @@ function WithAuth({ children }) {
             </div>
 
             <p className="text-base text-slate-600 dark:text-slate-400 font-[400] mt-6">
-              Please clear the site data if it takes too long and try again.
+              Refresh or clear the site data if it takes too long and try again.
             </p>
           </div>
         </div>

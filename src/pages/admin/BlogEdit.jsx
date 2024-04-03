@@ -575,7 +575,7 @@ function BlogEdit() {
                       </label>
                       <div
                         id="_blog-body-editor"
-                        className="border border-slate-200 dark:border-slate-700 rounded-md p-4 dark:border-violet-500 dark:border-2 min-h-[300px] max-h-[500px] overflow-y-auto"
+                        className="border border-slate-200 dark:border-slate-700 rounded-md p-4 dark:border-violet-500 dark:border-2 min-h-[300px]"
                       ></div>
                     </div>
                   </div>

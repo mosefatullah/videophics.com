@@ -65,14 +65,14 @@ export default function Navbar({ theme, setTheme }) {
     </>
   );
 
-  const navEffect = (replaceDefault) => {
+  const navEffect = () => {
     if (
       document.getElementById("homepage") &&
       document
         .querySelector("._services-menu")
         .classList.contains("-translate-x-full")
     ) {
-      if (window.scrollY > 50 || replaceDefault == true) {
+      if (window.scrollY > 50) {
         document
           .querySelector("._navbar")
           .classList.add(
@@ -114,7 +114,14 @@ export default function Navbar({ theme, setTheme }) {
           id="navServiceMenuItem"
           className="hidden lg:block"
           onMouseEnter={() => {
-            navEffect(true);
+            document
+              .querySelector("._navbar")
+              .classList.add(
+                "border-slate-200",
+                "bg-white",
+                "dark:bg-slate-800",
+                "dark:border-slate-700"
+              );
             document
               .querySelector("._services-menu")
               .classList.remove("transform");
@@ -185,7 +192,14 @@ export default function Navbar({ theme, setTheme }) {
   );
 
   const hideServiceMenu = () => {
-    navEffect();
+    document
+      .querySelector("._navbar")
+      .classList.remove(
+        "border-slate-200",
+        "bg-white",
+        "dark:bg-slate-800",
+        "dark:border-slate-700"
+      );
     document.querySelector("._services-menu").classList.add("transform");
     document
       .querySelector("._services-menu")

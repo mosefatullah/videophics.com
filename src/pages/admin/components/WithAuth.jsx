@@ -11,7 +11,12 @@ function WithAuth({ children }) {
     setUser(null);
     login(
       (u) => {
-        setUser(u.user);
+        const x = u.user;
+        setUser({
+          displayName: x.displayName,
+          email: x.email,
+          photoURL: x.photoURL,
+        });
       },
       () => {
         alert("You are not authorized to access this page!");
@@ -38,7 +43,11 @@ function WithAuth({ children }) {
         checkAdmin(
           u.email,
           () => {
-            setUser(u);
+            setUser({
+              displayName: u.displayName,
+              email: u.email,
+              photoURL: u.photoURL,
+            });
           },
           () => {
             logOutProcess();

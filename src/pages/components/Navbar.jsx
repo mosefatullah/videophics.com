@@ -65,6 +65,42 @@ export default function Navbar({ theme, setTheme }) {
     </>
   );
 
+  const navEffect = (replaceDefault) => {
+    if (document.getElementById("homepage")) {
+      if (window.scrollY > 100 || replaceDefault == true) {
+        document
+          .querySelector("._navbar")
+          .classList.add(
+            "border-b",
+            "border-slate-200",
+            "bg-white",
+            "dark:bg-slate-800",
+            "dark:border-slate-700"
+          );
+      } else {
+        document
+          .querySelector("._navbar")
+          .classList.remove(
+            "border-b",
+            "border-slate-200",
+            "bg-white",
+            "dark:bg-slate-800",
+            "dark:border-slate-700"
+          );
+      }
+    } else {
+      document
+        .querySelector("._navbar")
+        .classList.add(
+          "border-b",
+          "border-slate-200",
+          "bg-white",
+          "dark:bg-slate-800",
+          "dark:border-slate-700"
+        );
+    }
+  };
+
   const Menu = () => (
     <>
       <li>
@@ -73,8 +109,10 @@ export default function Navbar({ theme, setTheme }) {
       <li>
         <NavLink
           to="/services"
+          id="navServiceMenuItem"
           className="hidden lg:block"
           onMouseEnter={() => {
+            navEffect(true);
             document
               .querySelector("._services-menu")
               .classList.remove("transform");
@@ -145,6 +183,7 @@ export default function Navbar({ theme, setTheme }) {
   );
 
   const hideServiceMenu = () => {
+    navEffect();
     document.querySelector("._services-menu").classList.add("transform");
     document
       .querySelector("._services-menu")
@@ -197,41 +236,6 @@ export default function Navbar({ theme, setTheme }) {
         });
       });
     });
-    const navEffect = () => {
-      if (document.getElementById("homepage")) {
-        if (window.scrollY > 100) {
-          document
-            .querySelector("nav")
-            .classList.add(
-              "border-b",
-              "border-slate-200",
-              "bg-white",
-              "dark:bg-slate-800",
-              "dark:border-slate-700"
-            );
-        } else {
-          document
-            .querySelector("nav")
-            .classList.remove(
-              "border-b",
-              "border-slate-200",
-              "bg-white",
-              "dark:bg-slate-800",
-              "dark:border-slate-700"
-            );
-        }
-      } else {
-        document
-          .querySelector("nav")
-          .classList.add(
-            "border-b",
-            "border-slate-200",
-            "bg-white",
-            "dark:bg-slate-800",
-            "dark:border-slate-700"
-          );
-      }
-    };
     navEffect();
     window.addEventListener("scroll", navEffect);
   }, [document.querySelector("._services-menu ol li")]);

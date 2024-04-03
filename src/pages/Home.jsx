@@ -391,7 +391,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="bg-slate-100 dark:bg-slate-800 py-[4rem]">
+      <div className="bg-violet-100 dark:bg-slate-800 py-[4rem]">
         <section className="_clients-section pb-[9rem] flex flex-col justify-center items-center pt-[4rem]">
           <div className="container mx-auto max-w-[1300px]">
             <div className="text-center mb-8">

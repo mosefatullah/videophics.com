@@ -213,9 +213,13 @@ html.dark ._navbar ._menu li a:hover {
 }
 
 ._clients-section ._clients > div {
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 100rem;
   padding: 0.3rem;
+}
+
+html.dark ._clients-section ._clients > div {
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 ._clients-section ._clients > div img {

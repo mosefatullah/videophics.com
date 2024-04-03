@@ -49,6 +49,17 @@ export default function BlogView() {
       }
     };
     getBlog();
+    const navEffect = () => {
+      if (window.scrollY > 1) {
+        document.querySelector("._navbar").classList.remove("sticky");
+      } else {
+        document.querySelector("._navbar").classList.add("sticky");
+      }
+    };
+    window.addEventListener("scroll", navEffect);
+    return () => {
+      window.removeEventListener("scroll", navEffect);
+    };
   }, [id]);
 
   return (

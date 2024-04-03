@@ -65,6 +65,28 @@ export default function Navbar({ theme, setTheme }) {
     </>
   );
 
+  const navActivated = () => {
+    document
+      .querySelector("._navbar")
+      .classList.add(
+        "border-slate-200",
+        "bg-white/80",
+        "backdrop-blur-lg",
+        "dark:bg-slate-800/80",
+        "dark:border-slate-700"
+      );
+  };
+  const navDeactivated = () => {
+    document
+      .querySelector("._navbar")
+      .classList.remove(
+        "border-slate-200",
+        "bg-white/80",
+        "backdrop-blur-lg",
+        "dark:bg-slate-800/80",
+        "dark:border-slate-700"
+      );
+  };
   const navEffect = () => {
     if (
       document.getElementById("homepage") &&
@@ -73,33 +95,12 @@ export default function Navbar({ theme, setTheme }) {
         .classList.contains("-translate-x-full")
     ) {
       if (window.scrollY > 50) {
-        document
-          .querySelector("._navbar")
-          .classList.add(
-            "border-slate-200",
-            "bg-white",
-            "dark:bg-slate-800",
-            "dark:border-slate-700"
-          );
+        navActivated();
       } else {
-        document
-          .querySelector("._navbar")
-          .classList.remove(
-            "border-slate-200",
-            "bg-white",
-            "dark:bg-slate-800",
-            "dark:border-slate-700"
-          );
+        navDeactivated();
       }
     } else {
-      document
-        .querySelector("._navbar")
-        .classList.add(
-          "border-slate-200",
-          "bg-white",
-          "dark:bg-slate-800",
-          "dark:border-slate-700"
-        );
+      navActivated();
     }
   };
 
@@ -114,14 +115,7 @@ export default function Navbar({ theme, setTheme }) {
           id="navServiceMenuItem"
           className="hidden lg:block"
           onMouseEnter={() => {
-            document
-              .querySelector("._navbar")
-              .classList.add(
-                "border-slate-200",
-                "bg-white",
-                "dark:bg-slate-800",
-                "dark:border-slate-700"
-              );
+            navActivated();
             document
               .querySelector("._services-menu")
               .classList.remove("transform");
@@ -193,14 +187,7 @@ export default function Navbar({ theme, setTheme }) {
 
   const hideServiceMenu = () => {
     if (!document.getElementById("homepage")) {
-      document
-        .querySelector("._navbar")
-        .classList.add(
-          "border-slate-200",
-          "bg-white",
-          "dark:bg-slate-800",
-          "dark:border-slate-700"
-        );
+      navActivated();
     }
     document.querySelector("._services-menu").classList.add("transform");
     document
@@ -391,14 +378,7 @@ export default function Navbar({ theme, setTheme }) {
         role="menu"
         style={{ zIndex: "60" }}
         onMouseLeave={() => {
-          document
-            .querySelector("._navbar")
-            .classList.remove(
-              "border-slate-200",
-              "bg-white",
-              "dark:bg-slate-800",
-              "dark:border-slate-700"
-            );
+          navDeactivated();
           hideServiceMenu();
         }}
       >

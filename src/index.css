@@ -100,9 +100,6 @@ html.lenis {
   transform: translateX(0px);
 }
 
-._navbar {
-}
-
 ._navbar ._menu li a {
   font-weight: 500 !important;
   display: block;

@@ -66,12 +66,16 @@ export default function Navbar({ theme, setTheme }) {
   );
 
   const navEffect = (replaceDefault) => {
-    if (document.getElementById("homepage")) {
-      if (window.scrollY > 100 || replaceDefault == true) {
+    if (
+      document.getElementById("homepage") &&
+      document
+        .querySelector("._services-menu")
+        .classList.contains("-translate-x-full")
+    ) {
+      if (window.scrollY > 50 || replaceDefault == true) {
         document
           .querySelector("._navbar")
           .classList.add(
-            "border-b",
             "border-slate-200",
             "bg-white",
             "dark:bg-slate-800",
@@ -81,7 +85,6 @@ export default function Navbar({ theme, setTheme }) {
         document
           .querySelector("._navbar")
           .classList.remove(
-            "border-b",
             "border-slate-200",
             "bg-white",
             "dark:bg-slate-800",
@@ -92,7 +95,6 @@ export default function Navbar({ theme, setTheme }) {
       document
         .querySelector("._navbar")
         .classList.add(
-          "border-b",
           "border-slate-200",
           "bg-white",
           "dark:bg-slate-800",
@@ -243,7 +245,7 @@ export default function Navbar({ theme, setTheme }) {
   return (
     <>
       <nav
-        className="_navbar sticky top-0 left-0 z-50 py-4 lg:p-0 text-black dark:text-white"
+        className="_navbar sticky top-0 left-0 z-50 py-4 lg:p-0 text-black dark:text-white border-b border-transparent"
         role="navigation"
       >
         <div className="container mx-auto flex justify-between lg:grid grid-cols-3 gap-4 max-w-[1300px]">

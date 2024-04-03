@@ -10,7 +10,7 @@ export default function Contact() {
             <span className="text-violet-700 dark:text-violet-400">
               Office Hours:
             </span>{" "}
-            9:00 AM - 5:00 PM (GMT+6)
+            9:00 AM - 9:00 PM (GMT+6)
           </p>
           <p className="leading-6">
             <span className="text-violet-700 dark:text-violet-400">
@@ -21,6 +21,10 @@ export default function Contact() {
           <p className="leading-6">
             <span className="text-violet-700 dark:text-violet-400">Email:</span>{" "}
             contact@videophics.com
+          </p>
+          <p className="leading-6">
+            <span className="text-violet-700 dark:text-violet-400">Facebook:</span>{" "}
+            https://facebook.com/videophics
           </p>
         </p>
         <iframe
@@ -37,18 +41,25 @@ export default function Contact() {
           className="flex flex-col gap-4 rounded-md py-8 lg:p-8 md:py-10"
           onSubmit={(e) => {
             e.preventDefault();
-            let msgbody = `Hello, I am ${document.getElementById("name").value &&
+            let msgbody = `Hello, I am ${
+              document.getElementById("name").value &&
               document.getElementById("name").value + " "
-              }from ${document.getElementById("company").value
-              } and I am interested in your ${document.getElementById("service").value
-              } service.\n\nMy budget range is ${document.getElementById("range").value
-              }. Here are the details of my project:\n\n${document.getElementById("message").value
-              }
+            }from ${
+              document.getElementById("company").value
+            } and I am interested in your ${
+              document.getElementById("service").value
+            } service.\n\nMy budget range is ${
+              document.getElementById("range").value
+            }. Here are the details of my project:\n\n${
+              document.getElementById("message").value
+            }
                     `;
 
-            window.location.href = `mailto:${document.getElementById("email").value
-              }?subject=Inquiry from ${document.getElementById("name").value
-              }&body=${encodeURIComponent(msgbody)}`;
+            window.location.href = `mailto:${
+              document.getElementById("email").value
+            }?subject=Inquiry from ${
+              document.getElementById("name").value
+            }&body=${encodeURIComponent(msgbody)}`;
           }}
         >
           <div className="flex flex-col gap-2">

@@ -378,7 +378,7 @@ export default function Navbar({ theme, setTheme }) {
         role="menu"
         style={{ zIndex: "60" }}
         onMouseLeave={() => {
-          navDeactivated();
+          if (window.scrollY < 50) navDeactivated();
           hideServiceMenu();
         }}
       >

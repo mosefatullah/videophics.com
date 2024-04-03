@@ -192,14 +192,16 @@ export default function Navbar({ theme, setTheme }) {
   );
 
   const hideServiceMenu = () => {
-    document
-      .querySelector("._navbar")
-      .classList.remove(
-        "border-slate-200",
-        "bg-white",
-        "dark:bg-slate-800",
-        "dark:border-slate-700"
-      );
+    if (!document.getElementById("homepage")) {
+      document
+        .querySelector("._navbar")
+        .classList.add(
+          "border-slate-200",
+          "bg-white",
+          "dark:bg-slate-800",
+          "dark:border-slate-700"
+        );
+    }
     document.querySelector("._services-menu").classList.add("transform");
     document
       .querySelector("._services-menu")
@@ -388,7 +390,17 @@ export default function Navbar({ theme, setTheme }) {
         className="_services-menu bg-white dark:bg-slate-800 fixed left-0 w-full transform -translate-x-full transition-all duration-500 ease-in-out px-6 shadow-md opacity-0 hidden md:block"
         role="menu"
         style={{ zIndex: "60" }}
-        onMouseLeave={hideServiceMenu}
+        onMouseLeave={() => {
+          document
+            .querySelector("._navbar")
+            .classList.remove(
+              "border-slate-200",
+              "bg-white",
+              "dark:bg-slate-800",
+              "dark:border-slate-700"
+            );
+          hideServiceMenu();
+        }}
       >
         <div className="py-12 container mx-auto max-w-[1300px] flex justify-around items-center gap-6">
           <ol

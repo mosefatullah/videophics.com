@@ -9,6 +9,12 @@ export default {
       padding: "2rem",
     },
     extend: {
+      colors: {
+        body: {
+          DEFAULT: "rgb(245, 243, 255)",
+          dark: "rgb(15, 23, 42)",
+        },
+      },
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
       },
@@ -19,5 +25,5 @@ export default {
       },
     },
   },
-  plugins: []
+  plugins: [],
 };

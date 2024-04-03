@@ -41,7 +41,7 @@ export default function App() {
       localStorage.setItem("theme", "light");
       document.documentElement.style.setProperty("--bg-secondary-1", "#5c42bd");
     }
-    return () => { };
+    return () => {};
   }, [theme]);
 
   const Layout = ({ children }) => {
@@ -50,12 +50,9 @@ export default function App() {
     }, [children]);
 
     return (
-      <main>
+      <main className="bg-body dark:bg-body-dark">
         <Navbar theme={theme} setTheme={setTheme} />
-        <div
-          className="bg-violet-50 dark:bg-slate-900 min-h-screen"
-          role="main"
-        >
+        <div className=" min-h-screen" role="main">
           {children}
         </div>
         <Footer />

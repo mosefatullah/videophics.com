@@ -10,10 +10,15 @@ import Booking from "./components/Booking";
 
 export default function Home() {
   return (
-    <>
+    <div id="homepage">
       <Helmet>
-        <title>Videophics - Your Premier Branding Agency & Branding Experts</title>
-        <meta name="description" content="Videophics is a leading branding agency dedicated to empowering your brand's growth and success. Through our expertise in emotion-driven storytelling and strategic branding, we create enduring experiences that resonate with your audience." />
+        <title>
+          Videophics - Your Premier Branding Agency & Branding Experts
+        </title>
+        <meta
+          name="description"
+          content="Videophics is a leading branding agency dedicated to empowering your brand's growth and success. Through our expertise in emotion-driven storytelling and strategic branding, we create enduring experiences that resonate with your audience."
+        />
 
         <script
           src="https://assets.calendly.com/assets/external/widget.js"
@@ -21,56 +26,65 @@ export default function Home() {
           async
         ></script>
       </Helmet>
-      <section className="_hero-section relative py-10 lg:min-h-[calc(100vh-80px)] flex justify-center dark:bg-slate-900">
+      <div className="hidden lg:block absolute right-0 top-0 h-[400px] w-[500px] bg-violet-100 dark:bg-slate-800 rounded-l-full" />
+      <div className="hidden lg:block absolute right-0 top-[300px] h-[200px] w-[200px] bg-violet-200 dark:bg-slate-700 rounded-full" />
+      <section className="_hero-section relative py-10 lg:min-h-[calc(100vh-80px)] flex justify-center">
         <div className="_sketch h-[200px] w-[100px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 left-0 dark:opacity-50" />
         <div className="_sketch h-[200px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter right-0 md:left-[40%] bottom-10 dark:hidden" />
         <div className="_sketch h-[100px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 right-0 hidden md:block dark:bottom-20 dark:top-auto dark:opacity-50" />
-        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-7 md:gap-14 max-w-[1300px]">
-          <div className="flex flex-col justify-center md:pt-10 lg:pt-0 md:items-center lg:items-start z-10 max-w-[700px] lg:max-w-auto mx-auto lg:mx-0">
-            <h1 className="text-4xl md:text-4xl lg:text-5xl  font-[600] mb-4 text-slate-700 dark:text-white leading-10 xl:leading-12">
-              <Animated varient="fade-left" className="inline">
-                Innovative minds are
-              </Animated>{" "}
-              <Animated varient="fade-right" className="inline">
-                <span className="text-violet-500 dark:text-violet-400">
-                  shaping
-                </span>{" "}
-                a brighter tomorrow
-              </Animated>
-            </h1>
-            <p className="text-[14px] md:text-[17px] mt-4 mb-7 text-slate-500 dark:text-slate-400 leading-6 md:leading-7 _heroPara">
-              At Videophics, we bring brands and people closer. With a focus on
-              emotion-driven connections, we craft experiences that resonate and
-              endure. Let us help you tell your brand's story in a way that fosters genuine connections and drives meaningful engagement.
-            </p>
-            <NavLink to="/about-us">
-              <button
-                className="px-7 text-sm md:text-[16px] md:px-8 py-3 text-white rounded-md from-violet-400 to-violet-600 bg-gradient-to-l hover:from-violet-500 hover:to-violet-700 active:scale-95"
-                title="Clixk here to learn more"
+        <div className="container mx-auto max-w-[1300px] flex flex-col gap-10">
+          <Animated varient="fade-up" speed="fast">
+            <div className="flex flex-col justify-center  md:items-center md:text-center lg:text-left lg:items-start z-10 max-w-[620px] lg:max-w-auto mx-auto lg:mx-0 md:py-10">
+              <h1
+                className="text-4xl md:text-4xl lg:text-5xl font-[600] mb-4 text-slate-700 dark:text-white leading-10 xl:leading-12"
+                style={{
+                  letterSpacing: "-0.02em",
+                }}
               >
-                Learn More &rarr;
-              </button>
-            </NavLink>
-          </div>
+                <Animated varient="fade-left" className="inline">
+                  Innovative minds are
+                </Animated>{" "}
+                <Animated varient="fade-right" className="inline">
+                  <span className="text-violet-500 dark:text-violet-400">
+                    shaping
+                  </span>{" "}
+                  a brighter tomorrow
+                </Animated>
+              </h1>
+              <p className="text-[14px] md:text-[17px] mt-4 mb-7 text-slate-500 dark:text-slate-400 leading-6 md:leading-7 _heroPara">
+                We bring brands and people closer. With a focus on
+                emotion-driven connections, we craft experiences that resonate
+                and endure.
+              </p>
+              <NavLink to="/about-us">
+                <button
+                  className="px-7 text-sm md:text-[16px] md:px-8 py-3 text-white rounded-md from-violet-400 to-violet-600 bg-gradient-to-l hover:from-violet-500 hover:to-violet-700 active:scale-95"
+                  title="Clixk here to learn more"
+                >
+                  Learn More &rarr;
+                </button>
+              </NavLink>
+            </div>
+          </Animated>
+
           <div className="flex justify-center items-center md:justify-end z-10 md:order-1">
-            <Animated varient="fade-in" speed="fast">
-              <div className="bg-violet-100 dark:bg-slate-700 rounded-lg">
-                <video
-                  src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                  autoPlay
-                  muted
-                  controls={false}
-                  alt="A visual representation of videophics"
-                  className="object-cover rounded-lg max-h-[500px] w-full md:max-w-[700px] md:hidden lg:block"
-                  style={{
-                    aspectRatio: "16/9",
-                  }}
-                /></div>
-            </Animated>
+            <div className="bg-violet-100 dark:bg-slate-700 rounded-lg">
+              <video
+                src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                autoPlay
+                muted
+                controls={false}
+                alt="A visual representation of videophics"
+                className="object-cover rounded-lg w-full"
+                style={{
+                  aspectRatio: "16/9",
+                }}
+              />
+            </div>
           </div>
         </div>
       </section>
-      <section className="_services-section dark:bg-slate-900 py-[7rem] md:min-h-[calc(100vh-80px)]">
+      <section className="_services-section py-[7rem] md:min-h-[calc(100vh-80px)]">
         <div className="container mx-auto max-w-[1300px]">
           <div className="flex flex-col justify-center items-center text-center">
             <p className="text-sm text-slate-500 dark:text-slate-400 leading-6 md:leading-7 uppercase">
@@ -96,10 +110,12 @@ export default function Home() {
                           <span className="text-violet-700">1.</span> Branding
                         </h3>
                         <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
-                          We create brand identities, brand guidelines, and more.
+                          We create brand identities, brand guidelines, and
+                          more.
                         </p>
                       </div>
-                    </div></Link>
+                    </div>
+                  </Link>
                 </Animated>
               </Animated>
             </div>
@@ -115,7 +131,8 @@ export default function Home() {
                           className="w-15 h-15 mb-5"
                         />
                         <h3 className="text-3xl md:text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
-                          <span className="text-violet-700">2.</span> Development
+                          <span className="text-violet-700">2.</span>{" "}
+                          Development
                         </h3>
                         <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
                           We develop websites, web applications, and more.
@@ -209,10 +226,12 @@ export default function Home() {
                           className="w-15 h-15 mb-5"
                         />
                         <h3 className="text-3xl md:text-4xl font-[600] mb-2 text-slate-700 dark:text-white leading-10">
-                          <span className="text-violet-700">6.</span> Software Testing
+                          <span className="text-violet-700">6.</span> Software
+                          Testing
                         </h3>
                         <p className="text-sm text-slate-500 dark:text-slate-300 leading-6">
-                          We test your software to ensure quality and performance.
+                          We test your software to ensure quality and
+                          performance.
                         </p>
                       </div>
                     </div>
@@ -283,7 +302,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="_team-section py-[8rem] pt-[6rem] bg-white dark:bg-slate-900 flex flex-col justify-center items-center">
+      <section className="_team-section py-[8rem] pt-[6rem] flex flex-col justify-center items-center">
         <div className="container mx-auto max-w-[1300px]">
           <div className="text-center">
             <p className="text-sm text-slate-500 dark:text-slate-400 leading-6 md:leading-7 mb-2 uppercase">
@@ -498,13 +517,13 @@ export default function Home() {
         </section>
       </div>
       <section
-        className="_contact-section py-[8rem] bg-white dark:bg-slate-900 flex flex-col justify-center items-center"
+        className="_contact-section py-[8rem] flex flex-col justify-center items-center"
         id="contact"
       >
         <div className="container mx-auto max-w-[1300px] grid md:grid-cols-2 gap-10">
           <Contact />
         </div>
       </section>
-    </>
+    </div>
   );
 }

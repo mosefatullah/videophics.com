@@ -197,12 +197,49 @@ export default function Navbar({ theme, setTheme }) {
         });
       });
     });
+    const navEffect = () => {
+      if (document.getElementById("homepage")) {
+        if (window.scrollY > 100) {
+          document
+            .querySelector("nav")
+            .classList.add(
+              "border-b",
+              "border-slate-200",
+              "bg-white",
+              "dark:bg-slate-800",
+              "dark:border-slate-700"
+            );
+        } else {
+          document
+            .querySelector("nav")
+            .classList.remove(
+              "border-b",
+              "border-slate-200",
+              "bg-white",
+              "dark:bg-slate-800",
+              "dark:border-slate-700"
+            );
+        }
+      } else {
+        document
+          .querySelector("nav")
+          .classList.add(
+            "border-b",
+            "border-slate-200",
+            "bg-white",
+            "dark:bg-slate-800",
+            "dark:border-slate-700"
+          );
+      }
+    };
+    navEffect();
+    window.addEventListener("scroll", navEffect);
   }, [document.querySelector("._services-menu ol li")]);
 
   return (
     <>
       <nav
-        className="_navbar sticky top-0 left-0 z-50 text-black border-b border-slate-200 py-4 lg:p-0 dark:bg-slate-800 dark:border-slate-700 bg-white dark:text-white"
+        className="_navbar sticky top-0 left-0 z-50 py-4 lg:p-0 text-black dark:text-white"
         role="navigation"
       >
         <div className="container mx-auto flex justify-between lg:grid grid-cols-3 gap-4 max-w-[1300px]">
@@ -215,7 +252,8 @@ export default function Navbar({ theme, setTheme }) {
                   className="h-8 w-8 object-cover rounded-md mr-2"
                 />
                 <span>Videophics</span>
-              </h1></NavLink>
+              </h1>
+            </NavLink>
           </div>
           <ol
             className="_menu text-sm items-center hidden lg:flex"

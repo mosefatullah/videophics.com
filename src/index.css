@@ -116,6 +116,10 @@ html.lenis {
   transition: border-bottom-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
+._navbar .custom li {
+  width: fit-content;
+}
+
 html.dark ._navbar ._menu > li > a:hover {
   background-color: rgba(255, 255, 255, 0.03);
 }

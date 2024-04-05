@@ -6,7 +6,7 @@ export default function Navbar({ theme, setTheme }) {
 
   const ServicesList = ({ mobile }) => (
     <>
-      <Link to="/services/branding">
+      <Link className="w-fit" to="/services/branding">
         <li
           className={
             !mobile
@@ -19,7 +19,7 @@ export default function Navbar({ theme, setTheme }) {
           <p className="_hover">Branding</p>
         </li>
       </Link>
-      <Link to="/services/development">
+      <Link className="w-fit" to="/services/development">
         <li
           className="border-b-[2px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
           index="3"
@@ -28,7 +28,7 @@ export default function Navbar({ theme, setTheme }) {
           <p className="_hover">Development</p>
         </li>
       </Link>
-      <Link to="/services/brand-advisory">
+      <Link className="w-fit" to="/services/brand-advisory">
         <li
           className="border-b-[2px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
           index="2"
@@ -37,7 +37,7 @@ export default function Navbar({ theme, setTheme }) {
           <p className="_hover">Brand Advisory</p>
         </li>
       </Link>
-      <Link to="/services/marketing">
+      <Link className="w-fit" to="/services/marketing">
         <li
           className="border-b-[2px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
           index="4"
@@ -46,7 +46,7 @@ export default function Navbar({ theme, setTheme }) {
           <p className="_hover">Marketing</p>
         </li>
       </Link>
-      <Link to="/services/content-writing">
+      <Link className="w-fit" to="/services/content-writing">
         <li
           className="border-b-[2px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
           index="5"
@@ -55,7 +55,7 @@ export default function Navbar({ theme, setTheme }) {
           <p className="_hover">Content Writing</p>
         </li>
       </Link>
-      <Link to="/services/software-testing">
+      <Link className="w-fit" to="/services/software-testing">
         <li
           className="border-b-[2px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
           index="6"
@@ -173,7 +173,7 @@ export default function Navbar({ theme, setTheme }) {
             />
           </svg>
         </button>
-        <div id="service-lists-in-mob" className="mt-3 lg:hidden">
+        <div id="service-lists-in-mob" className="mt-3 mb-4 lg:hidden">
           <ol className="flex flex-col">
             <ServicesList mobile={true} />
           </ol>
@@ -251,6 +251,13 @@ export default function Navbar({ theme, setTheme }) {
         });
       });
     });
+    navEffect();
+    window.addEventListener("scroll", navEffect);
+    if (!document.getElementById("homepage")) {
+      document.querySelector("._ad").style.display = "none";
+    } else {
+      document.querySelector("._ad").style.display = "block";
+    }
   }, [document.querySelector("._services-menu ol li")]);
 
   const initOffer = () => {
@@ -273,13 +280,6 @@ export default function Navbar({ theme, setTheme }) {
       initOffer();
     }, 1000);
     initOffer();
-    if (!document.getElementById("homepage")) {
-      document.querySelector("._ad").style.display = "none";
-    } else {
-      document.querySelector("._ad").style.display = "block";
-    }
-    navEffect();
-    window.addEventListener("scroll", navEffect);
 
     return () => {
       clearInterval(i);

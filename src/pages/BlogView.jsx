@@ -128,7 +128,7 @@ export default function BlogView() {
 
           <div className="container max-w-[1300px] mx-auto dark:text-white py-20 pb-30">
             <div className="flex flex-grow flex-col lg:flex-row gap-14">
-              <div className="text-gray-700 lg:h-full lg:sticky top-[7rem] dark:text-gray-400 flex lg:flex-col gap-4 pt-1">
+              <div className="text-gray-700 lg:h-full lg:sticky top-[7rem] dark:text-gray-400 flex lg:flex-col gap-4 pt-3">
                 <a
                   target="_blank"
                   href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}&title=${blogData.title}`}

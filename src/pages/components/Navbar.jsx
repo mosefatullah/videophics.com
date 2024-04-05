@@ -2,10 +2,6 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 
 export default function Navbar({ theme, setTheme }) {
-  const [offerDays, setOfferDays] = React.useState("0");
-  const [offerHours, setOfferHours] = React.useState("0");
-  const [offerMinutes, setOfferMinutes] = React.useState("0");
-  const [offerSeconds, setOfferSeconds] = React.useState("0");
   const offerEndsIn = new Date("10 April 2024");
 
   const ServicesList = ({ mobile }) => (
@@ -257,7 +253,26 @@ export default function Navbar({ theme, setTheme }) {
     });
   }, [document.querySelector("._services-menu ol li")]);
 
+  const initOffer = () => {
+    const totalSeconds = Math.floor(
+      (offerEndsIn.getTime() - new Date().getTime()) / 1000
+    );
+    const d = Math.floor(totalSeconds / 3600 / 24);
+    const h = Math.floor(totalSeconds / 3600) % 24;
+    const m = Math.floor((totalSeconds % 3660) / 60);
+    const s = Math.floor(totalSeconds % 60);
+    
+    document.getElementById("offerDays").textContent = d + "d";
+    document.getElementById("offerHours").textContent = h + "h";
+    document.getElementById("offerMinutes").textContent = m + "m";
+    document.getElementById("offerSeconds").textContent = s + "s";
+  };
+
   React.useEffect(() => {
+    const i = setInterval(() => {
+      initOffer();
+    }, 1000);
+    initOffer();
     if (!document.getElementById("homepage")) {
       document.querySelector("._ad").style.display = "none";
     } else {
@@ -265,23 +280,11 @@ export default function Navbar({ theme, setTheme }) {
     }
     navEffect();
     window.addEventListener("scroll", navEffect);
-    const initOffer = () => {
-      const totalSeconds = Math.floor(
-        (offerEndsIn.getTime() - new Date().getTime()) / 1000
-      );
-      const d = Math.floor(totalSeconds / 3600 / 24);
-      const h = Math.floor(totalSeconds / 3600) % 24;
-      const m = Math.floor((totalSeconds % 3660) / 60);
-      const s = Math.floor(totalSeconds % 60);
-      setOfferDays(d);
-      setOfferHours(h);
-      setOfferMinutes(m);
-      setOfferSeconds(s);
+
+    return () => {
+      clearInterval(i);
     };
-    setInterval(() => {
-      initOffer();
-    }, 1000);
-  });
+  }, []);
 
   return (
     <>
@@ -293,20 +296,20 @@ export default function Navbar({ theme, setTheme }) {
           </div>
           <div className="flex md:flex">
             <code className="text-sm md:text-xl">
-              <span className="bg-white text-black px-2 py-1 rounded-md">
-                {offerDays || "0"}d
+              <span className="bg-white text-black px-2 py-1 rounded-md" id="offerDays">
+                0d
               </span>
               :
-              <span className="bg-white text-black px-2 py-1 rounded-md">
-                {offerHours || "0"}h
+              <span className="bg-white text-black px-2 py-1 rounded-md" id="offerHours">
+                0h
               </span>
               :
-              <span className="bg-white text-black px-2 py-1 rounded-md">
-                {offerMinutes || "0"}m
+              <span className="bg-white text-black px-2 py-1 rounded-md" id="offerMinutes">
+                0m
               </span>
               :
-              <span className="bg-white text-black px-2 py-1 rounded-md">
-                {offerSeconds || "0"}s
+              <span className="bg-white text-black px-2 py-1 rounded-md" id="offerSeconds">
+                0s
               </span>
             </code>
             <button

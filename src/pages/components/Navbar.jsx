@@ -70,7 +70,7 @@ export default function Navbar({ theme, setTheme }) {
     document
       .querySelector("._navbar")
       .classList.add(
-        "border-[#e5e5e5]",
+        "border-[#ddd]",
         "bg-white/80",
         "backdrop-blur-lg",
         "dark:bg-slate-800/80",
@@ -81,7 +81,7 @@ export default function Navbar({ theme, setTheme }) {
     document
       .querySelector("._navbar")
       .classList.remove(
-        "border-[#e5e5e5]",
+        "border-[#ddd]",
         "bg-white/80",
         "backdrop-blur-lg",
         "dark:bg-slate-800/80",

@@ -2,6 +2,12 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 
 export default function Navbar({ theme, setTheme }) {
+  const [offerDays, setOfferDays] = React.useState("0");
+  const [offerHours, setOfferHours] = React.useState("0");
+  const [offerMinutes, setOfferMinutes] = React.useState("0");
+  const [offerSeconds, setOfferSeconds] = React.useState("0");
+  const offerEndsIn = new Date("10 April 2024");
+
   const ServicesList = ({ mobile }) => (
     <>
       <Link to="/services/branding">
@@ -68,7 +74,7 @@ export default function Navbar({ theme, setTheme }) {
     document
       .querySelector("._navbar")
       .classList.add(
-        "border-gray-300",
+        "border-[#e5e5e5]",
         "bg-white/80",
         "backdrop-blur-lg",
         "dark:bg-slate-800/80",
@@ -79,7 +85,7 @@ export default function Navbar({ theme, setTheme }) {
     document
       .querySelector("._navbar")
       .classList.remove(
-        "border-gray-300",
+        "border-[#e5e5e5]",
         "bg-white/80",
         "backdrop-blur-lg",
         "dark:bg-slate-800/80",
@@ -102,7 +108,6 @@ export default function Navbar({ theme, setTheme }) {
       navActivated();
     }
   };
-
   const Menu = () => (
     <>
       <li>
@@ -201,7 +206,6 @@ export default function Navbar({ theme, setTheme }) {
       </li>
     </>
   );
-
   const hideServiceMenu = () => {
     if (!document.getElementById("homepage")) {
       navActivated();
@@ -212,7 +216,6 @@ export default function Navbar({ theme, setTheme }) {
       .classList.add("-translate-y-[100rem]");
     document.querySelector("._services-menu").classList.remove("opacity-100");
   };
-
   const hideDrawerMenu = () => {
     document.querySelector("._drawer-menu-layer").classList.add("hidden");
     document.querySelector("._drawer-menu").classList.add("transform");
@@ -252,6 +255,9 @@ export default function Navbar({ theme, setTheme }) {
         });
       });
     });
+  }, [document.querySelector("._services-menu ol li")]);
+
+  React.useEffect(() => {
     if (!document.getElementById("homepage")) {
       document.querySelector("._ad").style.display = "none";
     } else {
@@ -259,37 +265,74 @@ export default function Navbar({ theme, setTheme }) {
     }
     navEffect();
     window.addEventListener("scroll", navEffect);
-  }, [document.querySelector("._services-menu ol li")]);
+    const initOffer = () => {
+      const totalSeconds = Math.floor(
+        (offerEndsIn.getTime() - new Date().getTime()) / 1000
+      );
+      const d = Math.floor(totalSeconds / 3600 / 24);
+      const h = Math.floor(totalSeconds / 3600) % 24;
+      const m = Math.floor((totalSeconds % 3660) / 60);
+      const s = Math.floor(totalSeconds % 60);
+      setOfferDays(d);
+      setOfferHours(h);
+      setOfferMinutes(m);
+      setOfferSeconds(s);
+    };
+    setInterval(() => {
+      initOffer();
+    }, 1000);
+  });
 
   return (
     <>
-      <div className="_ad w-full relative bg-violet-300 dark:bg-gradient-to-r dark:from-violet-500 dark:to-violet-600 z-20 p-3">
-        <div className="container mx-auto max-w-[1300px] text-slate-700 dark:text-white flex justify-center items-center gap-6">
-          <div className="ml-auto flex gap-3">
+      <div className="_ad w-full relative bg-violet-300 dark:bg-gradient-to-r dark:from-violet-500 dark:to-violet-600 z-20 py-3">
+        <div className="container mx-auto max-w-[1300px] text-slate-700 dark:text-white flex flex-col md:flex-row justify-center md:items-center gap-6 text-sm md:text-md lg:text-2md">
+          <div className="md:ml-auto flex flex-col md:flex-row md:gap-3">
             <p className="font-[600]">Black Friday Sale!</p>
             <p>Up to 20% off in all packages!</p>
           </div>
-          <div>
-            <code className="text-xl">
+          <div className="flex md:flex">
+            <code className="text-sm md:text-xl">
               <span className="bg-white text-black px-2 py-1 rounded-md">
-                10
+                {offerDays || "0"}d
               </span>
               :
               <span className="bg-white text-black px-2 py-1 rounded-md">
-                10
+                {offerHours || "0"}h
               </span>
               :
               <span className="bg-white text-black px-2 py-1 rounded-md">
-                10
+                {offerMinutes || "0"}m
               </span>
               :
               <span className="bg-white text-black px-2 py-1 rounded-md">
-                10
+                {offerSeconds || "0"}s
               </span>
             </code>
+            <button
+              className="ml-auto block md:hidden"
+              onClick={() => {
+                document.querySelector("._ad").style.display = "none";
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
           </div>
           <button
-            className="ml-auto"
+            className="ml-auto hidden md:block"
             onClick={() => {
               document.querySelector("._ad").style.display = "none";
             }}

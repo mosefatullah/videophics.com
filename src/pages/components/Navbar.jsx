@@ -174,7 +174,7 @@ export default function Navbar({ theme, setTheme }) {
           </svg>
         </button>
         <div id="service-lists-in-mob" className="mt-3 lg:hidden">
-          <ol>
+          <ol className="flex flex-col">
             <ServicesList mobile={true} />
           </ol>
         </div>
@@ -261,7 +261,7 @@ export default function Navbar({ theme, setTheme }) {
     const h = Math.floor(totalSeconds / 3600) % 24;
     const m = Math.floor((totalSeconds % 3660) / 60);
     const s = Math.floor(totalSeconds % 60);
-    
+
     document.getElementById("offerDays").textContent = d + "d";
     document.getElementById("offerHours").textContent = h + "h";
     document.getElementById("offerMinutes").textContent = m + "m";
@@ -296,19 +296,31 @@ export default function Navbar({ theme, setTheme }) {
           </div>
           <div className="flex md:flex">
             <code className="text-sm md:text-xl">
-              <span className="bg-white text-black px-2 py-1 rounded-md" id="offerDays">
+              <span
+                className="bg-white text-black px-2 py-1 rounded-md"
+                id="offerDays"
+              >
                 0d
               </span>
               :
-              <span className="bg-white text-black px-2 py-1 rounded-md" id="offerHours">
+              <span
+                className="bg-white text-black px-2 py-1 rounded-md"
+                id="offerHours"
+              >
                 0h
               </span>
               :
-              <span className="bg-white text-black px-2 py-1 rounded-md" id="offerMinutes">
+              <span
+                className="bg-white text-black px-2 py-1 rounded-md"
+                id="offerMinutes"
+              >
                 0m
               </span>
               :
-              <span className="bg-white text-black px-2 py-1 rounded-md" id="offerSeconds">
+              <span
+                className="bg-white text-black px-2 py-1 rounded-md"
+                id="offerSeconds"
+              >
                 0s
               </span>
             </code>

@@ -100,27 +100,27 @@ html.lenis {
   transform: translateX(0px);
 }
 
-._navbar ._menu li a {
+._navbar ._menu > li > a {
   font-weight: 500 !important;
   display: block;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   padding: 30px 20px;
   white-space: nowrap;
   margin-bottom: -1px;
 }
 
-._navbar ._menu li a:hover {
-  border-bottom: 2px solid var(--bg-secondary-1);
+._navbar ._menu > li > a:hover {
+  border-bottom: 1px solid var(--bg-secondary-1);
   color: var(--bg-secondary-1);
   background-color: rgba(0, 0, 0, 0.03);
   transition: border-bottom-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
-html.dark ._navbar ._menu li a:hover {
+html.dark ._navbar ._menu > li > a:hover {
   background-color: rgba(255, 255, 255, 0.03);
 }
 
-._navbar ._menu li a.active {
+._navbar ._menu > li > a.active {
   color: var(--bg-secondary-1);
   transition: border-bottom-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
@@ -570,3 +570,55 @@ html.dark ._blog-body blockquote {
   margin-top: 20px;
   display: block;
 }
+
+/*
+.bm-features-card-init-bg, bm-features-card-active-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+.edge-glare-nw {
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(to top left,rgba(0,0,0,0.4) 45%,rgba(255,255,255,0.4)) 1;
+}
+.glass-effects-nw-small {
+  box-shadow: 4px 4px 24px 0 rgba(0,0,0,.75),-4px -4px 24px 0 rgba(255,255,255,.05);
+}
+.glass-nw-medium {
+  background: linear-gradient(131deg,rgba(255,255,255,.08) 0,rgba(255,255,255,.01) 100%),url("../images/noise-60-2.png"),0 0;
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+}
+.edge-glare-ne {
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(to top right,rgba(0,0,0,0.4) 45%,rgba(255,255,255,0.4)) 1;
+}
+.glass-effects-ne-small {
+  box-shadow: -4px 4px 24px 0 rgba(0,0,0,.75),4px -4px 24px 0 rgba(255,255,255,.05);
+}
+.glass-ne-medium {
+  background: linear-gradient(78deg,rgba(255,255,255,.01) 0,rgba(255,255,255,.08) 100%),url("../images/noise-60-2.png"),0 0;
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+}
+
+
+
+
+<a href="/product/detection-as-code/" class="bm-single-features-card">
+   <div class="bm-features-card-init-bg glass-nw-medium edge-glare-nw glass-effects-nw-small"></div>
+   <div class="bm-features-card-active-bg glass-ne-medium edge-glare-ne glass-effects-ne-small"></div>
+   <div class="bm-features-card-content">
+        <noscript><img class="bm-features-card-icon" src="https://panther.com/wp-content/uploads/2024/02/Detection-shadow.png" alt="Card icon" style="position: relative; left: 5px;"></noscript><img class="bm-features-card-icon lazyloaded" src="https://panther.com/wp-content/uploads/2024/02/Detection-shadow.png" alt="Card icon" style="position: relative; left: 5px;" data-src="https://panther.com/ wp-content/uploads/2024/02/Detection-shadow.png">
+        <div class="bm-features-card-description-wrap">
+            <h6 class="bm-features-card-title">Drive Efficiency withDetection-as-Code</h6>
+            <div class="bm-features-card-description">Customize or create detections using Python or YAML and manage detections in Git.</div>
+        </div>
+   </div>
+</a>
+*/

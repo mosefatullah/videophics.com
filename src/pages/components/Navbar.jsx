@@ -8,8 +8,8 @@ export default function Navbar({ theme, setTheme }) {
         <li
           className={
             !mobile
-              ? "border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
-              : "border-b-[3px] border-transparent dark:hover:border-violet-500"
+              ? "border-b-[2px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
+              : "border-b-[2px] border-transparent dark:hover:border-violet-500"
           }
           index="1"
         >
@@ -19,7 +19,7 @@ export default function Navbar({ theme, setTheme }) {
       </Link>
       <Link to="/services/development">
         <li
-          className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
+          className="border-b-[2px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
           index="3"
         >
           <p className={mobile && "hidden"}>Development</p>
@@ -28,7 +28,7 @@ export default function Navbar({ theme, setTheme }) {
       </Link>
       <Link to="/services/brand-advisory">
         <li
-          className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
+          className="border-b-[2px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
           index="2"
         >
           <p className={mobile && "hidden"}>Brand Advisory</p>
@@ -37,7 +37,7 @@ export default function Navbar({ theme, setTheme }) {
       </Link>
       <Link to="/services/marketing">
         <li
-          className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
+          className="border-b-[2px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
           index="4"
         >
           <p className={mobile && "hidden"}>Marketing</p>
@@ -46,7 +46,7 @@ export default function Navbar({ theme, setTheme }) {
       </Link>
       <Link to="/services/content-writing">
         <li
-          className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
+          className="border-b-[2px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
           index="5"
         >
           <p className={mobile && "hidden"}>Content Writing</p>
@@ -55,7 +55,7 @@ export default function Navbar({ theme, setTheme }) {
       </Link>
       <Link to="/services/software-testing">
         <li
-          className="border-b-[3px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
+          className="border-b-[2px] border-transparent hover:border-violet-700 dark:hover:border-violet-500"
           index="6"
         >
           <p className={mobile && "hidden"}>Software Testing</p>
@@ -64,7 +64,6 @@ export default function Navbar({ theme, setTheme }) {
       </Link>
     </>
   );
-
   const navActivated = () => {
     document
       .querySelector("._navbar")
@@ -92,7 +91,7 @@ export default function Navbar({ theme, setTheme }) {
       document.getElementById("homepage") &&
       document
         .querySelector("._services-menu")
-        .classList.contains("-translate-x-full")
+        .classList.contains("-translate-y-[100rem]")
     ) {
       if (window.scrollY > 50) {
         navActivated();
@@ -109,7 +108,13 @@ export default function Navbar({ theme, setTheme }) {
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
+      <li
+        className="relative"
+        onMouseLeave={() => {
+          if (window.scrollY < 50) navDeactivated();
+          hideServiceMenu();
+        }}
+      >
         <NavLink
           to="/services"
           id="navServiceMenuItem"
@@ -121,7 +126,7 @@ export default function Navbar({ theme, setTheme }) {
               .classList.remove("transform");
             document
               .querySelector("._services-menu")
-              .classList.remove("-translate-x-full");
+              .classList.remove("-translate-y-[100rem]");
             document
               .querySelector("._services-menu")
               .classList.add("opacity-100");
@@ -172,6 +177,18 @@ export default function Navbar({ theme, setTheme }) {
             <ServicesList mobile={true} />
           </ol>
         </div>
+        <div
+          className="_services-menu bg-white dark:bg-slate-800 absolute -translate-y-[100rem] transition-all duration-500 ease-in-out px-6 shadow-md opacity-0 hidden md:block w-auto whitespace-nowrap"
+          role="menu"
+          style={{ zIndex: "60" }}
+        >
+          <ol
+            className="custom flex flex-col gap-3 text-lg font-[500] text-slate-700 dark:text-white py-[1.5rem] "
+            onClick={hideServiceMenu}
+          >
+            <ServicesList />
+          </ol>
+        </div>
       </li>
       <li>
         <NavLink to="/about-us">About Us</NavLink>
@@ -192,7 +209,7 @@ export default function Navbar({ theme, setTheme }) {
     document.querySelector("._services-menu").classList.add("transform");
     document
       .querySelector("._services-menu")
-      .classList.add("-translate-x-full");
+      .classList.add("-translate-y-[100rem]");
     document.querySelector("._services-menu").classList.remove("opacity-100");
   };
 
@@ -200,7 +217,9 @@ export default function Navbar({ theme, setTheme }) {
     document.querySelector("._drawer-menu-layer").classList.add("hidden");
     document.querySelector("._drawer-menu").classList.add("transform");
     document.querySelector("._drawer-menu").classList.add("translate-x-full");
-    document.querySelector("._drawer-menu").classList.add("-translate-y-full");
+    document
+      .querySelector("._drawer-menu")
+      .classList.add("-translate-y-[100rem]");
   };
 
   React.useEffect(() => {
@@ -226,14 +245,6 @@ export default function Navbar({ theme, setTheme }) {
           list.classList.remove("active");
         });
         li.classList.add("active");
-        const img = document.querySelector(
-          `._services-menu #img${e.target.getAttribute("index")}`
-        );
-        const images = document.querySelectorAll("._services-menu img");
-        images.forEach((image) => {
-          image.classList.add("hidden");
-        });
-        img.classList.remove("hidden");
       });
       li.addEventListener("mouseleave", () => {
         servicesMenuList.forEach((list) => {
@@ -329,7 +340,7 @@ export default function Navbar({ theme, setTheme }) {
                   .classList.toggle("translate-x-full");
                 document
                   .querySelector("._drawer-menu")
-                  .classList.toggle("-translate-y-full");
+                  .classList.toggle("-translate-y-[100rem]");
               }}
             >
               <svg
@@ -351,7 +362,7 @@ export default function Navbar({ theme, setTheme }) {
         </div>
       </nav>
       <div
-        className="_drawer-menu max-w-[380px] w-[70%] bg-white dark:bg-slate-800 dark:text-white fixed top-0 right-0 h-full transform translate-x-full -translate-y-full transition-all duration-500 ease-in-out p-6 shadow text-xl rounded-lg"
+        className="_drawer-menu max-w-[380px] w-[70%] bg-white dark:bg-slate-800 dark:text-white fixed top-0 right-0 h-full transform translate-x-full -translate-y-[100rem] transition-all duration-500 ease-in-out p-6 shadow text-xl rounded-lg"
         role="menu"
         style={{ zIndex: "60" }}
       >
@@ -373,62 +384,6 @@ export default function Navbar({ theme, setTheme }) {
         className="_drawer-menu-layer fixed top-0 left-0 h-screen w-full hidden z-50 bg-black bg-opacity-50 transition-all duration-500 ease-in-out"
         onClick={hideDrawerMenu}
       />
-      <div
-        className="_services-menu bg-white dark:bg-slate-800 fixed left-0 w-full transform -translate-x-full transition-all duration-500 ease-in-out px-6 shadow-md opacity-0 hidden md:block"
-        role="menu"
-        style={{ zIndex: "60" }}
-        onMouseLeave={() => {
-          if (window.scrollY < 50) navDeactivated();
-          hideServiceMenu();
-        }}
-      >
-        <div className="py-12 container mx-auto max-w-[1300px] flex justify-around items-center gap-6">
-          <ol
-            className="flex flex-col items-start gap-2 text-2xl font-[500] text-slate-700 dark:text-white text-right"
-            onClick={hideServiceMenu}
-          >
-            <ServicesList />
-          </ol>
-          <div>
-            <img
-              src="/images/static/branding.png"
-              alt="Branding"
-              id="img1"
-              className="w-full max-h-[350px] object-cover rounded-md bg-slate-300 dark:bg-slate-500 p-10"
-            />
-            <img
-              src="/images/static/advisory.png"
-              alt="Advisory"
-              id="img2"
-              className="w-full max-h-[350px] object-cover rounded-md hidden bg-slate-300 dark:bg-slate-500 p-10"
-            />
-            <img
-              src="/images/static/development.png"
-              alt="Development"
-              id="img3"
-              className="w-full max-h-[350px] object-cover rounded-md hidden bg-slate-300 dark:bg-slate-500 p-10"
-            />
-            <img
-              src="/images/static/marketing.png"
-              alt="Marketing"
-              id="img4"
-              className="w-full max-h-[350px] object-cover rounded-md hidden bg-slate-300 dark:bg-slate-500 p-10"
-            />
-            <img
-              src="/images/static/content.png"
-              alt="Content Writing"
-              id="img5"
-              className="w-full max-h-[350px] object-cover rounded-md hidden bg-slate-300 dark:bg-slate-500 p-10"
-            />
-            <img
-              src="/images/static/patch.png"
-              alt="Software Testing"
-              id="img6"
-              className="w-full max-h-[350px] object-cover rounded-md hidden bg-slate-300 dark:bg-slate-500 p-10"
-            />
-          </div>
-        </div>
-      </div>
       <div className="bottom-to-top fixed right-4 bottom-4 z-50 hidden">
         <button
           className="p-3 bg-white rounded-full active:scale-95 active:bg-gray-100 shadow-md"

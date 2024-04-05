@@ -5,8 +5,29 @@ export default function Contact() {
         <h3 className="text-3xl lg:text-4xl font-[600] mb-4 text-slate-500 dark:text-white leading-10">
           Let's talk about your project.
         </h3>
-        <p className="text-md text-slate-500 dark:text-slate-300 pt-6">
-          <p className="leading-6">
+        <p className="text-md text-slate-500 dark:text-white pt-6">
+          <p className="flex gap-2 leading-6 text-lg">
+            <span className="text-slate-700 dark:text-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                />
+              </svg>
+            </span>{" "}
+            <span className="text-blue-700 dark:text-blue-400">
+              contact@videophics.com
+            </span>
+          </p>
+          <p className="leading-6 mt-6">
             <span className="text-violet-700 dark:text-violet-400">
               Office Hours:
             </span>{" "}
@@ -19,11 +40,9 @@ export default function Contact() {
             Dhaka, Bangladesh
           </p>
           <p className="leading-6">
-            <span className="text-violet-700 dark:text-violet-400">Email:</span>{" "}
-            contact@videophics.com
-          </p>
-          <p className="leading-6">
-            <span className="text-violet-700 dark:text-violet-400">Facebook:</span>{" "}
+            <span className="text-violet-700 dark:text-violet-400">
+              Facebook:
+            </span>{" "}
             https://facebook.com/videophics
           </p>
         </p>

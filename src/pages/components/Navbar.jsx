@@ -180,7 +180,7 @@ export default function Navbar({ theme, setTheme }) {
         <div
           className="_services-menu bg-white dark:bg-slate-800 absolute -translate-y-[100rem] transition-all duration-500 ease-in-out px-6 shadow-md opacity-0 hidden md:block w-auto whitespace-nowrap"
           role="menu"
-          style={{ zIndex: "60" }}
+          style={{ zIndex: "10" }}
         >
           <ol
             className="custom flex flex-col gap-3 text-lg font-[500] text-slate-700 dark:text-white py-[1.5rem] "
@@ -252,12 +252,65 @@ export default function Navbar({ theme, setTheme }) {
         });
       });
     });
+    if (!document.getElementById("homepage")) {
+      document.querySelector("._ad").style.display = "none";
+    } else {
+      document.querySelector("._ad").style.display = "block";
+    }
     navEffect();
     window.addEventListener("scroll", navEffect);
   }, [document.querySelector("._services-menu ol li")]);
 
   return (
     <>
+      <div className="_ad w-full relative bg-violet-300 dark:bg-gradient-to-r dark:from-violet-500 dark:to-violet-600 z-20 p-3">
+        <div className="container mx-auto max-w-[1300px] text-slate-700 dark:text-white flex justify-center items-center gap-6">
+          <div className="ml-auto flex gap-3">
+            <p className="font-[600]">Black Friday Sale!</p>
+            <p>Up to 20% off in all packages!</p>
+          </div>
+          <div>
+            <code className="text-xl">
+              <span className="bg-white text-black px-2 py-1 rounded-md">
+                10
+              </span>
+              :
+              <span className="bg-white text-black px-2 py-1 rounded-md">
+                10
+              </span>
+              :
+              <span className="bg-white text-black px-2 py-1 rounded-md">
+                10
+              </span>
+              :
+              <span className="bg-white text-black px-2 py-1 rounded-md">
+                10
+              </span>
+            </code>
+          </div>
+          <button
+            className="ml-auto"
+            onClick={() => {
+              document.querySelector("._ad").style.display = "none";
+            }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18 18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
       <nav
         className="_navbar sticky top-0 left-0 z-50 py-4 lg:p-0 text-black dark:text-white border-b border-transparent"
         role="navigation"

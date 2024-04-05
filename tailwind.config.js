@@ -15,6 +15,9 @@ export default {
           dark: "rgb(15, 23, 42)",
         },
       },
+      lineHeight: {
+        "13": "3.5rem",
+      },
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
       },

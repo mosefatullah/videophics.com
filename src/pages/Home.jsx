@@ -9,6 +9,7 @@ import Animated from "./components/Animated";
 import Booking from "./components/Booking";
 
 export default function Home() {
+  const [isMuted, setMuted] = React.useState(true);
   return (
     <div id="homepage">
       <Helmet>
@@ -26,8 +27,8 @@ export default function Home() {
           async
         ></script>
       </Helmet>
-      <div className="hidden lg:block absolute right-0 top-0 h-[400px] w-[500px] bg-gradient-to-r from-violet-100 to-violet-50 dark:from-slate-800 dark:to-slate-900 rounded-l-full" />
-      <div className="hidden lg:block absolute right-0 top-[300px] h-[200px] w-[200px] bg-gradient-to-r from-violet-200 to-violet-50 dark:from-slate-800 dark:to-slate-900 rounded-full" />
+      <div className="hidden md:block absolute right-0 top-0 h-[400px] w-[500px] bg-gradient-to-r from-violet-100 to-violet-50 dark:from-slate-800 dark:to-slate-900 rounded-l-full z-5" />
+      <div className="hidden md:block absolute right-0 top-[300px] h-[200px] w-[200px] bg-gradient-to-r from-violet-200 to-violet-50 dark:from-slate-800 dark:to-slate-900 rounded-full z-5" />
       <section className="_hero-section relative py-10 lg:min-h-[calc(100vh-80px)] flex justify-center">
         <div className="_sketch h-[200px] w-[100px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 left-0 dark:opacity-50" />
         <div className="_sketch h-[200px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter right-0 md:left-[40%] bottom-10 dark:hidden" />
@@ -36,19 +37,25 @@ export default function Home() {
           <Animated varient="fade-up" speed="fast">
             <div className="flex flex-col justify-center md:items-center md:text-center z-10 max-w-[620px] lg:max-w-[730px] mx-auto lg:mx-0 md:py-10">
               <h1
-                className="text-4xl md:text-4xl lg:text-5xl font-[600] mb-4 text-slate-700 dark:text-white leading-10 xl:leading-12"
+                className="text-4xl md:text-4xl lg:text-5xl font-[600] mb-4 text-slate-700 dark:text-white leading-10 xl:leading-13"
                 style={{
                   letterSpacing: "-0.02em",
                 }}
               >
                 <Animated varient="fade-left" className="inline">
-                  Innovative minds are
+                  Branding is all about
                 </Animated>{" "}
                 <Animated varient="fade-right" className="inline">
                   <span className="text-violet-500 dark:text-violet-400">
-                    shaping
-                  </span>{" "}
-                  a brighter tomorrow
+                    storytelling
+                  </span>
+                  . We{" "}
+                  <Animated varient="fade-right" className="inline">
+                    <span className="text-violet-500 dark:text-violet-400">
+                      visualize
+                    </span>
+                  </Animated>{" "}
+                  your touchy stories
                 </Animated>
               </h1>
               <p className="text-[14px] md:text-[17px] mt-4 mb-7 text-slate-500 dark:text-slate-400 leading-6 md:leading-7 _heroPara">
@@ -61,25 +68,65 @@ export default function Home() {
                   className="px-7 text-sm md:text-[16px] md:px-8 py-3 text-white rounded-md from-violet-400 to-violet-600 bg-gradient-to-l hover:from-violet-500 hover:to-violet-700 active:scale-95"
                   title="Clixk here to learn more"
                 >
-                  Learn More &rarr;
+                  See more &rarr;
                 </button>
               </NavLink>
             </div>
           </Animated>
 
           <div className="z-10">
-            <div className="bg-violet-100 dark:bg-slate-700 rounded-lg">
+            <div className="bg-violet-100 dark:bg-slate-700 rounded-lg relative">
               <video
                 src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
                 autoPlay
-                muted
+                muted={isMuted}
                 controls={false}
                 alt="A visual representation of videophics"
                 className="object-cover rounded-lg w-full"
+                id="hero-video"
                 style={{
                   aspectRatio: "16/9",
                 }}
               />
+              <button
+                className="absolute top-[10px] right-[10px] bg-violet-700 text-white p-2 hover:scale-90 active:opacity-75 active:scale-95 rounded-full"
+                onClick={() => {
+                  document.getElementById("hero-video").muted = !isMuted;
+                  setMuted(!isMuted);
+                }}
+              >
+                {!isMuted ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
+                    />
+                  </svg>
+                )}
+              </button>
             </div>
           </div>
         </div>

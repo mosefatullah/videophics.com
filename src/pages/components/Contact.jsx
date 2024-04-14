@@ -67,17 +67,17 @@ export default function Contact() {
               document.getElementById("company").value
             } and I am interested in your ${
               document.getElementById("service").value
-            } service.\n\nMy budget range is ${
+            } service.\nMy budget range is ${
               document.getElementById("range").value
-            }. Here are the details of my project:\n\n${
+            }. Here are the details of my project:\n"${
               document.getElementById("message").value
-            }
-                    `;
+            }"`;
 
-            window.location.href = `mailto:${
-              document.getElementById("email").value
-            }?subject=Inquiry from ${
+            window.top.location.href = `mailto:contact@videophics.com?subject=Inquiry from ${
               document.getElementById("name").value
+            }${
+              document.getElementById("name").value &&
+              "! (" + document.getElementById("company").value + ")"
             }&body=${encodeURIComponent(msgbody)}`;
           }}
         >

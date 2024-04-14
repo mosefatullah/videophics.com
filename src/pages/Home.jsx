@@ -28,16 +28,16 @@ export default function Home() {
         ></script>
       </Helmet>
       <div className="hidden md:block absolute right-0 top-0 h-[400px] w-[500px] bg-gradient-to-r from-violet-100 to-violet-50 dark:from-slate-800 dark:to-slate-900 rounded-l-full z-5" />
-      <div className="hidden md:block absolute right-0 top-[300px] h-[200px] w-[200px] bg-gradient-to-r from-violet-200 to-violet-50 dark:from-slate-800 dark:to-slate-900 rounded-full z-5" />
+      <div className="hidden md:block absolute right-0 top-[300px] h-[200px] w-[200px] bg-gradient-to-r from-violet-200 to-violet-50 dark:from-slate-800 dark:to-slate-900 rounded-full z-5 animate-[bounce_3s_infinite]" />
       <section className="_hero-section relative py-10 lg:min-h-[calc(100vh-80px)] flex justify-center">
-        <div className="_sketch h-[200px] w-[100px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 left-0 dark:opacity-50" />
-        <div className="_sketch h-[200px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter right-0 md:left-[40%] bottom-10 dark:hidden" />
-        <div className="_sketch h-[100px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 right-0 hidden md:block dark:bottom-20 dark:top-auto dark:opacity-50" />
+        <div className="_sketch h-[200px] w-[100px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 left-0 dark:opacity-50 animate-[bounce_3s_infinite]" />
+        <div className="_sketch h-[200px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter right-0 md:left-[40%] bottom-10 dark:hidden animate-[bounce_3s_infinite]" />
+        <div className="_sketch h-[100px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 right-0 hidden md:block dark:bottom-20 dark:top-auto dark:opacity-50 animate-[bounce_3s_infinite]" />
         <div className="container mx-auto max-w-[1300px] flex flex-col gap-10 lg:items-center">
           <Animated varient="fade-up" speed="fast">
             <div className="flex flex-col justify-center md:items-center md:text-center z-10 max-w-[620px] lg:max-w-[730px] mx-auto lg:mx-0 md:py-10">
               <h1
-                className="text-4xl md:text-4xl lg:text-5xl font-[600] mb-4 text-slate-700 dark:text-white leading-10 xl:leading-13"
+                className="text-3xl sm:text-4xl lg:text-5xl font-[600] mb-4 text-slate-700 dark:text-white sm:leading-10 xl:leading-13"
                 style={{
                   letterSpacing: "-0.02em",
                 }}
@@ -65,7 +65,7 @@ export default function Home() {
               </p>
               <NavLink to="/about-us">
                 <button
-                  className="px-7 text-sm md:text-[16px] md:px-8 py-3 text-white rounded-md from-violet-400 to-violet-600 bg-gradient-to-l hover:from-violet-500 hover:to-violet-700 active:scale-95"
+                  className="px-7 text-sm md:text-[16px] md:px-8 py-3 text-white rounded-md from-violet-400 to-violet-600 bg-gradient-to-l hover:from-violet-500 hover:to-violet-700 active:scale-95 animate-[pulse_2s_infinite]"
                   title="Clixk here to learn more"
                 >
                   See more &rarr;
@@ -74,10 +74,10 @@ export default function Home() {
             </div>
           </Animated>
 
-          <div className="z-10">
+          <div className="z-10 w-full">
             <div className="bg-violet-100 dark:bg-slate-700 rounded-lg relative">
               <video
-                src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                srcc="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
                 autoPlay
                 muted={isMuted}
                 controls={false}

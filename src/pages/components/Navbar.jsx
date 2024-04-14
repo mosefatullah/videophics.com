@@ -495,7 +495,7 @@ export default function Navbar({ theme, setTheme }) {
         className="_drawer-menu-layer fixed top-0 left-0 h-screen w-full hidden z-50 bg-black bg-opacity-50 transition-all duration-500 ease-in-out"
         onClick={hideDrawerMenu}
       />
-      <div className="bottom-to-top fixed right-4 bottom-4 z-50 hidden">
+      <div className="bottom-to-top fixed right-4 bottom-4 z-50 hidden animate-bounce">
         <button
           className="p-3 bg-white rounded-full active:scale-95 active:bg-gray-100 shadow-md"
           onClick={() => {

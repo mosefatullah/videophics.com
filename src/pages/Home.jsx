@@ -8,15 +8,8 @@ import Contact from "./components/Contact";
 import Animated from "./components/Animated";
 import Booking from "./components/Booking";
 
-/* Utils */
-import startAnimation from "../utils/animation";
-
 export default function Home() {
   const [isMuted, setMuted] = React.useState(true);
-
-  React.useEffect(() => {
-    startAnimation();
-  }, []);
   return (
     <div id="homepage">
       <Helmet>
@@ -138,7 +131,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <canvas id="canvasAnimation" className="bg-transparent w-full"></canvas>
       <section className="_services-section py-[7rem] md:min-h-[calc(100vh-80px)]">
         <div className="container mx-auto max-w-[1300px]">
           <div className="flex flex-col justify-center items-center text-center">

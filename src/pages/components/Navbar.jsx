@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 
 export default function Navbar({ theme, setTheme }) {
-  const offerEndsIn = new Date("10 April 2024");
+  const offerEndsIn = new Date("19 April 2024");
 
   const ServicesList = ({ mobile }) => (
     <>

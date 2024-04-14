@@ -74,7 +74,8 @@ export default function Navbar({ theme, setTheme }) {
         "bg-white/80",
         "backdrop-blur-lg",
         "dark:bg-slate-800/80",
-        "dark:border-slate-700"
+        "dark:border-slate-700",
+        "shadow-sm"
       );
   };
   const navDeactivated = () => {
@@ -85,7 +86,8 @@ export default function Navbar({ theme, setTheme }) {
         "bg-white/80",
         "backdrop-blur-lg",
         "dark:bg-slate-800/80",
-        "dark:border-slate-700"
+        "dark:border-slate-700",
+        "shadow-sm"
       );
   };
   const navEffect = () => {
@@ -288,7 +290,7 @@ export default function Navbar({ theme, setTheme }) {
 
   return (
     <>
-      <div className="_ad w-full relative bg-violet-300 dark:bg-gradient-to-r dark:from-violet-500 dark:to-violet-600 z-20 py-3">
+      <div className="_ad w-full relative bg-violet-200 dark:bg-gradient-to-r dark:from-violet-500 dark:to-violet-600 z-20 py-3">
         <div className="container mx-auto max-w-[1300px] text-slate-700 dark:text-white flex flex-col md:flex-row justify-center md:items-center gap-6 text-sm md:text-md lg:text-2md">
           <div className="md:ml-auto flex flex-col md:flex-row md:gap-3">
             <p className="font-[600]">Black Friday Sale!</p>

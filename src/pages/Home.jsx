@@ -30,7 +30,7 @@ export default function Home() {
       <div className="hidden md:block absolute right-0 top-0 h-[400px] w-[500px] bg-gradient-to-r from-violet-100 to-violet-50 dark:from-slate-800 dark:to-slate-900 rounded-l-full z-5" />
       <div className="hidden md:block absolute right-0 top-[300px] h-[200px] w-[200px] bg-gradient-to-r from-violet-200 to-violet-50 dark:from-slate-800 dark:to-slate-900 rounded-full z-5 animate-[bounce_3s_infinite]" />
       <section className="_hero-section relative py-10 lg:min-h-[calc(100vh-80px)] flex justify-center">
-        <div className="_sketch h-[200px] w-[100px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 left-0 dark:opacity-50 animate-[bounce_3s_infinite]" />
+        <div className="_sketch h-[200px] w-[100px] absolute from-violet-700 dark:from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-20 left-0 dark:opacity-50 animate-[bounce_3s_infinite]" />
         <div className="_sketch h-[200px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter right-0 md:left-[40%] bottom-10 dark:hidden animate-[bounce_3s_infinite]" />
         <div className="_sketch h-[100px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 right-0 hidden md:block dark:bottom-20 dark:top-auto dark:opacity-50 animate-[bounce_3s_infinite]" />
         <div className="container mx-auto max-w-[1300px] flex flex-col gap-10 lg:items-center">
@@ -131,7 +131,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="_services-section py-[7rem] md:min-h-[calc(100vh-80px)]">
+      <section className="_services-section bg-violet-50/50 mt-9 dark:mt-0 dark:bg-transparent py-[7rem] md:min-h-[calc(100vh-80px)]">
         <div className="container mx-auto max-w-[1300px]">
           <div className="flex flex-col justify-center items-center text-center">
             <p className="text-sm text-slate-500 dark:text-slate-400 leading-6 md:leading-7 uppercase">
@@ -349,7 +349,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="_team-section py-[8rem] pt-[6rem] flex flex-col justify-center items-center">
+      <section className="_team-section bg-violet-50/50 dark:bg-transparent py-[8rem] pt-[6rem] flex flex-col justify-center items-center">
         <div className="container mx-auto max-w-[1300px]">
           <div className="text-center">
             <p className="text-sm text-slate-500 dark:text-slate-400 leading-6 md:leading-7 mb-2 uppercase">
@@ -438,7 +438,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="bg-violet-100 dark:bg-slate-800 py-[4rem]">
+      <div className="bg-violet-0 dark:bg-slate-800 py-[4rem]">
         <section className="_clients-section pb-[9rem] flex flex-col justify-center items-center pt-[4rem]">
           <div className="container mx-auto max-w-[1300px]">
             <div className="text-center mb-8">
@@ -564,7 +564,7 @@ export default function Home() {
         </section>
       </div>
       <section
-        className="_contact-section py-[8rem] flex flex-col justify-center items-center"
+        className="_contact-section bg-violet-50/50 dark:bg-transparent py-[8rem] flex flex-col justify-center items-center"
         id="contact"
       >
         <div className="container mx-auto max-w-[1300px] grid md:grid-cols-2 gap-10">

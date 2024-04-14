@@ -50,9 +50,9 @@ export default function App() {
     }, [children]);
 
     return (
-      <main className="bg-body dark:bg-body-dark">
+      <main className="bg-white dark:bg-body-dark">
         <Navbar theme={theme} setTheme={setTheme} />
-        <div className=" min-h-screen" role="main">
+        <div className="min-h-screen" role="main">
           {children}
         </div>
         <Footer />

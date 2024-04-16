@@ -70,32 +70,27 @@ export default function Navbar({ theme, setTheme }) {
     document
       .querySelector("._navbar")
       .classList.add(
-        "border-[#ddd]",
-        "bg-white/80",
+        "border-[#cecece]",
+        "bg-violet-50/90",
         "backdrop-blur-lg",
         "dark:bg-slate-800/80",
-        "dark:border-slate-700",
-        "shadow-sm"
+        "dark:border-slate-700"
       );
   };
   const navDeactivated = () => {
     document
       .querySelector("._navbar")
       .classList.remove(
-        "border-[#ddd]",
-        "bg-white/80",
+        "border-[#cecece]",
+        "bg-violet-50/90",
         "backdrop-blur-lg",
         "dark:bg-slate-800/80",
-        "dark:border-slate-700",
-        "shadow-sm"
+        "dark:border-slate-700"
       );
   };
   const navEffect = () => {
     if (
-      document.getElementById("homepage") &&
-      document
-        .querySelector("._services-menu")
-        .classList.contains("-translate-y-[100rem]")
+      document.getElementById("homepage")
     ) {
       if (window.scrollY > 50) {
         navActivated();
@@ -113,17 +108,13 @@ export default function Navbar({ theme, setTheme }) {
       </li>
       <li
         className="relative"
-        onMouseLeave={() => {
-          if (window.scrollY < 50) navDeactivated();
-          hideServiceMenu();
-        }}
+        onMouseLeave={hideServiceMenu}
       >
         <NavLink
           to="/services"
           id="navServiceMenuItem"
           className="hidden lg:block"
           onMouseEnter={() => {
-            navActivated();
             document
               .querySelector("._services-menu")
               .classList.remove("transform");
@@ -205,9 +196,6 @@ export default function Navbar({ theme, setTheme }) {
     </>
   );
   const hideServiceMenu = () => {
-    if (!document.getElementById("homepage")) {
-      navActivated();
-    }
     document.querySelector("._services-menu").classList.add("transform");
     document
       .querySelector("._services-menu")
@@ -241,7 +229,7 @@ export default function Navbar({ theme, setTheme }) {
   React.useEffect(() => {
     const servicesMenuList = document.querySelectorAll("._services-menu ol li");
     servicesMenuList.forEach((li) => {
-      li.addEventListener("mouseenter", (e) => {
+      li.addEventListener("mouseenter", () => {
         servicesMenuList.forEach((list) => {
           list.classList.remove("active");
         });

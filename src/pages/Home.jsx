@@ -24,7 +24,7 @@ export default function Home() {
       </button>
     </NavLink>
     <button
-      className="px-7 text-sm md:text-[16px] md:px-8 py-3 text-white rounded-full bg-transparent border border-violet-500 active:scale-95 hover:bg-violet-500/20 hover:border-violet-100 w-fit"
+      className="px-7 text-sm md:text-[16px] md:px-8 py-3 dark:text-white rounded-full bg-transparent border border-violet-500 active:scale-95 hover:bg-violet-500/20 hover:border-violet-100 w-fit"
       title="Click here to compare our plans"
     >
       Compare our plans &rarr;
@@ -94,7 +94,7 @@ export default function Home() {
           <div className="z-10 w-full">
             <div className="bg-violet-100 dark:bg-slate-700 rounded-lg relative">
               <video
-                srcc="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
                 autoPlay
                 muted={isMuted}
                 controls={false}
@@ -119,7 +119,7 @@ export default function Home() {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-6 h-6"
+                    className="w-5 h-5"
                   >
                     <path
                       strokeLinecap="round"
@@ -134,7 +134,7 @@ export default function Home() {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-6 h-6"
+                    className="w-5 h-5"
                   >
                     <path
                       strokeLinecap="round"
@@ -383,7 +383,7 @@ export default function Home() {
             <Animated varient="fade-in">
               <div className="flex flex-col items-center">
                 <img
-                  src=""
+                  src="/images/static/persons/saadalamin.jpg"
                   className="w-full max-w-[300px] bg-violet-300 rounded-md object-cover"
                   style={{ aspectRatio: "3/3" }}
                 />
@@ -413,7 +413,7 @@ export default function Home() {
             <Animated varient="fade-in">
               <div className="flex flex-col items-center">
                 <img
-                  src=""
+                  src="/images/static/persons/nishat.jpg"
                   className="w-full max-w-[300px] bg-violet-300 rounded-md object-cover"
                   style={{ aspectRatio: "3/3" }}
                 />
@@ -433,7 +433,7 @@ export default function Home() {
                   style={{ aspectRatio: "3/3" }}
                 />
                 <h4 className="text-xl font-[600] mt-4 text-slate-700 dark:text-white leading-8">
-                  Tahmidur Rahman
+                  Unknown
                 </h4>
                 <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
                   Unknown
@@ -443,7 +443,7 @@ export default function Home() {
             <Animated varient="fade-in">
               <div className="flex flex-col items-center">
                 <img
-                  src=""
+                  src="/images/static/persons/mohammadsefatullah.jpg"
                   className="w-full max-w-[300px] bg-violet-300 rounded-md object-cover"
                   style={{ aspectRatio: "3/3" }}
                 />
@@ -507,7 +507,7 @@ export default function Home() {
           <div className="container mx-auto max-w-[1300px]">
             <section
               id="booking"
-              className="_booking-section py-12 md:py-[6.5rem] bg-violet-500 dark:bg-slate-950 flex flex-col justify-center items-center rounded-lg"
+              className="_booking-section py-12 md:py-[6.5rem] bg-violet-500 dark:bg-slate-900 flex flex-col justify-center items-center rounded-lg"
             >
               <Booking />
             </section>

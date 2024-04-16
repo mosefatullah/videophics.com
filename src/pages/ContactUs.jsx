@@ -16,7 +16,7 @@ export default function ContactUs() {
         <Animated varient="fade-up" speed="fast">
           <section
             id="booking"
-            className="_booking-section py-12 md:py-[6rem] bg-violet-500 dark:bg-slate-950 flex flex-col justify-center items-center rounded-lg my-12"
+            className="_booking-section py-12 md:py-[6rem] bg-violet-500 dark:bg-gray-950/50 flex flex-col justify-center items-center rounded-lg my-12"
           >
             <Booking />
           </section>

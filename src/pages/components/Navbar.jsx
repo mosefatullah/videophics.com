@@ -290,9 +290,9 @@ export default function Navbar({ theme, setTheme }) {
 
   return (
     <>
-      <div className="_ad w-full relative bg-violet-200 dark:bg-gradient-to-r dark:from-violet-500 dark:to-violet-600 z-20 py-3">
-        <div className="container mx-auto max-w-[1300px] text-slate-700 dark:text-white flex flex-col md:flex-row justify-center md:items-center gap-6 text-sm md:text-md lg:text-2md">
-          <div className="md:ml-auto flex flex-col md:flex-row md:gap-3">
+      <div className="_ad w-full relative bg-violet-100 dark:bg-gradient-to-r dark:from-[#410AC2] dark:to-violet-600 z-20 py-3">
+        <div className="container mx-auto max-w-[1300px] text-slate-700 dark:text-white flex flex-col sm:flex-row justify-center sm:items-center gap-2 sm:gap-6 text-sm md:text-md lg:text-2md flex-wrap">
+          <div className="md:ml-auto flex flex-wrap gap-1 md:gap-3">
             <p className="font-[600]">Black Friday Sale!</p>
             <p>Up to 20% off in all packages!</p>
           </div>
@@ -327,7 +327,7 @@ export default function Navbar({ theme, setTheme }) {
               </span>
             </code>
             <button
-              className="ml-auto block md:hidden"
+              className="ml-auto block sm:hidden"
               onClick={() => {
                 document.querySelector("._ad").style.display = "none";
               }}
@@ -349,7 +349,7 @@ export default function Navbar({ theme, setTheme }) {
             </button>
           </div>
           <button
-            className="ml-auto hidden md:block"
+            className="ml-auto hidden sm:block"
             onClick={() => {
               document.querySelector("._ad").style.display = "none";
             }}

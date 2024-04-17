@@ -51,7 +51,8 @@ export default function Home() {
       <div className="hidden md:block absolute right-0 top-0 h-[400px] opacity-80 dark:opacity-1 w-[500px] bg-gradient-to-r from-slate-100 to-slate-50 dark:from-slate-800 dark:to-slate-900 rounded-l-full z-5" />
       <div className="hidden md:block absolute right-0 top-[300px] h-[200px] w-[200px] bg-gradient-to-r from-purple-200 to-purple-50 dark:from-slate-800 dark:to-slate-900 rounded-full z-5" />
       <section className="_hero-section relative py-10 lg:min-h-[calc(100vh-80px)] flex justify-center">
-        <div className="_sketch h-[200px] w-[100px] absolute from-violet-700 dark:from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-20 left-0 dark:opacity-90 animate-[bounce_3s_infinite]" />
+
+        <div className="_sketch h-[100px] w-[200px] dark:h-[200px] dark:w-[300px] absolute from-violet-700 dark:from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-20 dark:top-[-10px] left-0 dark:left-[-40px] dark:opacity-80" />
         <div className="_sketch h-[200px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter right-0 md:left-[40%] bottom-10 dark:hidden animate-[bounce_3s_infinite]" />
         <div className="_sketch h-[100px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 right-0 hidden md:block dark:bottom-20 dark:top-auto dark:opacity-50 animate-[bounce_3s_infinite]" />
 
@@ -59,7 +60,7 @@ export default function Home() {
           <Animated varient="fade-up" speed="fast">
             <div className="flex flex-col justify-center md:items-center md:text-center z-10 max-w-[620px] lg:max-w-[730px] mx-auto lg:mx-0 md:py-10">
               <h1
-                className="text-3xl sm:text-4xl lg:text-5xl font-[600] mb-4 text-slate-700 dark:text-white sm:leading-10 xl:leading-13"
+                className="text-3xl sm:text-4xl lg:text-[2.6rem] font-[600] mb-4 text-slate-700 dark:text-white sm:leading-10 xl:leading-13"
                 style={{
                   letterSpacing: "-0.02em",
                 }}
@@ -92,12 +93,13 @@ export default function Home() {
           </Animated>
 
           <div className="z-10 w-full">
-            <div className="bg-violet-100 dark:bg-slate-700 rounded-lg relative">
+            <div className="bg-violet-100 dark:bg-slate-700 rounded-lg relative md:max-w-[75%] mx-auto">
               <video
                 src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
                 autoPlay
                 muted={isMuted}
                 controls={false}
+                disablePictureInPicture
                 alt="A visual representation of videophics"
                 className="object-cover rounded-lg w-full"
                 id="hero-video"
@@ -379,7 +381,7 @@ export default function Home() {
               Meet Our Team
             </h3>
           </div>
-          <div className="_persons grid md:grid-cols-3 gap-9 pt-[4rem]">
+          <div className="_persons grid sm:grid-cols-2 md:grid-cols-3 gap-9 pt-[4rem]">
             <Animated varient="fade-in">
               <div className="flex flex-col items-center">
                 <img
@@ -459,9 +461,9 @@ export default function Home() {
         </div>
       </section>
       <div className="bg-violet-0 dark:bg-slate-800 py-[4rem]">
-        <section className="_clients-section pb-[9rem] flex flex-col justify-center items-center pt-[4rem]">
-          <div className="container mx-auto max-w-[1300px]">
-            <div className="text-center mb-8">
+        <section className="_clients-section pb-[4rem] flex flex-col justify-center items-center pt-[4rem]">
+          <div className="container mx-auto max-w-[1300px] flex flex-col lg:flex-row gap-4 justify-between">
+            <div className="mb-8">
               <p className="text-sm text-slate-500 dark:text-gray-300 leading-6 md:leading-7 uppercase mb-2">
                 Our Clients
               </p>
@@ -469,50 +471,52 @@ export default function Home() {
                 We're trusted by our clients.
               </h3>
             </div>
-            <Animated varient="fade-up">
-              <div className="_clients flex justify-center items-center gap-4 mt-2 flex-wrap">
-                <div className="w-16 h-16">
-                  <img
-                    src="/images/static/qweekai.png"
-                    alt="Client Logo"
-                    className="w-full h-full"
-                  />
+            <div>
+              <Animated varient="fade-left">
+                <div className="_clients justify-center flex gap-4 lg:gap-6 mt-2 flex-wrap">
+                  <div className="w-16 h-16">
+                    <img
+                      src="/images/static/qweekai.png"
+                      alt="Client Logo"
+                      className="w-full h-full"
+                    />
+                  </div>
+                  <div className="w-16 h-16">
+                    <img
+                      src="/images/static/dhanshalik.jpg"
+                      alt="Client Logo"
+                      className="w-full h-full"
+                    />
+                  </div>
+                  <div className="w-16 h-16">
+                    <img
+                      src="/images/static/specialstars.jpeg"
+                      alt="Client Logo"
+                      className="w-full h-full"
+                    />
+                  </div>
+                  <div className="w-16 h-16">
+                    <img
+                      src="/images/static/dropbox.png"
+                      alt="Client Logo"
+                      className="w-full h-full"
+                    />
+                  </div>
                 </div>
-                <div className="w-16 h-16">
-                  <img
-                    src="/images/static/dhanshalik.jpg"
-                    alt="Client Logo"
-                    className="w-full h-full"
-                  />
-                </div>
-                <div className="w-16 h-16">
-                  <img
-                    src="/images/static/specialstars.jpeg"
-                    alt="Client Logo"
-                    className="w-full h-full"
-                  />
-                </div>
-                <div className="w-16 h-16">
-                  <img
-                    src="/images/static/dropbox.png"
-                    alt="Client Logo"
-                    className="w-full h-full"
-                  />
-                </div>
-              </div>
-            </Animated>
+              </Animated>
+            </div>
           </div>
         </section>
-        <Animated varient="fade-up" speed="fast">
-          <div className="container mx-auto max-w-[1300px]">
+        <div className="container mx-auto max-w-[1300px]">
+          <Animated varient="fade-left">
             <section
               id="booking"
               className="_booking-section py-12 md:py-[6.5rem] bg-violet-500 dark:bg-slate-900 flex flex-col justify-center items-center rounded-lg"
             >
               <Booking />
             </section>
-          </div>
-        </Animated>
+          </Animated>
+        </div>
         <section
           className="_faq-section py-[8rem] pb-[3rem] md:min-h-[calc(100vh-80px)] flex flex-col justify-center items-center"
           id="faq"

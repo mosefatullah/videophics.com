@@ -423,7 +423,7 @@ export default function Home() {
                   Zadid Al Lisan
                 </h4>
                 <p className="text-sm text-slate-500 dark:text-slate-400 leading-6">
-                  Board Member
+                  CTO
                 </p>
               </div>
             </Animated>

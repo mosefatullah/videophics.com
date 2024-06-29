@@ -360,10 +360,10 @@ export default function Navbar({ theme, setTheme }) {
         </div>
       </div>
       <nav
-        className="_navbar sticky top-0 left-0 z-50 py-4 lg:p-0 bg-white/1 text-black dark:text-white border-b border-transparent backdrop-blur-xl"
+        className="_navbar sticky top-0 left-0 z-50 py-4 lg:p-0 bg-white/1 text-black dark:text-white border-b border-transparent"
         role="navigation"
       >
-        <div className="container mx-auto flex justify-between lg:grid grid-cols-3 gap-4 max-w-[1300px]">
+        <div className="container mx-auto flex justify-between lg:grid grid-cols-3 gap-4">
           <div className="_logo flex items-center">
             <NavLink to="/">
               <h1 className="font-medium text-lg flex items-center">

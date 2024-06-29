@@ -74,7 +74,7 @@ export default function Home() {
                   <span className="text-violet-500 dark:text-violet-400">
                     storytelling
                   </span>
-                  . We{" "}
+                  &nbsp;& We{" "}
                   <Animated varient="fade-right" className="inline">
                     <span className="text-violet-500 dark:text-violet-400">
                       visualize

@@ -41,7 +41,7 @@ export default function App() {
       localStorage.setItem("theme", "light");
       document.documentElement.style.setProperty("--bg-secondary-1", "#5c42bd");
     }
-    return () => {};
+    return () => { };
   }, [theme]);
 
   const Layout = ({ children }) => {
@@ -78,6 +78,14 @@ export default function App() {
             element={
               <Layout>
                 <ServicesView />
+              </Layout>
+            }
+          />
+          <Route
+            path="/services"
+            element={
+              <Layout>
+                
               </Layout>
             }
           />
@@ -183,10 +191,6 @@ export default function App() {
           />
 
           {/* Redirects */}
-          <Route
-            path="/services"
-            element={<Navigate to="/services/branding" />}
-          />
           <Route path="/about" element={<Navigate to="/about-us" />} />
           <Route path="/contact" element={<Navigate to="/contact-us" />} />
 

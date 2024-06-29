@@ -17,18 +17,20 @@ export default function Home() {
         className="px-7 text-md md:text-[16px] md:px-8 py-3 text-white rounded-full from-violet-400 to-violet-600 bg-gradient-to-l hover:from-violet-500 hover:to-violet-700 active:scale-95 flex gap-1 items-center justify-center w-fit min-w-[200px]"
         title="Click here to learn more"
       >
-        See more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+        Learn more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
         </svg>
 
       </button>
     </NavLink>
-    <button
-      className="px-7 text-sm md:text-[16px] md:px-8 py-3 dark:text-white rounded-full bg-transparent border border-violet-500 active:scale-95 hover:bg-violet-500/20 hover:border-violet-100 w-fit"
-      title="Click here to compare our plans"
-    >
-      Compare our plans &rarr;
-    </button>
+    <NavLink to="/services/">
+      <button
+        className="px-7 text-sm md:text-[16px] md:px-8 py-3 dark:text-white rounded-full bg-transparent border border-violet-500 active:scale-95 hover:bg-violet-500/20 hover:border-violet-100 w-fit"
+        title="Click here to compare our plans"
+      >
+        Visit our services &rarr;
+      </button>
+    </NavLink>
   </div>);
 
   return (
@@ -60,9 +62,9 @@ export default function Home() {
           <Animated varient="fade-up" speed="fast">
             <div className="flex flex-col justify-center md:items-center md:text-center z-10 max-w-[620px] lg:max-w-[730px] mx-auto lg:mx-0 md:py-10">
               <h1
-                className="text-3xl sm:text-4xl lg:text-[2.6rem] font-[600] mb-4 text-slate-700 dark:text-white sm:leading-10 xl:leading-13"
+                className="text-3xl sm:text-4xl lg:text-[2.7rem] font-[600] mb-4 text-slate-700 dark:text-white sm:leading-10 xl:leading-13"
                 style={{
-                  letterSpacing: "-0.02em",
+                  letterSpacing: "-0.03em",
                 }}
               >
                 <Animated varient="fade-left" className="inline">

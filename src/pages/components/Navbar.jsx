@@ -360,7 +360,7 @@ export default function Navbar({ theme, setTheme }) {
         </div>
       </div>
       <nav
-        className="_navbar sticky top-0 left-0 z-50 py-4 lg:p-0 text-black dark:text-white border-b border-transparent"
+        className="_navbar sticky top-0 left-0 z-50 py-4 lg:p-0 bg-white/1 text-black dark:text-white border-b border-transparent backdrop-blur-xl"
         role="navigation"
       >
         <div className="container mx-auto flex justify-between lg:grid grid-cols-3 gap-4 max-w-[1300px]">
@@ -385,7 +385,7 @@ export default function Navbar({ theme, setTheme }) {
           <div className="flex gap-5 md:gap-4 justify-end items-center">
             <NavLink
               to="/contact-us"
-              className="bg-purple-700 text-white text-sm px-6 py-3 rounded-full from-purple-500 to-purple-700 bg-gradient-to-l hover:from-purple-600 hover:to-purple-800 active:scale-95 hidden md:block"
+              className="bg-violet-700 text-white text-sm px-6 py-3 rounded-full from-violet-500 to-violet-700 bg-gradient-to-l hover:from-violet-600 hover:to-violet-800 active:scale-95 hidden md:block"
             >
               Contact Us
             </NavLink>

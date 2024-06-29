@@ -54,7 +54,7 @@ export default function Home() {
       <div className="hidden md:block absolute right-0 top-[300px] h-[200px] w-[200px] bg-gradient-to-r from-purple-200 to-purple-50 dark:from-slate-800 dark:to-slate-900 rounded-full z-5" />
       <section className="_hero-section relative py-10 lg:min-h-[calc(100vh-80px)] flex justify-center">
 
-        <div className="_sketch h-[100px] w-[200px] dark:h-[200px] dark:w-[300px] absolute from-violet-700 dark:from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-20 dark:top-[-10px] left-0 dark:left-[-40px] dark:opacity-80" />
+        <div className="_sketch h-[100px] w-[200px] dark:h-[200px] dark:w-[300px] absolute from-violet-700 dark:from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-20 dark:top-[10px] left-0 dark:left-[-40px] dark:opacity-70" />
         <div className="_sketch h-[200px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter right-0 md:left-[40%] bottom-10 dark:hidden animate-[bounce_3s_infinite]" />
         <div className="_sketch h-[100px] w-[300px] absolute from-violet-300 to-violet-100 bg-gradient-to-r blur-3xl filter top-0 right-0 hidden md:block dark:bottom-20 dark:top-auto dark:opacity-50 animate-[bounce_3s_infinite]" />
 
@@ -62,7 +62,7 @@ export default function Home() {
           <Animated varient="fade-up" speed="fast">
             <div className="flex flex-col justify-center md:items-center md:text-center z-10 max-w-[620px] lg:max-w-[730px] mx-auto lg:mx-0 md:py-10">
               <h1
-                className="text-3xl sm:text-4xl lg:text-[2.7rem] font-[600] mb-4 text-slate-700 dark:text-white sm:leading-10 xl:leading-13"
+                className="text-2xl sm:text-4xl lg:text-[2.6rem] xl:text-[3rem] font-bold mb-4 text-slate-700 dark:text-white sm:leading-10 lg:leading-13"
                 style={{
                   letterSpacing: "-0.03em",
                 }}
@@ -73,8 +73,7 @@ export default function Home() {
                 <Animated varient="fade-right" className="inline">
                   <span className="text-violet-500 dark:text-violet-400">
                     storytelling
-                  </span>
-                  &nbsp;& We{" "}
+                  </span>. We{" "}
                   <Animated varient="fade-right" className="inline">
                     <span className="text-violet-500 dark:text-violet-400">
                       visualize
@@ -83,7 +82,7 @@ export default function Home() {
                   your touchy stories
                 </Animated>
               </h1>
-              <p className="text-[14px] md:text-[17px] mt-4 mb-7 text-slate-500 dark:text-slate-400 leading-6 md:leading-7 _heroPara">
+              <p className="text-[14px] md:text-[17px] mt-4 mb-7 xl:px-12 text-slate-500 dark:text-slate-400 leading-6 md:leading-7 _heroPara">
                 We bring brands and people closer. With a focus on
                 emotion-driven connections, we craft experiences that resonate
                 and endure.
